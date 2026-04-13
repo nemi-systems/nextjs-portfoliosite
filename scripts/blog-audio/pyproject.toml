@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blog-audio-tooling"
+version = "0.1.0"
+description = "Blog-native Qwen audio tooling for nextjs-portfoliosite"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "accelerate==1.12.0",
+  "einops",
+  "gradio",
+  "librosa",
+  "numpy",
+  "onnxruntime",
+  "soundfile",
+  "sox",
+  "torch",
+  "torchaudio",
+  "transformers==4.57.3",
+  "vllm==0.18.0",
+  "vllm-omni",
+]
+
+[project.scripts]
+voice-workflow = "blog_audio.workflow:main"
+blog-audio-post = "blog_audio.post_audio:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["blog_audio*"]

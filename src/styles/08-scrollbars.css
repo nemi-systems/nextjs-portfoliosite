@@ -1,0 +1,117 @@
+/* === SCROLLBAR STYLING === */
+/* Custom scrollbar appearance for different screen sizes */
+
+/* Hide scrollbar on sidebar completely */
+.portfolio-sidebar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.portfolio-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide all scrollbars on mobile */
+@media (max-width: 1023px) {
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.project-table-scroll {
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.project-table-scroll thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Desktop only - orange scrollbar for main content */
+@media (min-width: 1024px) {
+  .project-table-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #CA8F31 #1A1A1A;
+  }
+
+  .project-table-scroll::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  .project-table-scroll::-webkit-scrollbar-track {
+    background: #1A1A1A !important;
+  }
+
+  .project-table-scroll::-webkit-scrollbar-thumb {
+    background: #CA8F31 !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  .project-table-scroll::-webkit-scrollbar-thumb:hover {
+    background: #E7A844 !important;
+  }
+
+  html::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  html::-webkit-scrollbar-track {
+    background: #1A1A1A !important;
+  }
+  
+  html::-webkit-scrollbar-thumb {
+    background: #CA8F31 !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+  
+  html::-webkit-scrollbar-thumb:hover {
+    background: #E7A844 !important;
+  }
+  
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #CA8F31 #1A1A1A;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1A1A1A !important;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #CA8F31 !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background: #E7A844 !important;
+  }
+  
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: #CA8F31 #1A1A1A;
+  }
+}

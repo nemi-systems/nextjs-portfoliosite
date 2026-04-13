@@ -1,0 +1,3 @@
+[console_scripts]
+blog-audio-post = blog_audio.post_audio:main
+voice-workflow = blog_audio.workflow:main

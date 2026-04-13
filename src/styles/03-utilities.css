@@ -1,0 +1,148 @@
+/* === UTILITIES === */
+/* One-off helpers and utility classes */
+
+
+/* Terminal header utility */
+.terminal-header {
+  background: #130F04;
+  border-bottom: 1px solid #1A1A1A;
+  position: relative;
+  color: #000000;
+}
+
+/* Data table utilities */
+.data-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #1A1A1A;
+  padding: 8px 12px;
+  background: #060606;
+  color: #808080;
+}
+
+.data-table th {
+  background: #CA8F31;
+  color: #000000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Progress bar utility */
+.progress-bar {
+  background: #040D0A;
+  border: 1px solid #5AFD81;
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #5AFD81;
+  @apply transition-all duration-300;
+}
+
+/* System status utility */
+.system-status {
+  @apply flex justify-between items-center p-2 border border-box-outline bg-box-bg font-mono text-xs;
+}
+
+/* Metric display utility */
+.metric-display {
+  @apply font-mono text-primary-green text-right;
+}
+
+/* Terminal cursor animation */
+.terminal-cursor::after {
+  @apply animate-blink;
+  content: '_';
+  color: #5AFD81;
+}
+
+/* Value box utility */
+.value-box {
+  @apply inline-block bg-box-bg border border-box-outline px-1.5 ml-2 mr-1 text-primary-green font-mono text-xs rounded-sm leading-tight;
+}
+
+/* Glowing digit animation */
+.value-box .glowing-digit {
+  text-shadow: 0 0 6px rgba(90,253,129,0.8), 0 0 10px rgba(90,253,129,0.5), 0 0 12px rgba(90,253,129,0.3);
+  animation: digit-pulse 0.8s ease-in-out infinite alternate;
+}
+
+/* Red glowing digit */
+.value-box .red-glowing-digit {
+  color: #FF4444 !important;
+  text-shadow: 0 0 6px rgba(255,68,68,0.8), 0 0 10px rgba(255,68,68,0.5), 0 0 12px rgba(255,68,68,0.3) !important;
+  animation: digit-red-pulse 0.8s ease-in-out infinite alternate !important;
+}
+
+/* Control readout utility */
+.control-readout {
+  @apply flex-1 h-full bg-box-title-bg border-r border-box-outline text-black font-mono text-xs flex items-center justify-center select-none;
+}
+
+/* Boombox button base styles */
+.boombox-button {
+  @apply flex-1 h-full text-xs font-mono border-r border-box-outline last:border-r-0 bg-box-bg cursor-pointer flex items-center justify-center text-table-text;
+  @apply transition-colors duration-200;
+  contain: layout style;
+  outline: none;
+}
+
+.boombox-button:hover {
+  @apply border-box-outline;
+}
+
+.boombox-button.active {
+  @apply bg-box-title-bg text-black border-box-title-bg;
+}
+
+.boombox-button.inactive {
+  @apply text-table-text border-box-outline;
+}
+
+.boombox-button:disabled {
+  @apply opacity-30 cursor-not-allowed;
+}
+
+.boombox-button.flashing-red {
+  @apply bg-red-600 text-white;
+  background-color: #FF4444 !important;
+  border: 1px solid #FF4444 !important;
+}
+
+/* Sticky section header */
+.sticky-section-header {
+  @apply sticky top-0 z-20 bg-bg-main border-b border-primary-green p-4 mb-6;
+}
+
+/* Navigation utilities */
+.nav-indicator {
+  @apply transition-all duration-200;
+  will-change: width, background-color;
+}
+
+.nav-text {
+  @apply font-mono text-xs uppercase tracking-widest;
+  @apply transition-colors duration-200;
+  will-change: color;
+}
+
+/* Highlighted navigation states */
+[data-highlighted="true"] .nav-indicator {
+  @apply w-16 bg-highlight-text;
+}
+
+[data-highlighted="true"] .nav-text {
+  @apply text-highlight-text;
+}

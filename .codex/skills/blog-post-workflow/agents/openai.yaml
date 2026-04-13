@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Post Workflow"
+  short_description: "Guide blog post assets, SVG flow, and commit workflow"
+  default_prompt: "Help author a blog post in this repo with correct asset placement and strict submodule commit flow."

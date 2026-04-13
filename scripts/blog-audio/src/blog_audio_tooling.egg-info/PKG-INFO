@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: blog-audio-tooling
+Version: 0.1.0
+Summary: Blog-native Qwen audio tooling for nextjs-portfoliosite
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: accelerate==1.12.0
+Requires-Dist: einops
+Requires-Dist: gradio
+Requires-Dist: librosa
+Requires-Dist: numpy
+Requires-Dist: onnxruntime
+Requires-Dist: soundfile
+Requires-Dist: sox
+Requires-Dist: torch
+Requires-Dist: torchaudio
+Requires-Dist: transformers==4.57.3
+Requires-Dist: vllm==0.18.0
+Requires-Dist: vllm-omni
+
+# Blog Audio Tooling
+
+Site-local Python package for the portfolio blog audio pipeline.
+
+## Runtime model
+- The working CUDA runtime is copied from `../tts/.venv`.
+- Blog audio generation runs through `vllm-omni` for Qwen3 TTS.
+- `transformers` is still used for tokenizer/config helpers needed by the vLLM prompt builder.
+- The copied runtime is local-only and should not be committed.
+- Blog-native post narration uses the Qwen Base model with one shared voice sample.
+- The default blog narration sample is `reference-audio.wav`.
+- Post narration output is stitched into one MP3 under `public/assets/post-audio/<post>/post.mp3`.
+- `ffmpeg` is required for the MP3 transcode step.
+- The shell must provide the same CUDA and C++ runtime support that makes `../tts/.venv` usable.
+
+## Bootstrap
+```bash
+bash scripts/blog-audio/bootstrap-runtime.sh
+```
+
+## Raw voice workflow
+```bash
+cd scripts/blog-audio
+uv run --python .venv/bin/python voice_workflow.py design --text "..." --instruct "..." --language English
+```
+
+## Blog-native wrapper
+```bash
+uv run --python scripts/blog-audio/.venv/bin/python scripts/blog-audio-post.py --post src/_posts/my-post.md --language English
+```
+
+## Narration defaults
+- Post narration uses `task_type=Base` with `x_vector_only_mode=true`.
+- Omit `--ref-audio` to use the shared `_denoise_2.wav` sample.
+- Posts are chunked into paragraph-sized TTS requests.
+- Default chunking targets `200-500` characters per chunk.
+- Adjacent short paragraphs or list items are merged until they reach a useful chunk size.
+- Long paragraphs fall back to major-punctuation splits.
+- Stitching inserts `100ms` of silence between generated chunks.
+- Generated sidecars preserve transcript text plus per-chunk text offsets and timeline offsets for later UI sync.

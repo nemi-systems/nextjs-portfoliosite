@@ -1,0 +1,88 @@
+/* === SYNTHESIZER LAYOUT STYLES === */
+/* Grid layouts and responsive positioning for synthesizer */
+
+@tailwind components;
+
+@layer components {
+  /* Desktop 4x2 Grid Layout (≥1280px) */
+  .synth-grid-desktop {
+    @apply grid grid-cols-1 lg:grid-cols-4 gap-2 mb-2;
+    grid-template-areas: 
+      "osc unison-glide filter scopes-master"
+      "lfo fx env macro";
+  }
+
+  .synth-grid-osc { grid-area: osc; }
+  .synth-grid-unison-glide { grid-area: unison-glide; }
+  .synth-grid-filter { grid-area: filter; }
+  .synth-grid-env { grid-area: env; }
+  .synth-grid-master { grid-area: master; }
+  .synth-grid-lfo { grid-area: lfo; }
+  .synth-grid-fx { grid-area: fx; }
+  .synth-grid-scopes { grid-area: scopes; }
+  .synth-grid-scopes-master { grid-area: scopes-master; }
+  .synth-grid-macro { grid-area: macro; }
+
+  /* Tablet Layout (768px - 1279px) */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .synth-grid-desktop {
+      grid-template-areas: 
+        "osc scopes-master"
+        "unison-glide filter"
+        "env lfo"
+        "fx macro";
+      @apply grid-cols-2;
+    }
+  }
+
+  /* Mobile Layout (<768px) */
+  @media (max-width: 767px) {
+    .synth-grid-desktop {
+      @apply grid-cols-2 gap-1;
+      grid-template-areas: 
+        "osc scopes-master"
+        "unison-glide filter"
+        "env lfo"
+        "fx macro";
+    }
+    
+    .synth-grid-desktop > div {
+      @apply mb-1;
+    }
+  }
+
+  /* Responsive adjustments for subsections */
+  @media (max-width: 767px) {
+    .synth-subsection-desktop:not(.synth-grid-osc .synth-subsection-desktop) {
+      @apply hidden;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .synth-subsection-mobile {
+      @apply hidden;
+    }
+  }
+
+  /* Mobile keyboard positioning - keyboard at top */
+  @media (max-width: 767px) {
+    .synth-keyboard-container {
+      @apply order-1;
+    }
+    
+    .synth-grid-desktop {
+      @apply order-2;
+    }
+  }
+
+  /* Desktop keyboard positioning - keyboard at bottom */
+  @media (min-width: 768px) {
+    .synth-keyboard-container {
+      @apply order-3;
+    }
+    
+    .synth-grid-desktop {
+      @apply order-1;
+    }
+  }
+}

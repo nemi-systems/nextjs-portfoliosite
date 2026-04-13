@@ -1,0 +1,28 @@
+/* === TOKENS === */
+/* Custom CSS variables and theme tokens */
+
+/* Additional custom properties for consistent theming */
+:root {
+  /* Animation timing */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.8s ease;
+  
+  /* Border tokens */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+  --border-width-x-thick: 4px;
+  
+  /* Spacing tokens */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Shadow tokens */
+  --shadow-glow-green: 0 0 8px rgba(90, 253, 129, 0.6);
+  --shadow-glow-yellow: 0 0 8px rgba(202, 143, 49, 0.4);
+  --shadow-glow-red: 0 0 8px rgba(255, 68, 68, 0.6);
+}
