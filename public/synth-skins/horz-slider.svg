@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%" onload="init(evt)">
+  <defs>
+    <!-- Panel / metal -->
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6e6e73"/>
+      <stop offset="40%" stop-color="#3f4044"/>
+      <stop offset="60%" stop-color="#2a2b2e"/>
+      <stop offset="100%" stop-color="#1d1e21"/>
+    </linearGradient>
+    <radialGradient id="rimGlow" cx="50%" cy="10%" r="80%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Inset channel -->
+    <linearGradient id="channelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e0f12"/>
+      <stop offset="100%" stop-color="#17181b"/>
+    </linearGradient>
+    <linearGradient id="channelEdgeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#27282b"/>
+      <stop offset="100%" stop-color="#0a0b0d"/>
+    </linearGradient>
+
+    <!-- Tick mark sheen -->
+    <linearGradient id="tickSheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9aa0a6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#42454a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Handle face -->
+    <linearGradient id="handleBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfc3c8"/>
+      <stop offset="45%" stop-color="#989da3"/>
+      <stop offset="55%" stop-color="#7e8287"/>
+      <stop offset="100%" stop-color="#4b4f55"/>
+    </linearGradient>
+    <radialGradient id="handleSpec" cx="30%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="handleRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232428"/>
+      <stop offset="100%" stop-color="#0a0b0d"/>
+    </linearGradient>
+
+    <!-- Accent (cyan by default) -->
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#00a3c7"/>
+    </linearGradient>
+    <filter id="accentGlow" x="-50%" y="-200%" width="200%" height="400%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft drop shadow for handle -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Outer panel -->
+  <g id="panel">
+    <rect x="8" y="8" width="384" height="104" rx="12" fill="url(#panelGrad)"/>
+    <!-- Dark outer rim -->
+    <rect x="8" y="8" width="384" height="104" rx="12" fill="none" stroke="#0a0b0d" stroke-width="2"/>
+    <!-- Subtle top gloss -->
+    <rect x="8" y="8" width="384" height="104" rx="12" fill="url(#rimGlow)"/>
+  </g>
+
+  <!-- Channel well -->
+  <g id="channel">
+    <!-- Inset cavity -->
+    <g transform="translate(28,44)">
+      <rect x="0" y="0" width="344" height="32" rx="8" fill="url(#channelEdgeGrad)"/>
+      <rect x="2" y="2" width="340" height="28" rx="7" fill="url(#channelGrad)"/>
+      <!-- Inner bevel highlights -->
+      <rect x="2" y="2" width="340" height="28" rx="7" fill="none" stroke="#2c2e32" stroke-opacity="0.9" stroke-width="1"/>
+      <rect x="1" y="1" width="342" height="30" rx="8" fill="none" stroke="#000000" stroke-opacity="0.55" stroke-width="1"/>
+    </g>
+
+    <!-- Tick marks (lab gear vibe) -->
+    <g id="ticks" transform="translate(28,44)">
+      <!-- 0..20 ticks over 340px -->
+      <!-- Minor ticks -->
+      <g stroke="url(#tickSheen)" stroke-width="1">
+        <!-- Generate 21 ticks manually for clean XML -->
+        <line x1="0"   y1="2" x2="0"   y2="9"/>
+        <line x1="34"  y1="2" x2="34"  y2="9"/>
+        <line x1="68"  y1="2" x2="68"  y2="9"/>
+        <line x1="102" y1="2" x2="102" y2="9"/>
+        <line x1="136" y1="2" x2="136" y2="9"/>
+        <line x1="170" y1="2" x2="170" y2="9"/>
+        <line x1="204" y1="2" x2="204" y2="9"/>
+        <line x1="238" y1="2" x2="238" y2="9"/>
+        <line x1="272" y1="2" x2="272" y2="9"/>
+        <line x1="306" y1="2" x2="306" y2="9"/>
+        <line x1="340" y1="2" x2="340" y2="9"/>
+
+        <line x1="17"  y1="2" x2="17"  y2="7" stroke-opacity="0.7"/>
+        <line x1="51"  y1="2" x2="51"  y2="7" stroke-opacity="0.7"/>
+        <line x1="85"  y1="2" x2="85"  y2="7" stroke-opacity="0.7"/>
+        <line x1="119" y1="2" x2="119" y2="7" stroke-opacity="0.7"/>
+        <line x1="153" y1="2" x2="153" y2="7" stroke-opacity="0.7"/>
+        <line x1="187" y1="2" x2="187" y2="7" stroke-opacity="0.7"/>
+        <line x1="221" y1="2" x2="221" y2="7" stroke-opacity="0.7"/>
+        <line x1="255" y1="2" x2="255" y2="7" stroke-opacity="0.7"/>
+        <line x1="289" y1="2" x2="289" y2="7" stroke-opacity="0.7"/>
+        <line x1="323" y1="2" x2="323" y2="7" stroke-opacity="0.7"/>
+      </g>
+      <!-- Subtle bottom tick echo -->
+      <g stroke="#0a0b0d" stroke-opacity="0.55" stroke-width="1" transform="translate(0,22)">
+        <line x1="0"   y1="1" x2="0"   y2="6"/>
+        <line x1="34"  y1="1" x2="34"  y2="6"/>
+        <line x1="68"  y1="1" x2="68"  y2="6"/>
+        <line x1="102" y1="1" x2="102" y2="6"/>
+        <line x1="136" y1="1" x2="136" y2="6"/>
+        <line x1="170" y1="1" x2="170" y2="6"/>
+        <line x1="204" y1="1" x2="204" y2="6"/>
+        <line x1="238" y1="1" x2="238" y2="6"/>
+        <line x1="272" y1="1" x2="272" y2="6"/>
+        <line x1="306" y1="1" x2="306" y2="6"/>
+        <line x1="340" y1="1" x2="340" y2="6"/>
+      </g>
+    </g>
+
+    <!-- Cyan accent under current value (dynamic width via script) -->
+    <rect id="accentFill" x="30" y="58" width="0" height="4" rx="2" fill="url(#accentBar)" filter="url(#accentGlow)"/>
+  </g>
+
+  <!-- Handle -->
+  <g id="handle" transform="translate(30,40)" filter="url(#softShadow)" cursor="pointer">
+    <!-- Rim -->
+    <rect x="-14" y="-2" width="28" height="44" rx="8" fill="url(#handleRim)"/>
+    <!-- Body -->
+    <rect x="-12" y="0" width="24" height="40" rx="7" fill="url(#handleBody)"/>
+    <!-- Center seam -->
+    <rect x="-0.75" y="1" width="1.5" height="38" rx="0.75" fill="#2b2e33" opacity="0.7"/>
+    <!-- Top glossy arc -->
+    <ellipse cx="-2" cy="8" rx="9" ry="5" fill="url(#handleSpec)"/>
+  </g>
+
+  <!-- Invisible hit area to improve dragging -->
+  <rect id="hit" x="20" y="32" width="360" height="56" fill="transparent" pointer-events="all"/>
+
+  <script><![CDATA[
+    function init(evt){
+      const svg = evt.target || document.querySelector('svg');
+      const handle = svg.getElementById('handle');
+      const hit = svg.getElementById('hit');
+      const accent = svg.getElementById('accentFill');
+      const trackLeft = 30;          // left x (matches initial handle x)
+      const trackRight = 370;        // right x (28 + 344 - handle half spacing)
+      const minX = trackLeft, maxX = trackRight;
+      let dragging = false, offset = 0;
+
+      // map clientX to SVG coords
+      const toLocalX = (e)=>{
+        const pt = svg.createSVGPoint();
+        pt.x = (e.touches ? e.touches[0].clientX : e.clientX);
+        pt.y = (e.touches ? e.touches[0].clientY : e.clientY);
+        const ctm = svg.getScreenCTM().inverse();
+        const sp = pt.matrixTransform(ctm);
+        return sp.x;
+      };
+
+      const setPos = (x)=>{
+        const clamped = Math.max(minX, Math.min(maxX, x));
+        handle.setAttribute('transform', `translate(${clamped},40)`);
+        // Update accent width to fill from left edge of channel (x=30) to handle center
+        const w = Math.max(0, clamped - 30);
+        accent.setAttribute('width', w);
+        // Store normalized value 0..1 on root for hooks
+        const norm = (clamped - minX) / (maxX - minX);
+        svg.setAttribute('data-value', norm.toFixed(4));
+      };
+
+      const down = (e)=>{
+        dragging = true;
+        const hx = Number(handle.transform.baseVal.consolidate().matrix.e);
+        offset = toLocalX(e) - hx;
+        e.preventDefault();
+      };
+      const move = (e)=>{
+        if(!dragging) return;
+        setPos(toLocalX(e) - offset);
+        e.preventDefault();
+      };
+      const up = ()=>{ dragging = false; };
+
+      ['pointerdown','mousedown','touchstart'].forEach(ev=>{
+        handle.addEventListener(ev, down, {passive:false});
+        hit.addEventListener(ev, (e)=>{ // click anywhere on channel to jump
+          setPos(toLocalX(e));
+          down(e);
+        }, {passive:false});
+      });
+      ['pointermove','mousemove','touchmove'].forEach(ev=>{
+        window.addEventListener(ev, move, {passive:false});
+      });
+      ['pointerup','mouseup','mouseleave','touchend','touchcancel'].forEach(ev=>{
+        window.addEventListener(ev, up, {passive:true});
+      });
+
+      // initialize at ~25%
+      setPos(minX + (maxX-minX)*0.25);
+    }
+  ]]></script>
+</svg>
+
+

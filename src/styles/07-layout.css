@@ -1,0 +1,48 @@
+/* === LAYOUT SYSTEM === */
+/* Portfolio layout components and main content wrapper */
+
+@tailwind components;
+
+@layer components {
+  /* Portfolio layout system */
+  .portfolio-container {
+    @apply mx-auto min-h-screen max-w-screen-xl px-4 py-6 antialiased;
+    @apply md:px-8 md:py-12 lg:px-12 lg:py-6;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar"
+        "main";
+    gap: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .portfolio-container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 
+          "sidebar main";
+      gap: 1.5rem;
+      align-items: start;
+    }
+  }
+
+  .portfolio-sidebar {
+    grid-area: sidebar;
+    @apply lg:sticky lg:top-0 lg:max-h-screen lg:overflow-y-auto lg:py-8;
+  }
+
+  .portfolio-main {
+    grid-area: main;
+    @apply pt-8 lg:py-8;
+  }
+
+  .portfolio-socials {
+    @apply mt-8;
+  }
+
+  .main-content-wrapper {
+    @apply bg-box-bg p-0 space-y-0 lg:border lg:border-box-outline lg:mt-2;
+  }
+}

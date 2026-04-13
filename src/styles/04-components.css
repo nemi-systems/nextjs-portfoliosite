@@ -1,0 +1,512 @@
+/* === COMPONENTS === */
+/* Reusable UI components built with Tailwind @apply */
+
+@tailwind components;
+
+@layer components {
+  /* Terminal border utility */
+  .terminal-border {
+    border: 1px solid #1A1A1A;
+  }
+  /* Prose markdown styling */
+  .prose {
+    @apply text-table-text font-mono;
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply font-bold text-table-text font-mono uppercase tracking-wide;
+  }
+
+  .prose h1 {
+    @apply text-2xl mb-4 border-b border-box-outline pb-2;
+  }
+
+  .prose h2 {
+    @apply text-lg mb-3 border-b border-box-outline pb-1;
+  }
+  
+  .prose a {
+    @apply text-box-title-bg hover:text-primary-green transition-colors;
+  }
+
+  .prose strong {
+    @apply text-table-text font-bold;
+  }
+
+  .prose ol > li::before {
+    @apply text-table-text;
+  }
+
+  .prose ul > li::before {
+    @apply bg-table-text;
+  }
+
+  .prose p,
+  .prose ul,
+  .prose ol {
+    @apply mb-4 font-mono text-sm leading-relaxed;
+  }
+
+  .prose pre {
+    @apply p-4 border border-box-outline bg-bg-main font-mono text-sm text-table-text;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 border-none text-table-text;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+  }
+
+  .prose [data-rehype-pretty-code-figure] pre {
+    @apply p-4 border border-box-outline bg-bg-main;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+  }
+
+  .prose code {
+    @apply bg-box-bg border border-box-outline px-1 py-0.5 text-table-text font-mono text-sm;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+  }
+
+  .prose img {
+    @apply mx-auto border border-box-outline;
+  }
+
+  .prose video {
+    @apply mx-auto border border-box-outline;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    background: #000;
+  }
+
+  .prose .mermaid-diagram {
+    @apply my-6 p-3 border border-box-outline bg-bg-main;
+    overflow-x: auto;
+  }
+
+  .prose .mermaid-diagram svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prose .mermaid-diagram svg text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
+  .prose .katex {
+    color: #808080;
+  }
+
+  .prose .katex-display {
+    margin: 1rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.25rem 0;
+  }
+
+  .prose .svg-depth-card {
+    --svg-tilt-x: 0deg;
+    --svg-tilt-y: 0deg;
+    --svg-shift-x: 0px;
+    --svg-shift-y: 0px;
+    position: relative;
+    display: block;
+    margin: 1.3rem auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0.95rem;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    background: transparent;
+  }
+
+  .prose .svg-depth-card .svg-layer {
+    position: absolute;
+    inset: 0;
+    margin: 0 !important;
+    width: 100%;
+    height: 100%;
+    border: none !important;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .prose .svg-depth-card .svg-layer-bg {
+    z-index: 1;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    transform: translate3d(
+      calc(var(--svg-shift-x, 0px) * 0.12),
+      calc(var(--svg-shift-y, 0px) * 0.12),
+      0
+    );
+  }
+
+  .prose .svg-depth-card .svg-layer-tone,
+  .prose .svg-depth-card .svg-layer-mid {
+    z-index: 2;
+    opacity: 0.88 !important;
+    mix-blend-mode: normal !important;
+    filter: drop-shadow(0 0 7px rgba(212, 175, 55, 0.16));
+    transform: translate3d(
+      calc(var(--svg-shift-x, 0px) * 0.24),
+      calc(var(--svg-shift-y, 0px) * 0.24),
+      8px
+    );
+  }
+
+  .prose .svg-depth-card .svg-layer-highlight {
+    z-index: 3;
+    opacity: 0.72 !important;
+    mix-blend-mode: normal !important;
+    transform: translate3d(
+      calc(var(--svg-shift-x, 0px) * 0.36),
+      calc(var(--svg-shift-y, 0px) * 0.34),
+      12px
+    );
+  }
+
+  .prose .svg-depth-card .svg-layer-line,
+  .prose .svg-depth-card .svg-layer-fg {
+    z-index: 4;
+    position: relative;
+    opacity: 0.62 !important;
+    mix-blend-mode: normal !important;
+    transform: translate3d(
+        calc(var(--svg-shift-x, 0px) * 0.55),
+        calc(var(--svg-shift-y, 0px) * 0.55),
+        18px
+      )
+      rotateX(var(--svg-tilt-x, 0deg))
+      rotateY(var(--svg-tilt-y, 0deg));
+    filter: contrast(1.02) saturate(1);
+  }
+
+  .prose p > img:only-child + p {
+    @apply text-center text-xs italic text-table-text mt-2 font-mono;
+  }
+
+  ::highlight(post-audio-active) {
+    background-color: #5AFD81;
+    color: #000000;
+    text-shadow: none;
+  }
+
+  .post-audio-player {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 40;
+    width: min(14rem, calc(100vw - 2rem));
+  }
+
+  .post-audio-player-panel {
+    @apply border border-box-outline bg-box-bg;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+  }
+
+  .post-audio-player-header {
+    @apply flex items-center justify-between pr-2;
+  }
+
+  .post-audio-player-header-main {
+    @apply flex min-w-0 flex-1 items-center gap-2;
+  }
+
+  .post-audio-player-title {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .post-audio-player-time {
+    @apply text-primary-green text-xs font-mono uppercase tracking-widest;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .post-audio-player-minimize {
+    @apply border-l border-box-outline bg-box-bg px-3 text-[11px] font-mono uppercase tracking-widest text-table-text;
+    min-height: 100%;
+  }
+
+  .post-audio-player-minimize:hover {
+    @apply text-primary-green;
+  }
+
+  .post-audio-player-minimize-collapsed {
+    @apply border-0 px-4 py-3;
+  }
+
+  .post-audio-player-body {
+    @apply flex flex-col items-stretch;
+  }
+
+  .post-audio-player-controls {
+    @apply flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 2.75rem;
+  }
+
+  .post-audio-player-controls .boombox-button {
+    border-top: 0;
+    height: 100%;
+    min-height: 2.75rem;
+  }
+
+  .post-audio-player-scrubber-shell {
+    --post-audio-progress: 0%;
+    @apply relative border-y border-box-outline bg-box-bg;
+    height: 1rem;
+    min-height: 1rem;
+    overflow: hidden;
+  }
+
+  .post-audio-player-scrubber-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(90, 253, 129, 0.78) 0%,
+        rgba(90, 253, 129, 0.78) var(--post-audio-progress),
+        rgba(15, 23, 42, 0.52) var(--post-audio-progress),
+        rgba(15, 23, 42, 0.52) 100%
+      );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .post-audio-player-scrubber-input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    cursor: ew-resize;
+  }
+
+  .post-audio-player-scrubber-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+
+  .post-audio-player-scrubber-input:focus-visible {
+    outline: 1px solid #5afd81;
+    outline-offset: 2px;
+  }
+
+  .post-audio-player-scrubber-input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 100%;
+    background: transparent;
+  }
+
+  .post-audio-player-scrubber-input::-moz-range-track {
+    height: 100%;
+    background: transparent;
+    border: 0;
+  }
+
+  .post-audio-player-scrubber-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.4rem;
+    height: 1rem;
+    margin-top: 0;
+    border: 1px solid #0f1720;
+    background: #ca8f31;
+    border-radius: 0;
+  }
+
+  .post-audio-player-scrubber-input::-moz-range-thumb {
+    width: 0.4rem;
+    height: 1rem;
+    border: 1px solid #0f1720;
+    border-radius: 0;
+    background: #ca8f31;
+  }
+
+  @media (max-width: 767px) {
+    .post-audio-player {
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      width: auto;
+    }
+
+    .post-audio-player.is-minimized {
+      left: auto;
+      width: auto;
+    }
+
+    .post-audio-player-header {
+      padding-right: 0;
+    }
+
+    .post-audio-player-header-main {
+      gap: 0.6rem;
+    }
+
+    .post-audio-player-time {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+    }
+
+    .post-audio-player-body {
+      width: 100%;
+    }
+
+    .post-audio-player-controls {
+      width: 100%;
+      min-width: 0;
+      min-height: 2.5rem;
+    }
+
+    .post-audio-player-controls .boombox-button,
+    .post-audio-player-scrubber-shell {
+      min-height: 2.5rem;
+    }
+
+    .post-audio-player-scrubber-shell {
+      height: 0.9rem;
+      min-height: 0.9rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .prose .svg-depth-card .svg-layer {
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  /* Terminal panel components */
+  .terminal-panel {
+    @apply terminal-border bg-box-bg p-4 m-2;
+  }
+  
+  .content-section {
+    @apply terminal-border bg-box-bg p-4 m-2;
+  }
+  
+  .content-section-borderless {
+    @apply bg-box-bg pb-4 px-4 m-2;
+  }
+
+  .terminal-header {
+    @apply bg-box-header-bg text-black font-mono text-sm uppercase tracking-widest border-b border-box-outline;
+  }
+  
+  .terminal-header-text {
+    @apply bg-box-title-bg text-black px-2 py-1 inline-block;
+  }
+
+  /* Interactive card components */
+  .list-item-card {
+    @apply relative border border-box-outline bg-box-bg p-3 mb-3;
+    @apply transition-colors duration-200;
+    contain: layout style;
+  }
+
+  .list-item-card:hover {
+    @apply border-box-title-bg bg-highlight-bg;
+  }
+  
+  .list-item-card:hover .hover-text {
+    @apply text-highlight-text;
+  }
+  
+  .list-item-card:hover .text-box-title-bg {
+    @apply text-primary-green;
+  }
+
+  /* Data table interactions */
+  .data-table tbody tr {
+    @apply transition-colors duration-200;
+    contain: layout style;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-highlight-bg outline outline-1 outline-highlight-text outline-offset-[-1px];
+  }
+  
+  .data-table tbody tr:hover td {
+    @apply text-highlight-text bg-highlight-bg;
+  }
+  
+  .data-table tbody tr:hover .text-box-title-bg {
+    @apply text-primary-green;
+  }
+
+  /* Social navigation items */
+  .social-item {
+    @apply transition-colors duration-200;
+    contain: layout style;
+  }
+
+  .social-item:hover {
+    @apply bg-highlight-bg;
+  }
+  
+  .social-item:hover .nav-text,
+  .social-item:hover .nav-indicator {
+    @apply text-highlight-text;
+  }
+
+  /* Mobile card interactions */
+  .mobile-card:hover .hover-text {
+    @apply text-highlight-text;
+  }
+  
+  .mobile-card:hover .text-box-title-bg {
+    @apply text-primary-green;
+  }
+
+  /* Fused terminal layout */
+  .fused-terminal-layout {
+    @apply terminal-border bg-box-bg m-2 flex flex-col;
+  }
+
+  .fused-panel-top {
+    @apply border-b-0;
+  }
+
+  .fused-panel-bottom {
+    @apply border-t-0;
+  }
+
+  .fused-panel-top .terminal-header,
+  .fused-panel-bottom .terminal-header {
+    @apply bg-box-header-bg text-black font-mono text-sm uppercase tracking-widest border-box-outline;
+  }
+
+  .fused-panel-top .terminal-header {
+    @apply border-b;
+  }
+
+  }

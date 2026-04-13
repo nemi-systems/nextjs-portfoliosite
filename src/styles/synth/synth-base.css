@@ -1,0 +1,162 @@
+/* === SYNTHESIZER BASE STYLES === */
+/* Foundation styles for synthesizer components */
+
+@tailwind components;
+
+@layer components {
+  /* Synthesizer hardware-inspired base components */
+  .synth-chassis {
+    @apply bg-gray-900 border border-gray-800 rounded-lg shadow-2xl p-3;
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.5),
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .synth-control-panel {
+    @apply grid grid-cols-1 md:grid-cols-4 gap-2 mb-2;
+  }
+
+  .synth-section {
+    @apply bg-gray-800 border border-gray-700 rounded p-2 h-full flex flex-col;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    min-height: 160px;
+    margin-bottom: 8px;
+  }
+
+  .synth-section-title {
+    @apply text-xs font-mono text-gray-400 uppercase tracking-wider mb-2 text-left;
+  }
+
+  .synth-knob-compact {
+    @apply flex flex-col items-center space-y-1;
+  }
+
+  .synth-knob-mini {
+    @apply flex flex-col items-center;
+  }
+
+  .synth-knob-label {
+    @apply text-[10px] font-mono text-gray-500 uppercase tracking-wider;
+  }
+
+  .synth-knob-value {
+    @apply text-[10px] font-mono text-gray-400;
+  }
+
+  /* === UTILITY CLASSES === */
+  
+  /* Color utilities using CSS custom properties */
+  .synth-text-ink-1,
+  .synth-var-ink-1 {
+    color: var(--ink-1);
+  }
+
+  .synth-text-ink-2,
+  .synth-var-ink-2 {
+    color: var(--ink-2);
+  }
+
+  /* Text sizing utilities */
+  .synth-text-xs {
+    @apply text-[8px] font-mono;
+  }
+
+  .synth-text-sm {
+    @apply text-[9px] font-mono;
+  }
+
+  .synth-text-base {
+    @apply text-[10px] font-mono;
+  }
+
+  /* Layout utilities */
+  .synth-flex-col {
+    @apply flex flex-col;
+  }
+
+  .synth-flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .synth-flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* Spacing utilities */
+  .synth-mb-1 {
+    @apply mb-1;
+  }
+
+  .synth-ml-1 {
+    @apply ml-1;
+  }
+
+  .synth-w-full {
+    @apply w-full;
+  }
+
+  /* Animation utilities */
+  .synth-transition-fast {
+    @apply transition-all duration-100;
+  }
+
+  .synth-transition-normal {
+    @apply transition-all duration-150;
+  }
+
+  .synth-width-dynamic {
+    transition: width 0.1s ease;
+  }
+
+  /* Level meter utilities */
+  .synth-level-meter {
+    @apply bg-gray-700 rounded-full h-1 overflow-hidden;
+  }
+
+  .synth-level-fill {
+    @apply bg-cyan-500 h-full synth-transition-fast;
+  }
+
+  /* Dynamic styling utilities */
+  .synth-bg-dynamic {
+    background-color: var(--synth-bg, transparent);
+  }
+
+  .synth-status-bar {
+    @apply flex items-center justify-between bg-gray-800 border border-gray-700 rounded p-2 mb-2;
+  }
+
+  .synth-keyboard-container {
+    @apply bg-gray-800 border border-gray-700 rounded p-2;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .synth-visualizer {
+    @apply bg-gray-900 border border-gray-700 rounded p-2;
+    min-height: 80px;
+  }
+
+  .synth-waveform-display {
+    @apply bg-black border border-gray-700 rounded p-1 h-8 flex items-center justify-center;
+  }
+
+  /* Desktop subsections - integrated layout */
+  .synth-subsection-desktop {
+    @apply bg-gray-800 border border-gray-600 rounded p-2;
+    transition: all 0.2s ease;
+  }
+
+  .synth-subsection-desktop:hover {
+    @apply bg-gray-700 border-gray-500;
+  }
+
+  /* Mobile subsections - only shown when enabled */
+  .synth-subsection-mobile {
+    @apply bg-gray-800 border border-gray-600 rounded p-2;
+    transition: all 0.2s ease;
+  }
+
+  .synth-subsection-mobile:hover {
+    @apply bg-gray-700 border-gray-500;
+  }
+}
