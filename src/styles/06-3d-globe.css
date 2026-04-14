@@ -248,21 +248,21 @@
   }
 
   .equalizer-level:hover {
-    border-color: #5AFD81;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 4px rgba(90,253,129,0.3);
+    border-color: var(--theme-secondary);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 4px rgb(var(--theme-secondary-rgb) / 0.3);
     background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 50%, #2a2a2a 100%);
   }
 
   .equalizer-level.lit-up {
     background: linear-gradient(to bottom, #2a4a2a 0%, #1a3a1a 50%, #2a4a2a 100%);
     border-color: #4a7a4a;
-    box-shadow: inset 0 1px 0 rgba(90,253,129,0.2), 0 1px 2px rgba(0,0,0,0.4), 0 0 2px rgba(90,253,129,0.2);
+    box-shadow: inset 0 1px 0 rgb(var(--theme-secondary-rgb) / 0.2), 0 1px 2px rgba(0,0,0,0.4), 0 0 2px rgb(var(--theme-secondary-rgb) / 0.2);
   }
 
   .equalizer-level.active {
-    background: linear-gradient(to bottom, #5AFD81 0%, #4AED71 50%, #5AFD81 100%);
-    border-color: #5AFD81;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 0 8px rgba(90,253,129,0.6), 0 0 12px rgba(90,253,129,0.3);
+    background: linear-gradient(to bottom, rgb(var(--theme-secondary-rgb) / 1) 0%, rgb(var(--theme-secondary-rgb) / 0.82) 50%, rgb(var(--theme-secondary-rgb) / 1) 100%);
+    border-color: var(--theme-secondary);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 0 8px rgb(var(--theme-secondary-rgb) / 0.6), 0 0 12px rgb(var(--theme-secondary-rgb) / 0.3);
     animation: equalizer-pulse 0.8s ease-in-out infinite alternate;
   }
 
@@ -301,7 +301,7 @@
   }
 
   .slider-track-shell:focus-within {
-    box-shadow: 0 0 0 1px rgba(90,253,129,0.5);
+    box-shadow: 0 0 0 1px rgb(var(--theme-secondary-rgb) / 0.5);
   }
 
   .slider-bottom-label {
@@ -332,7 +332,7 @@
   }
 
   .industrial-vertical-slider:focus-visible {
-    outline: 1px solid #5AFD81;
+    outline: 1px solid var(--theme-secondary);
     outline-offset: 2px;
   }
 
@@ -364,8 +364,8 @@
   }
 
   .industrial-vertical-slider:active::-webkit-slider-thumb {
-    border-color: #5AFD81;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 0 0 1px rgba(90,253,129,0.4);
+    border-color: var(--theme-secondary);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 0 0 1px rgb(var(--theme-secondary-rgb) / 0.4);
   }
 
   .industrial-vertical-slider::-moz-range-track {
@@ -392,8 +392,8 @@
   }
 
   .industrial-vertical-slider:active::-moz-range-thumb {
-    border-color: #5AFD81;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 0 0 1px rgba(90,253,129,0.4);
+    border-color: var(--theme-secondary);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 0 0 1px rgb(var(--theme-secondary-rgb) / 0.4);
   }
 
   .industrial-vertical-slider::-moz-focus-outer {

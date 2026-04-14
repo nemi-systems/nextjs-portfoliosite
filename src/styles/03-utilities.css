@@ -25,7 +25,7 @@
 }
 
 .data-table th {
-  background: #CA8F31;
+  background: var(--theme-accent);
   color: #000000;
   font-weight: bold;
   text-transform: uppercase;
@@ -35,7 +35,7 @@
 /* Progress bar utility */
 .progress-bar {
   background: #040D0A;
-  border: 1px solid #5AFD81;
+  border: 1px solid var(--theme-secondary);
   height: 8px;
   overflow: hidden;
   position: relative;
@@ -47,7 +47,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: #5AFD81;
+  background: var(--theme-secondary);
   @apply transition-all duration-300;
 }
 
@@ -65,7 +65,7 @@
 .terminal-cursor::after {
   @apply animate-blink;
   content: '_';
-  color: #5AFD81;
+  color: var(--theme-secondary);
 }
 
 /* Value box utility */
@@ -75,7 +75,7 @@
 
 /* Glowing digit animation */
 .value-box .glowing-digit {
-  text-shadow: 0 0 6px rgba(90,253,129,0.8), 0 0 10px rgba(90,253,129,0.5), 0 0 12px rgba(90,253,129,0.3);
+  text-shadow: 0 0 6px rgb(var(--theme-secondary-rgb) / 0.8), 0 0 10px rgb(var(--theme-secondary-rgb) / 0.5), 0 0 12px rgb(var(--theme-secondary-rgb) / 0.3);
   animation: digit-pulse 0.8s ease-in-out infinite alternate;
 }
 

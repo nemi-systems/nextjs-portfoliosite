@@ -47,7 +47,7 @@
 @media (min-width: 1024px) {
   .project-table-scroll {
     scrollbar-width: thin;
-    scrollbar-color: #CA8F31 #1A1A1A;
+    scrollbar-color: var(--theme-accent) #1A1A1A;
   }
 
   .project-table-scroll::-webkit-scrollbar {
@@ -60,13 +60,13 @@
   }
 
   .project-table-scroll::-webkit-scrollbar-thumb {
-    background: #CA8F31 !important;
+    background: var(--theme-accent) !important;
     border-radius: 0 !important;
     border: none !important;
   }
 
   .project-table-scroll::-webkit-scrollbar-thumb:hover {
-    background: #E7A844 !important;
+    background: var(--theme-accent-hover) !important;
   }
 
   html::-webkit-scrollbar {
@@ -78,18 +78,18 @@
   }
   
   html::-webkit-scrollbar-thumb {
-    background: #CA8F31 !important;
+    background: var(--theme-accent) !important;
     border-radius: 0 !important;
     border: none !important;
   }
   
   html::-webkit-scrollbar-thumb:hover {
-    background: #E7A844 !important;
+    background: var(--theme-accent-hover) !important;
   }
   
   html {
     scrollbar-width: thin;
-    scrollbar-color: #CA8F31 #1A1A1A;
+    scrollbar-color: var(--theme-accent) #1A1A1A;
   }
   
   body::-webkit-scrollbar {
@@ -101,17 +101,17 @@
   }
   
   body::-webkit-scrollbar-thumb {
-    background: #CA8F31 !important;
+    background: var(--theme-accent) !important;
     border-radius: 0 !important;
     border: none !important;
   }
   
   body::-webkit-scrollbar-thumb:hover {
-    background: #E7A844 !important;
+    background: var(--theme-accent-hover) !important;
   }
   
   body {
     scrollbar-width: thin;
-    scrollbar-color: #CA8F31 #1A1A1A;
+    scrollbar-color: var(--theme-accent) #1A1A1A;
   }
 }

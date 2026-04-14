@@ -1,5 +1,8 @@
 import type { Config } from 'tailwindcss'
 
+const colorVariable = (name: string) => `rgb(var(${name}) / <alpha-value>)`
+const secondaryGlow = (alpha: number) => `rgb(var(--theme-secondary-rgb) / ${alpha})`
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,7 +15,7 @@ const config: Config = {
         'mono': ['Berkeley Mono', 'JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Consolas', 'monospace'],
       },
       colors: {
-        'primary-green': '#5AFD81',
+        'primary-green': colorVariable('--theme-secondary-rgb'),
         'primary-red': '#F8343D',
         'primary-yellow': '#E7F40F',
         'primary-cyan': '#00FFFF',
@@ -23,14 +26,14 @@ const config: Config = {
         'table-item-bg': '#1F1F05',
         'table-item-fg': '#848D11',
         'table-title-alt': '#041A43',
-        'accent': '#BC8D25',
+        'accent': colorVariable('--theme-accent-rgb'),
         'box-outline': '#1A1A1A',
         'box-bg': '#060606',
-        'box-title-bg': '#CA8F31',
+        'box-title-bg': colorVariable('--theme-accent-rgb'),
         'box-header-bg': '#130F04',
         'table-text': '#808080',
-        'highlight-text': '#CA8F31',
-        'highlight-bg': '#212107',
+        'highlight-text': colorVariable('--theme-accent-rgb'),
+        'highlight-bg': colorVariable('--theme-accent-bg-rgb'),
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -67,10 +70,10 @@ const config: Config = {
         },
         'digit-pulse': {
           '0%': {
-            'text-shadow': '0 0 6px rgba(90,253,129,0.8), 0 0 10px rgba(90,253,129,0.5), 0 0 12px rgba(90,253,129,0.3)',
+            'text-shadow': `0 0 6px ${secondaryGlow(0.8)}, 0 0 10px ${secondaryGlow(0.5)}, 0 0 12px ${secondaryGlow(0.3)}`,
           },
           '100%': {
-            'text-shadow': '0 0 8px rgba(90,253,129,1), 0 0 12px rgba(90,253,129,0.7), 0 0 16px rgba(90,253,129,0.5)',
+            'text-shadow': `0 0 8px ${secondaryGlow(1)}, 0 0 12px ${secondaryGlow(0.7)}, 0 0 16px ${secondaryGlow(0.5)}`,
           },
         },
         'digit-red-pulse': {
@@ -99,10 +102,10 @@ const config: Config = {
         },
         'equalizer-pulse': {
           '0%': {
-            'box-shadow': 'inset 0 1px 0 rgba(255,255,255,0.3), 0 0 8px rgba(90,253,129,0.6), 0 0 12px rgba(90,253,129,0.3)',
+            'box-shadow': `inset 0 1px 0 rgba(255,255,255,0.3), 0 0 8px ${secondaryGlow(0.6)}, 0 0 12px ${secondaryGlow(0.3)}`,
           },
           '100%': {
-            'box-shadow': 'inset 0 1px 0 rgba(255,255,255,0.4), 0 0 12px rgba(90,253,129,0.8), 0 0 16px rgba(90,253,129,0.5)',
+            'box-shadow': `inset 0 1px 0 rgba(255,255,255,0.4), 0 0 12px ${secondaryGlow(0.8)}, 0 0 16px ${secondaryGlow(0.5)}`,
           },
         },
         'equalizer-red-pulse': {
