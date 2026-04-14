@@ -254,9 +254,17 @@
   }
 
   .equalizer-level.lit-up {
-    background: linear-gradient(to bottom, #2a4a2a 0%, #1a3a1a 50%, #2a4a2a 100%);
-    border-color: #4a7a4a;
-    box-shadow: inset 0 1px 0 rgb(var(--theme-secondary-rgb) / 0.2), 0 1px 2px rgba(0,0,0,0.4), 0 0 2px rgb(var(--theme-secondary-rgb) / 0.2);
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--theme-secondary-rgb) / 0.26) 0%,
+      rgb(var(--theme-secondary-rgb) / 0.14) 50%,
+      rgb(var(--theme-secondary-rgb) / 0.26) 100%
+    );
+    border-color: rgb(var(--theme-secondary-rgb) / 0.38);
+    box-shadow:
+      inset 0 1px 0 rgb(var(--theme-secondary-rgb) / 0.14),
+      0 1px 2px rgba(0,0,0,0.4),
+      0 0 2px rgb(var(--theme-secondary-rgb) / 0.16);
   }
 
   .equalizer-level.active {
