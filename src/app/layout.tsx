@@ -4,6 +4,9 @@ import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
 
+import { AccentThemeProvider } from './AccentThemeProvider'
+import { getAccentThemeInitScript } from './accentTheme'
+
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -27,7 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jetbrainsMono.className}>
-        {children}
+        <Script id="accent-theme-init" strategy="beforeInteractive">
+          {getAccentThemeInitScript()}
+        </Script>
+        <AccentThemeProvider>
+          {children}
+        </AccentThemeProvider>
         {/* Cloudflare Web Analytics */}
         <Script
           defer

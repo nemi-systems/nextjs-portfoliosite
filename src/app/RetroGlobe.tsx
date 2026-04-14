@@ -2,12 +2,16 @@
 'use client'
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import {
+  type Rgb,
   type SpeedLevel,
   bandLevelToAngularVelocity,
   renderRetroGlobeFrame,
   speedLevelToAngularVelocity,
   wobbleLevelToAngularVelocity
 } from '@/lib/retroGlobeCanvas'
+
+import { useAccentTheme } from './AccentThemeProvider'
+import { ACCENT_THEMES } from './accentTheme'
 
 type RotationAxis = 'x' | 'y' | 'z'
 
@@ -26,6 +30,7 @@ const normalizeRadians = (value: number) => {
 }
 
 export const RetroGlobe = () => {
+  const { theme } = useAccentTheme()
   const [mounted, setMounted] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const [lineWidth, setLineWidth] = useState(3)
@@ -80,6 +85,8 @@ export const RetroGlobe = () => {
   const isGlobeFlashing = useMemo(() => {
     return xRotationSpeed === 5 && rotationSpeed === 5 && zRotationSpeed === 5
   }, [xRotationSpeed, rotationSpeed, zRotationSpeed])
+
+  const accentRgb = useMemo<Rgb>(() => ACCENT_THEMES[theme].rgb, [theme])
 
   const flashButton = useCallback((buttonId: string) => {
     setFlashingButton(buttonId)
@@ -316,6 +323,7 @@ export const RetroGlobe = () => {
           dpr,
           runtime,
           controls,
+          accentRgb,
           userRotationXDeg: userRotationRef.current.x,
           userRotationYDeg: userRotationRef.current.y
         })
@@ -333,7 +341,7 @@ export const RetroGlobe = () => {
       }
       lastTimestampRef.current = null
     }
-  }, [mounted])
+  }, [accentRgb, mounted])
 
   useEffect(() => {
     if (!mounted) {

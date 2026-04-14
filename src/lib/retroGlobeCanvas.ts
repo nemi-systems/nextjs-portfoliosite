@@ -23,7 +23,7 @@ type UnitCircleSample = {
   sin: number
 }
 
-type Rgb = [number, number, number]
+export type Rgb = readonly [number, number, number]
 
 type RenderPalette = {
   grid: Rgb
@@ -68,6 +68,7 @@ export interface GlobeFrameInput {
   dpr: number
   runtime: GlobeRuntimeState
   controls: GlobeControlState
+  accentRgb?: Rgb
   userRotationXDeg: number
   userRotationYDeg: number
 }
@@ -95,13 +96,7 @@ export const DEFAULT_SHELLS: readonly GlobeShellConfig[] = [
 
 const LIGHT_BAND_LATITUDES = [-16, 0, 16].map((deg) => degToRad(deg))
 
-const AMBER_PALETTE: RenderPalette = {
-  grid: [202, 143, 49],
-  bandCore: [255, 246, 181],
-  bandGlow: [249, 194, 109],
-  vignetteInner: 'rgba(0, 0, 0, 0)',
-  vignetteOuter: 'rgba(0, 0, 0, 0.22)'
-}
+const DEFAULT_AMBER_RGB: Rgb = [202, 143, 49]
 
 const RED_PALETTE: RenderPalette = {
   grid: [255, 68, 68],
@@ -112,6 +107,7 @@ const RED_PALETTE: RenderPalette = {
 }
 
 const unitCircleCache = new Map<number, UnitCircleSample[]>()
+const accentPaletteCache = new Map<string, RenderPalette>()
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value))
@@ -123,6 +119,48 @@ function degToRad(value: number): number {
 
 function toRgbCss(rgb: Rgb): string {
   return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`
+}
+
+function toRgbaCss(rgb: Rgb, alpha: number): string {
+  return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`
+}
+
+function mixRgb(base: Rgb, target: Rgb, amount: number): Rgb {
+  const clampedAmount = clamp(amount, 0, 1)
+
+  return [
+    Math.round(base[0] + (target[0] - base[0]) * clampedAmount),
+    Math.round(base[1] + (target[1] - base[1]) * clampedAmount),
+    Math.round(base[2] + (target[2] - base[2]) * clampedAmount)
+  ] as Rgb
+}
+
+function scaleRgb(rgb: Rgb, factor: number): Rgb {
+  return [
+    Math.round(rgb[0] * factor),
+    Math.round(rgb[1] * factor),
+    Math.round(rgb[2] * factor)
+  ] as Rgb
+}
+
+function getAccentPalette(accentRgb: Rgb): RenderPalette {
+  const cacheKey = accentRgb.join(',')
+  const cachedPalette = accentPaletteCache.get(cacheKey)
+
+  if (cachedPalette) {
+    return cachedPalette
+  }
+
+  const palette: RenderPalette = {
+    grid: accentRgb,
+    bandCore: mixRgb(accentRgb, [255, 255, 255], 0.72),
+    bandGlow: mixRgb(accentRgb, [255, 255, 255], 0.38),
+    vignetteInner: 'rgba(0, 0, 0, 0)',
+    vignetteOuter: toRgbaCss(scaleRgb(accentRgb, 0.18), 0.24)
+  }
+
+  accentPaletteCache.set(cacheKey, palette)
+  return palette
 }
 
 function getUnitCircle(segmentCount: number): UnitCircleSample[] {
@@ -477,7 +515,7 @@ export function bandLevelToAngularVelocity(level: number): number {
 }
 
 export function renderRetroGlobeFrame(ctx: CanvasRenderingContext2D, input: GlobeFrameInput): void {
-  const { width, height, dpr, runtime, controls, userRotationXDeg, userRotationYDeg } = input
+  const { width, height, dpr, runtime, controls, accentRgb, userRotationXDeg, userRotationYDeg } = input
 
   if (width <= 0 || height <= 0) {
     return
@@ -495,7 +533,7 @@ export function renderRetroGlobeFrame(ctx: CanvasRenderingContext2D, input: Glob
   const rotationY = degToRad(userRotationYDeg) + runtime.rotY
   const rotationZ = runtime.rotZ + wobbleZ
 
-  const palette = controls.isFlashing ? RED_PALETTE : AMBER_PALETTE
+  const palette = controls.isFlashing ? RED_PALETTE : getAccentPalette(accentRgb ?? DEFAULT_AMBER_RGB)
   const densityScale = 0.75 + Math.max(0, controls.lineDensity) * 0.25
 
   const baseGridWidth = 0.26 + Math.max(0, controls.lineWidth) * 0.24

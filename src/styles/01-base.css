@@ -48,7 +48,7 @@
 
 /* Base body styles */
 body {
-  color: #5AFD81;
+  color: var(--theme-secondary);
   background: #000000;
   font-family: 'Berkeley Mono', 'JetBrains Mono', monospace;
   font-size: 15px;

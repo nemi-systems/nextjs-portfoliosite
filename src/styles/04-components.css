@@ -203,7 +203,7 @@
   }
 
   ::highlight(post-audio-active) {
-    background-color: #5AFD81;
+    background-color: var(--theme-secondary);
     color: #000000;
     text-shadow: none;
   }
@@ -287,8 +287,8 @@
     background:
       linear-gradient(
         90deg,
-        rgba(90, 253, 129, 0.78) 0%,
-        rgba(90, 253, 129, 0.78) var(--post-audio-progress),
+        rgb(var(--theme-secondary-rgb) / 0.78) 0%,
+        rgb(var(--theme-secondary-rgb) / 0.78) var(--post-audio-progress),
         rgba(15, 23, 42, 0.52) var(--post-audio-progress),
         rgba(15, 23, 42, 0.52) 100%
       );
@@ -314,7 +314,7 @@
   }
 
   .post-audio-player-scrubber-input:focus-visible {
-    outline: 1px solid #5afd81;
+    outline: 1px solid var(--theme-secondary);
     outline-offset: 2px;
   }
 

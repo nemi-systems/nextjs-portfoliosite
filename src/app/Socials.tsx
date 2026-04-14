@@ -5,6 +5,8 @@ import React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 
+import { ColorPicker } from './ColorPicker'
+
 const SocialItem = ({link, icon, code, label}) => {
   return (
     <li className="mb-1">
@@ -31,6 +33,7 @@ export const Socials = () => {
         <SocialItem link='https://github.com/nemi-systems' icon={<GitHubIcon style={{fontSize: '16px'}}/>} code='GH' label='GITHUB'/>
         <SocialItem link='mailto:nemigeneralcontact@gmail.com' icon={<EmailIcon style={{fontSize: '16px'}}/>} code='EM' label='EMAIL'/>
       </ul>
+      <ColorPicker />
     </div>
   );
 };
