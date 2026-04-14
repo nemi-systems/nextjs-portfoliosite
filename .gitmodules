@@ -1,3 +1,6 @@
 [submodule "public/assets"]
 	path = public/assets
-	url = https://github.com/nemi-systems/nextjs-portfoliosite-assets.git
+	url = git@github.com:nemi-systems/nextjs-portfoliosite-assets.git
+[submodule "projects/black-hole-laboratory"]
+	path = projects/black-hole-laboratory
+	url = 

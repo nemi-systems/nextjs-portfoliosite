@@ -11,13 +11,22 @@ const projectsConfig = {
       githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite",
     },
     {
+      title: "GravityLens",
+      summary:
+        "Realtime gravitational lensing experiment built with Rust, WebAssembly, and GPU rendering.",
+      image: "/assets/black-hole-laboratory.webp",
+      url: "https://gravitylens.n3mi.net",
+      github: null,
+      githubUrl: null,
+    },
+    {
       title: "Web Audio Synthesizer",
       summary:
         "Browser synth with ADSR envelopes, filters, fx, unison, keyboard input, and live scopes.",
       image: "/assets/web_audio_synth.webp",
-      url: "/synth",
+      url: "https://synth.n3mi.net",
       github: "nemi-systems/nextjs-portfoliosite",
-      githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite/blob/main/docs/synthesizer.md",
+      githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite/tree/main/projects/synth",
     },
   ],
 } as const;

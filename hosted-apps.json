@@ -1,0 +1,44 @@
+{
+  "rootDomain": "n3mi.net",
+  "sites": [
+    {
+      "id": "portfolio",
+      "publicName": "nemi",
+      "projectPath": ".",
+      "artifactPath": "out",
+      "installCommand": ["npm", "ci"],
+      "buildCommand": ["npm", "run", "build"],
+      "domainAliases": ["n3mi.net", "www.n3mi.net"],
+      "defaultRootObject": "index.html",
+      "fallbackPagePath": "/index.html",
+      "responseHeaders": "standard",
+      "cacheProfile": "mutable"
+    },
+    {
+      "id": "synth",
+      "publicName": "Synth",
+      "projectPath": "projects/synth",
+      "artifactPath": "projects/synth/out",
+      "installCommand": ["npm", "ci"],
+      "buildCommand": ["npm", "run", "build"],
+      "domainAliases": ["synth.n3mi.net"],
+      "defaultRootObject": "index.html",
+      "fallbackPagePath": "/index.html",
+      "responseHeaders": "standard",
+      "cacheProfile": "mutable"
+    },
+    {
+      "id": "gravitylens",
+      "publicName": "GravityLens",
+      "projectPath": "projects/black-hole-laboratory",
+      "artifactPath": "projects/black-hole-laboratory/www/dist",
+      "installCommand": ["npm", "ci"],
+      "buildCommand": ["npm", "run", "build"],
+      "domainAliases": ["gravitylens.n3mi.net"],
+      "defaultRootObject": "index.html",
+      "fallbackPagePath": "/index.html",
+      "responseHeaders": "standard",
+      "cacheProfile": "mutable"
+    }
+  ]
+}

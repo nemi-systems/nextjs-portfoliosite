@@ -27,8 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={jetbrainsMono.className}>
-              {/* SVG sprite for synthesizer controls will be loaded by components */}
-        
         {children}
         {/* Cloudflare Web Analytics */}
         <Script

@@ -7,7 +7,10 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import projectsConfig from '@/content/projects'
 import { hrefHtml } from '@/lib/links'
 
-const featuredProjectTitles = ['Web Audio Synthesizer']
+const featuredProjectTitles = [
+  'GravityLens',
+  'Web Audio Synthesizer',
+]
 
 const FeaturedProjectCard = ({ title, summary, image, url, github, githubUrl }) => {
   const handleProjectClick = () => {
@@ -74,9 +77,9 @@ const FeaturedProjectCard = ({ title, summary, image, url, github, githubUrl }) 
 }
 
 export const FeaturedProjectsGrid = () => {
-  const featuredProjects = projectsConfig.items.filter((project) =>
-    featuredProjectTitles.includes(project.title)
-  )
+  const featuredProjects = featuredProjectTitles
+    .map((title) => projectsConfig.items.find((project) => project.title === title))
+    .filter(Boolean)
 
   if (featuredProjects.length === 0) {
     return null

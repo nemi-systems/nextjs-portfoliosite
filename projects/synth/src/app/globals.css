@@ -1,0 +1,14 @@
+@import '../styles/synth/synth-base.css';
+@import '../styles/synth/synth-layout.css';
+@import '../styles/synth/synth-components.css';
+@import '../styles/synth/synth-hardware.css';
+
+@tailwind base;
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+@tailwind utilities;

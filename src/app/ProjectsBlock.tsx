@@ -16,7 +16,10 @@ export const ProjectsBlock = () => {
     return null
   }
 
-  const featuredProjectTitles = ['Web Audio Synthesizer']
+  const featuredProjectTitles = [
+    'GravityLens',
+    'Web Audio Synthesizer',
+  ]
   const tableProjects = projectsConfig.items.filter(
     (project) => !featuredProjectTitles.includes(project.title)
   )
