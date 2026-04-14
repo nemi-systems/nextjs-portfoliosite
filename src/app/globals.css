@@ -11,12 +11,5 @@
 @import '../styles/07-layout.css';
 @import '../styles/08-scrollbars.css';
 
-/* Import synthesizer-specific styles */
-@import '../styles/synth/synth-base.css';
-@import '../styles/synth/synth-layout.css';
-@import '../styles/synth/synth-components.css';
-/* Hardware skeuo theme overrides */
-@import '../styles/synth/synth-hardware.css';
-
 /* Import Tailwind utilities layer */
 @tailwind utilities;

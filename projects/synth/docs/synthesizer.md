@@ -4,7 +4,7 @@ This document maps the synthesizer’s UI to its Web Audio graph and behavior. I
 
 ## Locations
 
-- UI entry: `src/app/synth/page.tsx` renders `HybridSynth`.
+- UI entry: `src/app/page.tsx` renders `HybridSynth`.
 - Main shell: `src/components/synth/HybridSynth.tsx` (power, panic, grid layout).
 - Engine: `src/components/synth/hooks/useSynthEngine.ts` (Web Audio graph/state).
 - UI blocks: `src/components/synth/components/*` (oscillator, filter, envelope, LFO, FX, keyboard, scopes).
@@ -101,7 +101,7 @@ Polyphony/stealing:
 
 ## File Map
 
-- Page: `src/app/synth/page.tsx`
+- Page: `src/app/page.tsx`
 - Shell: `src/components/synth/HybridSynth.tsx`
 - Engine: `src/components/synth/hooks/useSynthEngine.ts`
 - Keyboard: `src/components/synth/components/Keyboard.tsx`

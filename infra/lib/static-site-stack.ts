@@ -1,105 +1,94 @@
 import {
+  CfnOutput,
   Duration,
   RemovalPolicy,
   Size,
   Stack,
   StackProps,
-  CfnOutput,
 } from 'aws-cdk-lib'
-import { Construct } from 'constructs'
-import path from 'path'
-import { existsSync } from 'fs'
+import * as acm from 'aws-cdk-lib/aws-certificatemanager'
+import {
+  AllowedMethods,
+  BehaviorOptions,
+  CachePolicy,
+  CachedMethods,
+  Distribution,
+  ErrorResponse,
+  OriginRequestCookieBehavior,
+  OriginRequestHeaderBehavior,
+  OriginRequestPolicy,
+  OriginRequestQueryStringBehavior,
+  SecurityPolicyProtocol,
+  ViewerProtocolPolicy,
+} from 'aws-cdk-lib/aws-cloudfront'
+import { OriginAccessIdentity } from 'aws-cdk-lib/aws-cloudfront'
+import { S3BucketOrigin } from 'aws-cdk-lib/aws-cloudfront-origins'
 import {
   BlockPublicAccess,
   Bucket,
   BucketEncryption,
   HttpMethods,
 } from 'aws-cdk-lib/aws-s3'
-import { OriginAccessIdentity } from 'aws-cdk-lib/aws-cloudfront'
-import { BucketDeployment, CacheControl, Source } from 'aws-cdk-lib/aws-s3-deployment'
 import {
-  AllowedMethods,
-  CachedMethods,
-  CachePolicy,
-  Distribution,
-  SecurityPolicyProtocol,
-  OriginRequestCookieBehavior,
-  OriginRequestHeaderBehavior,
-  OriginRequestPolicy,
-  OriginRequestQueryStringBehavior,
-  ResponseHeadersPolicy,
-  ViewerProtocolPolicy,
-  BehaviorOptions,
-  ErrorResponse,
-} from 'aws-cdk-lib/aws-cloudfront'
-import { S3BucketOrigin } from 'aws-cdk-lib/aws-cloudfront-origins'
-import * as acm from 'aws-cdk-lib/aws-certificatemanager'
+  BucketDeployment,
+  CacheControl,
+  Source,
+} from 'aws-cdk-lib/aws-s3-deployment'
+import { existsSync } from 'fs'
+import path from 'path'
+import { Construct } from 'constructs'
+import hostedApps from '../../hosted-apps.json'
+
+type ResponseHeadersProfile = 'standard'
+
+interface HostedSiteConfig {
+  id: string
+  publicName: string
+  artifactPath: string
+  domainAliases: string[]
+  defaultRootObject: string
+  fallbackPagePath: string
+  responseHeaders: ResponseHeadersProfile
+}
+
+interface HostedAppsManifest {
+  sites: HostedSiteConfig[]
+}
 
 export interface NemiPortfolioSiteStackProps extends StackProps {
   domainName: string
   certificateArn?: string
 }
 
+const manifest = hostedApps as HostedAppsManifest
+
+function logicalPrefix(id: string): string {
+  return id
+    .split(/[^a-zA-Z0-9]/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('')
+}
+
+function resolveDistPath(siteId: string, artifactPath: string, stack: Stack): string {
+  const contextDist = stack.node.tryGetContext(`distPath:${siteId}`) as string | undefined
+  return contextDist ?? path.resolve(process.cwd(), '..', artifactPath)
+}
+
 export class NemiPortfolioSiteStack extends Stack {
   constructor(scope: Construct, id: string, props: NemiPortfolioSiteStackProps) {
     super(scope, id, props)
-    const { domainName, certificateArn } = props
 
-    // Resolve deployment source path for the site assets
-    // - default: repo root `out/` (static export)
-    // - override: `-c distPath=/abs/path` when invoking CDK
-    // Use repo-root resolution based on process.cwd() (infra) so it works in ts-node and compiled runs
-    const contextDist = this.node.tryGetContext('distPath') as string | undefined
-    const defaultDist = path.resolve(process.cwd(), '../out')
-    const distPath = contextDist ?? defaultDist
+    const certificate = props.certificateArn
+      ? acm.Certificate.fromCertificateArn(this, 'SiteCertificate', props.certificateArn)
+      : undefined
 
-    const hasDist = existsSync(distPath)
-    if (!hasDist) {
-      // Do not fail app synthesis when only deploying other stacks.
-      // We will simply skip the BucketDeployment if assets are missing.
-      // When you intend to deploy this stack, build first or pass '-c distPath=/abs/path'.
+    if (!certificate) {
       // eslint-disable-next-line no-console
       console.warn(
-        `Static export not found at: ${distPath}. Skipping asset deployment for NemiPortfolioSiteStack. Build with 'npm run build' or pass '-c distPath=/abs/path' when deploying this stack.`,
+        'SITE_CERTIFICATE_ARN (or -c certificateArn=...) is not set. Distributions will use CloudFront hostnames until you redeploy with the ACM wildcard certificate.',
       )
     }
-
-    const siteBucket = new Bucket(this, 'SiteBucket', {
-      blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
-      encryption: BucketEncryption.S3_MANAGED,
-      enforceSSL: true,
-      versioned: true,
-      removalPolicy: RemovalPolicy.RETAIN,
-      autoDeleteObjects: false,
-      cors: [
-        {
-          allowedMethods: [HttpMethods.GET, HttpMethods.HEAD],
-          allowedOrigins: ['*'],
-          allowedHeaders: ['*'],
-        },
-      ],
-    })
-
-    const originAccessIdentity = new OriginAccessIdentity(this, 'OriginAccessIdentity', {
-      comment: 'Access identity for the NextjsPortfoliosite static site bucket',
-    })
-
-    const responseHeadersPolicy = new ResponseHeadersPolicy(this, 'ResponseHeadersPolicy', {
-      customHeadersBehavior: {
-        customHeaders: [
-          {
-            header: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin',
-            override: true,
-          },
-          {
-            header: 'Cross-Origin-Embedder-Policy',
-            value: 'require-corp',
-            override: true,
-          },
-        ],
-      },
-    })
 
     const originPolicy = new OriginRequestPolicy(this, 'OriginRequestPolicy', {
       cookieBehavior: OriginRequestCookieBehavior.none(),
@@ -107,95 +96,109 @@ export class NemiPortfolioSiteStack extends Stack {
       queryStringBehavior: OriginRequestQueryStringBehavior.none(),
     })
 
-    const defaultBehavior: BehaviorOptions = {
-      origin: S3BucketOrigin.withOriginAccessIdentity(siteBucket, {
-        originAccessIdentity,
-      }),
-      viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-      allowedMethods: AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
-      cachedMethods: CachedMethods.CACHE_GET_HEAD_OPTIONS,
-      cachePolicy: CachePolicy.CACHING_OPTIMIZED,
-      originRequestPolicy: originPolicy,
-      responseHeadersPolicy,
-      compress: true,
-    }
+    for (const site of manifest.sites) {
+      const prefix = logicalPrefix(site.id)
+      const distPath = resolveDistPath(site.id, site.artifactPath, this)
+      const hasDist = existsSync(distPath)
 
-    const errorResponses: ErrorResponse[] = [
-      {
-        httpStatus: 403,
-        responseHttpStatus: 200,
-        responsePagePath: '/index.html',
-        ttl: Duration.minutes(5),
-      },
-      {
-        httpStatus: 404,
-        responseHttpStatus: 200,
-        responsePagePath: '/index.html',
-        ttl: Duration.minutes(5),
-      },
-    ]
+      if (!hasDist) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `Build artifacts for ${site.id} were not found at ${distPath}. Skipping asset deployment for this site.`,
+        )
+      }
 
-    const distributionProps = {
-      defaultBehavior,
-      defaultRootObject: 'index.html',
-      comment: 'nemi portfolio static site distribution',
-      errorResponses,
-    } as const
-
-    const certificate = certificateArn
-      ? acm.Certificate.fromCertificateArn(this, 'SiteCertificate', certificateArn)
-      : undefined
-
-    if (!certificate) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'SITE_CERTIFICATE_ARN (or -c certificateArn=...) is not set. Deploy the certificate stack first, validate DNS, then redeploy the site stack with the ACM certificate ARN to attach n3mi.net aliases.',
-      )
-    }
-
-    const distribution = new Distribution(this, 'SiteDistribution', {
-      ...distributionProps,
-      ...(certificate
-        ? {
-            domainNames: [domainName, `www.${domainName}`],
-            certificate,
-            minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
-          }
-        : {}),
-    })
-
-    if (hasDist) {
-      new BucketDeployment(this, 'DeployWithInvalidation', {
-        sources: [Source.asset(distPath)],
-        destinationBucket: siteBucket,
-        distribution,
-        distributionPaths: ['/*'],
-        cacheControl: [
-          CacheControl.fromString('public, max-age=0, must-revalidate'),
+      const siteBucket = new Bucket(this, `${prefix}SiteBucket`, {
+        blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+        encryption: BucketEncryption.S3_MANAGED,
+        enforceSSL: true,
+        versioned: true,
+        removalPolicy: RemovalPolicy.RETAIN,
+        autoDeleteObjects: false,
+        cors: [
+          {
+            allowedMethods: [HttpMethods.GET, HttpMethods.HEAD],
+            allowedOrigins: ['*'],
+            allowedHeaders: ['*'],
+          },
         ],
-        prune: true,
-        // Large model assets can make uploads slow; increase
-        // Lambda memory to speed up uploads.
-        memoryLimit: 2048,
-        // Increase ephemeral storage to handle large deployments
-        ephemeralStorageSize: Size.mebibytes(2048),
+      })
+
+      const originAccessIdentity = new OriginAccessIdentity(this, `${prefix}OriginAccessIdentity`, {
+        comment: `Access identity for ${site.publicName}`,
+      })
+
+      const defaultBehavior: BehaviorOptions = {
+        origin: S3BucketOrigin.withOriginAccessIdentity(siteBucket, {
+          originAccessIdentity,
+        }),
+        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        allowedMethods: AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
+        cachedMethods: CachedMethods.CACHE_GET_HEAD_OPTIONS,
+        cachePolicy: CachePolicy.CACHING_OPTIMIZED,
+        originRequestPolicy: originPolicy,
+        compress: true,
+      }
+
+      const errorResponses: ErrorResponse[] = [
+        {
+          httpStatus: 403,
+          responseHttpStatus: 200,
+          responsePagePath: site.fallbackPagePath,
+          ttl: Duration.minutes(5),
+        },
+        {
+          httpStatus: 404,
+          responseHttpStatus: 200,
+          responsePagePath: site.fallbackPagePath,
+          ttl: Duration.minutes(5),
+        },
+      ]
+
+      const distribution = new Distribution(this, `${prefix}Distribution`, {
+        defaultBehavior,
+        defaultRootObject: site.defaultRootObject,
+        comment: `${site.publicName} static site distribution`,
+        errorResponses,
+        ...(certificate
+          ? {
+              certificate,
+              domainNames: site.domainAliases,
+              minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
+            }
+          : {}),
+      })
+
+      if (hasDist) {
+        const siteDeployment = new BucketDeployment(this, `${prefix}DeployWithInvalidation`, {
+          sources: [Source.asset(distPath)],
+          destinationBucket: siteBucket,
+          distribution,
+          distributionPaths: ['/*'],
+          cacheControl: [
+            CacheControl.fromString('public, max-age=0, must-revalidate'),
+          ],
+          prune: true,
+          memoryLimit: 2048,
+          ephemeralStorageSize: Size.mebibytes(2048),
+        })
+      }
+
+      new CfnOutput(this, `${prefix}BucketName`, {
+        value: siteBucket.bucketName,
+      })
+
+      new CfnOutput(this, `${prefix}CloudFrontDistributionId`, {
+        value: distribution.distributionId,
+      })
+
+      new CfnOutput(this, `${prefix}CloudFrontDomainName`, {
+        value: distribution.domainName,
+      })
+
+      new CfnOutput(this, `${prefix}ConfiguredDomainAliases`, {
+        value: site.domainAliases.join(', '),
       })
     }
-
-    new CfnOutput(this, 'BucketName', {
-      value: siteBucket.bucketName,
-    })
-
-    new CfnOutput(this, 'CloudFrontDistributionId', {
-      value: distribution.distributionId,
-    })
-
-    new CfnOutput(this, 'CloudFrontDomainName', {
-      value: distribution.domainName,
-    })
-
-    new CfnOutput(this, 'ConfiguredDomainName', {
-      value: domainName,
-    })
   }
 }

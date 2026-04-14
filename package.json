@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "bootstrap:apps": "node scripts/hosted-apps.mjs bootstrap",
     "build": "next build",
-    "serve": "npx serve@latest out -l 3000",
+    "build:apps": "node scripts/hosted-apps.mjs build",
+    "build:gravitylens": "node scripts/hosted-apps.mjs build gravitylens",
+    "build:synth": "node scripts/hosted-apps.mjs build synth",
+    "serve": "node scripts/serve-hosted-apps.mjs",
     "preview": "rm -rf .next out && npm run build && npm run serve",
     "lint": "next lint",
     "svg:post": "python3 scripts/blog-image-svg/cli.py",
