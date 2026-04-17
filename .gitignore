@@ -15,6 +15,9 @@
 # next.js
 /.next/
 /out/
+projects/*/.next/
+projects/*/out/
+projects/*/node_modules/
 
 # production
 /build
@@ -54,3 +57,13 @@ __pycache__/
 scripts/blog-audio/.venv/
 scripts/blog-audio/.local/
 AGENTS.md
+
+# local scratch files
+dump-env.sh
+tmp-home-trace.json
+todo.txt
+differentiation_dimensionality_v2.md
+typescript/
+
+# submodule-pending (no remote yet)
+projects/black-hole-laboratory/

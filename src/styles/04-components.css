@@ -14,7 +14,7 @@
   }
 
   .prose h1, .prose h2, .prose h3, .prose h4 {
-    @apply font-bold text-table-text font-mono uppercase tracking-wide;
+    @apply font-bold text-box-title-bg font-mono uppercase tracking-wide;
   }
 
   .prose h1 {
@@ -22,7 +22,7 @@
   }
 
   .prose h2 {
-    @apply text-lg mb-3 border-b border-box-outline pb-1;
+    @apply text-lg mb-3 border-b border-b-box-outline border-t border-t-white/60 pt-2 pb-1;
   }
   
   .prose a {
@@ -31,6 +31,20 @@
 
   .prose strong {
     @apply text-table-text font-bold;
+  }
+
+  .prose table th {
+    @apply text-box-title-bg font-bold;
+  }
+
+  .prose table {
+    border-collapse: collapse;
+  }
+
+  .prose table th,
+  .prose table td {
+    border: 1px solid rgb(var(--theme-secondary-rgb) / 0.3);
+    padding: 0.5rem 0.75rem;
   }
 
   .prose ol > li::before {
@@ -107,7 +121,7 @@
   }
 
   .prose .katex {
-    color: #808080;
+    color: rgb(var(--theme-secondary-rgb));
   }
 
   .prose .katex-display {
@@ -236,9 +250,10 @@
   }
 
   .post-audio-player-time {
-    @apply text-primary-green text-xs font-mono uppercase tracking-widest;
+    @apply text-primary-green text-xs font-mono;
     margin-left: auto;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .post-audio-player-minimize {
@@ -338,7 +353,7 @@
     height: 1rem;
     margin-top: 0;
     border: 1px solid #0f1720;
-    background: #ca8f31;
+    background: var(--theme-secondary);
     border-radius: 0;
   }
 
@@ -347,7 +362,7 @@
     height: 1rem;
     border: 1px solid #0f1720;
     border-radius: 0;
-    background: #ca8f31;
+    background: var(--theme-secondary);
   }
 
   @media (max-width: 767px) {
@@ -419,7 +434,8 @@
   }
 
   .terminal-header {
-    @apply bg-box-header-bg text-black font-mono text-sm uppercase tracking-widest border-b border-box-outline;
+    @apply text-black font-mono text-sm uppercase tracking-widest border-b border-box-outline;
+    background: var(--theme-header-bg);
   }
   
   .terminal-header-text {

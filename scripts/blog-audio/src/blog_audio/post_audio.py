@@ -31,6 +31,7 @@ HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$")
 LIST_ITEM_RE = re.compile(r"^\s{0,3}(?:[-+*]|\d+\.)\s+(.*)$")
 HR_RE = re.compile(r"^\s*(?:[-*_]\s*){3,}\s*$")
 IMAGE_ONLY_RE = re.compile(r"^\s*!\[[^\]]*]\([^)]*\)\s*$")
+TABLE_SEPARATOR_CELL_RE = re.compile(r"^:?-{3,}:?$")
 INLINE_IMAGE_RE = re.compile(r"!\[[^\]]*]\([^)]*\)")
 INLINE_LINK_RE = re.compile(r"\[([^\]]+)]\([^)]*\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
@@ -169,6 +170,38 @@ def is_caption_like(raw_text: str) -> bool:
 def is_html_block_start(line: str) -> bool:
     stripped = line.lstrip()
     return stripped.startswith("<") and not stripped.startswith("<!--")
+
+
+def split_markdown_table_cells(line: str) -> list[str]:
+    stripped = line.strip()
+    if "|" not in stripped:
+        return []
+    return [cell.strip() for cell in stripped.strip("|").split("|")]
+
+
+def is_markdown_table_row(line: str) -> bool:
+    cells = split_markdown_table_cells(line)
+    return len(cells) >= 2 and any(cells)
+
+
+def is_markdown_table_separator(line: str) -> bool:
+    cells = split_markdown_table_cells(line)
+    return len(cells) >= 2 and all(TABLE_SEPARATOR_CELL_RE.match(cell) for cell in cells)
+
+
+def is_markdown_table_start(lines: list[str], index: int) -> bool:
+    return (
+        index + 1 < len(lines)
+        and is_markdown_table_row(lines[index])
+        and is_markdown_table_separator(lines[index + 1])
+    )
+
+
+def skip_markdown_table(lines: list[str], index: int) -> int:
+    index += 2
+    while index < len(lines) and is_markdown_table_row(lines[index]):
+        index += 1
+    return index
 
 
 def split_sentences(text: str) -> list[TextSlice]:
@@ -447,6 +480,11 @@ def extract_narration_blocks(markdown: str) -> list[NarrationBlock]:
             index += 1
             continue
 
+        if is_markdown_table_start(lines, index):
+            pending_media_caption = False
+            index = skip_markdown_table(lines, index)
+            continue
+
         if is_html_block_start(raw_line):
             pending_media_caption = any(token in stripped.lower() for token in ("<img", "<video", "<source", "<figure", "<div"))
             index += 1
@@ -474,7 +512,7 @@ def extract_narration_blocks(markdown: str) -> list[NarrationBlock]:
                     break
                 if LIST_ITEM_RE.match(continuation) or HEADING_RE.match(continuation_stripped) or continuation_stripped.startswith("```") or continuation_stripped.startswith("~~~"):
                     break
-                if is_html_block_start(continuation) or IMAGE_ONLY_RE.match(continuation_stripped):
+                if is_html_block_start(continuation) or IMAGE_ONLY_RE.match(continuation_stripped) or is_markdown_table_start(lines, index):
                     break
                 item_lines.append(continuation_stripped)
                 index += 1
@@ -516,6 +554,7 @@ def extract_narration_blocks(markdown: str) -> list[NarrationBlock]:
                 or IMAGE_ONLY_RE.match(candidate)
                 or HR_RE.match(candidate)
                 or is_html_block_start(candidate_raw)
+                or is_markdown_table_start(lines, index)
             ):
                 break
             paragraph_lines.append(candidate)

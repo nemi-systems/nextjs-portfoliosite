@@ -20,6 +20,15 @@ const projectsConfig = {
       githubUrl: null,
     },
     {
+      title: "Ontology",
+      summary:
+        "LLM-driven ontology extraction from markdown with interactive knowledge graph exploration.",
+      image: "/assets/ontology-viewer-project-square.webp",
+      url: "https://ontology.n3mi.net",
+      github: null,
+      githubUrl: null,
+    },
+    {
       title: "Web Audio Synthesizer",
       summary:
         "Browser synth with ADSR envelopes, filters, fx, unison, keyboard input, and live scopes.",

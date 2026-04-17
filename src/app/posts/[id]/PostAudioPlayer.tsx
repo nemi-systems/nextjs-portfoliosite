@@ -859,7 +859,7 @@ export default function PostAudioPlayer({ audioSrc, title, chunks }: PostAudioPl
               <div className="post-audio-player-header-main">
                 <span className="terminal-header-text post-audio-player-title">BLOG AUDIO</span>
                 <span className="post-audio-player-time">
-                  {formatTime(currentTime)} / {formatTime(duration)}
+                  {formatTime(currentTime)}/{formatTime(duration)}
                 </span>
               </div>
               {isMobileViewport ? (

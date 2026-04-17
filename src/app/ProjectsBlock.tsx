@@ -18,6 +18,7 @@ export const ProjectsBlock = () => {
 
   const featuredProjectTitles = [
     'GravityLens',
+    'Ontology',
     'Web Audio Synthesizer',
   ]
   const tableProjects = projectsConfig.items.filter(
