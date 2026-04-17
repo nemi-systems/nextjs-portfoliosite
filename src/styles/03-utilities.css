@@ -4,7 +4,7 @@
 
 /* Terminal header utility */
 .terminal-header {
-  background: #130F04;
+  background: var(--theme-header-bg);
   border-bottom: 1px solid #1A1A1A;
   position: relative;
   color: #000000;

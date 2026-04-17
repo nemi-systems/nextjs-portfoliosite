@@ -147,6 +147,11 @@ $$
   <source src="/assets/demo.mp4" />
 </video>
 
+| Label | Value |
+|---|---|
+| Narrate | No |
+| Also narrate | No |
+
 > Quoted line
 """
         blocks = post_audio.extract_narration_blocks(markdown)
@@ -158,6 +163,36 @@ $$
                 "First bullet",
                 "Second bullet",
                 "Quoted line",
+            ],
+        )
+
+    def test_extract_narration_blocks_skips_markdown_tables(self):
+        markdown = """---
+title: Sample
+---
+
+## Before table
+
+Introductory prose stays in the narration.
+
+| Things to distinguish | Bits required | Everyday analogue |
+|---|---:|:---|
+| 2 | 1 | on/off |
+| "Effectively unique" | 128+ | fingerprints |
+
+## After table
+
+Closing prose also stays in the narration.
+"""
+        blocks = post_audio.extract_narration_blocks(markdown)
+
+        self.assertEqual(
+            [block.text for block in blocks],
+            [
+                "Before table",
+                "Introductory prose stays in the narration.",
+                "After table",
+                "Closing prose also stays in the narration.",
             ],
         )
 

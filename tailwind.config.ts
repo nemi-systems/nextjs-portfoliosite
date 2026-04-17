@@ -30,7 +30,7 @@ const config: Config = {
         'box-outline': '#1A1A1A',
         'box-bg': '#060606',
         'box-title-bg': colorVariable('--theme-accent-rgb'),
-        'box-header-bg': '#130F04',
+        'box-header-bg': 'var(--theme-header-bg)',
         'table-text': '#808080',
         'highlight-text': colorVariable('--theme-accent-rgb'),
         'highlight-bg': colorVariable('--theme-accent-bg-rgb'),

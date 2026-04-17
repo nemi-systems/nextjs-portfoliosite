@@ -9,6 +9,7 @@ import { hrefHtml } from '@/lib/links'
 
 const featuredProjectTitles = [
   'GravityLens',
+  'Ontology',
   'Web Audio Synthesizer',
 ]
 

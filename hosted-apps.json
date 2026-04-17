@@ -39,6 +39,19 @@
       "fallbackPagePath": "/index.html",
       "responseHeaders": "standard",
       "cacheProfile": "mutable"
+    },
+    {
+      "id": "ontology",
+      "publicName": "ontology",
+      "projectPath": "projects/ontology",
+      "artifactPath": "projects/ontology/out",
+      "installCommand": ["npm", "ci"],
+      "buildCommand": ["npm", "run", "build"],
+      "domainAliases": ["ontology.n3mi.net"],
+      "defaultRootObject": "index.html",
+      "fallbackPagePath": "/index.html",
+      "responseHeaders": "standard",
+      "cacheProfile": "mutable"
     }
   ]
 }

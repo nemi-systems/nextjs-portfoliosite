@@ -175,6 +175,7 @@ server.listen(port, () => {
     `http://localhost:${port}`,
     `http://synth.localhost:${port}`,
     `http://gravitylens.localhost:${port}`,
+    `http://ontology.localhost:${port}`,
   ];
 
   console.log(`Hosted app preview server listening on port ${port}`);
