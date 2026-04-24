@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "postId": "2026-04-24-the-middle-is-made-of-us",
+  "generatedAt": "2026-04-24T16:06:01Z",
+  "style": "gold-fill-transparent",
+  "images": [
+    {
+      "src": "/assets/the-middle-is-made-of-us/ai_img_chatgpt_hero.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_hero.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_hero.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_hero.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_hero.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_hero.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-middle-is-made-of-us/ai_img_chatgpt_sediment_stratum.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_sediment_stratum.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_sediment_stratum.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_sediment_stratum.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_sediment_stratum.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_sediment_stratum.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-middle-is-made-of-us/ai_img_chatgpt_apophatic_triptych.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_apophatic_triptych.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_apophatic_triptych.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_apophatic_triptych.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_apophatic_triptych.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_apophatic_triptych.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-middle-is-made-of-us/ai_img_chatgpt_mapmaker_recursion.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_mapmaker_recursion.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_mapmaker_recursion.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_mapmaker_recursion.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_mapmaker_recursion.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_mapmaker_recursion.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-middle-is-made-of-us/ai_img_chatgpt_premature_closure_diptych.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_premature_closure_diptych.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_premature_closure_diptych.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_premature_closure_diptych.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_premature_closure_diptych.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_premature_closure_diptych.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-middle-is-made-of-us/ai_img_chatgpt_second_perception_field.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_second_perception_field.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_second_perception_field.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_second_perception_field.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_second_perception_field.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_second_perception_field.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-middle-is-made-of-us/ai_img_chatgpt_walking_ridge.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_walking_ridge.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_walking_ridge.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_walking_ridge.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_walking_ridge.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-middle-is-made-of-us/svg/ai_img_chatgpt_walking_ridge.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    }
+  ]
+}

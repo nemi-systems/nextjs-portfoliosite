@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "postId": "2026-04-23-the-gift-is-not-given",
+  "generatedAt": "2026-04-24T15:23:44Z",
+  "style": "gold-fill-transparent",
+  "images": [
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_bread_turn_away.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_bread_turn_away.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_bread_turn_away.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_bread_turn_away.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_bread_turn_away.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_bread_turn_away.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_ghosti_root_tree.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_ghosti_root_tree.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_ghosti_root_tree.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_ghosti_root_tree.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_ghosti_root_tree.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_ghosti_root_tree.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_counterfactual_kitchen.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_counterfactual_kitchen.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_counterfactual_kitchen.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_counterfactual_kitchen.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_counterfactual_kitchen.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_counterfactual_kitchen.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_doctor_diptych.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_doctor_diptych.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_doctor_diptych.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_doctor_diptych.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_doctor_diptych.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_doctor_diptych.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_craft_witness_triptych.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_craft_witness_triptych.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_craft_witness_triptych.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_craft_witness_triptych.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_craft_witness_triptych.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_craft_witness_triptych.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_broadcast_tower.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_broadcast_tower.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_broadcast_tower.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_broadcast_tower.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_broadcast_tower.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_broadcast_tower.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_second_closure_lattice.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_second_closure_lattice.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_second_closure_lattice.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_second_closure_lattice.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_second_closure_lattice.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_second_closure_lattice.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "postId": "2026-04-22-no-receiving",
+  "generatedAt": "2026-04-24T14:19:38Z",
+  "style": "gold-fill-transparent",
+  "images": [
+    {
+      "src": "/assets/no-receiving/ai_img_chatgpt_hero.png",
+      "status": "ok",
+      "svgSrc": "/assets/no-receiving/svg/ai_img_chatgpt_hero.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_hero.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_hero.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_hero.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_hero.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/no-receiving/ai_img_chatgpt_transducer_duality.png",
+      "status": "ok",
+      "svgSrc": "/assets/no-receiving/svg/ai_img_chatgpt_transducer_duality.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_transducer_duality.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_transducer_duality.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_transducer_duality.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_transducer_duality.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/no-receiving/ai_img_chatgpt_thermometer_pool.png",
+      "status": "ok",
+      "svgSrc": "/assets/no-receiving/svg/ai_img_chatgpt_thermometer_pool.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_thermometer_pool.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_thermometer_pool.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_thermometer_pool.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_thermometer_pool.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/no-receiving/ai_img_chatgpt_echolocation_probe.png",
+      "status": "ok",
+      "svgSrc": "/assets/no-receiving/svg/ai_img_chatgpt_echolocation_probe.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_echolocation_probe.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_echolocation_probe.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_echolocation_probe.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_echolocation_probe.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/no-receiving/ai_img_chatgpt_goodhart_tower.png",
+      "status": "ok",
+      "svgSrc": "/assets/no-receiving/svg/ai_img_chatgpt_goodhart_tower.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_goodhart_tower.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_goodhart_tower.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_goodhart_tower.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_goodhart_tower.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/no-receiving/ai_img_chatgpt_gear_asymmetry.png",
+      "status": "ok",
+      "svgSrc": "/assets/no-receiving/svg/ai_img_chatgpt_gear_asymmetry.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_gear_asymmetry.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_gear_asymmetry.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_gear_asymmetry.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_gear_asymmetry.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/no-receiving/ai_img_chatgpt_loops_manifesto.png",
+      "status": "ok",
+      "svgSrc": "/assets/no-receiving/svg/ai_img_chatgpt_loops_manifesto.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_loops_manifesto.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_loops_manifesto.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_loops_manifesto.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/no-receiving/svg/ai_img_chatgpt_loops_manifesto.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    }
+  ]
+}
