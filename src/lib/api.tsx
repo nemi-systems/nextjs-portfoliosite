@@ -29,6 +29,7 @@ interface PostSvgMapImageEntry {
   svgSrc?: string;
   status?: string;
   layers?: PostSvgMapLayerEntry[];
+  aspectRatio?: string;
 }
 
 interface PostSvgMapLayerEntry {
@@ -36,6 +37,48 @@ interface PostSvgMapLayerEntry {
   src: string;
   opacity?: number;
   blend?: string;
+}
+
+function isBackgroundSvgLayer(kind: string | undefined): boolean {
+  if (typeof kind !== "string") {
+    return false;
+  }
+
+  return kind === "bg" || kind === "background";
+}
+
+function readSvgAspectRatio(publicRelativePath: string): string | undefined {
+  try {
+    const fullPath = join("public", publicRelativePath.replace(/^\//, ""));
+    const fd = fs.openSync(fullPath, "r");
+    try {
+      const buf = Buffer.alloc(2048);
+      const n = fs.readSync(fd, buf, 0, 2048, 0);
+      const head = buf.toString("utf8", 0, n);
+      const vb = head.match(/viewBox\s*=\s*"\s*[-\d.eE]+\s+[-\d.eE]+\s+([\d.eE]+)\s+([\d.eE]+)\s*"/);
+      if (vb) {
+        const w = parseFloat(vb[1]);
+        const h = parseFloat(vb[2]);
+        if (w > 0 && h > 0) {
+          return `${w} / ${h}`;
+        }
+      }
+      const wAttr = head.match(/\swidth\s*=\s*"([\d.eE]+)(?:px)?"/);
+      const hAttr = head.match(/\sheight\s*=\s*"([\d.eE]+)(?:px)?"/);
+      if (wAttr && hAttr) {
+        const w = parseFloat(wAttr[1]);
+        const h = parseFloat(hAttr[1]);
+        if (w > 0 && h > 0) {
+          return `${w} / ${h}`;
+        }
+      }
+    } finally {
+      fs.closeSync(fd);
+    }
+  } catch {
+    /* ignore */
+  }
+  return undefined;
 }
 
 interface PostSvgMap {
@@ -477,59 +520,77 @@ function addClasses() {
       if (node.tagName === "img") {
         const src = typeof node.properties?.src === "string" ? node.properties.src : "";
         const mapped = svgMapBySrc.get(src);
-        if (!mapped) {
+        if (!mapped || !parent || typeof index !== "number") {
           return;
         }
 
+        const originalAlt = typeof node.properties?.alt === "string" ? node.properties.alt : "";
         const layers = Array.isArray(mapped.layers) ? mapped.layers : [];
+        const hasLayers = layers.length > 0;
 
-        if (layers.length > 1 && parent && typeof index === "number") {
-          const originalAlt = typeof node.properties?.alt === "string" ? node.properties.alt : "";
+        const layerSpecs: Array<{ kind: string; src: string }> = (
+          hasLayers
+            ? layers.map((layer, i) => ({ kind: layer.kind || `layer-${i}`, src: layer.src }))
+            : mapped.svgSrc
+              ? [
+                  { kind: "tone", src: mapped.svgSrc },
+                  { kind: "line", src: mapped.svgSrc },
+                ]
+              : []
+        ).filter((layer) => !isBackgroundSvgLayer(layer.kind));
 
-          const layerChildren = layers.map((layer, layerIndex) => {
-            const isTop = layerIndex === layers.length - 1;
-            const classes = ["svg-layer", `svg-layer-${layer.kind || `layer-${layerIndex}`}`];
-            if (isTop) {
-              classes.push("svg-layer-fg");
-            }
+        if (!layerSpecs.length) {
+          return;
+        }
 
-            const properties: Record<string, any> = {
-              src: layer.src,
-              alt: isTop ? originalAlt : "",
-              className: classes,
-              loading: "lazy",
-              decoding: "async",
-            };
-            if (!isTop) {
-              properties["aria-hidden"] = "true";
-            } else {
-              properties.className.push("svg-3d-source");
-            }
+        const maskUrl = (layerSrc: string) => {
+          const escaped = layerSrc.replace(/"/g, '\\"');
+          return `url("${escaped}")`;
+        };
 
-            return {
-              type: "element",
-              tagName: "img",
-              properties,
-              children: [],
-            };
-          });
+        const layerChildren = layerSpecs.map((layer, layerIndex) => {
+          const isTop = layerIndex === layerSpecs.length - 1;
+          const classes = ["svg-layer", `svg-layer-${layer.kind}`];
+          if (isTop) {
+            classes.push("svg-layer-fg");
+          }
 
-          parent.children[index] = {
+          const maskValue = maskUrl(layer.src);
+          const style = `mask-image: ${maskValue}; -webkit-mask-image: ${maskValue};`;
+
+          const properties: Record<string, any> = {
+            className: classes,
+            style,
+          };
+          if (isTop) {
+            properties["role"] = "img";
+            properties["aria-label"] = originalAlt;
+            properties["data-svg-src"] = layer.src;
+          } else {
+            properties["aria-hidden"] = "true";
+          }
+
+          return {
             type: "element",
             tagName: "span",
-            properties: {
-              className: ["svg-depth-card", "svg-depth-card--generated"],
-            },
-            children: layerChildren,
+            properties,
+            children: [],
           };
-          return;
+        });
+
+        const cardProps: Record<string, any> = {
+          className: ["svg-depth-card", "svg-depth-card--generated"],
+        };
+        if (mapped.aspectRatio) {
+          cardProps.style = `aspect-ratio: ${mapped.aspectRatio};`;
         }
 
-        if (mapped.svgSrc) {
-          node.properties = node.properties || {};
-          node.properties.src = mapped.svgSrc;
-          appendClassNames(node, ["svg-3d-source"]);
-        }
+        parent.children[index] = {
+          type: "element",
+          tagName: "span",
+          properties: cardProps,
+          children: layerChildren,
+        };
         return;
       }
 
@@ -897,6 +958,16 @@ export async function getPostById(id: string) {
         }
 
         entry.layers = validLayers;
+
+        const aspectSource =
+          (validLayers.find((l) => l.kind === "line") || validLayers[0])?.src ||
+          entry.svgSrc;
+        if (aspectSource) {
+          const aspect = readSvgAspectRatio(aspectSource);
+          if (aspect) {
+            entry.aspectRatio = aspect;
+          }
+        }
         return true;
       })
       .map((entry) => [entry.src, entry])

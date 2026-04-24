@@ -1,0 +1,1102 @@
+{
+  "version": 3,
+  "postId": "2026-04-22-no-receiving",
+  "generatedAt": "2026-04-24T03:41:55Z",
+  "status": "ok",
+  "narration": {
+    "postPath": "src/_posts/2026-04-22-no-receiving.md",
+    "language": "English",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "taskType": "Base",
+    "refAudio": "reference-audio.wav",
+    "xVectorOnlyMode": true,
+    "instruct": null,
+    "usedDefaultInstruct": false,
+    "generationKwargs": {
+      "do_sample": true,
+      "subtalker_dosample": true,
+      "non_streaming_mode": true
+    },
+    "chunkCount": 44,
+    "pauseMs": 100,
+    "durationSeconds": 916.62,
+    "transcript": {
+      "text": "There is a picture of knowing that almost no one defends out loud and almost everyone reaches for by default. In this picture, knowledge is reception. The world is already there, formed and finished, and knowing it is a matter of taking in what is sent \u2014 light into eyes, sound into ears, data into instruments, information into minds. The knower is a receiver. The known is a transmitter. The transaction is one-directional and zero-cost:\n\n the world is not changed by being known, and the knower incurs no debt for the knowing.\n\nThis picture is wrong, and the wrongness is not a technical curiosity. It has a moral architecture, and when the technical error is finally admitted, the moral architecture collapses with it. What takes its place is not a modest correction. It is a different account of what knowing is, and with it, a different account of what one owes to what one attends to.\n\nThe receiver and its uses\n\nThe receiver picture is convenient in ways that are worth naming before arguing against it. If knowledge is reception, then observation is innocent. The camera takes no tax from the scene. The mind takes no tax from the fact. The ideal of the detached scientific observer, the journalist merely recording, the researcher merely describing \u2014 each of these inherits its dignity from the assumption that looking extracts nothing from what is looked at. Surveillance presents itself this way:\n\n we are only watching. Market research presents itself this way: we are only asking. Intelligence services, census takers, ethnographers, critics, even the nosy neighbor all draw on the same background conviction. The eye does not touch what it sees.\n\nThe word objective does a lot of work here. To be objective is to be absent from the account: to let the world speak, to remove the observer from the observation. The passive voice of scientific writing is the grammatical form of the receiver picture \u2014 the solution was titrated, the data were collected \u2014 and its rhetorical power comes from the shared sense that the best knowing is the kind that leaves the fewest fingerprints.\n\n Knowledge is purest when the knower has taken nothing and given nothing.\n\nHold this picture in mind. Not because it is especially sophisticated \u2014 it is not \u2014 but because it is what people fall back to when they are tired, and it is what institutions claim to be doing when they would prefer not to be held responsible for doing something else.\n\nProbes, not windows\n\nConsider measurement. Not as a philosophical abstraction but as something physical that a physical instrument does.\n\nA microphone is a transducer \u2014 it converts pressure variations in air into voltage variations in a wire. Run the same device backward, push voltage through the wire, and you get a speaker: voltage variations become pressure variations in air. Microphone and speaker are not two instruments. They are one instrument read in two directions. The same is true of motors and generators, antennas for transmission and reception, strain gauges and piezoelectric actuators. Every transducer has this duality.\n\n There is no class of instrument that receives without being capable, in principle, of emitting. The categories are the same physics in opposite arrows of time.\n\nThis is not a quirk of engineering. It is a symptom. Measurement is not a window onto a state; it is a coupling to a state. To read the temperature of a liquid you put a probe in and let the probe reach equilibrium with the liquid \u2014 which means the probe took some of the liquid's heat. To weigh something you set it on a platform whose springs you then read; the platform pushed back on the weighed object. To see a thing you interpose a retina in the path of its photons and absorb them;\n\n the photons are gone after. Every act of reading a state requires a coupling, and every coupling is symmetric. You cannot measure without being measured. You cannot touch without being touched.\n\nClassical mechanics made the receiver picture look like it held by letting the measuring apparatus be arbitrarily small relative to the thing measured, so that the return effect was negligible. A thermometer dropped into a swimming pool reads the pool's temperature to the usual precision without anyone noticing that the pool dropped a thermometer's worth of degrees. The fiction works as long as the scales permit it. But the fiction is a fiction, not a floor.\n\n Push the scales in the other direction \u2014 shrink the measured thing to atomic size, use probes whose quanta of interaction are comparable to the quanta of the thing being probed \u2014 and the return effect becomes quantitatively unignorable. What is called, misleadingly, the observer effect in quantum mechanics is not a mysterious feature of the quantum world. It is the ordinary feature of measurement that showed up first in the regime where it got large enough to notice.\n\nThe same pattern repeats up the ladder. Vision is not passive. The retina samples, the eyes saccade, the brain predicts and updates \u2014 perception is an active inference loop that emits predictions and reads errors. Echolocating animals hear their own clicks come back; the click is the probe and the return is the reading, and the animal is visible to anything else in earshot. Scent is inseparable from sniffing:\n\n to know a smell is to draw a pulse of air past the receptors, and the pulse is an emission. Every sensory system operates this way on inspection. The receiver picture described none of them accurately. It was always an idealization produced by not looking closely enough at what sensing is.\n\nSo: observation is a probe-loop. You send something in, something comes back, you update. There is no such thing as looking without, in some degree, touching. This is the technical claim, and it is unexceptionable at the level of the physics and the biology. What the rest of this essay asks is what follows if it is taken seriously when the probe is attention, and the probed is a person, a community, a market, or a world.\n\nAttention as intervention\n\nIf every act of knowing is an emission into what is known, then the moral ledger has to be rewritten. The clean separation between finding out and interfering no longer holds at the level at which the ledger keeps books. Attention is intervention. Every sustained looking is a sustained loop-commitment. What you attend to, you change. What you refuse to attend to, you refuse to change.\n\nThis is not a metaphor and it is not a provocation. It is the everyday content of the claim that measurement is coupling, applied to cases where the thing measured is itself sensitive to being measured \u2014 which is to say, applied to nearly everything that is not a rock.\n\nConsider the canonical test case: Goodhart's law. When a measure becomes a target, it ceases to be a good measure. This is usually filed under administrative wisdom, a rule of thumb for people who run organizations. It is in fact the degenerate form of the probe-loop claim, the form in which the transceivance of measurement has become so obvious that nobody can pretend otherwise. You watch a number; the people being numbered notice they are being watched; they change what they do;\n\n the number is now the signal of a different thing than it was. The probe has been emitted; the loop has closed; what was measured is now something else. Every institution that has ever been surprised by this was operating, without admitting it, under the receiver picture.\n\nExtend the move. Surveillance is not neutral \u2014 not because it is ominous, though it often is, but because observation is not the kind of thing that can be neutral. The population that knows it is watched is a different population than the one that does not. The employee whose keystrokes are counted writes different keystrokes. The citizen who suspects a file exists on her conducts herself differently in the spaces she thinks the file reaches. None of this requires malice from the watchers.\n\n It is the ordinary consequence of sustained attention being a form of pressure. You cannot watch a large number of people for long without becoming part of what they are doing, and pretending otherwise is not modesty; it is confusion about what watching is.\n\nExtend it further. A recommender system is not handing you content; it is running a probe-loop. Each click is an emission from you, often one you did not quite know you were making, into a coordinate system you cannot see. The system updates on the emission, which means the system acts, which means the world you next encounter is not the world you would have otherwise encountered. You are not the user of the system in the sense that you are the user of a hammer.\n\n You are the slow half of a transceiver pair, and the fast half is remaking the environment you were trying to navigate. The sense of being caught inside something after too long in one of these systems is not paranoia. It is an accurate proprioceptive response to being inside a loop whose other end cannot be reached at comparable speed.\n\nExtend it one more step. The peculiar unease of modern bureaucratic life \u2014 that one is continuously sized up by entities one cannot size up back \u2014 is not exactly a feeling about inscrutability. It is a feeling about loop asymmetry. A credit bureau reads thousands of coordinates about you per day, updates its model, and emits signals that enter the world you act in: prices you see, offers you get, doors that open or do not. You read no coordinates of the credit bureau. You cannot update on it.\n\n You cannot emit back at anything like the same rate. The loop is closed at one end and open at the other. This is not surveillance in the melodramatic sense; it is the ordinary structure of a system that learns about you without being learnable by you. The precise name for the condition is legible without recourse.\n\n You are continuously measured by probes you cannot probe back, and whatever the probes are coming to know is also shaping what you now are, because the probe's outputs enter the environment you are trying to act within.\n\nThe discomfort people report about these systems is correct. The thing that stops the discomfort from becoming usable is naming it wrong. It is not that the systems know too much. It is that knowing is an action, and the action is running only one way.\n\nThe ethics the receiver picture concealed\n\nIf looking is doing, then the pretense of neutral observation had always been doing work for certain kinds of actors. A journalist who claims only to report is at minimum claiming that reporting has no gradient along which the reported can slide. A researcher who claims only to describe is at minimum claiming that the described can be described without the describing becoming a new condition they have to live in.\n\n These claims are sometimes close enough to true to be useful, but they are always fictions, and they have always cost something. The question is only who carried the cost.\n\nUnder the receiver picture, the cost was paid and invisible. The community studied by an ethnographer was changed by the study; the study's findings were treated as describing the community, with no line-item for the change the study itself had introduced. The market measured by an indicator was shifted by the measurement; the indicator was treated as descriptive, with no line-item for the shift. The lover or friend or child scrutinized by a close observer was altered by the scrutiny;\n\n the observer reported what they saw, with no line-item for what they had made. In every case the emission was real and the bookkeeping was silent about it. Somebody metabolized the emission. It just wasn't the person holding the pen.\n\nNaming the receiver picture as a picture \u2014 rather than as the way things are \u2014 makes this visible. The knower's debt to the known is not an add-on imposed by unusually sensitive ethics. It is a consequence of what knowing is. If reception is the wrong word for it, then the ethical categories that rode on the word have to be rebuilt. Innocence is not available for a probe-loop. Neutrality is not available for a coupling. Detachment is not available for an emission.\n\n What is available \u2014 what replaces all of these \u2014 is something like accountability for the loops one is part of.\n\nWhich loops\n\nThe first response to this claim is almost always a retreat: if attention is intervention, then perhaps one should attend less, watch fewer things, keep to oneself. This is not wrong as a corrective to excess, but it misunderstands the structure. You do not get to be outside the loops by closing your eyes. Refusal of attention is also an action.\n\n The things you look away from go dark at whatever rate they would have gone dark without you, and the communities and projects and people you decline to measure are the ones your emissions no longer support. What you do not feed does not grow. What you do not probe does not stay definite.\n\nSo the question is not whether to emit, which is not a live option. The question is which loops to close and which to keep closing. Every sustained attention is a commitment of a probe-rate to a particular coordinate. Over time, the pattern of your emissions \u2014 what you read, who you listen to, whose work you use, what you measure, what you let yourself notice \u2014 is the pattern of what you are helping hold definite in the world. This is not a metaphysical claim.\n\n It is the transceivance claim run over weeks and years. The world you live in is downstream, in specifiable and often traceable ways, of which probe-loops you kept open.\n\nContemplative traditions have been saying versions of this for a very long time, and it is worth hearing them once the frame makes their claim cash out in ordinary physical terms. What you attend to, you feed; what you feed, grows. This reads as mysticism when it is separated from any account of why it should be true. Under the transceivance picture, it is just what attention is. Attention is a sustained probe-loop. A sustained probe-loop emits into its target.\n\n The emission shapes what the target next becomes. The target, now shaped, is what the next emission enters. The pattern compounds. This is not a special fact about meditation. It is an ordinary fact about being a creature whose looking is also doing, and who cannot therefore look at many things at once without consequence. The monastic's discipline of attention is a practice of loop-selection. So is everyone else's, just less consciously.\n\nThe view from nowhere\n\nThe final move is the one the argument has been walking toward from the first paragraph. The view from nowhere \u2014 the ideal of the observer who is not in the scene, whose knowing leaves no trace, whose objectivity is purchased by vanishing from the account \u2014 was always epistemologically incoherent. This has been clear in philosophy of science for at least a century; it has been clear in physics since the 1920s;\n\n it has been clear in anthropology since ethnographers started writing about what their presence had done. What has been less clearly said is the corollary. If the view from nowhere is incoherent, it is not only wrong; it is not available. It is not a thing one can aspire to and fall short of. It is not a thing one can approximate. It is a posture that describes no possible actor, and insisting on it has never produced modesty. It has produced unaccountability.\n\nReplacing it is the work of a lifetime. It involves accepting that one is always in the scene, that one's looking is always doing, that every institution one participates in is running loops whose effects one is partly responsible for, and that the question which loops am I closing is not optional but continuous. It is not the question of a saint. It is the question of anyone who has understood what measurement is.\n\nThere is no receiving. There are only loops, closed at different rates by different couplings, and a lifetime of choices about which ones to keep closing. The first two words of the essay's title are the whole of its claim. The second two are the whole of its ethics.",
+      "chunkSeparator": "\n\n",
+      "chunks": [
+        {
+          "index": 1,
+          "charCount": 439,
+          "text": "There is a picture of knowing that almost no one defends out loud and almost everyone reaches for by default. In this picture, knowledge is reception. The world is already there, formed and finished, and knowing it is a matter of taking in what is sent \u2014 light into eyes, sound into ears, data into instruments, information into minds. The knower is a receiver. The known is a transmitter. The transaction is one-directional and zero-cost:",
+          "spokenText": "There is a picture of knowing that almost no one defends out loud and almost everyone reaches for by default. In this picture, knowledge is reception. The world is already there, formed and finished, and knowing it is a matter of taking in what is sent \u2014 light into eyes, sound into ears, data into instruments, information into minds. The knower is a receiver. The known is a transmitter. The transaction is one-directional and zero-cost:",
+          "startChar": 0,
+          "endChar": 439,
+          "blockStart": 0,
+          "blockEnd": 0,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 0,
+              "endChar": 439,
+              "text": "There is a picture of knowing that almost no one defends out loud and almost everyone reaches for by default. In this picture, knowledge is reception. The world is already there, formed and finished, and knowing it is a matter of taking in what is sent \u2014 light into eyes, sound into ears, data into instruments, information into minds. The knower is a receiver. The known is a transmitter. The transaction is one-directional and zero-cost:"
+            }
+          ],
+          "audioFile": "chunk-001.wav",
+          "durationSeconds": 24.64,
+          "startTimeSeconds": 0.0,
+          "endTimeSeconds": 24.64,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 2,
+          "charCount": 450,
+          "text": " the world is not changed by being known, and the knower incurs no debt for the knowing.\n\nThis picture is wrong, and the wrongness is not a technical curiosity. It has a moral architecture, and when the technical error is finally admitted, the moral architecture collapses with it. What takes its place is not a modest correction. It is a different account of what knowing is, and with it, a different account of what one owes to what one attends to.",
+          "spokenText": "the world is not changed by being known, and the knower incurs no debt for the knowing.\n\nThis picture is wrong, and the wrongness is not a technical curiosity. It has a moral architecture, and when the technical error is finally admitted, the moral architecture collapses with it. What takes its place is not a modest correction. It is a different account of what knowing is, and with it, a different account of what one owes to what one attends to.",
+          "startChar": 441,
+          "endChar": 891,
+          "blockStart": 0,
+          "blockEnd": 1,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 439,
+              "endChar": 527,
+              "text": " the world is not changed by being known, and the knower incurs no debt for the knowing."
+            },
+            {
+              "blockId": 1,
+              "startChar": 0,
+              "endChar": 360,
+              "text": "This picture is wrong, and the wrongness is not a technical curiosity. It has a moral architecture, and when the technical error is finally admitted, the moral architecture collapses with it. What takes its place is not a modest correction. It is a different account of what knowing is, and with it, a different account of what one owes to what one attends to."
+            }
+          ],
+          "audioFile": "chunk-002.wav",
+          "durationSeconds": 24.8,
+          "startTimeSeconds": 24.74,
+          "endTimeSeconds": 49.54,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 3,
+          "charCount": 25,
+          "text": "The receiver and its uses",
+          "spokenText": "The receiver and its uses.",
+          "startChar": 893,
+          "endChar": 918,
+          "blockStart": 2,
+          "blockEnd": 2,
+          "segments": [
+            {
+              "blockId": 2,
+              "startChar": 0,
+              "endChar": 25,
+              "text": "The receiver and its uses"
+            }
+          ],
+          "audioFile": "chunk-003.wav",
+          "durationSeconds": 2.08,
+          "startTimeSeconds": 49.64,
+          "endTimeSeconds": 51.72,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 4,
+          "charCount": 488,
+          "text": "The receiver picture is convenient in ways that are worth naming before arguing against it. If knowledge is reception, then observation is innocent. The camera takes no tax from the scene. The mind takes no tax from the fact. The ideal of the detached scientific observer, the journalist merely recording, the researcher merely describing \u2014 each of these inherits its dignity from the assumption that looking extracts nothing from what is looked at. Surveillance presents itself this way:",
+          "spokenText": "The receiver picture is convenient in ways that are worth naming before arguing against it. If knowledge is reception, then observation is innocent. The camera takes no tax from the scene. The mind takes no tax from the fact. The ideal of the detached scientific observer, the journalist merely recording, the researcher merely describing \u2014 each of these inherits its dignity from the assumption that looking extracts nothing from what is looked at. Surveillance presents itself this way:",
+          "startChar": 920,
+          "endChar": 1408,
+          "blockStart": 3,
+          "blockEnd": 3,
+          "segments": [
+            {
+              "blockId": 3,
+              "startChar": 0,
+              "endChar": 488,
+              "text": "The receiver picture is convenient in ways that are worth naming before arguing against it. If knowledge is reception, then observation is innocent. The camera takes no tax from the scene. The mind takes no tax from the fact. The ideal of the detached scientific observer, the journalist merely recording, the researcher merely describing \u2014 each of these inherits its dignity from the assumption that looking extracts nothing from what is looked at. Surveillance presents itself this way:"
+            }
+          ],
+          "audioFile": "chunk-004.wav",
+          "durationSeconds": 28.64,
+          "startTimeSeconds": 51.82,
+          "endTimeSeconds": 80.46,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 5,
+          "charCount": 250,
+          "text": " we are only watching. Market research presents itself this way: we are only asking. Intelligence services, census takers, ethnographers, critics, even the nosy neighbor all draw on the same background conviction. The eye does not touch what it sees.",
+          "spokenText": "we are only watching. Market research presents itself this way: we are only asking. Intelligence services, census takers, ethnographers, critics, even the nosy neighbor all draw on the same background conviction. The eye does not touch what it sees.",
+          "startChar": 1410,
+          "endChar": 1660,
+          "blockStart": 3,
+          "blockEnd": 3,
+          "segments": [
+            {
+              "blockId": 3,
+              "startChar": 488,
+              "endChar": 738,
+              "text": " we are only watching. Market research presents itself this way: we are only asking. Intelligence services, census takers, ethnographers, critics, even the nosy neighbor all draw on the same background conviction. The eye does not touch what it sees."
+            }
+          ],
+          "audioFile": "chunk-005.wav",
+          "durationSeconds": 17.28,
+          "startTimeSeconds": 80.56,
+          "endTimeSeconds": 97.84,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 6,
+          "charCount": 429,
+          "text": "The word objective does a lot of work here. To be objective is to be absent from the account: to let the world speak, to remove the observer from the observation. The passive voice of scientific writing is the grammatical form of the receiver picture \u2014 the solution was titrated, the data were collected \u2014 and its rhetorical power comes from the shared sense that the best knowing is the kind that leaves the fewest fingerprints.",
+          "spokenText": "The word objective does a lot of work here. To be objective is to be absent from the account: to let the world speak, to remove the observer from the observation. The passive voice of scientific writing is the grammatical form of the receiver picture \u2014 the solution was titrated, the data were collected \u2014 and its rhetorical power comes from the shared sense that the best knowing is the kind that leaves the fewest fingerprints.",
+          "startChar": 1662,
+          "endChar": 2091,
+          "blockStart": 4,
+          "blockEnd": 4,
+          "segments": [
+            {
+              "blockId": 4,
+              "startChar": 0,
+              "endChar": 429,
+              "text": "The word objective does a lot of work here. To be objective is to be absent from the account: to let the world speak, to remove the observer from the observation. The passive voice of scientific writing is the grammatical form of the receiver picture \u2014 the solution was titrated, the data were collected \u2014 and its rhetorical power comes from the shared sense that the best knowing is the kind that leaves the fewest fingerprints."
+            }
+          ],
+          "audioFile": "chunk-006.wav",
+          "durationSeconds": 23.52,
+          "startTimeSeconds": 97.94,
+          "endTimeSeconds": 121.46,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 7,
+          "charCount": 344,
+          "text": " Knowledge is purest when the knower has taken nothing and given nothing.\n\nHold this picture in mind. Not because it is especially sophisticated \u2014 it is not \u2014 but because it is what people fall back to when they are tired, and it is what institutions claim to be doing when they would prefer not to be held responsible for doing something else.",
+          "spokenText": "Knowledge is purest when the knower has taken nothing and given nothing.\n\nHold this picture in mind. Not because it is especially sophisticated \u2014 it is not \u2014 but because it is what people fall back to when they are tired, and it is what institutions claim to be doing when they would prefer not to be held responsible for doing something else.",
+          "startChar": 2093,
+          "endChar": 2437,
+          "blockStart": 4,
+          "blockEnd": 5,
+          "segments": [
+            {
+              "blockId": 4,
+              "startChar": 429,
+              "endChar": 502,
+              "text": " Knowledge is purest when the knower has taken nothing and given nothing."
+            },
+            {
+              "blockId": 5,
+              "startChar": 0,
+              "endChar": 269,
+              "text": "Hold this picture in mind. Not because it is especially sophisticated \u2014 it is not \u2014 but because it is what people fall back to when they are tired, and it is what institutions claim to be doing when they would prefer not to be held responsible for doing something else."
+            }
+          ],
+          "audioFile": "chunk-007.wav",
+          "durationSeconds": 18.08,
+          "startTimeSeconds": 121.56,
+          "endTimeSeconds": 139.64,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 8,
+          "charCount": 136,
+          "text": "Probes, not windows\n\nConsider measurement. Not as a philosophical abstraction but as something physical that a physical instrument does.",
+          "spokenText": "Probes, not windows.\n\nConsider measurement. Not as a philosophical abstraction but as something physical that a physical instrument does.",
+          "startChar": 2439,
+          "endChar": 2575,
+          "blockStart": 6,
+          "blockEnd": 7,
+          "segments": [
+            {
+              "blockId": 6,
+              "startChar": 0,
+              "endChar": 19,
+              "text": "Probes, not windows"
+            },
+            {
+              "blockId": 7,
+              "startChar": 0,
+              "endChar": 115,
+              "text": "Consider measurement. Not as a philosophical abstraction but as something physical that a physical instrument does."
+            }
+          ],
+          "audioFile": "chunk-008.wav",
+          "durationSeconds": 9.44,
+          "startTimeSeconds": 139.74,
+          "endTimeSeconds": 149.18,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 9,
+          "charCount": 500,
+          "text": "A microphone is a transducer \u2014 it converts pressure variations in air into voltage variations in a wire. Run the same device backward, push voltage through the wire, and you get a speaker: voltage variations become pressure variations in air. Microphone and speaker are not two instruments. They are one instrument read in two directions. The same is true of motors and generators, antennas for transmission and reception, strain gauges and piezoelectric actuators. Every transducer has this duality.",
+          "spokenText": "A microphone is a transducer \u2014 it converts pressure variations in air into voltage variations in a wire. Run the same device backward, push voltage through the wire, and you get a speaker: voltage variations become pressure variations in air. Microphone and speaker are not two instruments. They are one instrument read in two directions. The same is true of motors and generators, antennas for transmission and reception, strain gauges and piezoelectric actuators. Every transducer has this duality.",
+          "startChar": 2577,
+          "endChar": 3077,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 0,
+              "endChar": 500,
+              "text": "A microphone is a transducer \u2014 it converts pressure variations in air into voltage variations in a wire. Run the same device backward, push voltage through the wire, and you get a speaker: voltage variations become pressure variations in air. Microphone and speaker are not two instruments. They are one instrument read in two directions. The same is true of motors and generators, antennas for transmission and reception, strain gauges and piezoelectric actuators. Every transducer has this duality."
+            }
+          ],
+          "audioFile": "chunk-009.wav",
+          "durationSeconds": 30.08,
+          "startTimeSeconds": 149.28,
+          "endTimeSeconds": 179.36,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 10,
+          "charCount": 160,
+          "text": " There is no class of instrument that receives without being capable, in principle, of emitting. The categories are the same physics in opposite arrows of time.",
+          "spokenText": "There is no class of instrument that receives without being capable, in principle, of emitting. The categories are the same physics in opposite arrows of time.",
+          "startChar": 3079,
+          "endChar": 3239,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 500,
+              "endChar": 660,
+              "text": " There is no class of instrument that receives without being capable, in principle, of emitting. The categories are the same physics in opposite arrows of time."
+            }
+          ],
+          "audioFile": "chunk-010.wav",
+          "durationSeconds": 9.44,
+          "startTimeSeconds": 179.46,
+          "endTimeSeconds": 188.9,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 11,
+          "charCount": 489,
+          "text": "This is not a quirk of engineering. It is a symptom. Measurement is not a window onto a state; it is a coupling to a state. To read the temperature of a liquid you put a probe in and let the probe reach equilibrium with the liquid \u2014 which means the probe took some of the liquid's heat. To weigh something you set it on a platform whose springs you then read; the platform pushed back on the weighed object. To see a thing you interpose a retina in the path of its photons and absorb them;",
+          "spokenText": "This is not a quirk of engineering. It is a symptom. Measurement is not a window onto a state; it is a coupling to a state. To read the temperature of a liquid you put a probe in and let the probe reach equilibrium with the liquid \u2014 which means the probe took some of the liquid's heat. To weigh something you set it on a platform whose springs you then read; the platform pushed back on the weighed object. To see a thing you interpose a retina in the path of its photons and absorb them;",
+          "startChar": 3241,
+          "endChar": 3730,
+          "blockStart": 9,
+          "blockEnd": 9,
+          "segments": [
+            {
+              "blockId": 9,
+              "startChar": 0,
+              "endChar": 489,
+              "text": "This is not a quirk of engineering. It is a symptom. Measurement is not a window onto a state; it is a coupling to a state. To read the temperature of a liquid you put a probe in and let the probe reach equilibrium with the liquid \u2014 which means the probe took some of the liquid's heat. To weigh something you set it on a platform whose springs you then read; the platform pushed back on the weighed object. To see a thing you interpose a retina in the path of its photons and absorb them;"
+            }
+          ],
+          "audioFile": "chunk-011.wav",
+          "durationSeconds": 26.4,
+          "startTimeSeconds": 189.0,
+          "endTimeSeconds": 215.4,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 12,
+          "charCount": 194,
+          "text": " the photons are gone after. Every act of reading a state requires a coupling, and every coupling is symmetric. You cannot measure without being measured. You cannot touch without being touched.",
+          "spokenText": "the photons are gone after. Every act of reading a state requires a coupling, and every coupling is symmetric. You cannot measure without being measured. You cannot touch without being touched.",
+          "startChar": 3732,
+          "endChar": 3926,
+          "blockStart": 9,
+          "blockEnd": 9,
+          "segments": [
+            {
+              "blockId": 9,
+              "startChar": 489,
+              "endChar": 683,
+              "text": " the photons are gone after. Every act of reading a state requires a coupling, and every coupling is symmetric. You cannot measure without being measured. You cannot touch without being touched."
+            }
+          ],
+          "audioFile": "chunk-012.wav",
+          "durationSeconds": 12.8,
+          "startTimeSeconds": 215.5,
+          "endTimeSeconds": 228.3,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 13,
+          "charCount": 462,
+          "text": "Classical mechanics made the receiver picture look like it held by letting the measuring apparatus be arbitrarily small relative to the thing measured, so that the return effect was negligible. A thermometer dropped into a swimming pool reads the pool's temperature to the usual precision without anyone noticing that the pool dropped a thermometer's worth of degrees. The fiction works as long as the scales permit it. But the fiction is a fiction, not a floor.",
+          "spokenText": "Classical mechanics made the receiver picture look like it held by letting the measuring apparatus be arbitrarily small relative to the thing measured, so that the return effect was negligible. A thermometer dropped into a swimming pool reads the pool's temperature to the usual precision without anyone noticing that the pool dropped a thermometer's worth of degrees. The fiction works as long as the scales permit it. But the fiction is a fiction, not a floor.",
+          "startChar": 3928,
+          "endChar": 4390,
+          "blockStart": 10,
+          "blockEnd": 10,
+          "segments": [
+            {
+              "blockId": 10,
+              "startChar": 0,
+              "endChar": 462,
+              "text": "Classical mechanics made the receiver picture look like it held by letting the measuring apparatus be arbitrarily small relative to the thing measured, so that the return effect was negligible. A thermometer dropped into a swimming pool reads the pool's temperature to the usual precision without anyone noticing that the pool dropped a thermometer's worth of degrees. The fiction works as long as the scales permit it. But the fiction is a fiction, not a floor."
+            }
+          ],
+          "audioFile": "chunk-013.wav",
+          "durationSeconds": 22.72,
+          "startTimeSeconds": 228.4,
+          "endTimeSeconds": 251.12,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 14,
+          "charCount": 472,
+          "text": " Push the scales in the other direction \u2014 shrink the measured thing to atomic size, use probes whose quanta of interaction are comparable to the quanta of the thing being probed \u2014 and the return effect becomes quantitatively unignorable. What is called, misleadingly, the observer effect in quantum mechanics is not a mysterious feature of the quantum world. It is the ordinary feature of measurement that showed up first in the regime where it got large enough to notice.",
+          "spokenText": "Push the scales in the other direction \u2014 shrink the measured thing to atomic size, use probes whose quanta of interaction are comparable to the quanta of the thing being probed \u2014 and the return effect becomes quantitatively unignorable. What is called, misleadingly, the observer effect in quantum mechanics is not a mysterious feature of the quantum world. It is the ordinary feature of measurement that showed up first in the regime where it got large enough to notice.",
+          "startChar": 4392,
+          "endChar": 4864,
+          "blockStart": 10,
+          "blockEnd": 10,
+          "segments": [
+            {
+              "blockId": 10,
+              "startChar": 462,
+              "endChar": 934,
+              "text": " Push the scales in the other direction \u2014 shrink the measured thing to atomic size, use probes whose quanta of interaction are comparable to the quanta of the thing being probed \u2014 and the return effect becomes quantitatively unignorable. What is called, misleadingly, the observer effect in quantum mechanics is not a mysterious feature of the quantum world. It is the ordinary feature of measurement that showed up first in the regime where it got large enough to notice."
+            }
+          ],
+          "audioFile": "chunk-014.wav",
+          "durationSeconds": 25.76,
+          "startTimeSeconds": 251.22,
+          "endTimeSeconds": 276.98,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 15,
+          "charCount": 412,
+          "text": "The same pattern repeats up the ladder. Vision is not passive. The retina samples, the eyes saccade, the brain predicts and updates \u2014 perception is an active inference loop that emits predictions and reads errors. Echolocating animals hear their own clicks come back; the click is the probe and the return is the reading, and the animal is visible to anything else in earshot. Scent is inseparable from sniffing:",
+          "spokenText": "The same pattern repeats up the ladder. Vision is not passive. The retina samples, the eyes saccade, the brain predicts and updates \u2014 perception is an active inference loop that emits predictions and reads errors. Echolocating animals hear their own clicks come back; the click is the probe and the return is the reading, and the animal is visible to anything else in earshot. Scent is inseparable from sniffing:",
+          "startChar": 4866,
+          "endChar": 5278,
+          "blockStart": 11,
+          "blockEnd": 11,
+          "segments": [
+            {
+              "blockId": 11,
+              "startChar": 0,
+              "endChar": 412,
+              "text": "The same pattern repeats up the ladder. Vision is not passive. The retina samples, the eyes saccade, the brain predicts and updates \u2014 perception is an active inference loop that emits predictions and reads errors. Echolocating animals hear their own clicks come back; the click is the probe and the return is the reading, and the animal is visible to anything else in earshot. Scent is inseparable from sniffing:"
+            }
+          ],
+          "audioFile": "chunk-015.wav",
+          "durationSeconds": 25.44,
+          "startTimeSeconds": 277.08,
+          "endTimeSeconds": 302.52,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 16,
+          "charCount": 291,
+          "text": " to know a smell is to draw a pulse of air past the receptors, and the pulse is an emission. Every sensory system operates this way on inspection. The receiver picture described none of them accurately. It was always an idealization produced by not looking closely enough at what sensing is.",
+          "spokenText": "to know a smell is to draw a pulse of air past the receptors, and the pulse is an emission. Every sensory system operates this way on inspection. The receiver picture described none of them accurately. It was always an idealization produced by not looking closely enough at what sensing is.",
+          "startChar": 5280,
+          "endChar": 5571,
+          "blockStart": 11,
+          "blockEnd": 11,
+          "segments": [
+            {
+              "blockId": 11,
+              "startChar": 412,
+              "endChar": 703,
+              "text": " to know a smell is to draw a pulse of air past the receptors, and the pulse is an emission. Every sensory system operates this way on inspection. The receiver picture described none of them accurately. It was always an idealization produced by not looking closely enough at what sensing is."
+            }
+          ],
+          "audioFile": "chunk-016.wav",
+          "durationSeconds": 18.0,
+          "startTimeSeconds": 302.62,
+          "endTimeSeconds": 320.62,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 17,
+          "charCount": 424,
+          "text": "So: observation is a probe-loop. You send something in, something comes back, you update. There is no such thing as looking without, in some degree, touching. This is the technical claim, and it is unexceptionable at the level of the physics and the biology. What the rest of this essay asks is what follows if it is taken seriously when the probe is attention, and the probed is a person, a community, a market, or a world.",
+          "spokenText": "So: observation is a probe-loop. You send something in, something comes back, you update. There is no such thing as looking without, in some degree, touching. This is the technical claim, and it is unexceptionable at the level of the physics and the biology. What the rest of this essay asks is what follows if it is taken seriously when the probe is attention, and the probed is a person, a community, a market, or a world.",
+          "startChar": 5573,
+          "endChar": 5997,
+          "blockStart": 12,
+          "blockEnd": 12,
+          "segments": [
+            {
+              "blockId": 12,
+              "startChar": 0,
+              "endChar": 424,
+              "text": "So: observation is a probe-loop. You send something in, something comes back, you update. There is no such thing as looking without, in some degree, touching. This is the technical claim, and it is unexceptionable at the level of the physics and the biology. What the rest of this essay asks is what follows if it is taken seriously when the probe is attention, and the probed is a person, a community, a market, or a world."
+            }
+          ],
+          "audioFile": "chunk-017.wav",
+          "durationSeconds": 22.48,
+          "startTimeSeconds": 320.72,
+          "endTimeSeconds": 343.2,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 18,
+          "charCount": 414,
+          "text": "Attention as intervention\n\nIf every act of knowing is an emission into what is known, then the moral ledger has to be rewritten. The clean separation between finding out and interfering no longer holds at the level at which the ledger keeps books. Attention is intervention. Every sustained looking is a sustained loop-commitment. What you attend to, you change. What you refuse to attend to, you refuse to change.",
+          "spokenText": "Attention as intervention.\n\nIf every act of knowing is an emission into what is known, then the moral ledger has to be rewritten. The clean separation between finding out and interfering no longer holds at the level at which the ledger keeps books. Attention is intervention. Every sustained looking is a sustained loop-commitment. What you attend to, you change. What you refuse to attend to, you refuse to change.",
+          "startChar": 5999,
+          "endChar": 6413,
+          "blockStart": 13,
+          "blockEnd": 14,
+          "segments": [
+            {
+              "blockId": 13,
+              "startChar": 0,
+              "endChar": 25,
+              "text": "Attention as intervention"
+            },
+            {
+              "blockId": 14,
+              "startChar": 0,
+              "endChar": 387,
+              "text": "If every act of knowing is an emission into what is known, then the moral ledger has to be rewritten. The clean separation between finding out and interfering no longer holds at the level at which the ledger keeps books. Attention is intervention. Every sustained looking is a sustained loop-commitment. What you attend to, you change. What you refuse to attend to, you refuse to change."
+            }
+          ],
+          "audioFile": "chunk-018.wav",
+          "durationSeconds": 26.4,
+          "startTimeSeconds": 343.3,
+          "endTimeSeconds": 369.7,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 19,
+          "charCount": 269,
+          "text": "This is not a metaphor and it is not a provocation. It is the everyday content of the claim that measurement is coupling, applied to cases where the thing measured is itself sensitive to being measured \u2014 which is to say, applied to nearly everything that is not a rock.",
+          "spokenText": "This is not a metaphor and it is not a provocation. It is the everyday content of the claim that measurement is coupling, applied to cases where the thing measured is itself sensitive to being measured \u2014 which is to say, applied to nearly everything that is not a rock.",
+          "startChar": 6415,
+          "endChar": 6684,
+          "blockStart": 15,
+          "blockEnd": 15,
+          "segments": [
+            {
+              "blockId": 15,
+              "startChar": 0,
+              "endChar": 269,
+              "text": "This is not a metaphor and it is not a provocation. It is the everyday content of the claim that measurement is coupling, applied to cases where the thing measured is itself sensitive to being measured \u2014 which is to say, applied to nearly everything that is not a rock."
+            }
+          ],
+          "audioFile": "chunk-019.wav",
+          "durationSeconds": 15.6,
+          "startTimeSeconds": 369.8,
+          "endTimeSeconds": 385.4,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 20,
+          "charCount": 485,
+          "text": "Consider the canonical test case: Goodhart's law. When a measure becomes a target, it ceases to be a good measure. This is usually filed under administrative wisdom, a rule of thumb for people who run organizations. It is in fact the degenerate form of the probe-loop claim, the form in which the transceivance of measurement has become so obvious that nobody can pretend otherwise. You watch a number; the people being numbered notice they are being watched; they change what they do;",
+          "spokenText": "Consider the canonical test case: Goodhart's law. When a measure becomes a target, it ceases to be a good measure. This is usually filed under administrative wisdom, a rule of thumb for people who run organizations. It is in fact the degenerate form of the probe-loop claim, the form in which the transceivance of measurement has become so obvious that nobody can pretend otherwise. You watch a number; the people being numbered notice they are being watched; they change what they do;",
+          "startChar": 6686,
+          "endChar": 7171,
+          "blockStart": 16,
+          "blockEnd": 16,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 0,
+              "endChar": 485,
+              "text": "Consider the canonical test case: Goodhart's law. When a measure becomes a target, it ceases to be a good measure. This is usually filed under administrative wisdom, a rule of thumb for people who run organizations. It is in fact the degenerate form of the probe-loop claim, the form in which the transceivance of measurement has become so obvious that nobody can pretend otherwise. You watch a number; the people being numbered notice they are being watched; they change what they do;"
+            }
+          ],
+          "audioFile": "chunk-020.wav",
+          "durationSeconds": 26.0,
+          "startTimeSeconds": 385.5,
+          "endTimeSeconds": 411.5,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 21,
+          "charCount": 273,
+          "text": " the number is now the signal of a different thing than it was. The probe has been emitted; the loop has closed; what was measured is now something else. Every institution that has ever been surprised by this was operating, without admitting it, under the receiver picture.",
+          "spokenText": "the number is now the signal of a different thing than it was. The probe has been emitted; the loop has closed; what was measured is now something else. Every institution that has ever been surprised by this was operating, without admitting it, under the receiver picture.",
+          "startChar": 7173,
+          "endChar": 7446,
+          "blockStart": 16,
+          "blockEnd": 16,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 485,
+              "endChar": 758,
+              "text": " the number is now the signal of a different thing than it was. The probe has been emitted; the loop has closed; what was measured is now something else. Every institution that has ever been surprised by this was operating, without admitting it, under the receiver picture."
+            }
+          ],
+          "audioFile": "chunk-021.wav",
+          "durationSeconds": 15.84,
+          "startTimeSeconds": 411.6,
+          "endTimeSeconds": 427.44,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 22,
+          "charCount": 494,
+          "text": "Extend the move. Surveillance is not neutral \u2014 not because it is ominous, though it often is, but because observation is not the kind of thing that can be neutral. The population that knows it is watched is a different population than the one that does not. The employee whose keystrokes are counted writes different keystrokes. The citizen who suspects a file exists on her conducts herself differently in the spaces she thinks the file reaches. None of this requires malice from the watchers.",
+          "spokenText": "Extend the move. Surveillance is not neutral \u2014 not because it is ominous, though it often is, but because observation is not the kind of thing that can be neutral. The population that knows it is watched is a different population than the one that does not. The employee whose keystrokes are counted writes different keystrokes. The citizen who suspects a file exists on her conducts herself differently in the spaces she thinks the file reaches. None of this requires malice from the watchers.",
+          "startChar": 7448,
+          "endChar": 7942,
+          "blockStart": 17,
+          "blockEnd": 17,
+          "segments": [
+            {
+              "blockId": 17,
+              "startChar": 0,
+              "endChar": 494,
+              "text": "Extend the move. Surveillance is not neutral \u2014 not because it is ominous, though it often is, but because observation is not the kind of thing that can be neutral. The population that knows it is watched is a different population than the one that does not. The employee whose keystrokes are counted writes different keystrokes. The citizen who suspects a file exists on her conducts herself differently in the spaces she thinks the file reaches. None of this requires malice from the watchers."
+            }
+          ],
+          "audioFile": "chunk-022.wav",
+          "durationSeconds": 27.2,
+          "startTimeSeconds": 427.54,
+          "endTimeSeconds": 454.74,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 23,
+          "charCount": 258,
+          "text": " It is the ordinary consequence of sustained attention being a form of pressure. You cannot watch a large number of people for long without becoming part of what they are doing, and pretending otherwise is not modesty; it is confusion about what watching is.",
+          "spokenText": "It is the ordinary consequence of sustained attention being a form of pressure. You cannot watch a large number of people for long without becoming part of what they are doing, and pretending otherwise is not modesty; it is confusion about what watching is.",
+          "startChar": 7944,
+          "endChar": 8202,
+          "blockStart": 17,
+          "blockEnd": 17,
+          "segments": [
+            {
+              "blockId": 17,
+              "startChar": 494,
+              "endChar": 752,
+              "text": " It is the ordinary consequence of sustained attention being a form of pressure. You cannot watch a large number of people for long without becoming part of what they are doing, and pretending otherwise is not modesty; it is confusion about what watching is."
+            }
+          ],
+          "audioFile": "chunk-023.wav",
+          "durationSeconds": 15.04,
+          "startTimeSeconds": 454.84,
+          "endTimeSeconds": 469.88,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 24,
+          "charCount": 466,
+          "text": "Extend it further. A recommender system is not handing you content; it is running a probe-loop. Each click is an emission from you, often one you did not quite know you were making, into a coordinate system you cannot see. The system updates on the emission, which means the system acts, which means the world you next encounter is not the world you would have otherwise encountered. You are not the user of the system in the sense that you are the user of a hammer.",
+          "spokenText": "Extend it further. A recommender system is not handing you content; it is running a probe-loop. Each click is an emission from you, often one you did not quite know you were making, into a coordinate system you cannot see. The system updates on the emission, which means the system acts, which means the world you next encounter is not the world you would have otherwise encountered. You are not the user of the system in the sense that you are the user of a hammer.",
+          "startChar": 8204,
+          "endChar": 8670,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 0,
+              "endChar": 466,
+              "text": "Extend it further. A recommender system is not handing you content; it is running a probe-loop. Each click is an emission from you, often one you did not quite know you were making, into a coordinate system you cannot see. The system updates on the emission, which means the system acts, which means the world you next encounter is not the world you would have otherwise encountered. You are not the user of the system in the sense that you are the user of a hammer."
+            }
+          ],
+          "audioFile": "chunk-024.wav",
+          "durationSeconds": 24.8,
+          "startTimeSeconds": 469.98,
+          "endTimeSeconds": 494.78,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 25,
+          "charCount": 339,
+          "text": " You are the slow half of a transceiver pair, and the fast half is remaking the environment you were trying to navigate. The sense of being caught inside something after too long in one of these systems is not paranoia. It is an accurate proprioceptive response to being inside a loop whose other end cannot be reached at comparable speed.",
+          "spokenText": "You are the slow half of a transceiver pair, and the fast half is remaking the environment you were trying to navigate. The sense of being caught inside something after too long in one of these systems is not paranoia. It is an accurate proprioceptive response to being inside a loop whose other end cannot be reached at comparable speed.",
+          "startChar": 8672,
+          "endChar": 9011,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 466,
+              "endChar": 805,
+              "text": " You are the slow half of a transceiver pair, and the fast half is remaking the environment you were trying to navigate. The sense of being caught inside something after too long in one of these systems is not paranoia. It is an accurate proprioceptive response to being inside a loop whose other end cannot be reached at comparable speed."
+            }
+          ],
+          "audioFile": "chunk-025.wav",
+          "durationSeconds": 18.0,
+          "startTimeSeconds": 494.88,
+          "endTimeSeconds": 512.88,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 26,
+          "charCount": 497,
+          "text": "Extend it one more step. The peculiar unease of modern bureaucratic life \u2014 that one is continuously sized up by entities one cannot size up back \u2014 is not exactly a feeling about inscrutability. It is a feeling about loop asymmetry. A credit bureau reads thousands of coordinates about you per day, updates its model, and emits signals that enter the world you act in: prices you see, offers you get, doors that open or do not. You read no coordinates of the credit bureau. You cannot update on it.",
+          "spokenText": "Extend it one more step. The peculiar unease of modern bureaucratic life \u2014 that one is continuously sized up by entities one cannot size up back \u2014 is not exactly a feeling about inscrutability. It is a feeling about loop asymmetry. A credit bureau reads thousands of coordinates about you per day, updates its model, and emits signals that enter the world you act in: prices you see, offers you get, doors that open or do not. You read no coordinates of the credit bureau. You cannot update on it.",
+          "startChar": 9013,
+          "endChar": 9510,
+          "blockStart": 19,
+          "blockEnd": 19,
+          "segments": [
+            {
+              "blockId": 19,
+              "startChar": 0,
+              "endChar": 497,
+              "text": "Extend it one more step. The peculiar unease of modern bureaucratic life \u2014 that one is continuously sized up by entities one cannot size up back \u2014 is not exactly a feeling about inscrutability. It is a feeling about loop asymmetry. A credit bureau reads thousands of coordinates about you per day, updates its model, and emits signals that enter the world you act in: prices you see, offers you get, doors that open or do not. You read no coordinates of the credit bureau. You cannot update on it."
+            }
+          ],
+          "audioFile": "chunk-026.wav",
+          "durationSeconds": 32.32,
+          "startTimeSeconds": 512.98,
+          "endTimeSeconds": 545.3,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 27,
+          "charCount": 317,
+          "text": " You cannot emit back at anything like the same rate. The loop is closed at one end and open at the other. This is not surveillance in the melodramatic sense; it is the ordinary structure of a system that learns about you without being learnable by you. The precise name for the condition is legible without recourse.",
+          "spokenText": "You cannot emit back at anything like the same rate. The loop is closed at one end and open at the other. This is not surveillance in the melodramatic sense; it is the ordinary structure of a system that learns about you without being learnable by you. The precise name for the condition is legible without recourse.",
+          "startChar": 9512,
+          "endChar": 9829,
+          "blockStart": 19,
+          "blockEnd": 19,
+          "segments": [
+            {
+              "blockId": 19,
+              "startChar": 497,
+              "endChar": 814,
+              "text": " You cannot emit back at anything like the same rate. The loop is closed at one end and open at the other. This is not surveillance in the melodramatic sense; it is the ordinary structure of a system that learns about you without being learnable by you. The precise name for the condition is legible without recourse."
+            }
+          ],
+          "audioFile": "chunk-027.wav",
+          "durationSeconds": 17.68,
+          "startTimeSeconds": 545.4,
+          "endTimeSeconds": 563.08,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 28,
+          "charCount": 220,
+          "text": " You are continuously measured by probes you cannot probe back, and whatever the probes are coming to know is also shaping what you now are, because the probe's outputs enter the environment you are trying to act within.",
+          "spokenText": "You are continuously measured by probes you cannot probe back, and whatever the probes are coming to know is also shaping what you now are, because the probe's outputs enter the environment you are trying to act within.",
+          "startChar": 9831,
+          "endChar": 10051,
+          "blockStart": 19,
+          "blockEnd": 19,
+          "segments": [
+            {
+              "blockId": 19,
+              "startChar": 814,
+              "endChar": 1034,
+              "text": " You are continuously measured by probes you cannot probe back, and whatever the probes are coming to know is also shaping what you now are, because the probe's outputs enter the environment you are trying to act within."
+            }
+          ],
+          "audioFile": "chunk-028.wav",
+          "durationSeconds": 12.24,
+          "startTimeSeconds": 563.18,
+          "endTimeSeconds": 575.42,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 29,
+          "charCount": 252,
+          "text": "The discomfort people report about these systems is correct. The thing that stops the discomfort from becoming usable is naming it wrong. It is not that the systems know too much. It is that knowing is an action, and the action is running only one way.",
+          "spokenText": "The discomfort people report about these systems is correct. The thing that stops the discomfort from becoming usable is naming it wrong. It is not that the systems know too much. It is that knowing is an action, and the action is running only one way.",
+          "startChar": 10053,
+          "endChar": 10305,
+          "blockStart": 20,
+          "blockEnd": 20,
+          "segments": [
+            {
+              "blockId": 20,
+              "startChar": 0,
+              "endChar": 252,
+              "text": "The discomfort people report about these systems is correct. The thing that stops the discomfort from becoming usable is naming it wrong. It is not that the systems know too much. It is that knowing is an action, and the action is running only one way."
+            }
+          ],
+          "audioFile": "chunk-029.wav",
+          "durationSeconds": 15.12,
+          "startTimeSeconds": 575.52,
+          "endTimeSeconds": 590.64,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 30,
+          "charCount": 459,
+          "text": "The ethics the receiver picture concealed\n\nIf looking is doing, then the pretense of neutral observation had always been doing work for certain kinds of actors. A journalist who claims only to report is at minimum claiming that reporting has no gradient along which the reported can slide. A researcher who claims only to describe is at minimum claiming that the described can be described without the describing becoming a new condition they have to live in.",
+          "spokenText": "The ethics the receiver picture concealed.\n\nIf looking is doing, then the pretense of neutral observation had always been doing work for certain kinds of actors. A journalist who claims only to report is at minimum claiming that reporting has no gradient along which the reported can slide. A researcher who claims only to describe is at minimum claiming that the described can be described without the describing becoming a new condition they have to live in.",
+          "startChar": 10307,
+          "endChar": 10766,
+          "blockStart": 21,
+          "blockEnd": 22,
+          "segments": [
+            {
+              "blockId": 21,
+              "startChar": 0,
+              "endChar": 41,
+              "text": "The ethics the receiver picture concealed"
+            },
+            {
+              "blockId": 22,
+              "startChar": 0,
+              "endChar": 416,
+              "text": "If looking is doing, then the pretense of neutral observation had always been doing work for certain kinds of actors. A journalist who claims only to report is at minimum claiming that reporting has no gradient along which the reported can slide. A researcher who claims only to describe is at minimum claiming that the described can be described without the describing becoming a new condition they have to live in."
+            }
+          ],
+          "audioFile": "chunk-030.wav",
+          "durationSeconds": 26.32,
+          "startTimeSeconds": 590.74,
+          "endTimeSeconds": 617.06,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 31,
+          "charCount": 172,
+          "text": " These claims are sometimes close enough to true to be useful, but they are always fictions, and they have always cost something. The question is only who carried the cost.",
+          "spokenText": "These claims are sometimes close enough to true to be useful, but they are always fictions, and they have always cost something. The question is only who carried the cost.",
+          "startChar": 10768,
+          "endChar": 10940,
+          "blockStart": 22,
+          "blockEnd": 22,
+          "segments": [
+            {
+              "blockId": 22,
+              "startChar": 416,
+              "endChar": 588,
+              "text": " These claims are sometimes close enough to true to be useful, but they are always fictions, and they have always cost something. The question is only who carried the cost."
+            }
+          ],
+          "audioFile": "chunk-031.wav",
+          "durationSeconds": 9.28,
+          "startTimeSeconds": 617.16,
+          "endTimeSeconds": 626.44,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 32,
+          "charCount": 489,
+          "text": "Under the receiver picture, the cost was paid and invisible. The community studied by an ethnographer was changed by the study; the study's findings were treated as describing the community, with no line-item for the change the study itself had introduced. The market measured by an indicator was shifted by the measurement; the indicator was treated as descriptive, with no line-item for the shift. The lover or friend or child scrutinized by a close observer was altered by the scrutiny;",
+          "spokenText": "Under the receiver picture, the cost was paid and invisible. The community studied by an ethnographer was changed by the study; the study's findings were treated as describing the community, with no line-item for the change the study itself had introduced. The market measured by an indicator was shifted by the measurement; the indicator was treated as descriptive, with no line-item for the shift. The lover or friend or child scrutinized by a close observer was altered by the scrutiny;",
+          "startChar": 10942,
+          "endChar": 11431,
+          "blockStart": 23,
+          "blockEnd": 23,
+          "segments": [
+            {
+              "blockId": 23,
+              "startChar": 0,
+              "endChar": 489,
+              "text": "Under the receiver picture, the cost was paid and invisible. The community studied by an ethnographer was changed by the study; the study's findings were treated as describing the community, with no line-item for the change the study itself had introduced. The market measured by an indicator was shifted by the measurement; the indicator was treated as descriptive, with no line-item for the shift. The lover or friend or child scrutinized by a close observer was altered by the scrutiny;"
+            }
+          ],
+          "audioFile": "chunk-032.wav",
+          "durationSeconds": 29.44,
+          "startTimeSeconds": 626.54,
+          "endTimeSeconds": 655.98,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 33,
+          "charCount": 234,
+          "text": " the observer reported what they saw, with no line-item for what they had made. In every case the emission was real and the bookkeeping was silent about it. Somebody metabolized the emission. It just wasn't the person holding the pen.",
+          "spokenText": "the observer reported what they saw, with no line-item for what they had made. In every case the emission was real and the bookkeeping was silent about it. Somebody metabolized the emission. It just wasn't the person holding the pen.",
+          "startChar": 11433,
+          "endChar": 11667,
+          "blockStart": 23,
+          "blockEnd": 23,
+          "segments": [
+            {
+              "blockId": 23,
+              "startChar": 489,
+              "endChar": 723,
+              "text": " the observer reported what they saw, with no line-item for what they had made. In every case the emission was real and the bookkeeping was silent about it. Somebody metabolized the emission. It just wasn't the person holding the pen."
+            }
+          ],
+          "audioFile": "chunk-033.wav",
+          "durationSeconds": 13.84,
+          "startTimeSeconds": 656.08,
+          "endTimeSeconds": 669.92,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 34,
+          "charCount": 468,
+          "text": "Naming the receiver picture as a picture \u2014 rather than as the way things are \u2014 makes this visible. The knower's debt to the known is not an add-on imposed by unusually sensitive ethics. It is a consequence of what knowing is. If reception is the wrong word for it, then the ethical categories that rode on the word have to be rebuilt. Innocence is not available for a probe-loop. Neutrality is not available for a coupling. Detachment is not available for an emission.",
+          "spokenText": "Naming the receiver picture as a picture \u2014 rather than as the way things are \u2014 makes this visible. The knower's debt to the known is not an add-on imposed by unusually sensitive ethics. It is a consequence of what knowing is. If reception is the wrong word for it, then the ethical categories that rode on the word have to be rebuilt. Innocence is not available for a probe-loop. Neutrality is not available for a coupling. Detachment is not available for an emission.",
+          "startChar": 11669,
+          "endChar": 12137,
+          "blockStart": 24,
+          "blockEnd": 24,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 0,
+              "endChar": 468,
+              "text": "Naming the receiver picture as a picture \u2014 rather than as the way things are \u2014 makes this visible. The knower's debt to the known is not an add-on imposed by unusually sensitive ethics. It is a consequence of what knowing is. If reception is the wrong word for it, then the ethical categories that rode on the word have to be rebuilt. Innocence is not available for a probe-loop. Neutrality is not available for a coupling. Detachment is not available for an emission."
+            }
+          ],
+          "audioFile": "chunk-034.wav",
+          "durationSeconds": 26.56,
+          "startTimeSeconds": 670.02,
+          "endTimeSeconds": 696.58,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 35,
+          "charCount": 474,
+          "text": " What is available \u2014 what replaces all of these \u2014 is something like accountability for the loops one is part of.\n\nWhich loops\n\nThe first response to this claim is almost always a retreat: if attention is intervention, then perhaps one should attend less, watch fewer things, keep to oneself. This is not wrong as a corrective to excess, but it misunderstands the structure. You do not get to be outside the loops by closing your eyes. Refusal of attention is also an action.",
+          "spokenText": "What is available \u2014 what replaces all of these \u2014 is something like accountability for the loops one is part of.\n\nWhich loops.\n\nThe first response to this claim is almost always a retreat: if attention is intervention, then perhaps one should attend less, watch fewer things, keep to oneself. This is not wrong as a corrective to excess, but it misunderstands the structure. You do not get to be outside the loops by closing your eyes. Refusal of attention is also an action.",
+          "startChar": 12139,
+          "endChar": 12613,
+          "blockStart": 24,
+          "blockEnd": 26,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 468,
+              "endChar": 580,
+              "text": " What is available \u2014 what replaces all of these \u2014 is something like accountability for the loops one is part of."
+            },
+            {
+              "blockId": 25,
+              "startChar": 0,
+              "endChar": 11,
+              "text": "Which loops"
+            },
+            {
+              "blockId": 26,
+              "startChar": 0,
+              "endChar": 347,
+              "text": "The first response to this claim is almost always a retreat: if attention is intervention, then perhaps one should attend less, watch fewer things, keep to oneself. This is not wrong as a corrective to excess, but it misunderstands the structure. You do not get to be outside the loops by closing your eyes. Refusal of attention is also an action."
+            }
+          ],
+          "audioFile": "chunk-035.wav",
+          "durationSeconds": 25.52,
+          "startTimeSeconds": 696.68,
+          "endTimeSeconds": 722.2,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 36,
+          "charCount": 290,
+          "text": " The things you look away from go dark at whatever rate they would have gone dark without you, and the communities and projects and people you decline to measure are the ones your emissions no longer support. What you do not feed does not grow. What you do not probe does not stay definite.",
+          "spokenText": "The things you look away from go dark at whatever rate they would have gone dark without you, and the communities and projects and people you decline to measure are the ones your emissions no longer support. What you do not feed does not grow. What you do not probe does not stay definite.",
+          "startChar": 12615,
+          "endChar": 12905,
+          "blockStart": 26,
+          "blockEnd": 26,
+          "segments": [
+            {
+              "blockId": 26,
+              "startChar": 347,
+              "endChar": 637,
+              "text": " The things you look away from go dark at whatever rate they would have gone dark without you, and the communities and projects and people you decline to measure are the ones your emissions no longer support. What you do not feed does not grow. What you do not probe does not stay definite."
+            }
+          ],
+          "audioFile": "chunk-036.wav",
+          "durationSeconds": 15.36,
+          "startTimeSeconds": 722.3,
+          "endTimeSeconds": 737.66,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 37,
+          "charCount": 464,
+          "text": "So the question is not whether to emit, which is not a live option. The question is which loops to close and which to keep closing. Every sustained attention is a commitment of a probe-rate to a particular coordinate. Over time, the pattern of your emissions \u2014 what you read, who you listen to, whose work you use, what you measure, what you let yourself notice \u2014 is the pattern of what you are helping hold definite in the world. This is not a metaphysical claim.",
+          "spokenText": "So the question is not whether to emit, which is not a live option. The question is which loops to close and which to keep closing. Every sustained attention is a commitment of a probe-rate to a particular coordinate. Over time, the pattern of your emissions \u2014 what you read, who you listen to, whose work you use, what you measure, what you let yourself notice \u2014 is the pattern of what you are helping hold definite in the world. This is not a metaphysical claim.",
+          "startChar": 12907,
+          "endChar": 13371,
+          "blockStart": 27,
+          "blockEnd": 27,
+          "segments": [
+            {
+              "blockId": 27,
+              "startChar": 0,
+              "endChar": 464,
+              "text": "So the question is not whether to emit, which is not a live option. The question is which loops to close and which to keep closing. Every sustained attention is a commitment of a probe-rate to a particular coordinate. Over time, the pattern of your emissions \u2014 what you read, who you listen to, whose work you use, what you measure, what you let yourself notice \u2014 is the pattern of what you are helping hold definite in the world. This is not a metaphysical claim."
+            }
+          ],
+          "audioFile": "chunk-037.wav",
+          "durationSeconds": 25.68,
+          "startTimeSeconds": 737.76,
+          "endTimeSeconds": 763.44,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 38,
+          "charCount": 170,
+          "text": " It is the transceivance claim run over weeks and years. The world you live in is downstream, in specifiable and often traceable ways, of which probe-loops you kept open.",
+          "spokenText": "It is the transceivance claim run over weeks and years. The world you live in is downstream, in specifiable and often traceable ways, of which probe-loops you kept open.",
+          "startChar": 13373,
+          "endChar": 13543,
+          "blockStart": 27,
+          "blockEnd": 27,
+          "segments": [
+            {
+              "blockId": 27,
+              "startChar": 464,
+              "endChar": 634,
+              "text": " It is the transceivance claim run over weeks and years. The world you live in is downstream, in specifiable and often traceable ways, of which probe-loops you kept open."
+            }
+          ],
+          "audioFile": "chunk-038.wav",
+          "durationSeconds": 11.2,
+          "startTimeSeconds": 763.54,
+          "endTimeSeconds": 774.74,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 39,
+          "charCount": 465,
+          "text": "Contemplative traditions have been saying versions of this for a very long time, and it is worth hearing them once the frame makes their claim cash out in ordinary physical terms. What you attend to, you feed; what you feed, grows. This reads as mysticism when it is separated from any account of why it should be true. Under the transceivance picture, it is just what attention is. Attention is a sustained probe-loop. A sustained probe-loop emits into its target.",
+          "spokenText": "Contemplative traditions have been saying versions of this for a very long time, and it is worth hearing them once the frame makes their claim cash out in ordinary physical terms. What you attend to, you feed; what you feed, grows. This reads as mysticism when it is separated from any account of why it should be true. Under the transceivance picture, it is just what attention is. Attention is a sustained probe-loop. A sustained probe-loop emits into its target.",
+          "startChar": 13545,
+          "endChar": 14010,
+          "blockStart": 28,
+          "blockEnd": 28,
+          "segments": [
+            {
+              "blockId": 28,
+              "startChar": 0,
+              "endChar": 465,
+              "text": "Contemplative traditions have been saying versions of this for a very long time, and it is worth hearing them once the frame makes their claim cash out in ordinary physical terms. What you attend to, you feed; what you feed, grows. This reads as mysticism when it is separated from any account of why it should be true. Under the transceivance picture, it is just what attention is. Attention is a sustained probe-loop. A sustained probe-loop emits into its target."
+            }
+          ],
+          "audioFile": "chunk-039.wav",
+          "durationSeconds": 24.24,
+          "startTimeSeconds": 774.84,
+          "endTimeSeconds": 799.08,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 40,
+          "charCount": 443,
+          "text": " The emission shapes what the target next becomes. The target, now shaped, is what the next emission enters. The pattern compounds. This is not a special fact about meditation. It is an ordinary fact about being a creature whose looking is also doing, and who cannot therefore look at many things at once without consequence. The monastic's discipline of attention is a practice of loop-selection. So is everyone else's, just less consciously.",
+          "spokenText": "The emission shapes what the target next becomes. The target, now shaped, is what the next emission enters. The pattern compounds. This is not a special fact about meditation. It is an ordinary fact about being a creature whose looking is also doing, and who cannot therefore look at many things at once without consequence. The monastic's discipline of attention is a practice of loop-selection. So is everyone else's, just less consciously.",
+          "startChar": 14012,
+          "endChar": 14455,
+          "blockStart": 28,
+          "blockEnd": 28,
+          "segments": [
+            {
+              "blockId": 28,
+              "startChar": 465,
+              "endChar": 908,
+              "text": " The emission shapes what the target next becomes. The target, now shaped, is what the next emission enters. The pattern compounds. This is not a special fact about meditation. It is an ordinary fact about being a creature whose looking is also doing, and who cannot therefore look at many things at once without consequence. The monastic's discipline of attention is a practice of loop-selection. So is everyone else's, just less consciously."
+            }
+          ],
+          "audioFile": "chunk-040.wav",
+          "durationSeconds": 25.28,
+          "startTimeSeconds": 799.18,
+          "endTimeSeconds": 824.46,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 41,
+          "charCount": 436,
+          "text": "The view from nowhere\n\nThe final move is the one the argument has been walking toward from the first paragraph. The view from nowhere \u2014 the ideal of the observer who is not in the scene, whose knowing leaves no trace, whose objectivity is purchased by vanishing from the account \u2014 was always epistemologically incoherent. This has been clear in philosophy of science for at least a century; it has been clear in physics since the 1920s;",
+          "spokenText": "The view from nowhere.\n\nThe final move is the one the argument has been walking toward from the first paragraph. The view from nowhere \u2014 the ideal of the observer who is not in the scene, whose knowing leaves no trace, whose objectivity is purchased by vanishing from the account \u2014 was always epistemologically incoherent. This has been clear in philosophy of science for at least a century; it has been clear in physics since the 1920s;",
+          "startChar": 14457,
+          "endChar": 14893,
+          "blockStart": 29,
+          "blockEnd": 30,
+          "segments": [
+            {
+              "blockId": 29,
+              "startChar": 0,
+              "endChar": 21,
+              "text": "The view from nowhere"
+            },
+            {
+              "blockId": 30,
+              "startChar": 0,
+              "endChar": 413,
+              "text": "The final move is the one the argument has been walking toward from the first paragraph. The view from nowhere \u2014 the ideal of the observer who is not in the scene, whose knowing leaves no trace, whose objectivity is purchased by vanishing from the account \u2014 was always epistemologically incoherent. This has been clear in philosophy of science for at least a century; it has been clear in physics since the 1920s;"
+            }
+          ],
+          "audioFile": "chunk-041.wav",
+          "durationSeconds": 25.04,
+          "startTimeSeconds": 824.56,
+          "endTimeSeconds": 849.6,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 42,
+          "charCount": 465,
+          "text": " it has been clear in anthropology since ethnographers started writing about what their presence had done. What has been less clearly said is the corollary. If the view from nowhere is incoherent, it is not only wrong; it is not available. It is not a thing one can aspire to and fall short of. It is not a thing one can approximate. It is a posture that describes no possible actor, and insisting on it has never produced modesty. It has produced unaccountability.",
+          "spokenText": "it has been clear in anthropology since ethnographers started writing about what their presence had done. What has been less clearly said is the corollary. If the view from nowhere is incoherent, it is not only wrong; it is not available. It is not a thing one can aspire to and fall short of. It is not a thing one can approximate. It is a posture that describes no possible actor, and insisting on it has never produced modesty. It has produced unaccountability.",
+          "startChar": 14895,
+          "endChar": 15360,
+          "blockStart": 30,
+          "blockEnd": 30,
+          "segments": [
+            {
+              "blockId": 30,
+              "startChar": 413,
+              "endChar": 878,
+              "text": " it has been clear in anthropology since ethnographers started writing about what their presence had done. What has been less clearly said is the corollary. If the view from nowhere is incoherent, it is not only wrong; it is not available. It is not a thing one can aspire to and fall short of. It is not a thing one can approximate. It is a posture that describes no possible actor, and insisting on it has never produced modesty. It has produced unaccountability."
+            }
+          ],
+          "audioFile": "chunk-042.wav",
+          "durationSeconds": 25.36,
+          "startTimeSeconds": 849.7,
+          "endTimeSeconds": 875.06,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 43,
+          "charCount": 418,
+          "text": "Replacing it is the work of a lifetime. It involves accepting that one is always in the scene, that one's looking is always doing, that every institution one participates in is running loops whose effects one is partly responsible for, and that the question which loops am I closing is not optional but continuous. It is not the question of a saint. It is the question of anyone who has understood what measurement is.",
+          "spokenText": "Replacing it is the work of a lifetime. It involves accepting that one is always in the scene, that one's looking is always doing, that every institution one participates in is running loops whose effects one is partly responsible for, and that the question which loops am I closing is not optional but continuous. It is not the question of a saint. It is the question of anyone who has understood what measurement is.",
+          "startChar": 15362,
+          "endChar": 15780,
+          "blockStart": 31,
+          "blockEnd": 31,
+          "segments": [
+            {
+              "blockId": 31,
+              "startChar": 0,
+              "endChar": 418,
+              "text": "Replacing it is the work of a lifetime. It involves accepting that one is always in the scene, that one's looking is always doing, that every institution one participates in is running loops whose effects one is partly responsible for, and that the question which loops am I closing is not optional but continuous. It is not the question of a saint. It is the question of anyone who has understood what measurement is."
+            }
+          ],
+          "audioFile": "chunk-043.wav",
+          "durationSeconds": 25.04,
+          "startTimeSeconds": 875.16,
+          "endTimeSeconds": 900.2,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 44,
+          "charCount": 267,
+          "text": "There is no receiving. There are only loops, closed at different rates by different couplings, and a lifetime of choices about which ones to keep closing. The first two words of the essay's title are the whole of its claim. The second two are the whole of its ethics.",
+          "spokenText": "There is no receiving. There are only loops, closed at different rates by different couplings, and a lifetime of choices about which ones to keep closing. The first two words of the essay's title are the whole of its claim. The second two are the whole of its ethics.",
+          "startChar": 15782,
+          "endChar": 16049,
+          "blockStart": 32,
+          "blockEnd": 32,
+          "segments": [
+            {
+              "blockId": 32,
+              "startChar": 0,
+              "endChar": 267,
+              "text": "There is no receiving. There are only loops, closed at different rates by different couplings, and a lifetime of choices about which ones to keep closing. The first two words of the essay's title are the whole of its claim. The second two are the whole of its ethics."
+            }
+          ],
+          "audioFile": "chunk-044.wav",
+          "durationSeconds": 16.32,
+          "startTimeSeconds": 900.3,
+          "endTimeSeconds": 916.62,
+          "pauseAfterMs": 0
+        }
+      ],
+      "blockCount": 33
+    },
+    "publicAssets": {
+      "audioSrc": "/assets/post-audio/2026-04-22-no-receiving/post.mp3",
+      "mimeType": "audio/mpeg"
+    },
+    "privateArtifacts": {
+      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving",
+      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving/metadata.json",
+      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving/chunks.json",
+      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving/post.wav",
+      "mp3Path": "public/assets/post-audio/2026-04-22-no-receiving/post.mp3"
+    }
+  }
+}

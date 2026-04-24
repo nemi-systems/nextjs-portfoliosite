@@ -1,6 +1,6 @@
 # Nemi Portfolio Site
 
-Static portfolio and app host for `nemi`, built with Next.js App Router, TypeScript, and Tailwind CSS. The repo now manages the root site plus subdomain-hosted apps for `synth` and `gravitylens`.
+Static portfolio site for `nemi`, built with Next.js App Router, TypeScript, and Tailwind CSS.
 
 ## Architecture
 - `src/app/`: App Router routes and UI blocks.
@@ -21,14 +21,10 @@ Static portfolio and app host for `nemi`, built with Next.js App Router, TypeScr
 - Bootstrap app dependencies: `npm run bootstrap:apps`
 - Build the static export: `npm run build`
 - Build all hosted apps: `npm run build:apps`
-- Serve the built export locally: `npm run serve`
+- Serve the portfolio export locally at `http://localhost:3000`: `npm run serve`
 - Lint: `npm run lint`
 - Optional dev shell: `nix develop`
-- Local hosted-app preview URLs after `npm run serve`:
-  - `http://localhost:3000`
-  - `http://synth.localhost:3000`
-  - `http://gravitylens.localhost:3000`
-- If your browser does not resolve `*.localhost` automatically, add temporary hosts entries for the specific preview names you want to use.
+- Hosted apps should be served separately from their own project workspaces and ports during local development.
 - SVG utility prerequisite: `uv tool install --editable /path/to/svg-layer-tool`
 - Generate layered SVGs for a post: `npm run svg:post -- --post src/_posts/<post>.md`
 - Optimize generated SVG assets: `npm run svg:optimize`

@@ -16,40 +16,6 @@ function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
 
-function buildCard(img: HTMLImageElement): HTMLElement | null {
-  if (img.closest('.svg-depth-card')) {
-    return img.closest('.svg-depth-card') as HTMLElement;
-  }
-
-  const parent = img.parentElement;
-  if (!parent) {
-    return null;
-  }
-
-  const card = document.createElement('span');
-  card.className = 'svg-depth-card';
-
-  const bg = img.cloneNode(true) as HTMLImageElement;
-  bg.className = 'svg-layer svg-layer-bg';
-  bg.alt = '';
-  bg.setAttribute('aria-hidden', 'true');
-
-  const mid = img.cloneNode(true) as HTMLImageElement;
-  mid.className = 'svg-layer svg-layer-mid';
-  mid.alt = '';
-  mid.setAttribute('aria-hidden', 'true');
-
-  img.classList.remove('svg-3d-source');
-  img.classList.add('svg-layer', 'svg-layer-fg');
-
-  parent.insertBefore(card, img);
-  card.appendChild(bg);
-  card.appendChild(mid);
-  card.appendChild(img);
-
-  return card;
-}
-
 function setCardVars(card: HTMLElement, x: number, y: number) {
   const rotateX = clamp(-y * 8.5, -12, 12);
   const rotateY = clamp(x * 10.5, -13, 13);
@@ -107,13 +73,6 @@ export default function SvgImageReactivity() {
     const cards = new Set<HTMLElement>(
       Array.from(document.querySelectorAll<HTMLElement>('.prose .svg-depth-card'))
     );
-    const images = Array.from(document.querySelectorAll<HTMLImageElement>('.prose img.svg-3d-source'));
-    for (const img of images) {
-      const built = buildCard(img);
-      if (built) {
-        cards.add(built);
-      }
-    }
 
     if (!cards.size) {
       return;

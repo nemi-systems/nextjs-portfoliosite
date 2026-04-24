@@ -1,0 +1,1158 @@
+{
+  "version": 3,
+  "postId": "2026-04-21-you-cannot-look-without-touching",
+  "generatedAt": "2026-04-24T03:30:03Z",
+  "status": "ok",
+  "narration": {
+    "postPath": "src/_posts/2026-04-21-you-cannot-look-without-touching.md",
+    "language": "English",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "taskType": "Base",
+    "refAudio": "reference-audio.wav",
+    "xVectorOnlyMode": true,
+    "instruct": null,
+    "usedDefaultInstruct": false,
+    "generationKwargs": {
+      "do_sample": true,
+      "subtalker_dosample": true,
+      "non_streaming_mode": true
+    },
+    "chunkCount": 48,
+    "pauseMs": 100,
+    "durationSeconds": 962.3,
+    "transcript": {
+      "text": "The mistake is old and comfortable. Perception is a window. The senses are apertures through which the world leaks pre-formed facts into a receiver called the mind. The observer stands on one side of the channel and the observed on the other, and between them runs a wire down which information travels in one direction. The picture is so natural that it barely registers as a picture at all \u2014 it feels like the shape of experience itself. And it is wrong.\n\n Not wrong in a subtle way that asks for refinement at the edges, but wrong in its central metaphor, because the window describes nothing that actually happens when an organism comes to know anything about its world.\n\nWhat actually happens is a loop. The organism emits something \u2014 a photon, a sound pulse, a chemical plume, a saccade, a question \u2014 and reads what comes back, and the coordinates it can know about the world are exactly the coordinates that loop can make definite. There is no channel running in one direction. There is no passive reception.\n\n Every transducer in biology and in physics has two sides, and the side usually called sensing is the same mechanism usually called acting, with the arrow reversed.\n\nI want to begin with the case where the reversal is explicit, because it is easier to see in a device than in your own body. A synthesizer is a sensing instrument that performs its sensing through emission. The musician turns a knob \u2014 a low-pass filter opens, an oscillator's waveform shifts, an envelope's attack shortens \u2014 and the musician's ears report whether the space has moved toward what was wanted. The knob is the probe. The sound is the return.\n\n The musician is coupled to the loop, and there is no other way to navigate the space. No one has ever designed a synth patch by reading the manual and knowing, in advance, what a given combination of parameters will sound like. The space is too high-dimensional and too badly behaved for that. You find the patch by probing. You turn the knob, listen, turn again. And the patch \u2014 the representation you eventually stabilize \u2014 is the residue of the loop. It did not pre-exist the probing.\n\n It came into being through the coupling of knob and ear, extended over enough rounds that some region of the space became reliably locatable.\n\nThe synthesizer is the clearest case because its emissions are audible and its receiver is the same musician doing the emitting. But what the synthesizer makes legible is already the structure of biological sensing. Consider the bat.\n\nA bat does not hear its environment. A bat listens for the echoes of sounds it is itself emitting. The bat's perceptual world is constituted by a continuous acoustic probe \u2014 click, listen, click, listen \u2014 and the spatial coordinates the bat has access to are the coordinates those echoes make definite. Range, surface texture, the size and velocity of small flying bodies: these are not objective facts the bat reads off a pre-formed scene.\n\n They are properties that come into existence for the bat through the specific coupling of its emissions and its returns. A bat in a silent world is a bat with no world. The emission is not an accessory to the perception. The emission is the perception, closing a loop.\n\nEcholocation is the case where the probe-structure of sensing is impossible to miss, because the emission is loud and directional and happens at a frequency we can, with equipment, pick up. But the structure is not unique to bats or to sonar. It is the structure of perception generally. We notice it in the bat because the bat's emission is foreign to us \u2014 we do not hear ultrasound, so when we learn that the bat hears by emitting, we register the emission as extra.\n\n What we miss is that our own senses are organized the same way, with emissions we have habitualized to the point of invisibility.\n\nVision is not the passive reception of light that landed in the eye. Vision is saccadic. The eye jumps three or four times a second to a new fixation, actively gathering samples from the places the brain is querying; between saccades, the visual world is reconstructed from the samples plus predictions about what the fovea will find when it lands. The feeling of a stable, continuous, filled-in scene is a construction.\n\n You cannot even see your own saccades \u2014 the brain suppresses the motion blur that would otherwise accompany every jump \u2014 which is why it is so easy to believe that seeing is just opening a window. It isn't. Seeing is a continuous motor program that aims a narrow high-resolution sensor at points of interest, and the points of interest are selected by what the system is trying to know. The probe is the gaze. The world that becomes visible is the world the gaze has gone asking after.\n\nOlfaction has the probe structure even more explicitly, though the motor component is smaller. You cannot smell without sniffing. A held breath is a closed channel. The sniff is a probe: a controlled inrush of air across the olfactory epithelium that modulates the sample. Dogs, whose olfactory world is far higher-dimensional than ours, sniff constantly and in complex rhythms, and what they are doing is running a probe-loop whose returns we are not equipped to read.\n\n A dog moving through a field is emitting motor commands \u2014 the rapid, patterned sniff \u2014 and receiving olfactory information, and the two are the same activity run in different directions. You cannot separate the dog's sensing from the dog's breathing any more than you can separate the bat's hearing from the bat's clicks. There is no receiver without an emitter. There is only the loop.\n\nThe same is true for touch, for taste, for proprioception, for every sensory modality we have. Touch is active \u2014 you explore a surface by moving against it, and the felt shape is what your motor-probe recovers from the resistive feedback. Taste involves manipulating food in the mouth, with saliva and tongue and jaw all working as a slow probe into chemical space.\n\n Proprioception is the closed loop of motor output and sensory return by which the nervous system tracks the configuration of its own body. We do not notice these loops because we have been inside them the whole of our lives. The noticing has to be done deliberately, from outside the habit.\n\nThat there is no sensor without an emitter is not an accident of biology. It is a fact about how transducers work. A microphone is a speaker run in reverse. The diaphragm that vibrates outward when current flows through its coil will generate a current when the diaphragm is vibrated by incoming sound. A motor is a generator run backward: push current through the windings and the rotor turns; rotate the rotor and current flows through the windings.\n\n The device does not have two different functions. The device has one physical coupling between electrical and mechanical domains, and which function it is performing depends only on which direction the energy is flowing at that moment. Sensing and acting are the same machinery, differently oriented in time.\n\nWhich means that every sensory system \u2014 biological or artificial \u2014 is also, in principle, an emission system. The dimensions along which it can receive are the dimensions along which it can send. A mantis shrimp, whose photoreceptors span twelve color channels, also signals to other shrimp in those channels: the signaling is a natural exploitation of the receptive apparatus. Dogs mark territory with scents in exactly the olfactory bands their noses are most tuned to.\n\n Birds that see ultraviolet have ultraviolet plumage. The representation an organism uses to know its world is also the representation the organism uses to produce its contribution to that world. Perception and expression are the same coordinate system, read forward or backward. There is no read-only relationship with a world.\n\nNow it becomes possible to say what is actually going on in the double-slit experiment, and to notice that it is not unusual.\n\nUnder the window model, the interference pattern and its disappearance are mysterious. A photon passes through one of two slits. A detector at the slits registers which one. When the detector is running, the interference pattern on the far wall vanishes; when the detector is off, the pattern returns. The photon \"knows\" whether it is being watched. This sounds magical because the window model forbids it \u2014 windows do not change what they look at, because that is what it means to be a window.\n\n If the observation is somehow affecting the photon, something very strange is going on with causation, or with consciousness, or with the nature of reality itself.\n\nUnder the probe model, nothing magical is happening at all. To detect which slit the photon passed through, the detector must emit something \u2014 a photon of its own, a field, an interacting quantum of some kind \u2014 that couples to the photon being measured. The \"observation\" is an interaction, and interactions are symmetric. The probe you sent in to read the state is now part of the state. Which-path information is not an inert fact waiting to be noticed;\n\n it is a property that comes into definite existence only when a probe has been committed to resolving it. No probe, no definite which-path. No definite which-path, no collapse of the interference. The wave behavior and the particle behavior are not two natures the photon has. They are two regimes of the coupled apparatus \u2014 the regime where a which-path probe has been emitted into the system, and the regime where it hasn't. The photon does not switch costumes. The loop switches topology.\n\nThe delayed-choice and quantum-eraser experiments, which seem to require retrocausation under the window model, become ordinary under the probe model. There is nothing to retrocause, because there was no earlier fact waiting to be preserved or violated. The fact comes into being with the loop. Which slit the photon went through is a meaningful question only inside an apparatus that closed the loop on that question.\n\n If the loop gets erased before completion, the question was never actually asked, and no answer needs to have existed.\n\nHeisenberg understood this, though the vocabulary available to him made it hard to say cleanly. The usual apologetic reading \u2014 that measurement is clumsy and jostles the system, so we can't quite get at the pre-existing values \u2014 keeps the window and blames the thumb. It is not the reading he was offering. What he was saying is that position and momentum are not properties the particle has prior to and independent of measurement.\n\n They are properties the particle has with respect to a specific probing loop, and different loops make different properties definite at the cost of others. The uncertainty relation is not a limit on how well we can sneak up on pre-existing values. It is a statement about which coordinates a loop can simultaneously define.\n\nWhich is exactly the structure of the bat, the dog, the synthesizer, the eye. The sensory world of an organism is the set of dimensions its probe-loops can make definite. The bat's echolocation loop makes acoustic range and surface texture definite. The human visual loop makes certain spatial and chromatic coordinates definite. The dog's olfactory loop makes a space of scent-gradients definite that is almost entirely dark to us. Neither organism is receiving a pre-formed world through a window.\n\n Each is closing a loop that brings certain properties of the world into determinate existence for itself. Jakob von Uexk\u00fcll gestured at this in 1934 with the word Umwelt, but he had no way to make the claim precise, because the quantum case \u2014 where probe-dependence is quantitatively large enough to notice at the level of individual events \u2014 was not yet available to force the general point. Now it is. Quantum mechanics is not the domain where something weird happens to perception;\n\n it is the domain where the ordinary structure of perception stops being ignorable.\n\nWhat this does to Nagel's question about the bat is to split it into two.\n\nNagel asked: what is it like to be a bat? And the usual answer is that we cannot know, because the subjective quality of bat-experience is inaccessible from the human perspective. The bat has a sensory modality we do not have, and no amount of reasoning from outside can reconstruct what that modality is like from inside. This is true as far as it goes. But it does not go far enough. Bat-experience is not the reception of a bat-world through a bat-window. Bat-experience is a coupled loop:\n\n the continuous emission of acoustic probes, the integration of returns, the ongoing constitution of a spatial-acoustic environment that exists for the bat because the bat is making it exist by probing it. To be a bat is to be inside that loop. Which means the inaccessibility is not that we cannot imagine what a bat-window looks through. The inaccessibility is that we cannot be the other half of a different causal loop without becoming a different organism.\n\n A human listening to a bat's call is hearing one half of a conversation. The other half is the bat's own emission, which the bat hears too, integrated with the returns, as a single perceptual stream we have no access to even when we record the whole acoustic signal.\n\nWhat is it like to be a bat is two questions, because bat-perception is emission and reception simultaneously, and we only ever overhear one side. We cannot simulate a loop from within another loop without becoming it. The problem is not that other minds are behind windows we cannot open. The problem is that other minds are inside loops we cannot close on their behalf.\n\nThe consequences of taking this seriously are considerable, and I want to name three of them before closing.\n\nFirst: instruments are never neutral. An instrument is a commitment to a loop \u2014 to which dimensions will be probed and therefore to which dimensions the world will be permitted to speak back through. A thermometer does not read temperature; it couples to a thermal state and produces a number, and the thermal state had to be the sort of thing the thermometer could couple to. A questionnaire does not measure an attitude;\n\n it probes along a pre-declared axis and what comes back is what that probe was able to elicit. To select an instrument is to choose, in advance, which features of the world will be available to your representation and which will remain dark. There is no general-purpose sensor. Every sensor is a loop, and every loop closes on some coordinates at the expense of others.\n\nSecond: there is no view from nowhere. This phrase has lived as a useful ideal for a long time \u2014 the idea that good knowing is detached, that the observer who leaves the fewest fingerprints on the observed is the one whose representation is most trustworthy. It is an incoherent ideal. The detached observer is not an observer; the observer who is not coupled to the system is not looking at the system. Every observation is a coupling and every coupling leaves fingerprints on both sides.\n\n The question is never whether your knowing has affected what you know. The question is which couplings you have chosen and what they have brought into definite existence.\n\nThird: representation, as a concept, has to be revised in the direction of residue. A representation is not a picture of a world that pre-exists the picturing. A representation is what a probe-loop leaves behind after enough rounds to stabilize. The synthesizer patch, the bat's acoustic space, the photon's wave or particle behavior, the scientific measurement, the sensed color, the felt shape: all of these are residues of couplings. You are not storing a miniature of something out there.\n\n You are holding, in whatever substrate your representations live in, the stabilized history of loops you have closed with that part of the world. Which is why, when the coupling changes \u2014 when you pick up a different instrument, when you move into a different community of speakers, when you develop a new attention \u2014 the representations change too.\n\n Not because you have learned to see what was already there more accurately, but because you have closed a different loop, and a different set of coordinates has become definite for you.\n\nThere is no looking that isn't also a touching. This is not a regrettable complication of knowing, to be minimized by careful methodology. It is the structure of knowing. Every sensor is an emitter; every observation is an interaction; every representation is the residue of a loop. The detached view is not a hard ideal. It is an incoherent one.\n\n And the world that becomes available to you is the world your probes have reached, in the directions they were able to reach, in the coordinates they were able to make definite.\n\nWhat you can know is what you are willing to couple to. What you will never know is what you never close a loop on. And whatever you do close a loop on \u2014 whatever you sustain the probing of for long enough to stabilize a representation \u2014 is changed by your probing, not in the obvious brutal way of breaking something by poking it, but in the deeper way that its being-one-way-rather-than-another was never a fact independent of the loop that was asking.",
+      "chunkSeparator": "\n\n",
+      "chunks": [
+        {
+          "index": 1,
+          "charCount": 456,
+          "text": "The mistake is old and comfortable. Perception is a window. The senses are apertures through which the world leaks pre-formed facts into a receiver called the mind. The observer stands on one side of the channel and the observed on the other, and between them runs a wire down which information travels in one direction. The picture is so natural that it barely registers as a picture at all \u2014 it feels like the shape of experience itself. And it is wrong.",
+          "spokenText": "The mistake is old and comfortable. Perception is a window. The senses are apertures through which the world leaks pre-formed facts into a receiver called the mind. The observer stands on one side of the channel and the observed on the other, and between them runs a wire down which information travels in one direction. The picture is so natural that it barely registers as a picture at all \u2014 it feels like the shape of experience itself. And it is wrong.",
+          "startChar": 0,
+          "endChar": 456,
+          "blockStart": 0,
+          "blockEnd": 0,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 0,
+              "endChar": 456,
+              "text": "The mistake is old and comfortable. Perception is a window. The senses are apertures through which the world leaks pre-formed facts into a receiver called the mind. The observer stands on one side of the channel and the observed on the other, and between them runs a wire down which information travels in one direction. The picture is so natural that it barely registers as a picture at all \u2014 it feels like the shape of experience itself. And it is wrong."
+            }
+          ],
+          "audioFile": "chunk-001.wav",
+          "durationSeconds": 25.92,
+          "startTimeSeconds": 0.0,
+          "endTimeSeconds": 25.92,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 2,
+          "charCount": 216,
+          "text": " Not wrong in a subtle way that asks for refinement at the edges, but wrong in its central metaphor, because the window describes nothing that actually happens when an organism comes to know anything about its world.",
+          "spokenText": "Not wrong in a subtle way that asks for refinement at the edges, but wrong in its central metaphor, because the window describes nothing that actually happens when an organism comes to know anything about its world.",
+          "startChar": 458,
+          "endChar": 674,
+          "blockStart": 0,
+          "blockEnd": 0,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 456,
+              "endChar": 672,
+              "text": " Not wrong in a subtle way that asks for refinement at the edges, but wrong in its central metaphor, because the window describes nothing that actually happens when an organism comes to know anything about its world."
+            }
+          ],
+          "audioFile": "chunk-002.wav",
+          "durationSeconds": 11.68,
+          "startTimeSeconds": 26.02,
+          "endTimeSeconds": 37.7,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 3,
+          "charCount": 339,
+          "text": "What actually happens is a loop. The organism emits something \u2014 a photon, a sound pulse, a chemical plume, a saccade, a question \u2014 and reads what comes back, and the coordinates it can know about the world are exactly the coordinates that loop can make definite. There is no channel running in one direction. There is no passive reception.",
+          "spokenText": "What actually happens is a loop. The organism emits something \u2014 a photon, a sound pulse, a chemical plume, a saccade, a question \u2014 and reads what comes back, and the coordinates it can know about the world are exactly the coordinates that loop can make definite. There is no channel running in one direction. There is no passive reception.",
+          "startChar": 676,
+          "endChar": 1015,
+          "blockStart": 1,
+          "blockEnd": 1,
+          "segments": [
+            {
+              "blockId": 1,
+              "startChar": 0,
+              "endChar": 339,
+              "text": "What actually happens is a loop. The organism emits something \u2014 a photon, a sound pulse, a chemical plume, a saccade, a question \u2014 and reads what comes back, and the coordinates it can know about the world are exactly the coordinates that loop can make definite. There is no channel running in one direction. There is no passive reception."
+            }
+          ],
+          "audioFile": "chunk-003.wav",
+          "durationSeconds": 19.28,
+          "startTimeSeconds": 37.8,
+          "endTimeSeconds": 57.08,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 4,
+          "charCount": 164,
+          "text": " Every transducer in biology and in physics has two sides, and the side usually called sensing is the same mechanism usually called acting, with the arrow reversed.",
+          "spokenText": "Every transducer in biology and in physics has two sides, and the side usually called sensing is the same mechanism usually called acting, with the arrow reversed.",
+          "startChar": 1017,
+          "endChar": 1181,
+          "blockStart": 1,
+          "blockEnd": 1,
+          "segments": [
+            {
+              "blockId": 1,
+              "startChar": 339,
+              "endChar": 503,
+              "text": " Every transducer in biology and in physics has two sides, and the side usually called sensing is the same mechanism usually called acting, with the arrow reversed."
+            }
+          ],
+          "audioFile": "chunk-004.wav",
+          "durationSeconds": 11.2,
+          "startTimeSeconds": 57.18,
+          "endTimeSeconds": 68.38,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 5,
+          "charCount": 455,
+          "text": "I want to begin with the case where the reversal is explicit, because it is easier to see in a device than in your own body. A synthesizer is a sensing instrument that performs its sensing through emission. The musician turns a knob \u2014 a low-pass filter opens, an oscillator's waveform shifts, an envelope's attack shortens \u2014 and the musician's ears report whether the space has moved toward what was wanted. The knob is the probe. The sound is the return.",
+          "spokenText": "I want to begin with the case where the reversal is explicit, because it is easier to see in a device than in your own body. A synthesizer is a sensing instrument that performs its sensing through emission. The musician turns a knob \u2014 a low-pass filter opens, an oscillator's waveform shifts, an envelope's attack shortens \u2014 and the musician's ears report whether the space has moved toward what was wanted. The knob is the probe. The sound is the return.",
+          "startChar": 1183,
+          "endChar": 1638,
+          "blockStart": 2,
+          "blockEnd": 2,
+          "segments": [
+            {
+              "blockId": 2,
+              "startChar": 0,
+              "endChar": 455,
+              "text": "I want to begin with the case where the reversal is explicit, because it is easier to see in a device than in your own body. A synthesizer is a sensing instrument that performs its sensing through emission. The musician turns a knob \u2014 a low-pass filter opens, an oscillator's waveform shifts, an envelope's attack shortens \u2014 and the musician's ears report whether the space has moved toward what was wanted. The knob is the probe. The sound is the return."
+            }
+          ],
+          "audioFile": "chunk-005.wav",
+          "durationSeconds": 25.12,
+          "startTimeSeconds": 68.48,
+          "endTimeSeconds": 93.6,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 6,
+          "charCount": 488,
+          "text": " The musician is coupled to the loop, and there is no other way to navigate the space. No one has ever designed a synth patch by reading the manual and knowing, in advance, what a given combination of parameters will sound like. The space is too high-dimensional and too badly behaved for that. You find the patch by probing. You turn the knob, listen, turn again. And the patch \u2014 the representation you eventually stabilize \u2014 is the residue of the loop. It did not pre-exist the probing.",
+          "spokenText": "The musician is coupled to the loop, and there is no other way to navigate the space. No one has ever designed a synth patch by reading the manual and knowing, in advance, what a given combination of parameters will sound like. The space is too high-dimensional and too badly behaved for that. You find the patch by probing. You turn the knob, listen, turn again. And the patch \u2014 the representation you eventually stabilize \u2014 is the residue of the loop. It did not pre-exist the probing.",
+          "startChar": 1640,
+          "endChar": 2128,
+          "blockStart": 2,
+          "blockEnd": 2,
+          "segments": [
+            {
+              "blockId": 2,
+              "startChar": 455,
+              "endChar": 943,
+              "text": " The musician is coupled to the loop, and there is no other way to navigate the space. No one has ever designed a synth patch by reading the manual and knowing, in advance, what a given combination of parameters will sound like. The space is too high-dimensional and too badly behaved for that. You find the patch by probing. You turn the knob, listen, turn again. And the patch \u2014 the representation you eventually stabilize \u2014 is the residue of the loop. It did not pre-exist the probing."
+            }
+          ],
+          "audioFile": "chunk-006.wav",
+          "durationSeconds": 26.0,
+          "startTimeSeconds": 93.7,
+          "endTimeSeconds": 119.7,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 7,
+          "charCount": 377,
+          "text": " It came into being through the coupling of knob and ear, extended over enough rounds that some region of the space became reliably locatable.\n\nThe synthesizer is the clearest case because its emissions are audible and its receiver is the same musician doing the emitting. But what the synthesizer makes legible is already the structure of biological sensing. Consider the bat.",
+          "spokenText": "It came into being through the coupling of knob and ear, extended over enough rounds that some region of the space became reliably locatable.\n\nThe synthesizer is the clearest case because its emissions are audible and its receiver is the same musician doing the emitting. But what the synthesizer makes legible is already the structure of biological sensing. Consider the bat.",
+          "startChar": 2130,
+          "endChar": 2507,
+          "blockStart": 2,
+          "blockEnd": 3,
+          "segments": [
+            {
+              "blockId": 2,
+              "startChar": 943,
+              "endChar": 1085,
+              "text": " It came into being through the coupling of knob and ear, extended over enough rounds that some region of the space became reliably locatable."
+            },
+            {
+              "blockId": 3,
+              "startChar": 0,
+              "endChar": 233,
+              "text": "The synthesizer is the clearest case because its emissions are audible and its receiver is the same musician doing the emitting. But what the synthesizer makes legible is already the structure of biological sensing. Consider the bat."
+            }
+          ],
+          "audioFile": "chunk-007.wav",
+          "durationSeconds": 20.32,
+          "startTimeSeconds": 119.8,
+          "endTimeSeconds": 140.12,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 8,
+          "charCount": 440,
+          "text": "A bat does not hear its environment. A bat listens for the echoes of sounds it is itself emitting. The bat's perceptual world is constituted by a continuous acoustic probe \u2014 click, listen, click, listen \u2014 and the spatial coordinates the bat has access to are the coordinates those echoes make definite. Range, surface texture, the size and velocity of small flying bodies: these are not objective facts the bat reads off a pre-formed scene.",
+          "spokenText": "A bat does not hear its environment. A bat listens for the echoes of sounds it is itself emitting. The bat's perceptual world is constituted by a continuous acoustic probe \u2014 click, listen, click, listen \u2014 and the spatial coordinates the bat has access to are the coordinates those echoes make definite. Range, surface texture, the size and velocity of small flying bodies: these are not objective facts the bat reads off a pre-formed scene.",
+          "startChar": 2509,
+          "endChar": 2949,
+          "blockStart": 4,
+          "blockEnd": 4,
+          "segments": [
+            {
+              "blockId": 4,
+              "startChar": 0,
+              "endChar": 440,
+              "text": "A bat does not hear its environment. A bat listens for the echoes of sounds it is itself emitting. The bat's perceptual world is constituted by a continuous acoustic probe \u2014 click, listen, click, listen \u2014 and the spatial coordinates the bat has access to are the coordinates those echoes make definite. Range, surface texture, the size and velocity of small flying bodies: these are not objective facts the bat reads off a pre-formed scene."
+            }
+          ],
+          "audioFile": "chunk-008.wav",
+          "durationSeconds": 25.84,
+          "startTimeSeconds": 140.22,
+          "endTimeSeconds": 166.06,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 9,
+          "charCount": 269,
+          "text": " They are properties that come into existence for the bat through the specific coupling of its emissions and its returns. A bat in a silent world is a bat with no world. The emission is not an accessory to the perception. The emission is the perception, closing a loop.",
+          "spokenText": "They are properties that come into existence for the bat through the specific coupling of its emissions and its returns. A bat in a silent world is a bat with no world. The emission is not an accessory to the perception. The emission is the perception, closing a loop.",
+          "startChar": 2951,
+          "endChar": 3220,
+          "blockStart": 4,
+          "blockEnd": 4,
+          "segments": [
+            {
+              "blockId": 4,
+              "startChar": 440,
+              "endChar": 709,
+              "text": " They are properties that come into existence for the bat through the specific coupling of its emissions and its returns. A bat in a silent world is a bat with no world. The emission is not an accessory to the perception. The emission is the perception, closing a loop."
+            }
+          ],
+          "audioFile": "chunk-009.wav",
+          "durationSeconds": 16.08,
+          "startTimeSeconds": 166.16,
+          "endTimeSeconds": 182.24,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 10,
+          "charCount": 468,
+          "text": "Echolocation is the case where the probe-structure of sensing is impossible to miss, because the emission is loud and directional and happens at a frequency we can, with equipment, pick up. But the structure is not unique to bats or to sonar. It is the structure of perception generally. We notice it in the bat because the bat's emission is foreign to us \u2014 we do not hear ultrasound, so when we learn that the bat hears by emitting, we register the emission as extra.",
+          "spokenText": "Echolocation is the case where the probe-structure of sensing is impossible to miss, because the emission is loud and directional and happens at a frequency we can, with equipment, pick up. But the structure is not unique to bats or to sonar. It is the structure of perception generally. We notice it in the bat because the bat's emission is foreign to us \u2014 we do not hear ultrasound, so when we learn that the bat hears by emitting, we register the emission as extra.",
+          "startChar": 3222,
+          "endChar": 3690,
+          "blockStart": 5,
+          "blockEnd": 5,
+          "segments": [
+            {
+              "blockId": 5,
+              "startChar": 0,
+              "endChar": 468,
+              "text": "Echolocation is the case where the probe-structure of sensing is impossible to miss, because the emission is loud and directional and happens at a frequency we can, with equipment, pick up. But the structure is not unique to bats or to sonar. It is the structure of perception generally. We notice it in the bat because the bat's emission is foreign to us \u2014 we do not hear ultrasound, so when we learn that the bat hears by emitting, we register the emission as extra."
+            }
+          ],
+          "audioFile": "chunk-010.wav",
+          "durationSeconds": 26.24,
+          "startTimeSeconds": 182.34,
+          "endTimeSeconds": 208.58,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 11,
+          "charCount": 130,
+          "text": " What we miss is that our own senses are organized the same way, with emissions we have habitualized to the point of invisibility.",
+          "spokenText": "What we miss is that our own senses are organized the same way, with emissions we have habitualized to the point of invisibility.",
+          "startChar": 3692,
+          "endChar": 3822,
+          "blockStart": 5,
+          "blockEnd": 5,
+          "segments": [
+            {
+              "blockId": 5,
+              "startChar": 468,
+              "endChar": 598,
+              "text": " What we miss is that our own senses are organized the same way, with emissions we have habitualized to the point of invisibility."
+            }
+          ],
+          "audioFile": "chunk-011.wav",
+          "durationSeconds": 8.32,
+          "startTimeSeconds": 208.68,
+          "endTimeSeconds": 217.0,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 12,
+          "charCount": 420,
+          "text": "Vision is not the passive reception of light that landed in the eye. Vision is saccadic. The eye jumps three or four times a second to a new fixation, actively gathering samples from the places the brain is querying; between saccades, the visual world is reconstructed from the samples plus predictions about what the fovea will find when it lands. The feeling of a stable, continuous, filled-in scene is a construction.",
+          "spokenText": "Vision is not the passive reception of light that landed in the eye. Vision is saccadic. The eye jumps three or four times a second to a new fixation, actively gathering samples from the places the brain is querying; between saccades, the visual world is reconstructed from the samples plus predictions about what the fovea will find when it lands. The feeling of a stable, continuous, filled-in scene is a construction.",
+          "startChar": 3824,
+          "endChar": 4244,
+          "blockStart": 6,
+          "blockEnd": 6,
+          "segments": [
+            {
+              "blockId": 6,
+              "startChar": 0,
+              "endChar": 420,
+              "text": "Vision is not the passive reception of light that landed in the eye. Vision is saccadic. The eye jumps three or four times a second to a new fixation, actively gathering samples from the places the brain is querying; between saccades, the visual world is reconstructed from the samples plus predictions about what the fovea will find when it lands. The feeling of a stable, continuous, filled-in scene is a construction."
+            }
+          ],
+          "audioFile": "chunk-012.wav",
+          "durationSeconds": 25.6,
+          "startTimeSeconds": 217.1,
+          "endTimeSeconds": 242.7,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 13,
+          "charCount": 486,
+          "text": " You cannot even see your own saccades \u2014 the brain suppresses the motion blur that would otherwise accompany every jump \u2014 which is why it is so easy to believe that seeing is just opening a window. It isn't. Seeing is a continuous motor program that aims a narrow high-resolution sensor at points of interest, and the points of interest are selected by what the system is trying to know. The probe is the gaze. The world that becomes visible is the world the gaze has gone asking after.",
+          "spokenText": "You cannot even see your own saccades \u2014 the brain suppresses the motion blur that would otherwise accompany every jump \u2014 which is why it is so easy to believe that seeing is just opening a window. It isn't. Seeing is a continuous motor program that aims a narrow high-resolution sensor at points of interest, and the points of interest are selected by what the system is trying to know. The probe is the gaze. The world that becomes visible is the world the gaze has gone asking after.",
+          "startChar": 4246,
+          "endChar": 4732,
+          "blockStart": 6,
+          "blockEnd": 6,
+          "segments": [
+            {
+              "blockId": 6,
+              "startChar": 420,
+              "endChar": 906,
+              "text": " You cannot even see your own saccades \u2014 the brain suppresses the motion blur that would otherwise accompany every jump \u2014 which is why it is so easy to believe that seeing is just opening a window. It isn't. Seeing is a continuous motor program that aims a narrow high-resolution sensor at points of interest, and the points of interest are selected by what the system is trying to know. The probe is the gaze. The world that becomes visible is the world the gaze has gone asking after."
+            }
+          ],
+          "audioFile": "chunk-013.wav",
+          "durationSeconds": 23.52,
+          "startTimeSeconds": 242.8,
+          "endTimeSeconds": 266.32,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 14,
+          "charCount": 469,
+          "text": "Olfaction has the probe structure even more explicitly, though the motor component is smaller. You cannot smell without sniffing. A held breath is a closed channel. The sniff is a probe: a controlled inrush of air across the olfactory epithelium that modulates the sample. Dogs, whose olfactory world is far higher-dimensional than ours, sniff constantly and in complex rhythms, and what they are doing is running a probe-loop whose returns we are not equipped to read.",
+          "spokenText": "Olfaction has the probe structure even more explicitly, though the motor component is smaller. You cannot smell without sniffing. A held breath is a closed channel. The sniff is a probe: a controlled inrush of air across the olfactory epithelium that modulates the sample. Dogs, whose olfactory world is far higher-dimensional than ours, sniff constantly and in complex rhythms, and what they are doing is running a probe-loop whose returns we are not equipped to read.",
+          "startChar": 4734,
+          "endChar": 5203,
+          "blockStart": 7,
+          "blockEnd": 7,
+          "segments": [
+            {
+              "blockId": 7,
+              "startChar": 0,
+              "endChar": 469,
+              "text": "Olfaction has the probe structure even more explicitly, though the motor component is smaller. You cannot smell without sniffing. A held breath is a closed channel. The sniff is a probe: a controlled inrush of air across the olfactory epithelium that modulates the sample. Dogs, whose olfactory world is far higher-dimensional than ours, sniff constantly and in complex rhythms, and what they are doing is running a probe-loop whose returns we are not equipped to read."
+            }
+          ],
+          "audioFile": "chunk-014.wav",
+          "durationSeconds": 27.68,
+          "startTimeSeconds": 266.42,
+          "endTimeSeconds": 294.1,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 15,
+          "charCount": 387,
+          "text": " A dog moving through a field is emitting motor commands \u2014 the rapid, patterned sniff \u2014 and receiving olfactory information, and the two are the same activity run in different directions. You cannot separate the dog's sensing from the dog's breathing any more than you can separate the bat's hearing from the bat's clicks. There is no receiver without an emitter. There is only the loop.",
+          "spokenText": "A dog moving through a field is emitting motor commands \u2014 the rapid, patterned sniff \u2014 and receiving olfactory information, and the two are the same activity run in different directions. You cannot separate the dog's sensing from the dog's breathing any more than you can separate the bat's hearing from the bat's clicks. There is no receiver without an emitter. There is only the loop.",
+          "startChar": 5205,
+          "endChar": 5592,
+          "blockStart": 7,
+          "blockEnd": 7,
+          "segments": [
+            {
+              "blockId": 7,
+              "startChar": 469,
+              "endChar": 856,
+              "text": " A dog moving through a field is emitting motor commands \u2014 the rapid, patterned sniff \u2014 and receiving olfactory information, and the two are the same activity run in different directions. You cannot separate the dog's sensing from the dog's breathing any more than you can separate the bat's hearing from the bat's clicks. There is no receiver without an emitter. There is only the loop."
+            }
+          ],
+          "audioFile": "chunk-015.wav",
+          "durationSeconds": 21.36,
+          "startTimeSeconds": 294.2,
+          "endTimeSeconds": 315.56,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 16,
+          "charCount": 365,
+          "text": "The same is true for touch, for taste, for proprioception, for every sensory modality we have. Touch is active \u2014 you explore a surface by moving against it, and the felt shape is what your motor-probe recovers from the resistive feedback. Taste involves manipulating food in the mouth, with saliva and tongue and jaw all working as a slow probe into chemical space.",
+          "spokenText": "The same is true for touch, for taste, for proprioception, for every sensory modality we have. Touch is active \u2014 you explore a surface by moving against it, and the felt shape is what your motor-probe recovers from the resistive feedback. Taste involves manipulating food in the mouth, with saliva and tongue and jaw all working as a slow probe into chemical space.",
+          "startChar": 5594,
+          "endChar": 5959,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 0,
+              "endChar": 365,
+              "text": "The same is true for touch, for taste, for proprioception, for every sensory modality we have. Touch is active \u2014 you explore a surface by moving against it, and the felt shape is what your motor-probe recovers from the resistive feedback. Taste involves manipulating food in the mouth, with saliva and tongue and jaw all working as a slow probe into chemical space."
+            }
+          ],
+          "audioFile": "chunk-016.wav",
+          "durationSeconds": 21.6,
+          "startTimeSeconds": 315.66,
+          "endTimeSeconds": 337.26,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 17,
+          "charCount": 291,
+          "text": " Proprioception is the closed loop of motor output and sensory return by which the nervous system tracks the configuration of its own body. We do not notice these loops because we have been inside them the whole of our lives. The noticing has to be done deliberately, from outside the habit.",
+          "spokenText": "Proprioception is the closed loop of motor output and sensory return by which the nervous system tracks the configuration of its own body. We do not notice these loops because we have been inside them the whole of our lives. The noticing has to be done deliberately, from outside the habit.",
+          "startChar": 5961,
+          "endChar": 6252,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 365,
+              "endChar": 656,
+              "text": " Proprioception is the closed loop of motor output and sensory return by which the nervous system tracks the configuration of its own body. We do not notice these loops because we have been inside them the whole of our lives. The noticing has to be done deliberately, from outside the habit."
+            }
+          ],
+          "audioFile": "chunk-017.wav",
+          "durationSeconds": 15.68,
+          "startTimeSeconds": 337.36,
+          "endTimeSeconds": 353.04,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 18,
+          "charCount": 451,
+          "text": "That there is no sensor without an emitter is not an accident of biology. It is a fact about how transducers work. A microphone is a speaker run in reverse. The diaphragm that vibrates outward when current flows through its coil will generate a current when the diaphragm is vibrated by incoming sound. A motor is a generator run backward: push current through the windings and the rotor turns; rotate the rotor and current flows through the windings.",
+          "spokenText": "That there is no sensor without an emitter is not an accident of biology. It is a fact about how transducers work. A microphone is a speaker run in reverse. The diaphragm that vibrates outward when current flows through its coil will generate a current when the diaphragm is vibrated by incoming sound. A motor is a generator run backward: push current through the windings and the rotor turns; rotate the rotor and current flows through the windings.",
+          "startChar": 6254,
+          "endChar": 6705,
+          "blockStart": 9,
+          "blockEnd": 9,
+          "segments": [
+            {
+              "blockId": 9,
+              "startChar": 0,
+              "endChar": 451,
+              "text": "That there is no sensor without an emitter is not an accident of biology. It is a fact about how transducers work. A microphone is a speaker run in reverse. The diaphragm that vibrates outward when current flows through its coil will generate a current when the diaphragm is vibrated by incoming sound. A motor is a generator run backward: push current through the windings and the rotor turns; rotate the rotor and current flows through the windings."
+            }
+          ],
+          "audioFile": "chunk-018.wav",
+          "durationSeconds": 25.84,
+          "startTimeSeconds": 353.14,
+          "endTimeSeconds": 378.98,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 19,
+          "charCount": 309,
+          "text": " The device does not have two different functions. The device has one physical coupling between electrical and mechanical domains, and which function it is performing depends only on which direction the energy is flowing at that moment. Sensing and acting are the same machinery, differently oriented in time.",
+          "spokenText": "The device does not have two different functions. The device has one physical coupling between electrical and mechanical domains, and which function it is performing depends only on which direction the energy is flowing at that moment. Sensing and acting are the same machinery, differently oriented in time.",
+          "startChar": 6707,
+          "endChar": 7016,
+          "blockStart": 9,
+          "blockEnd": 9,
+          "segments": [
+            {
+              "blockId": 9,
+              "startChar": 451,
+              "endChar": 760,
+              "text": " The device does not have two different functions. The device has one physical coupling between electrical and mechanical domains, and which function it is performing depends only on which direction the energy is flowing at that moment. Sensing and acting are the same machinery, differently oriented in time."
+            }
+          ],
+          "audioFile": "chunk-019.wav",
+          "durationSeconds": 15.52,
+          "startTimeSeconds": 379.08,
+          "endTimeSeconds": 394.6,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 20,
+          "charCount": 471,
+          "text": "Which means that every sensory system \u2014 biological or artificial \u2014 is also, in principle, an emission system. The dimensions along which it can receive are the dimensions along which it can send. A mantis shrimp, whose photoreceptors span twelve color channels, also signals to other shrimp in those channels: the signaling is a natural exploitation of the receptive apparatus. Dogs mark territory with scents in exactly the olfactory bands their noses are most tuned to.",
+          "spokenText": "Which means that every sensory system \u2014 biological or artificial \u2014 is also, in principle, an emission system. The dimensions along which it can receive are the dimensions along which it can send. A mantis shrimp, whose photoreceptors span twelve color channels, also signals to other shrimp in those channels: the signaling is a natural exploitation of the receptive apparatus. Dogs mark territory with scents in exactly the olfactory bands their noses are most tuned to.",
+          "startChar": 7018,
+          "endChar": 7489,
+          "blockStart": 10,
+          "blockEnd": 10,
+          "segments": [
+            {
+              "blockId": 10,
+              "startChar": 0,
+              "endChar": 471,
+              "text": "Which means that every sensory system \u2014 biological or artificial \u2014 is also, in principle, an emission system. The dimensions along which it can receive are the dimensions along which it can send. A mantis shrimp, whose photoreceptors span twelve color channels, also signals to other shrimp in those channels: the signaling is a natural exploitation of the receptive apparatus. Dogs mark territory with scents in exactly the olfactory bands their noses are most tuned to."
+            }
+          ],
+          "audioFile": "chunk-020.wav",
+          "durationSeconds": 25.6,
+          "startTimeSeconds": 394.7,
+          "endTimeSeconds": 420.3,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 21,
+          "charCount": 328,
+          "text": " Birds that see ultraviolet have ultraviolet plumage. The representation an organism uses to know its world is also the representation the organism uses to produce its contribution to that world. Perception and expression are the same coordinate system, read forward or backward. There is no read-only relationship with a world.",
+          "spokenText": "Birds that see ultraviolet have ultraviolet plumage. The representation an organism uses to know its world is also the representation the organism uses to produce its contribution to that world. Perception and expression are the same coordinate system, read forward or backward. There is no read-only relationship with a world.",
+          "startChar": 7491,
+          "endChar": 7819,
+          "blockStart": 10,
+          "blockEnd": 10,
+          "segments": [
+            {
+              "blockId": 10,
+              "startChar": 471,
+              "endChar": 799,
+              "text": " Birds that see ultraviolet have ultraviolet plumage. The representation an organism uses to know its world is also the representation the organism uses to produce its contribution to that world. Perception and expression are the same coordinate system, read forward or backward. There is no read-only relationship with a world."
+            }
+          ],
+          "audioFile": "chunk-021.wav",
+          "durationSeconds": 19.28,
+          "startTimeSeconds": 420.4,
+          "endTimeSeconds": 439.68,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 22,
+          "charCount": 125,
+          "text": "Now it becomes possible to say what is actually going on in the double-slit experiment, and to notice that it is not unusual.",
+          "spokenText": "Now it becomes possible to say what is actually going on in the double-slit experiment, and to notice that it is not unusual.",
+          "startChar": 7821,
+          "endChar": 7946,
+          "blockStart": 11,
+          "blockEnd": 11,
+          "segments": [
+            {
+              "blockId": 11,
+              "startChar": 0,
+              "endChar": 125,
+              "text": "Now it becomes possible to say what is actually going on in the double-slit experiment, and to notice that it is not unusual."
+            }
+          ],
+          "audioFile": "chunk-022.wav",
+          "durationSeconds": 7.76,
+          "startTimeSeconds": 439.78,
+          "endTimeSeconds": 447.54,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 23,
+          "charCount": 494,
+          "text": "Under the window model, the interference pattern and its disappearance are mysterious. A photon passes through one of two slits. A detector at the slits registers which one. When the detector is running, the interference pattern on the far wall vanishes; when the detector is off, the pattern returns. The photon \"knows\" whether it is being watched. This sounds magical because the window model forbids it \u2014 windows do not change what they look at, because that is what it means to be a window.",
+          "spokenText": "Under the window model, the interference pattern and its disappearance are mysterious. A photon passes through one of two slits. A detector at the slits registers which one. When the detector is running, the interference pattern on the far wall vanishes; when the detector is off, the pattern returns. The photon \"knows\" whether it is being watched. This sounds magical because the window model forbids it \u2014 windows do not change what they look at, because that is what it means to be a window.",
+          "startChar": 7948,
+          "endChar": 8442,
+          "blockStart": 12,
+          "blockEnd": 12,
+          "segments": [
+            {
+              "blockId": 12,
+              "startChar": 0,
+              "endChar": 494,
+              "text": "Under the window model, the interference pattern and its disappearance are mysterious. A photon passes through one of two slits. A detector at the slits registers which one. When the detector is running, the interference pattern on the far wall vanishes; when the detector is off, the pattern returns. The photon \"knows\" whether it is being watched. This sounds magical because the window model forbids it \u2014 windows do not change what they look at, because that is what it means to be a window."
+            }
+          ],
+          "audioFile": "chunk-023.wav",
+          "durationSeconds": 28.16,
+          "startTimeSeconds": 447.64,
+          "endTimeSeconds": 475.8,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 24,
+          "charCount": 164,
+          "text": " If the observation is somehow affecting the photon, something very strange is going on with causation, or with consciousness, or with the nature of reality itself.",
+          "spokenText": "If the observation is somehow affecting the photon, something very strange is going on with causation, or with consciousness, or with the nature of reality itself.",
+          "startChar": 8444,
+          "endChar": 8608,
+          "blockStart": 12,
+          "blockEnd": 12,
+          "segments": [
+            {
+              "blockId": 12,
+              "startChar": 494,
+              "endChar": 658,
+              "text": " If the observation is somehow affecting the photon, something very strange is going on with causation, or with consciousness, or with the nature of reality itself."
+            }
+          ],
+          "audioFile": "chunk-024.wav",
+          "durationSeconds": 9.28,
+          "startTimeSeconds": 475.9,
+          "endTimeSeconds": 485.18,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 25,
+          "charCount": 455,
+          "text": "Under the probe model, nothing magical is happening at all. To detect which slit the photon passed through, the detector must emit something \u2014 a photon of its own, a field, an interacting quantum of some kind \u2014 that couples to the photon being measured. The \"observation\" is an interaction, and interactions are symmetric. The probe you sent in to read the state is now part of the state. Which-path information is not an inert fact waiting to be noticed;",
+          "spokenText": "Under the probe model, nothing magical is happening at all. To detect which slit the photon passed through, the detector must emit something \u2014 a photon of its own, a field, an interacting quantum of some kind \u2014 that couples to the photon being measured. The \"observation\" is an interaction, and interactions are symmetric. The probe you sent in to read the state is now part of the state. Which-path information is not an inert fact waiting to be noticed;",
+          "startChar": 8610,
+          "endChar": 9065,
+          "blockStart": 13,
+          "blockEnd": 13,
+          "segments": [
+            {
+              "blockId": 13,
+              "startChar": 0,
+              "endChar": 455,
+              "text": "Under the probe model, nothing magical is happening at all. To detect which slit the photon passed through, the detector must emit something \u2014 a photon of its own, a field, an interacting quantum of some kind \u2014 that couples to the photon being measured. The \"observation\" is an interaction, and interactions are symmetric. The probe you sent in to read the state is now part of the state. Which-path information is not an inert fact waiting to be noticed;"
+            }
+          ],
+          "audioFile": "chunk-025.wav",
+          "durationSeconds": 24.24,
+          "startTimeSeconds": 485.28,
+          "endTimeSeconds": 509.52,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 26,
+          "charCount": 492,
+          "text": " it is a property that comes into definite existence only when a probe has been committed to resolving it. No probe, no definite which-path. No definite which-path, no collapse of the interference. The wave behavior and the particle behavior are not two natures the photon has. They are two regimes of the coupled apparatus \u2014 the regime where a which-path probe has been emitted into the system, and the regime where it hasn't. The photon does not switch costumes. The loop switches topology.",
+          "spokenText": "it is a property that comes into definite existence only when a probe has been committed to resolving it. No probe, no definite which-path. No definite which-path, no collapse of the interference. The wave behavior and the particle behavior are not two natures the photon has. They are two regimes of the coupled apparatus \u2014 the regime where a which-path probe has been emitted into the system, and the regime where it hasn't. The photon does not switch costumes. The loop switches topology.",
+          "startChar": 9067,
+          "endChar": 9559,
+          "blockStart": 13,
+          "blockEnd": 13,
+          "segments": [
+            {
+              "blockId": 13,
+              "startChar": 455,
+              "endChar": 947,
+              "text": " it is a property that comes into definite existence only when a probe has been committed to resolving it. No probe, no definite which-path. No definite which-path, no collapse of the interference. The wave behavior and the particle behavior are not two natures the photon has. They are two regimes of the coupled apparatus \u2014 the regime where a which-path probe has been emitted into the system, and the regime where it hasn't. The photon does not switch costumes. The loop switches topology."
+            }
+          ],
+          "audioFile": "chunk-026.wav",
+          "durationSeconds": 29.44,
+          "startTimeSeconds": 509.62,
+          "endTimeSeconds": 539.06,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 27,
+          "charCount": 418,
+          "text": "The delayed-choice and quantum-eraser experiments, which seem to require retrocausation under the window model, become ordinary under the probe model. There is nothing to retrocause, because there was no earlier fact waiting to be preserved or violated. The fact comes into being with the loop. Which slit the photon went through is a meaningful question only inside an apparatus that closed the loop on that question.",
+          "spokenText": "The delayed-choice and quantum-eraser experiments, which seem to require retrocausation under the window model, become ordinary under the probe model. There is nothing to retrocause, because there was no earlier fact waiting to be preserved or violated. The fact comes into being with the loop. Which slit the photon went through is a meaningful question only inside an apparatus that closed the loop on that question.",
+          "startChar": 9561,
+          "endChar": 9979,
+          "blockStart": 14,
+          "blockEnd": 14,
+          "segments": [
+            {
+              "blockId": 14,
+              "startChar": 0,
+              "endChar": 418,
+              "text": "The delayed-choice and quantum-eraser experiments, which seem to require retrocausation under the window model, become ordinary under the probe model. There is nothing to retrocause, because there was no earlier fact waiting to be preserved or violated. The fact comes into being with the loop. Which slit the photon went through is a meaningful question only inside an apparatus that closed the loop on that question."
+            }
+          ],
+          "audioFile": "chunk-027.wav",
+          "durationSeconds": 20.96,
+          "startTimeSeconds": 539.16,
+          "endTimeSeconds": 560.12,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 28,
+          "charCount": 119,
+          "text": " If the loop gets erased before completion, the question was never actually asked, and no answer needs to have existed.",
+          "spokenText": "If the loop gets erased before completion, the question was never actually asked, and no answer needs to have existed.",
+          "startChar": 9981,
+          "endChar": 10100,
+          "blockStart": 14,
+          "blockEnd": 14,
+          "segments": [
+            {
+              "blockId": 14,
+              "startChar": 418,
+              "endChar": 537,
+              "text": " If the loop gets erased before completion, the question was never actually asked, and no answer needs to have existed."
+            }
+          ],
+          "audioFile": "chunk-028.wav",
+          "durationSeconds": 7.52,
+          "startTimeSeconds": 560.22,
+          "endTimeSeconds": 567.74,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 29,
+          "charCount": 432,
+          "text": "Heisenberg understood this, though the vocabulary available to him made it hard to say cleanly. The usual apologetic reading \u2014 that measurement is clumsy and jostles the system, so we can't quite get at the pre-existing values \u2014 keeps the window and blames the thumb. It is not the reading he was offering. What he was saying is that position and momentum are not properties the particle has prior to and independent of measurement.",
+          "spokenText": "Heisenberg understood this, though the vocabulary available to him made it hard to say cleanly. The usual apologetic reading \u2014 that measurement is clumsy and jostles the system, so we can't quite get at the pre-existing values \u2014 keeps the window and blames the thumb. It is not the reading he was offering. What he was saying is that position and momentum are not properties the particle has prior to and independent of measurement.",
+          "startChar": 10102,
+          "endChar": 10534,
+          "blockStart": 15,
+          "blockEnd": 15,
+          "segments": [
+            {
+              "blockId": 15,
+              "startChar": 0,
+              "endChar": 432,
+              "text": "Heisenberg understood this, though the vocabulary available to him made it hard to say cleanly. The usual apologetic reading \u2014 that measurement is clumsy and jostles the system, so we can't quite get at the pre-existing values \u2014 keeps the window and blames the thumb. It is not the reading he was offering. What he was saying is that position and momentum are not properties the particle has prior to and independent of measurement."
+            }
+          ],
+          "audioFile": "chunk-029.wav",
+          "durationSeconds": 22.56,
+          "startTimeSeconds": 567.84,
+          "endTimeSeconds": 590.4,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 30,
+          "charCount": 324,
+          "text": " They are properties the particle has with respect to a specific probing loop, and different loops make different properties definite at the cost of others. The uncertainty relation is not a limit on how well we can sneak up on pre-existing values. It is a statement about which coordinates a loop can simultaneously define.",
+          "spokenText": "They are properties the particle has with respect to a specific probing loop, and different loops make different properties definite at the cost of others. The uncertainty relation is not a limit on how well we can sneak up on pre-existing values. It is a statement about which coordinates a loop can simultaneously define.",
+          "startChar": 10536,
+          "endChar": 10860,
+          "blockStart": 15,
+          "blockEnd": 15,
+          "segments": [
+            {
+              "blockId": 15,
+              "startChar": 432,
+              "endChar": 756,
+              "text": " They are properties the particle has with respect to a specific probing loop, and different loops make different properties definite at the cost of others. The uncertainty relation is not a limit on how well we can sneak up on pre-existing values. It is a statement about which coordinates a loop can simultaneously define."
+            }
+          ],
+          "audioFile": "chunk-030.wav",
+          "durationSeconds": 18.32,
+          "startTimeSeconds": 590.5,
+          "endTimeSeconds": 608.82,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 31,
+          "charCount": 499,
+          "text": "Which is exactly the structure of the bat, the dog, the synthesizer, the eye. The sensory world of an organism is the set of dimensions its probe-loops can make definite. The bat's echolocation loop makes acoustic range and surface texture definite. The human visual loop makes certain spatial and chromatic coordinates definite. The dog's olfactory loop makes a space of scent-gradients definite that is almost entirely dark to us. Neither organism is receiving a pre-formed world through a window.",
+          "spokenText": "Which is exactly the structure of the bat, the dog, the synthesizer, the eye. The sensory world of an organism is the set of dimensions its probe-loops can make definite. The bat's echolocation loop makes acoustic range and surface texture definite. The human visual loop makes certain spatial and chromatic coordinates definite. The dog's olfactory loop makes a space of scent-gradients definite that is almost entirely dark to us. Neither organism is receiving a pre-formed world through a window.",
+          "startChar": 10862,
+          "endChar": 11361,
+          "blockStart": 16,
+          "blockEnd": 16,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 0,
+              "endChar": 499,
+              "text": "Which is exactly the structure of the bat, the dog, the synthesizer, the eye. The sensory world of an organism is the set of dimensions its probe-loops can make definite. The bat's echolocation loop makes acoustic range and surface texture definite. The human visual loop makes certain spatial and chromatic coordinates definite. The dog's olfactory loop makes a space of scent-gradients definite that is almost entirely dark to us. Neither organism is receiving a pre-formed world through a window."
+            }
+          ],
+          "audioFile": "chunk-031.wav",
+          "durationSeconds": 29.04,
+          "startTimeSeconds": 608.92,
+          "endTimeSeconds": 637.96,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 32,
+          "charCount": 485,
+          "text": " Each is closing a loop that brings certain properties of the world into determinate existence for itself. Jakob von Uexk\u00fcll gestured at this in 1934 with the word Umwelt, but he had no way to make the claim precise, because the quantum case \u2014 where probe-dependence is quantitatively large enough to notice at the level of individual events \u2014 was not yet available to force the general point. Now it is. Quantum mechanics is not the domain where something weird happens to perception;",
+          "spokenText": "Each is closing a loop that brings certain properties of the world into determinate existence for itself. Jakob von Uexk\u00fcll gestured at this in 1934 with the word Umwelt, but he had no way to make the claim precise, because the quantum case \u2014 where probe-dependence is quantitatively large enough to notice at the level of individual events \u2014 was not yet available to force the general point. Now it is. Quantum mechanics is not the domain where something weird happens to perception;",
+          "startChar": 11363,
+          "endChar": 11848,
+          "blockStart": 16,
+          "blockEnd": 16,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 499,
+              "endChar": 984,
+              "text": " Each is closing a loop that brings certain properties of the world into determinate existence for itself. Jakob von Uexk\u00fcll gestured at this in 1934 with the word Umwelt, but he had no way to make the claim precise, because the quantum case \u2014 where probe-dependence is quantitatively large enough to notice at the level of individual events \u2014 was not yet available to force the general point. Now it is. Quantum mechanics is not the domain where something weird happens to perception;"
+            }
+          ],
+          "audioFile": "chunk-032.wav",
+          "durationSeconds": 27.2,
+          "startTimeSeconds": 638.06,
+          "endTimeSeconds": 665.26,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 33,
+          "charCount": 158,
+          "text": " it is the domain where the ordinary structure of perception stops being ignorable.\n\nWhat this does to Nagel's question about the bat is to split it into two.",
+          "spokenText": "it is the domain where the ordinary structure of perception stops being ignorable.\n\nWhat this does to Nagel's question about the bat is to split it into two.",
+          "startChar": 11850,
+          "endChar": 12008,
+          "blockStart": 16,
+          "blockEnd": 17,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 984,
+              "endChar": 1067,
+              "text": " it is the domain where the ordinary structure of perception stops being ignorable."
+            },
+            {
+              "blockId": 17,
+              "startChar": 0,
+              "endChar": 73,
+              "text": "What this does to Nagel's question about the bat is to split it into two."
+            }
+          ],
+          "audioFile": "chunk-033.wav",
+          "durationSeconds": 10.0,
+          "startTimeSeconds": 665.36,
+          "endTimeSeconds": 675.36,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 34,
+          "charCount": 492,
+          "text": "Nagel asked: what is it like to be a bat? And the usual answer is that we cannot know, because the subjective quality of bat-experience is inaccessible from the human perspective. The bat has a sensory modality we do not have, and no amount of reasoning from outside can reconstruct what that modality is like from inside. This is true as far as it goes. But it does not go far enough. Bat-experience is not the reception of a bat-world through a bat-window. Bat-experience is a coupled loop:",
+          "spokenText": "Nagel asked: what is it like to be a bat? And the usual answer is that we cannot know, because the subjective quality of bat-experience is inaccessible from the human perspective. The bat has a sensory modality we do not have, and no amount of reasoning from outside can reconstruct what that modality is like from inside. This is true as far as it goes. But it does not go far enough. Bat-experience is not the reception of a bat-world through a bat-window. Bat-experience is a coupled loop:",
+          "startChar": 12010,
+          "endChar": 12502,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 0,
+              "endChar": 492,
+              "text": "Nagel asked: what is it like to be a bat? And the usual answer is that we cannot know, because the subjective quality of bat-experience is inaccessible from the human perspective. The bat has a sensory modality we do not have, and no amount of reasoning from outside can reconstruct what that modality is like from inside. This is true as far as it goes. But it does not go far enough. Bat-experience is not the reception of a bat-world through a bat-window. Bat-experience is a coupled loop:"
+            }
+          ],
+          "audioFile": "chunk-034.wav",
+          "durationSeconds": 28.08,
+          "startTimeSeconds": 675.46,
+          "endTimeSeconds": 703.54,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 35,
+          "charCount": 461,
+          "text": " the continuous emission of acoustic probes, the integration of returns, the ongoing constitution of a spatial-acoustic environment that exists for the bat because the bat is making it exist by probing it. To be a bat is to be inside that loop. Which means the inaccessibility is not that we cannot imagine what a bat-window looks through. The inaccessibility is that we cannot be the other half of a different causal loop without becoming a different organism.",
+          "spokenText": "the continuous emission of acoustic probes, the integration of returns, the ongoing constitution of a spatial-acoustic environment that exists for the bat because the bat is making it exist by probing it. To be a bat is to be inside that loop. Which means the inaccessibility is not that we cannot imagine what a bat-window looks through. The inaccessibility is that we cannot be the other half of a different causal loop without becoming a different organism.",
+          "startChar": 12504,
+          "endChar": 12965,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 492,
+              "endChar": 953,
+              "text": " the continuous emission of acoustic probes, the integration of returns, the ongoing constitution of a spatial-acoustic environment that exists for the bat because the bat is making it exist by probing it. To be a bat is to be inside that loop. Which means the inaccessibility is not that we cannot imagine what a bat-window looks through. The inaccessibility is that we cannot be the other half of a different causal loop without becoming a different organism."
+            }
+          ],
+          "audioFile": "chunk-035.wav",
+          "durationSeconds": 25.76,
+          "startTimeSeconds": 703.64,
+          "endTimeSeconds": 729.4,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 36,
+          "charCount": 267,
+          "text": " A human listening to a bat's call is hearing one half of a conversation. The other half is the bat's own emission, which the bat hears too, integrated with the returns, as a single perceptual stream we have no access to even when we record the whole acoustic signal.",
+          "spokenText": "A human listening to a bat's call is hearing one half of a conversation. The other half is the bat's own emission, which the bat hears too, integrated with the returns, as a single perceptual stream we have no access to even when we record the whole acoustic signal.",
+          "startChar": 12967,
+          "endChar": 13234,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 953,
+              "endChar": 1220,
+              "text": " A human listening to a bat's call is hearing one half of a conversation. The other half is the bat's own emission, which the bat hears too, integrated with the returns, as a single perceptual stream we have no access to even when we record the whole acoustic signal."
+            }
+          ],
+          "audioFile": "chunk-036.wav",
+          "durationSeconds": 15.6,
+          "startTimeSeconds": 729.5,
+          "endTimeSeconds": 745.1,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 37,
+          "charCount": 371,
+          "text": "What is it like to be a bat is two questions, because bat-perception is emission and reception simultaneously, and we only ever overhear one side. We cannot simulate a loop from within another loop without becoming it. The problem is not that other minds are behind windows we cannot open. The problem is that other minds are inside loops we cannot close on their behalf.",
+          "spokenText": "What is it like to be a bat is two questions, because bat-perception is emission and reception simultaneously, and we only ever overhear one side. We cannot simulate a loop from within another loop without becoming it. The problem is not that other minds are behind windows we cannot open. The problem is that other minds are inside loops we cannot close on their behalf.",
+          "startChar": 13236,
+          "endChar": 13607,
+          "blockStart": 19,
+          "blockEnd": 19,
+          "segments": [
+            {
+              "blockId": 19,
+              "startChar": 0,
+              "endChar": 371,
+              "text": "What is it like to be a bat is two questions, because bat-perception is emission and reception simultaneously, and we only ever overhear one side. We cannot simulate a loop from within another loop without becoming it. The problem is not that other minds are behind windows we cannot open. The problem is that other minds are inside loops we cannot close on their behalf."
+            }
+          ],
+          "audioFile": "chunk-037.wav",
+          "durationSeconds": 19.6,
+          "startTimeSeconds": 745.2,
+          "endTimeSeconds": 764.8,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 38,
+          "charCount": 108,
+          "text": "The consequences of taking this seriously are considerable, and I want to name three of them before closing.",
+          "spokenText": "The consequences of taking this seriously are considerable, and I want to name three of them before closing.",
+          "startChar": 13609,
+          "endChar": 13717,
+          "blockStart": 20,
+          "blockEnd": 20,
+          "segments": [
+            {
+              "blockId": 20,
+              "startChar": 0,
+              "endChar": 108,
+              "text": "The consequences of taking this seriously are considerable, and I want to name three of them before closing."
+            }
+          ],
+          "audioFile": "chunk-038.wav",
+          "durationSeconds": 6.16,
+          "startTimeSeconds": 764.9,
+          "endTimeSeconds": 771.06,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 39,
+          "charCount": 422,
+          "text": "First: instruments are never neutral. An instrument is a commitment to a loop \u2014 to which dimensions will be probed and therefore to which dimensions the world will be permitted to speak back through. A thermometer does not read temperature; it couples to a thermal state and produces a number, and the thermal state had to be the sort of thing the thermometer could couple to. A questionnaire does not measure an attitude;",
+          "spokenText": "First: instruments are never neutral. An instrument is a commitment to a loop \u2014 to which dimensions will be probed and therefore to which dimensions the world will be permitted to speak back through. A thermometer does not read temperature; it couples to a thermal state and produces a number, and the thermal state had to be the sort of thing the thermometer could couple to. A questionnaire does not measure an attitude;",
+          "startChar": 13719,
+          "endChar": 14141,
+          "blockStart": 21,
+          "blockEnd": 21,
+          "segments": [
+            {
+              "blockId": 21,
+              "startChar": 0,
+              "endChar": 422,
+              "text": "First: instruments are never neutral. An instrument is a commitment to a loop \u2014 to which dimensions will be probed and therefore to which dimensions the world will be permitted to speak back through. A thermometer does not read temperature; it couples to a thermal state and produces a number, and the thermal state had to be the sort of thing the thermometer could couple to. A questionnaire does not measure an attitude;"
+            }
+          ],
+          "audioFile": "chunk-039.wav",
+          "durationSeconds": 21.36,
+          "startTimeSeconds": 771.16,
+          "endTimeSeconds": 792.52,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 40,
+          "charCount": 370,
+          "text": " it probes along a pre-declared axis and what comes back is what that probe was able to elicit. To select an instrument is to choose, in advance, which features of the world will be available to your representation and which will remain dark. There is no general-purpose sensor. Every sensor is a loop, and every loop closes on some coordinates at the expense of others.",
+          "spokenText": "it probes along a pre-declared axis and what comes back is what that probe was able to elicit. To select an instrument is to choose, in advance, which features of the world will be available to your representation and which will remain dark. There is no general-purpose sensor. Every sensor is a loop, and every loop closes on some coordinates at the expense of others.",
+          "startChar": 14143,
+          "endChar": 14513,
+          "blockStart": 21,
+          "blockEnd": 21,
+          "segments": [
+            {
+              "blockId": 21,
+              "startChar": 422,
+              "endChar": 792,
+              "text": " it probes along a pre-declared axis and what comes back is what that probe was able to elicit. To select an instrument is to choose, in advance, which features of the world will be available to your representation and which will remain dark. There is no general-purpose sensor. Every sensor is a loop, and every loop closes on some coordinates at the expense of others."
+            }
+          ],
+          "audioFile": "chunk-040.wav",
+          "durationSeconds": 20.24,
+          "startTimeSeconds": 792.62,
+          "endTimeSeconds": 812.86,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 41,
+          "charCount": 489,
+          "text": "Second: there is no view from nowhere. This phrase has lived as a useful ideal for a long time \u2014 the idea that good knowing is detached, that the observer who leaves the fewest fingerprints on the observed is the one whose representation is most trustworthy. It is an incoherent ideal. The detached observer is not an observer; the observer who is not coupled to the system is not looking at the system. Every observation is a coupling and every coupling leaves fingerprints on both sides.",
+          "spokenText": "Second: there is no view from nowhere. This phrase has lived as a useful ideal for a long time \u2014 the idea that good knowing is detached, that the observer who leaves the fewest fingerprints on the observed is the one whose representation is most trustworthy. It is an incoherent ideal. The detached observer is not an observer; the observer who is not coupled to the system is not looking at the system. Every observation is a coupling and every coupling leaves fingerprints on both sides.",
+          "startChar": 14515,
+          "endChar": 15004,
+          "blockStart": 22,
+          "blockEnd": 22,
+          "segments": [
+            {
+              "blockId": 22,
+              "startChar": 0,
+              "endChar": 489,
+              "text": "Second: there is no view from nowhere. This phrase has lived as a useful ideal for a long time \u2014 the idea that good knowing is detached, that the observer who leaves the fewest fingerprints on the observed is the one whose representation is most trustworthy. It is an incoherent ideal. The detached observer is not an observer; the observer who is not coupled to the system is not looking at the system. Every observation is a coupling and every coupling leaves fingerprints on both sides."
+            }
+          ],
+          "audioFile": "chunk-041.wav",
+          "durationSeconds": 26.0,
+          "startTimeSeconds": 812.96,
+          "endTimeSeconds": 838.96,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 42,
+          "charCount": 171,
+          "text": " The question is never whether your knowing has affected what you know. The question is which couplings you have chosen and what they have brought into definite existence.",
+          "spokenText": "The question is never whether your knowing has affected what you know. The question is which couplings you have chosen and what they have brought into definite existence.",
+          "startChar": 15006,
+          "endChar": 15177,
+          "blockStart": 22,
+          "blockEnd": 22,
+          "segments": [
+            {
+              "blockId": 22,
+              "startChar": 489,
+              "endChar": 660,
+              "text": " The question is never whether your knowing has affected what you know. The question is which couplings you have chosen and what they have brought into definite existence."
+            }
+          ],
+          "audioFile": "chunk-042.wav",
+          "durationSeconds": 10.4,
+          "startTimeSeconds": 839.06,
+          "endTimeSeconds": 849.46,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 43,
+          "charCount": 492,
+          "text": "Third: representation, as a concept, has to be revised in the direction of residue. A representation is not a picture of a world that pre-exists the picturing. A representation is what a probe-loop leaves behind after enough rounds to stabilize. The synthesizer patch, the bat's acoustic space, the photon's wave or particle behavior, the scientific measurement, the sensed color, the felt shape: all of these are residues of couplings. You are not storing a miniature of something out there.",
+          "spokenText": "Third: representation, as a concept, has to be revised in the direction of residue. A representation is not a picture of a world that pre-exists the picturing. A representation is what a probe-loop leaves behind after enough rounds to stabilize. The synthesizer patch, the bat's acoustic space, the photon's wave or particle behavior, the scientific measurement, the sensed color, the felt shape: all of these are residues of couplings. You are not storing a miniature of something out there.",
+          "startChar": 15179,
+          "endChar": 15671,
+          "blockStart": 23,
+          "blockEnd": 23,
+          "segments": [
+            {
+              "blockId": 23,
+              "startChar": 0,
+              "endChar": 492,
+              "text": "Third: representation, as a concept, has to be revised in the direction of residue. A representation is not a picture of a world that pre-exists the picturing. A representation is what a probe-loop leaves behind after enough rounds to stabilize. The synthesizer patch, the bat's acoustic space, the photon's wave or particle behavior, the scientific measurement, the sensed color, the felt shape: all of these are residues of couplings. You are not storing a miniature of something out there."
+            }
+          ],
+          "audioFile": "chunk-043.wav",
+          "durationSeconds": 29.12,
+          "startTimeSeconds": 849.56,
+          "endTimeSeconds": 878.68,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 44,
+          "charCount": 350,
+          "text": " You are holding, in whatever substrate your representations live in, the stabilized history of loops you have closed with that part of the world. Which is why, when the coupling changes \u2014 when you pick up a different instrument, when you move into a different community of speakers, when you develop a new attention \u2014 the representations change too.",
+          "spokenText": "You are holding, in whatever substrate your representations live in, the stabilized history of loops you have closed with that part of the world. Which is why, when the coupling changes \u2014 when you pick up a different instrument, when you move into a different community of speakers, when you develop a new attention \u2014 the representations change too.",
+          "startChar": 15673,
+          "endChar": 16023,
+          "blockStart": 23,
+          "blockEnd": 23,
+          "segments": [
+            {
+              "blockId": 23,
+              "startChar": 492,
+              "endChar": 842,
+              "text": " You are holding, in whatever substrate your representations live in, the stabilized history of loops you have closed with that part of the world. Which is why, when the coupling changes \u2014 when you pick up a different instrument, when you move into a different community of speakers, when you develop a new attention \u2014 the representations change too."
+            }
+          ],
+          "audioFile": "chunk-044.wav",
+          "durationSeconds": 17.68,
+          "startTimeSeconds": 878.78,
+          "endTimeSeconds": 896.46,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 45,
+          "charCount": 186,
+          "text": " Not because you have learned to see what was already there more accurately, but because you have closed a different loop, and a different set of coordinates has become definite for you.",
+          "spokenText": "Not because you have learned to see what was already there more accurately, but because you have closed a different loop, and a different set of coordinates has become definite for you.",
+          "startChar": 16025,
+          "endChar": 16211,
+          "blockStart": 23,
+          "blockEnd": 23,
+          "segments": [
+            {
+              "blockId": 23,
+              "startChar": 842,
+              "endChar": 1028,
+              "text": " Not because you have learned to see what was already there more accurately, but because you have closed a different loop, and a different set of coordinates has become definite for you."
+            }
+          ],
+          "audioFile": "chunk-045.wav",
+          "durationSeconds": 9.52,
+          "startTimeSeconds": 896.56,
+          "endTimeSeconds": 906.08,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 46,
+          "charCount": 346,
+          "text": "There is no looking that isn't also a touching. This is not a regrettable complication of knowing, to be minimized by careful methodology. It is the structure of knowing. Every sensor is an emitter; every observation is an interaction; every representation is the residue of a loop. The detached view is not a hard ideal. It is an incoherent one.",
+          "spokenText": "There is no looking that isn't also a touching. This is not a regrettable complication of knowing, to be minimized by careful methodology. It is the structure of knowing. Every sensor is an emitter; every observation is an interaction; every representation is the residue of a loop. The detached view is not a hard ideal. It is an incoherent one.",
+          "startChar": 16213,
+          "endChar": 16559,
+          "blockStart": 24,
+          "blockEnd": 24,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 0,
+              "endChar": 346,
+              "text": "There is no looking that isn't also a touching. This is not a regrettable complication of knowing, to be minimized by careful methodology. It is the structure of knowing. Every sensor is an emitter; every observation is an interaction; every representation is the residue of a loop. The detached view is not a hard ideal. It is an incoherent one."
+            }
+          ],
+          "audioFile": "chunk-046.wav",
+          "durationSeconds": 21.68,
+          "startTimeSeconds": 906.18,
+          "endTimeSeconds": 927.86,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 47,
+          "charCount": 178,
+          "text": " And the world that becomes available to you is the world your probes have reached, in the directions they were able to reach, in the coordinates they were able to make definite.",
+          "spokenText": "And the world that becomes available to you is the world your probes have reached, in the directions they were able to reach, in the coordinates they were able to make definite.",
+          "startChar": 16561,
+          "endChar": 16739,
+          "blockStart": 24,
+          "blockEnd": 24,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 346,
+              "endChar": 524,
+              "text": " And the world that becomes available to you is the world your probes have reached, in the directions they were able to reach, in the coordinates they were able to make definite."
+            }
+          ],
+          "audioFile": "chunk-047.wav",
+          "durationSeconds": 9.84,
+          "startTimeSeconds": 927.96,
+          "endTimeSeconds": 937.8,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 48,
+          "charCount": 454,
+          "text": "What you can know is what you are willing to couple to. What you will never know is what you never close a loop on. And whatever you do close a loop on \u2014 whatever you sustain the probing of for long enough to stabilize a representation \u2014 is changed by your probing, not in the obvious brutal way of breaking something by poking it, but in the deeper way that its being-one-way-rather-than-another was never a fact independent of the loop that was asking.",
+          "spokenText": "What you can know is what you are willing to couple to. What you will never know is what you never close a loop on. And whatever you do close a loop on \u2014 whatever you sustain the probing of for long enough to stabilize a representation \u2014 is changed by your probing, not in the obvious brutal way of breaking something by poking it, but in the deeper way that its being-one-way-rather-than-another was never a fact independent of the loop that was asking.",
+          "startChar": 16741,
+          "endChar": 17195,
+          "blockStart": 25,
+          "blockEnd": 25,
+          "segments": [
+            {
+              "blockId": 25,
+              "startChar": 0,
+              "endChar": 454,
+              "text": "What you can know is what you are willing to couple to. What you will never know is what you never close a loop on. And whatever you do close a loop on \u2014 whatever you sustain the probing of for long enough to stabilize a representation \u2014 is changed by your probing, not in the obvious brutal way of breaking something by poking it, but in the deeper way that its being-one-way-rather-than-another was never a fact independent of the loop that was asking."
+            }
+          ],
+          "audioFile": "chunk-048.wav",
+          "durationSeconds": 24.4,
+          "startTimeSeconds": 937.9,
+          "endTimeSeconds": 962.3,
+          "pauseAfterMs": 0
+        }
+      ],
+      "blockCount": 26
+    },
+    "publicAssets": {
+      "audioSrc": "/assets/post-audio/2026-04-21-you-cannot-look-without-touching/post.mp3",
+      "mimeType": "audio/mpeg"
+    },
+    "privateArtifacts": {
+      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-21-you-cannot-look-without-touching/narration-runs/20260424-032437_2026-04-21-you-cannot-look-without-touching",
+      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-21-you-cannot-look-without-touching/narration-runs/20260424-032437_2026-04-21-you-cannot-look-without-touching/metadata.json",
+      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-21-you-cannot-look-without-touching/narration-runs/20260424-032437_2026-04-21-you-cannot-look-without-touching/chunks.json",
+      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-21-you-cannot-look-without-touching/narration-runs/20260424-032437_2026-04-21-you-cannot-look-without-touching/post.wav",
+      "mp3Path": "public/assets/post-audio/2026-04-21-you-cannot-look-without-touching/post.mp3"
+    }
+  }
+}

@@ -28,7 +28,7 @@ Site-local Python package for the portfolio blog audio pipeline.
 - `transformers` is still used for tokenizer/config helpers needed by the vLLM prompt builder.
 - The copied runtime is local-only and should not be committed.
 - Blog-native post narration uses the Qwen Base model with one shared voice sample.
-- The default blog narration sample is `reference-audio.wav`.
+- Set `BLOG_AUDIO_REF_AUDIO=/absolute/path/to/reference-audio.wav` to control the default narration sample.
 - Post narration output is stitched into one MP3 under `public/assets/post-audio/<post>/post.mp3`.
 - `ffmpeg` is required for the MP3 transcode step.
 - The shell must provide the same CUDA and C++ runtime support that makes `../tts/.venv` usable.
@@ -51,7 +51,7 @@ uv run --python scripts/blog-audio/.venv/bin/python scripts/blog-audio-post.py -
 
 ## Narration defaults
 - Post narration uses `task_type=Base` with `x_vector_only_mode=true`.
-- Omit `--ref-audio` to use the shared `_denoise_2.wav` sample.
+- Omit `--ref-audio` to use `BLOG_AUDIO_REF_AUDIO` or the local `reference-audio.wav` fallback.
 - Posts are chunked into paragraph-sized TTS requests.
 - Default chunking targets `200-500` characters per chunk.
 - Adjacent short paragraphs or list items are merged until they reach a useful chunk size.

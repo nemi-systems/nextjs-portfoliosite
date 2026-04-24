@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "postId": "2026-03-04-retroglobe-canvas-migration",
+  "images": [
+    {
+      "src": "/assets/retroglobe-canvas-migration/projection.png",
+      "prompt": "[SUBJECT]\n\nThe subject is an abstract physical / mathematical representation showing a 3d wireframe sphere consisting of 3 concentric spheres with radius r=1,0.66,0.33 being projected onto a flat 2d canvas. The mapping of 3d to 2d is visible to the user via lines projecting the 3d points to the 2d canvas.\n\n[PALETTE]\n\nStrictly use color palette: industrial yellow #CA8F31 in foreground on flat black #000000 background.\n\nPositive Prompt:\n\n[SUBJECT], illustrated as a hyper-detailed technical sketch with dense linework, mechanical schematic motifs, and blueprint precision. Minimalist layout inspired by Swiss International Typographic Style and IBM ThinkPad aesthetics. Strong geometric structure, asymmetric typography elements, and industrial futurism. Strictly use color palette: [PALETTE]. High contrast, figure-ground separation, negative space balanced with zones of extreme density. Crisp edges, poster-like composition. Absolutely no text, letters, numbers, logos, UI labels, symbols, or readable glyphs anywhere in the image.\n\nNegative Prompt:\n\ncartoon, anime softness, painterly brush strokes, watercolor, noisy clutter, gradients, excessive text, typography, letters, numbers, words, captions, labels, UI text, logos, watermarks, signatures, glossy 3d render, oversaturated colors",
+      "model": "Gemini Nano Banana 2"
+    }
+  ]
+}

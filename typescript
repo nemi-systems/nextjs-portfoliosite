@@ -1,0 +1,10 @@
+Script started on 2026-03-31 13:55:30-04:00 [TERM="xterm-kitty" TTY="/dev/pts/5" COLUMNS="205" LINES="113"]
+
+\[[1;32m\][\[]0;james@nixdesk: ~/projects/nextjs-portfoliosite\]james@nixdesk:~/projects/nextjs-portfoliosite]$\[[0m\] ls
+ AGENTS.md    flake.nix  'Mahasutra — High Register.md'   next-env.d.ts   package.json        [0m[01;34mpublic[0m      [01;34msrc[0m                  tsconfig.json
+ [01;34mdocs[0m         [01;34minfra[0m       [01;34mmahasutra-line-audio[0m            [01;34mnode_modules[0m    package-lock.json   README.md   tailwind.config.ts   tsconfig.tsbuildinfo
+ flake.lock   LICENSE     next.config.js                  [01;34mout[0m             postcss.config.js   [01;34mscripts[0m     [01;34mtmp[0m                  typescript
+
+\[[1;32m\][\[]0;james@nixdesk: ~/projects/nextjs-portfoliosite\]james@nixdesk:~/projects/nextjs-portfoliosite]$\[[0m\] exit
+
+Script done on 2026-03-31 13:55:33-04:00 [COMMAND_EXIT_CODE="0"]

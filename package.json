@@ -7,6 +7,7 @@
     "build": "next build",
     "build:apps": "node scripts/hosted-apps.mjs build",
     "build:gravitylens": "node scripts/hosted-apps.mjs build gravitylens",
+    "build:ontology": "node scripts/hosted-apps.mjs build ontology",
     "build:synth": "node scripts/hosted-apps.mjs build synth",
     "serve": "node scripts/serve-hosted-apps.mjs",
     "preview": "rm -rf .next out && npm run build && npm run serve",

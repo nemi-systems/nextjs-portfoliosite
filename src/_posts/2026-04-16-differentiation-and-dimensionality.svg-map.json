@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "postId": "2026-04-16-differentiation-and-dimensionality",
+  "generatedAt": "2026-04-24T02:42:17Z",
+  "style": "gold-fill-transparent",
+  "images": [
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_hero.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_hero.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_hero.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_hero.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_hero.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_hero.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_cartographer_desk.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_cartographer_desk.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_cartographer_desk.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_cartographer_desk.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_cartographer_desk.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_cartographer_desk.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_dimension_tower.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_dimension_tower.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_dimension_tower.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_dimension_tower.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_dimension_tower.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_dimension_tower.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_empty_warehouse.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_empty_warehouse.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_empty_warehouse.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_empty_warehouse.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_empty_warehouse.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_empty_warehouse.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_instrument_wall.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_instrument_wall.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_instrument_wall.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_instrument_wall.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_instrument_wall.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_instrument_wall.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_rubber_sheet.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_rubber_sheet.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_rubber_sheet.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_rubber_sheet.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_rubber_sheet.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_rubber_sheet.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_origami_fold.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_origami_fold.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_origami_fold.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_origami_fold.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_origami_fold.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_origami_fold.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    }
+  ]
+}

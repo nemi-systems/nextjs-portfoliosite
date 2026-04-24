@@ -5,6 +5,8 @@ date: 2026-04-16
 
 ## The identical twin problem
 
+![Two identical silhouettes in a forensic line-up, separated by a new orthogonal axis carrying a single freckle](/assets/differentiation-and-dimensionality/ai_img_chatgpt_hero.png)
+
 Look at two identical twins. You cannot tell them apart from a photograph alone — whatever features you're using (eye color, jaw shape, hair) return the same values for both. They collide in your representation. To distinguish them, you have to find some way their representation *can* differ: a freckle, a gesture, a voice, a fingerprint. You have to reshape the space in which you're trying to tell them apart.
 
 This is what differentiation is, underneath the word: **the act of locating things in a space of features such that they occupy distinct positions.** If two things collide — if every coordinate you've assigned them is the same — then in the space you've built, they are, for your purposes, the same thing. To pull them apart, you need a different space: more axes, or finer resolution along the axes you have, or a different way of measuring distance along them, or a transformation that folds the representation into a new geometry.
@@ -33,6 +35,8 @@ That last sentence is the thesis. Everything that follows is an attempt to unpac
 
 ## Map, territory, and the space in between
 
+![Overhead view of a cartographer's desk with three acetate overlays — subway topology, topographic elevation, sparse feature points — of one underlying terrain](/assets/differentiation-and-dimensionality/ai_img_chatgpt_cartographer_desk.png)
+
 Bateson's line — *the map is not the territory* — is often read as a warning against confusing models with reality. But there is a second reading, closer to what Korzybski originally meant and what Heidegger circled around in his talk of the *clearing*: a map is a choice about which dimensions of the territory to preserve. A subway map collapses geography to topology; a topographic map collapses cultural features to elevation. Each map is a projection, and every projection is a decision about what differences are allowed to register and what differences are permitted to collapse.
 
 Differentiation happens in the map, not the territory. The territory just *is*; it doesn't distinguish anything. Hermeneutically, this is why interpretation is never finished — any reading preserves some differences and collapses others, and another reading, with different axes, can always pull apart what yours ran together.
@@ -40,6 +44,8 @@ Differentiation happens in the map, not the territory. The territory just *is*; 
 For the ML-minded reader, this is the embedding problem stated philosophically. An embedding is a map. "King" and "queen" occupy nearby positions along most axes and differ sharply on one. Whether a given embedding is *good* depends on whether the differences that matter for your task are preserved as distances in the space. When a model confuses two things, the fix is rarely more training data along the axes where they already look alike. The fix is a representation in which they differ — and that may mean a new axis, or a new metric, or a new transformation of the space you already have.
 
 ## Climbing the dimensions
+
+![Isometric cutaway of an observatory tower with five stacked floors — scalar rail, scatterplot atrium, wire-frame cube room, time-slice corridor, folded manifold vault](/assets/differentiation-and-dimensionality/ai_img_chatgpt_dimension_tower.png)
 
 Each step up the dimensional ladder opens a new *kind* of distinction — not just more room, but a different shape of separability. Walking the first few rungs is worth doing even if the high rungs are where the interesting representations live, because the shape of the move is what generalizes.
 
@@ -93,6 +99,8 @@ Think of $r^d \geq N$ as the condition for differentiation to be *possible*. Eve
 
 ## Ambient and intrinsic: the space you built vs. the space that matters
 
+![A vast cathedral-scale warehouse of empty scaffolding with a solitary figure holding a thin luminous ribbon-thread winding through a narrow corridor of the space](/assets/differentiation-and-dimensionality/ai_img_chatgpt_empty_warehouse.png)
+
 A representation has two dimensionalities, and they are almost never the same.
 
 The **ambient dimension** is the one you can count. It's the length of the vector, the number of columns in the table, the size of the coordinate system you chose. A photograph at 1024×1024 pixels has an ambient dimension of about a million. A word embedding declared as $\mathbb{R}^{300}$ has an ambient dimension of 300. Ambient dimension is a property of the *container*.
@@ -113,6 +121,8 @@ Which is why dimension, on its own, is the wrong lever to reach for first — an
 
 ## The levers
 
+![A draughtsman's pegboard wall holding five instruments — a T-square extender, divider-comb caliper, warped French curve, origami crease template, and glass ink reservoir of sample dots](/assets/differentiation-and-dimensionality/ai_img_chatgpt_instrument_wall.png)
+
 When two things collide in your representation — when the coordinates you've assigned them are the same — you have more options than the twins example might suggest. *Add a dimension* is the most intuitive, but it's one of five levers, and often not the one you should reach for first.
 
 **Add a dimension.** Introduce a new axis along which the colliding things differ. This is the twin-with-a-freckle move: the original representation had nothing to say about freckles, and now it does. It's the most expensive lever in most settings — new axes cost measurement, annotation, or engineering — but it's also the most structurally direct. When two things genuinely share every coordinate in your current space, nothing else will separate them.
@@ -121,7 +131,11 @@ When two things collide in your representation — when the coordinates you've a
 
 **Change the metric.** Keep the space and the resolution but change what counts as "close." Two points can be neighbors under Euclidean distance and strangers under cosine similarity; the space hasn't changed, but the topology of distinction has. Attention mechanisms, learned distance functions, and Mahalanobis-style reweightings are all versions of this move. The coordinates stay; the relationships between them shift.
 
+![A solitary figure on a taut gridded rubber sheet, holding a heavy sphere that drags the grid into an anisotropic well so two identical-coordinate pin-points fall on far-apart iso-distance rings](/assets/differentiation-and-dimensionality/ai_img_chatgpt_rubber_sheet.png)
+
 **Transform nonlinearly.** Reparameterize the space so that points which collided under the old coordinates separate under the new ones. This is the kernel trick, and more generally what every hidden layer of a neural network is doing: folding the representation so that previously indistinguishable inputs land in different places. No dimensions are added in the honest accounting — the transformation is a map from the space to itself, or from one space to another of similar size — but the geometry of what can be linearly separated changes completely.
+
+![Draughtsman hands creasing a flat paper sheet printed with two tangled spirals into a saddle fold, so the spirals stand on opposite faces and separate along a single slice](/assets/differentiation-and-dimensionality/ai_img_chatgpt_origami_fold.png)
 
 **Gather more data.** The other four levers change the representation. This one leaves the representation alone and improves your estimates within it. If the axes are right and the metric is right but the data is noisy, more samples will sharpen the distinctions that are already latent. If the axes are wrong, more data won't help — and this is the case where the confusion about "do I need more data or more dimensions?" genuinely bites. The answer depends on whether the collision is statistical or structural.
 

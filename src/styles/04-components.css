@@ -141,6 +141,7 @@
     margin: 1.3rem auto;
     width: 100%;
     max-width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 0.95rem;
     overflow: hidden;
     transform-style: preserve-3d;
@@ -150,11 +151,18 @@
   .prose .svg-depth-card .svg-layer {
     position: absolute;
     inset: 0;
+    display: block;
     margin: 0 !important;
     width: 100%;
     height: 100%;
     border: none !important;
-    object-fit: contain;
+    background-color: rgb(var(--theme-accent-rgb));
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
     pointer-events: none;
     user-select: none;
     transform-origin: center;
@@ -177,7 +185,7 @@
     z-index: 2;
     opacity: 0.88 !important;
     mix-blend-mode: normal !important;
-    filter: drop-shadow(0 0 7px rgba(212, 175, 55, 0.16));
+    filter: drop-shadow(0 0 7px rgb(var(--theme-accent-rgb) / 0.16));
     transform: translate3d(
       calc(var(--svg-shift-x, 0px) * 0.24),
       calc(var(--svg-shift-y, 0px) * 0.24),
@@ -199,7 +207,6 @@
   .prose .svg-depth-card .svg-layer-line,
   .prose .svg-depth-card .svg-layer-fg {
     z-index: 4;
-    position: relative;
     opacity: 0.62 !important;
     mix-blend-mode: normal !important;
     transform: translate3d(
@@ -210,6 +217,7 @@
       rotateX(var(--svg-tilt-x, 0deg))
       rotateY(var(--svg-tilt-y, 0deg));
     filter: contrast(1.02) saturate(1);
+    transition: background-color 0.3s ease;
   }
 
   .prose p > img:only-child + p {

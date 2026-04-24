@@ -5,7 +5,7 @@ import path from "node:path";
 const port = Number(process.env.PORT || 3000);
 const artifactDir = path.resolve(process.cwd(), "out");
 
-const CONTENT_TYPES = new Map([
+const contentTypes = new Map([
   [".html", "text/html; charset=utf-8"],
   [".css", "text/css; charset=utf-8"],
   [".js", "application/javascript; charset=utf-8"],
@@ -24,8 +24,6 @@ const CONTENT_TYPES = new Map([
   [".ttf", "font/ttf"],
   [".otf", "font/otf"],
   [".wasm", "application/wasm"],
-  [".pdf", "application/pdf"],
-  [".mp3", "audio/mpeg"],
 ]);
 
 async function fileExists(filePath) {
@@ -94,12 +92,12 @@ const server = http.createServer(async (req, res) => {
 
     if (!filePath) {
       res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-      res.end("Portfolio preview files were not found. Run `npm run build` first.\n");
+      res.end("Ontology preview files were not found. Run `npm run build` first.\n");
       return;
     }
 
     const ext = path.extname(filePath).toLowerCase();
-    const contentType = CONTENT_TYPES.get(ext) || "application/octet-stream";
+    const contentType = contentTypes.get(ext) || "application/octet-stream";
     const body = await fs.readFile(filePath);
 
     res.setHeader("Cache-Control", "no-store");
@@ -112,5 +110,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`Portfolio preview server listening on http://localhost:${port}`);
+  console.log(`Ontology preview server listening on http://localhost:${port}`);
 });

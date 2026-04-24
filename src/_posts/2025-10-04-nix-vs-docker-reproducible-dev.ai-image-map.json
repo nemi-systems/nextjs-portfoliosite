@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "postId": "2025-10-04-nix-vs-docker-reproducible-dev",
+  "images": [
+    {
+      "src": "/assets/docker-nix-post/upscayl2/docker_whale_2_upscayl_2x_upscayl-standard-4x.webp",
+      "prompt": "[SUBJECT]\n\nstylized docker whale with many stylized shipping container pods on its back\n\n[PALETTE]\n\nblack background, #CA8F31 main color in foreground\n\nPositive Prompt:\n\n[SUBJECT], illustrated as a hyper-detailed technical sketch with dense linework, mechanical schematic motifs, and blueprint precision. Minimalist layout inspired by Swiss International Typographic Style and IBM ThinkPad aesthetics. Strong geometric structure, asymmetric typography elements, and industrial futurism. Strictly use color palette: [PALETTE]. High contrast, figure-ground separation, negative space balanced with zones of extreme density. Crisp edges, poster-like composition.\n\nRemove all text\n\nForeground Color: #CA8F31 industrial yellow main color in foreground\n\nBackground: Flat black #000000\n\nmore saturated fg no background gradient\n\nhigher quality\n\nNegative Prompt:\n\ncartoon, anime softness, painterly brush strokes, watercolor, noisy clutter, gradients, excessive text, glossy 3d render, oversaturated colors",
+      "model": "Gemini Nano Banana"
+    },
+    {
+      "src": "/assets/docker-nix-post/upscayl2/functional_factory_1_upscayl_2x_upscayl-standard-4x.webp",
+      "prompt": "[SUBJECT]\n\nA factory hall where each worker works at an infinitely recursive assembly line\n\nworkers are pixel art anime girls\n\n[PALETTE]\n\nblack background, #CA8F31 industrial yellow main color in foreground\n\nPositive Prompt:\n\n[SUBJECT], illustrated as a hyper-detailed technical sketch with dense linework, mechanical schematic motifs, and blueprint precision. Minimalist layout inspired by Swiss International Graphic Design. Strong geometric structure, asymmetric typography elements, and industrial futurism. Strictly use color palette: [PALETTE]. High contrast, figure-ground separation, negative space balanced with zones of extreme density. Crisp edges, landscape orientation poster-like composition. no text directly printed in foreground\n\nNegative Prompt:\n\ncartoon, anime softness, painterly brush strokes, watercolor, noisy clutter, gradients, text, glossy 3d render, oversaturated colors",
+      "model": "Gemini Nano Banana"
+    }
+  ]
+}
