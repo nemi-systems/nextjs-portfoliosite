@@ -1,0 +1,780 @@
+{
+  "version": 3,
+  "postId": "2026-04-20-the-instrument-is-the-representation",
+  "generatedAt": "2026-04-24T03:13:32Z",
+  "status": "ok",
+  "narration": {
+    "postPath": "src/_posts/2026-04-20-the-instrument-is-the-representation.md",
+    "language": "English",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "taskType": "Base",
+    "refAudio": "reference-audio.wav",
+    "xVectorOnlyMode": true,
+    "instruct": null,
+    "usedDefaultInstruct": false,
+    "generationKwargs": {
+      "do_sample": true,
+      "subtalker_dosample": true,
+      "non_streaming_mode": true
+    },
+    "chunkCount": 30,
+    "pauseMs": 100,
+    "durationSeconds": 614.26,
+    "transcript": {
+      "text": "A piano key meets your finger with a specific kind of resistance and then gives way all at once, producing a single fixed frequency. A guitar string resists differently. You can press it, yes, but you can also push it sideways; you can slide your finger up the neck; the pitch moves continuously and all the resistance is in your own body's control. Before either instrument has said anything about music, they have already disagreed about what sound is for.\n\n Every instrument is a physical commitment to which dimensions of sound are easy, which are hard, and which are foreclosed entirely. Wood, wire, and keyboard layout are not neutral vessels for a musician's intention \u2014 they are pre-collapsed coordinate systems, heuristics frozen into objects. To learn an instrument is to absorb its particular collapse. To transcend it, when transcendence is possible, is to work against the grain of that collapse with craft the instrument itself did not anticipate.\n\n This is the clearest place to see what the sequence has been describing. A representation is whatever decides what can be distinguished from what. An instrument is a representation made physical and handed to a body.\n\nThe piano's trade\n\nThe piano quantizes frequency hard. There are no cracks between the keys. You cannot play a note that is a third of the way between E and F \u2014 not because such a note is musically impossible, but because the instrument has no physical address for it. The key is a threshold; pitch has been carved into a ladder, and the ladder is what the hands know.\n\nIn exchange for that collapse, the piano gives an extravagant amount of room along other axes. Ten voices, fully independent. Counterpoint. Huge dynamic range from near-silence to fortissimo without the pitch drifting. And the pedals, which are modal operators that transform the whole space: the sustain pedal says let every note keep existing along the time axis; the una corda shifts the timbral axis bodily to one side;\n\n the sostenuto isolates a subset of notes and sustains only those, a selective modal move. The pedals do not add notes. They add ways for the notes that are already there to persist, relate, and color.\n\nSo the piano's representation is: frequency as ladder, time as field, timbre as dial with a few presets, polyphony as total freedom. A pianist reaching for what the keys alone cannot give \u2014 expressive resolution, the vocal inflection \u2014 works along the axes that remain open. Rubato is resolution along time. Voicing is resolution along dynamics. The piano cannot bend pitch, so it bends when. The instrument foreclosed one axis, and expression seeped into the others.\n\nThe guitar's opposite trade\n\nThe guitar makes the opposite choice. It loses polyphonic independence \u2014 six strings, one hand fretting, every voice sharing the same left-hand geometry \u2014 but in exchange it gives you continuous frequency. The bend, the slide, the vibrato: these are not decorations. They are the axis that a piano literally cannot reach. A guitarist who bends a minor third up to a major third has moved through every frequency between them.\n\n The fret is a threshold, but the bend is what happens when you refuse the threshold.\n\nThis is why the electric guitar became the vehicle for a kind of expression the piano could not house. It is closer to the human voice in the dimension that matters most to the voice: frequency as continuum, not ladder. Fretless bass and fretless violin go further still, removing the resolution floor entirely. The instrument gives you no help. You have to supply the precision yourself, which is why they are harder \u2014 the representation stops doing work for you, and the craft cost rises sharply.\n\nEach of these is a lesson about what it costs to open an axis. Open the pitch continuum and the instrument stops guaranteeing that you will hit any particular note. The ladder was doing labor. Without it, the labor has to come from somewhere else.\n\nThe synthesizer and the new axes\n\nThen comes the move that lines up most cleanly with the rest of the sequence. The synthesizer keeps the keyboard \u2014 same quantized frequency axis the piano has \u2014 but every other dimension of sound becomes a knob. Attack, decay, sustain, release. Filter cutoff, resonance. LFO rate, LFO depth, LFO target. Waveform, detune, unison voices, envelope amount to pitch, envelope amount to filter. You have not added notes. You have added axes.\n\nAnd here the intrinsic/ambient gap appears as a craft problem, not a philosopher's problem. Most knob combinations do not sound like anything. They are spurious separations in a suddenly enormous ambient space. Twist enough knobs at random and you will almost certainly produce noise no one wants to hear twice. The ambient dimensionality of a modular synthesizer is staggering;\n\n the intrinsic manifold \u2014 the set of settings that correspond to sounds a musician can actually use \u2014 is a thin, convoluted ribbon winding through that space. Sound design is the craft of finding that ribbon. It is a skill that did not need to exist when the only instruments available had their timbral commitments baked into wood.\n\nThis is worth dwelling on. An acoustic guitar has a timbre. You can change it a little with your right hand \u2014 closer to the bridge, closer to the neck, pick or fingers, nail or flesh \u2014 but the envelope of possible guitar-tones is tiny compared to what a synthesizer can address. The acoustic instrument collapses the timbral dimension down to a small, coherent region, and gives that region for free.\n\n The synthesizer exposes the whole dimension, makes every point addressable, and hands you the problem of which points are worth visiting.\n\nThe knob is the representation directly. There is no resonating body to pre-curate which settings will sound good. The filter will cut off at whatever frequency you ask it to, including frequencies that make the sound lifeless, harsh, or inert. The instrument gives you more freedom and more ways to get lost. The new skill is navigation.\n\nHeuristics in wood\n\nStep back and the pattern is clear. Older instruments bake their heuristics into wood and wire. A violin's body, a clarinet's bore, a cymbal's metallurgy \u2014 each of these is a hand-designed feature, optimized over centuries by luthiers and makers who did not know they were optimizing a representation but were. The acoustic instrument says: within this small envelope of possibilities, everything you do will sound like music.\n\n Step outside the envelope and you cannot, because the instrument will not let you. The representation is narrow, and the narrowness is doing expressive work \u2014 it is making it hard to sound bad.\n\nModern instruments \u2014 electronic instruments, software instruments \u2014 expose the axes. The knobs are honest about what the physical instrument was hiding: there was always a filter cutoff, it was just glued to one value by the shape of the resonator. There was always an attack envelope, it was just set by how hard you could hit a string. Now those parameters are available. The envelope of possible sounds is enormous. Almost all of it is bad.\n\n A small part of it is music no previous instrument could make.\n\nMusicianship on an acoustic instrument is largely the skill of getting the most out of a fixed set of collapsed choices. Musicianship on a synthesizer is largely the skill of choosing well among a vast set of exposed choices \u2014 which, as we keep finding, is a different kind of competence.\n\nThe same shape in the other place\n\nThe shift from acoustic instrument to synthesizer has the same shape as the shift from hand-designed features to learned representations. In both cases, what was hidden in the structure of the object becomes explicit in the parameters of a model. In both cases, the envelope of possible outputs expands by orders of magnitude. In both cases, most of the new possibilities are worthless, and the craft problem becomes one of navigation rather than mastery of a small fixed repertoire.\n\n A machine-learning engineer tuning a network, a sound designer tuning a patch, and a modular synthesist patching cables are doing structurally similar work: searching an ambient space for the intrinsic manifold of things that are actually good.\n\nAnd the same anxieties attach. With the acoustic instrument, you knew what a good violin sounded like; centuries of use had told you. With the learned representation, as with the patch, you have to develop new ears \u2014 new criteria for when the unfamiliar thing in front of you is genuinely good and when it is merely novel. Many synthesizer presets and many neural-network outputs share a quality of being superficially interesting and deeply uninhabited.\n\n The ambient space is full of things that look like sounds or look like images without being the kind of thing anyone would return to.\n\nThe dial the situation calls for\n\nIf the instrument is the representation, then the musician's skill is partly the skill of knowing which dial the musical situation calls for \u2014 and, when the instrument does not offer the dial directly, of smuggling the needed dimension in through another axis that does. The pianist bends time because she cannot bend pitch. The guitarist finds polyphony through open tunings, capos, loopers, each a small act of adding an axis the instrument did not natively give.\n\n The synthesist, given every axis at once, has the opposite problem: enough freedom to do nothing coherent, and a constant need to collapse dimensions back down into something an ear can hold.\n\nNone of this is a claim that one kind of instrument is better. The argument is that every instrument is a commitment, and that the commitments are now visible to us in a way they were not before. The acoustic instrument hid its commitments inside a resonating object. The synthesizer writes them on a front panel. Neither is the true instrument; they are different bets about which axes should come free and which should cost.\n\nThe payoff is that we can now see the same shape elsewhere. When the sequence later turns to representations in domains with no wood and no strings \u2014 languages, institutions, inherited worlds \u2014 the move will be the same. Something has been committed. Some axes are free and some are foreclosed. Expression finds the free axes; craft finds the intrinsic manifold inside the ambient one;\n\n and what feels like the nature of the thing turns out, on inspection, to be a choice someone made and the rest of us inherited.\n\nThe instrument is the representation. Every other representation is, in that sense, an instrument too.",
+      "chunkSeparator": "\n\n",
+      "chunks": [
+        {
+          "index": 1,
+          "charCount": 458,
+          "text": "A piano key meets your finger with a specific kind of resistance and then gives way all at once, producing a single fixed frequency. A guitar string resists differently. You can press it, yes, but you can also push it sideways; you can slide your finger up the neck; the pitch moves continuously and all the resistance is in your own body's control. Before either instrument has said anything about music, they have already disagreed about what sound is for.",
+          "spokenText": "A piano key meets your finger with a specific kind of resistance and then gives way all at once, producing a single fixed frequency. A guitar string resists differently. You can press it, yes, but you can also push it sideways; you can slide your finger up the neck; the pitch moves continuously and all the resistance is in your own body's control. Before either instrument has said anything about music, they have already disagreed about what sound is for.",
+          "startChar": 0,
+          "endChar": 458,
+          "blockStart": 0,
+          "blockEnd": 0,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 0,
+              "endChar": 458,
+              "text": "A piano key meets your finger with a specific kind of resistance and then gives way all at once, producing a single fixed frequency. A guitar string resists differently. You can press it, yes, but you can also push it sideways; you can slide your finger up the neck; the pitch moves continuously and all the resistance is in your own body's control. Before either instrument has said anything about music, they have already disagreed about what sound is for."
+            }
+          ],
+          "audioFile": "chunk-001.wav",
+          "durationSeconds": 26.8,
+          "startTimeSeconds": 0.0,
+          "endTimeSeconds": 26.8,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 2,
+          "charCount": 501,
+          "text": " Every instrument is a physical commitment to which dimensions of sound are easy, which are hard, and which are foreclosed entirely. Wood, wire, and keyboard layout are not neutral vessels for a musician's intention \u2014 they are pre-collapsed coordinate systems, heuristics frozen into objects. To learn an instrument is to absorb its particular collapse. To transcend it, when transcendence is possible, is to work against the grain of that collapse with craft the instrument itself did not anticipate.",
+          "spokenText": "Every instrument is a physical commitment to which dimensions of sound are easy, which are hard, and which are foreclosed entirely. Wood, wire, and keyboard layout are not neutral vessels for a musician's intention \u2014 they are pre-collapsed coordinate systems, heuristics frozen into objects. To learn an instrument is to absorb its particular collapse. To transcend it, when transcendence is possible, is to work against the grain of that collapse with craft the instrument itself did not anticipate.",
+          "startChar": 460,
+          "endChar": 961,
+          "blockStart": 0,
+          "blockEnd": 0,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 458,
+              "endChar": 959,
+              "text": " Every instrument is a physical commitment to which dimensions of sound are easy, which are hard, and which are foreclosed entirely. Wood, wire, and keyboard layout are not neutral vessels for a musician's intention \u2014 they are pre-collapsed coordinate systems, heuristics frozen into objects. To learn an instrument is to absorb its particular collapse. To transcend it, when transcendence is possible, is to work against the grain of that collapse with craft the instrument itself did not anticipate."
+            }
+          ],
+          "audioFile": "chunk-002.wav",
+          "durationSeconds": 28.48,
+          "startTimeSeconds": 26.9,
+          "endTimeSeconds": 55.38,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 3,
+          "charCount": 217,
+          "text": " This is the clearest place to see what the sequence has been describing. A representation is whatever decides what can be distinguished from what. An instrument is a representation made physical and handed to a body.",
+          "spokenText": "This is the clearest place to see what the sequence has been describing. A representation is whatever decides what can be distinguished from what. An instrument is a representation made physical and handed to a body.",
+          "startChar": 963,
+          "endChar": 1180,
+          "blockStart": 0,
+          "blockEnd": 0,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 959,
+              "endChar": 1176,
+              "text": " This is the clearest place to see what the sequence has been describing. A representation is whatever decides what can be distinguished from what. An instrument is a representation made physical and handed to a body."
+            }
+          ],
+          "audioFile": "chunk-003.wav",
+          "durationSeconds": 13.2,
+          "startTimeSeconds": 55.48,
+          "endTimeSeconds": 68.68,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 4,
+          "charCount": 368,
+          "text": "The piano's trade\n\nThe piano quantizes frequency hard. There are no cracks between the keys. You cannot play a note that is a third of the way between E and F \u2014 not because such a note is musically impossible, but because the instrument has no physical address for it. The key is a threshold; pitch has been carved into a ladder, and the ladder is what the hands know.",
+          "spokenText": "The piano's trade.\n\nThe piano quantizes frequency hard. There are no cracks between the keys. You cannot play a note that is a third of the way between E and F \u2014 not because such a note is musically impossible, but because the instrument has no physical address for it. The key is a threshold; pitch has been carved into a ladder, and the ladder is what the hands know.",
+          "startChar": 1182,
+          "endChar": 1550,
+          "blockStart": 1,
+          "blockEnd": 2,
+          "segments": [
+            {
+              "blockId": 1,
+              "startChar": 0,
+              "endChar": 17,
+              "text": "The piano's trade"
+            },
+            {
+              "blockId": 2,
+              "startChar": 0,
+              "endChar": 349,
+              "text": "The piano quantizes frequency hard. There are no cracks between the keys. You cannot play a note that is a third of the way between E and F \u2014 not because such a note is musically impossible, but because the instrument has no physical address for it. The key is a threshold; pitch has been carved into a ladder, and the ladder is what the hands know."
+            }
+          ],
+          "audioFile": "chunk-004.wav",
+          "durationSeconds": 20.24,
+          "startTimeSeconds": 68.78,
+          "endTimeSeconds": 89.02,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 5,
+          "charCount": 423,
+          "text": "In exchange for that collapse, the piano gives an extravagant amount of room along other axes. Ten voices, fully independent. Counterpoint. Huge dynamic range from near-silence to fortissimo without the pitch drifting. And the pedals, which are modal operators that transform the whole space: the sustain pedal says let every note keep existing along the time axis; the una corda shifts the timbral axis bodily to one side;",
+          "spokenText": "In exchange for that collapse, the piano gives an extravagant amount of room along other axes. Ten voices, fully independent. Counterpoint. Huge dynamic range from near-silence to fortissimo without the pitch drifting. And the pedals, which are modal operators that transform the whole space: the sustain pedal says let every note keep existing along the time axis; the una corda shifts the timbral axis bodily to one side;",
+          "startChar": 1552,
+          "endChar": 1975,
+          "blockStart": 3,
+          "blockEnd": 3,
+          "segments": [
+            {
+              "blockId": 3,
+              "startChar": 0,
+              "endChar": 423,
+              "text": "In exchange for that collapse, the piano gives an extravagant amount of room along other axes. Ten voices, fully independent. Counterpoint. Huge dynamic range from near-silence to fortissimo without the pitch drifting. And the pedals, which are modal operators that transform the whole space: the sustain pedal says let every note keep existing along the time axis; the una corda shifts the timbral axis bodily to one side;"
+            }
+          ],
+          "audioFile": "chunk-005.wav",
+          "durationSeconds": 24.72,
+          "startTimeSeconds": 89.12,
+          "endTimeSeconds": 113.84,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 6,
+          "charCount": 201,
+          "text": " the sostenuto isolates a subset of notes and sustains only those, a selective modal move. The pedals do not add notes. They add ways for the notes that are already there to persist, relate, and color.",
+          "spokenText": "the sostenuto isolates a subset of notes and sustains only those, a selective modal move. The pedals do not add notes. They add ways for the notes that are already there to persist, relate, and color.",
+          "startChar": 1977,
+          "endChar": 2178,
+          "blockStart": 3,
+          "blockEnd": 3,
+          "segments": [
+            {
+              "blockId": 3,
+              "startChar": 423,
+              "endChar": 624,
+              "text": " the sostenuto isolates a subset of notes and sustains only those, a selective modal move. The pedals do not add notes. They add ways for the notes that are already there to persist, relate, and color."
+            }
+          ],
+          "audioFile": "chunk-006.wav",
+          "durationSeconds": 14.24,
+          "startTimeSeconds": 113.94,
+          "endTimeSeconds": 128.18,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 7,
+          "charCount": 467,
+          "text": "So the piano's representation is: frequency as ladder, time as field, timbre as dial with a few presets, polyphony as total freedom. A pianist reaching for what the keys alone cannot give \u2014 expressive resolution, the vocal inflection \u2014 works along the axes that remain open. Rubato is resolution along time. Voicing is resolution along dynamics. The piano cannot bend pitch, so it bends when. The instrument foreclosed one axis, and expression seeped into the others.",
+          "spokenText": "So the piano's representation is: frequency as ladder, time as field, timbre as dial with a few presets, polyphony as total freedom. A pianist reaching for what the keys alone cannot give \u2014 expressive resolution, the vocal inflection \u2014 works along the axes that remain open. Rubato is resolution along time. Voicing is resolution along dynamics. The piano cannot bend pitch, so it bends when. The instrument foreclosed one axis, and expression seeped into the others.",
+          "startChar": 2180,
+          "endChar": 2647,
+          "blockStart": 4,
+          "blockEnd": 4,
+          "segments": [
+            {
+              "blockId": 4,
+              "startChar": 0,
+              "endChar": 467,
+              "text": "So the piano's representation is: frequency as ladder, time as field, timbre as dial with a few presets, polyphony as total freedom. A pianist reaching for what the keys alone cannot give \u2014 expressive resolution, the vocal inflection \u2014 works along the axes that remain open. Rubato is resolution along time. Voicing is resolution along dynamics. The piano cannot bend pitch, so it bends when. The instrument foreclosed one axis, and expression seeped into the others."
+            }
+          ],
+          "audioFile": "chunk-007.wav",
+          "durationSeconds": 31.04,
+          "startTimeSeconds": 128.28,
+          "endTimeSeconds": 159.32,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 8,
+          "charCount": 454,
+          "text": "The guitar's opposite trade\n\nThe guitar makes the opposite choice. It loses polyphonic independence \u2014 six strings, one hand fretting, every voice sharing the same left-hand geometry \u2014 but in exchange it gives you continuous frequency. The bend, the slide, the vibrato: these are not decorations. They are the axis that a piano literally cannot reach. A guitarist who bends a minor third up to a major third has moved through every frequency between them.",
+          "spokenText": "The guitar's opposite trade.\n\nThe guitar makes the opposite choice. It loses polyphonic independence \u2014 six strings, one hand fretting, every voice sharing the same left-hand geometry \u2014 but in exchange it gives you continuous frequency. The bend, the slide, the vibrato: these are not decorations. They are the axis that a piano literally cannot reach. A guitarist who bends a minor third up to a major third has moved through every frequency between them.",
+          "startChar": 2649,
+          "endChar": 3103,
+          "blockStart": 5,
+          "blockEnd": 6,
+          "segments": [
+            {
+              "blockId": 5,
+              "startChar": 0,
+              "endChar": 27,
+              "text": "The guitar's opposite trade"
+            },
+            {
+              "blockId": 6,
+              "startChar": 0,
+              "endChar": 425,
+              "text": "The guitar makes the opposite choice. It loses polyphonic independence \u2014 six strings, one hand fretting, every voice sharing the same left-hand geometry \u2014 but in exchange it gives you continuous frequency. The bend, the slide, the vibrato: these are not decorations. They are the axis that a piano literally cannot reach. A guitarist who bends a minor third up to a major third has moved through every frequency between them."
+            }
+          ],
+          "audioFile": "chunk-008.wav",
+          "durationSeconds": 26.4,
+          "startTimeSeconds": 159.42,
+          "endTimeSeconds": 185.82,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 9,
+          "charCount": 85,
+          "text": " The fret is a threshold, but the bend is what happens when you refuse the threshold.",
+          "spokenText": "The fret is a threshold, but the bend is what happens when you refuse the threshold.",
+          "startChar": 3105,
+          "endChar": 3190,
+          "blockStart": 6,
+          "blockEnd": 6,
+          "segments": [
+            {
+              "blockId": 6,
+              "startChar": 425,
+              "endChar": 510,
+              "text": " The fret is a threshold, but the bend is what happens when you refuse the threshold."
+            }
+          ],
+          "audioFile": "chunk-009.wav",
+          "durationSeconds": 4.72,
+          "startTimeSeconds": 185.92,
+          "endTimeSeconds": 190.64,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 10,
+          "charCount": 498,
+          "text": "This is why the electric guitar became the vehicle for a kind of expression the piano could not house. It is closer to the human voice in the dimension that matters most to the voice: frequency as continuum, not ladder. Fretless bass and fretless violin go further still, removing the resolution floor entirely. The instrument gives you no help. You have to supply the precision yourself, which is why they are harder \u2014 the representation stops doing work for you, and the craft cost rises sharply.",
+          "spokenText": "This is why the electric guitar became the vehicle for a kind of expression the piano could not house. It is closer to the human voice in the dimension that matters most to the voice: frequency as continuum, not ladder. Fretless bass and fretless violin go further still, removing the resolution floor entirely. The instrument gives you no help. You have to supply the precision yourself, which is why they are harder \u2014 the representation stops doing work for you, and the craft cost rises sharply.",
+          "startChar": 3192,
+          "endChar": 3690,
+          "blockStart": 7,
+          "blockEnd": 7,
+          "segments": [
+            {
+              "blockId": 7,
+              "startChar": 0,
+              "endChar": 498,
+              "text": "This is why the electric guitar became the vehicle for a kind of expression the piano could not house. It is closer to the human voice in the dimension that matters most to the voice: frequency as continuum, not ladder. Fretless bass and fretless violin go further still, removing the resolution floor entirely. The instrument gives you no help. You have to supply the precision yourself, which is why they are harder \u2014 the representation stops doing work for you, and the craft cost rises sharply."
+            }
+          ],
+          "audioFile": "chunk-010.wav",
+          "durationSeconds": 28.32,
+          "startTimeSeconds": 190.74,
+          "endTimeSeconds": 219.06,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 11,
+          "charCount": 247,
+          "text": "Each of these is a lesson about what it costs to open an axis. Open the pitch continuum and the instrument stops guaranteeing that you will hit any particular note. The ladder was doing labor. Without it, the labor has to come from somewhere else.",
+          "spokenText": "Each of these is a lesson about what it costs to open an axis. Open the pitch continuum and the instrument stops guaranteeing that you will hit any particular note. The ladder was doing labor. Without it, the labor has to come from somewhere else.",
+          "startChar": 3692,
+          "endChar": 3939,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 0,
+              "endChar": 247,
+              "text": "Each of these is a lesson about what it costs to open an axis. Open the pitch continuum and the instrument stops guaranteeing that you will hit any particular note. The ladder was doing labor. Without it, the labor has to come from somewhere else."
+            }
+          ],
+          "audioFile": "chunk-011.wav",
+          "durationSeconds": 14.08,
+          "startTimeSeconds": 219.16,
+          "endTimeSeconds": 233.24,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 12,
+          "charCount": 470,
+          "text": "The synthesizer and the new axes\n\nThen comes the move that lines up most cleanly with the rest of the sequence. The synthesizer keeps the keyboard \u2014 same quantized frequency axis the piano has \u2014 but every other dimension of sound becomes a knob. Attack, decay, sustain, release. Filter cutoff, resonance. LFO rate, LFO depth, LFO target. Waveform, detune, unison voices, envelope amount to pitch, envelope amount to filter. You have not added notes. You have added axes.",
+          "spokenText": "The synthesizer and the new axes.\n\nThen comes the move that lines up most cleanly with the rest of the sequence. The synthesizer keeps the keyboard \u2014 same quantized frequency axis the piano has \u2014 but every other dimension of sound becomes a knob. Attack, decay, sustain, release. Filter cutoff, resonance. LFO rate, LFO depth, LFO target. Waveform, detune, unison voices, envelope amount to pitch, envelope amount to filter. You have not added notes. You have added axes.",
+          "startChar": 3941,
+          "endChar": 4411,
+          "blockStart": 9,
+          "blockEnd": 10,
+          "segments": [
+            {
+              "blockId": 9,
+              "startChar": 0,
+              "endChar": 32,
+              "text": "The synthesizer and the new axes"
+            },
+            {
+              "blockId": 10,
+              "startChar": 0,
+              "endChar": 436,
+              "text": "Then comes the move that lines up most cleanly with the rest of the sequence. The synthesizer keeps the keyboard \u2014 same quantized frequency axis the piano has \u2014 but every other dimension of sound becomes a knob. Attack, decay, sustain, release. Filter cutoff, resonance. LFO rate, LFO depth, LFO target. Waveform, detune, unison voices, envelope amount to pitch, envelope amount to filter. You have not added notes. You have added axes."
+            }
+          ],
+          "audioFile": "chunk-012.wav",
+          "durationSeconds": 29.04,
+          "startTimeSeconds": 233.34,
+          "endTimeSeconds": 262.38,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 13,
+          "charCount": 378,
+          "text": "And here the intrinsic/ambient gap appears as a craft problem, not a philosopher's problem. Most knob combinations do not sound like anything. They are spurious separations in a suddenly enormous ambient space. Twist enough knobs at random and you will almost certainly produce noise no one wants to hear twice. The ambient dimensionality of a modular synthesizer is staggering;",
+          "spokenText": "And here the intrinsic/ambient gap appears as a craft problem, not a philosopher's problem. Most knob combinations do not sound like anything. They are spurious separations in a suddenly enormous ambient space. Twist enough knobs at random and you will almost certainly produce noise no one wants to hear twice. The ambient dimensionality of a modular synthesizer is staggering;",
+          "startChar": 4413,
+          "endChar": 4791,
+          "blockStart": 11,
+          "blockEnd": 11,
+          "segments": [
+            {
+              "blockId": 11,
+              "startChar": 0,
+              "endChar": 378,
+              "text": "And here the intrinsic/ambient gap appears as a craft problem, not a philosopher's problem. Most knob combinations do not sound like anything. They are spurious separations in a suddenly enormous ambient space. Twist enough knobs at random and you will almost certainly produce noise no one wants to hear twice. The ambient dimensionality of a modular synthesizer is staggering;"
+            }
+          ],
+          "audioFile": "chunk-013.wav",
+          "durationSeconds": 21.76,
+          "startTimeSeconds": 262.48,
+          "endTimeSeconds": 284.24,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 14,
+          "charCount": 332,
+          "text": " the intrinsic manifold \u2014 the set of settings that correspond to sounds a musician can actually use \u2014 is a thin, convoluted ribbon winding through that space. Sound design is the craft of finding that ribbon. It is a skill that did not need to exist when the only instruments available had their timbral commitments baked into wood.",
+          "spokenText": "the intrinsic manifold \u2014 the set of settings that correspond to sounds a musician can actually use \u2014 is a thin, convoluted ribbon winding through that space. Sound design is the craft of finding that ribbon. It is a skill that did not need to exist when the only instruments available had their timbral commitments baked into wood.",
+          "startChar": 4793,
+          "endChar": 5125,
+          "blockStart": 11,
+          "blockEnd": 11,
+          "segments": [
+            {
+              "blockId": 11,
+              "startChar": 378,
+              "endChar": 710,
+              "text": " the intrinsic manifold \u2014 the set of settings that correspond to sounds a musician can actually use \u2014 is a thin, convoluted ribbon winding through that space. Sound design is the craft of finding that ribbon. It is a skill that did not need to exist when the only instruments available had their timbral commitments baked into wood."
+            }
+          ],
+          "audioFile": "chunk-014.wav",
+          "durationSeconds": 18.56,
+          "startTimeSeconds": 284.34,
+          "endTimeSeconds": 302.9,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 15,
+          "charCount": 400,
+          "text": "This is worth dwelling on. An acoustic guitar has a timbre. You can change it a little with your right hand \u2014 closer to the bridge, closer to the neck, pick or fingers, nail or flesh \u2014 but the envelope of possible guitar-tones is tiny compared to what a synthesizer can address. The acoustic instrument collapses the timbral dimension down to a small, coherent region, and gives that region for free.",
+          "spokenText": "This is worth dwelling on. An acoustic guitar has a timbre. You can change it a little with your right hand \u2014 closer to the bridge, closer to the neck, pick or fingers, nail or flesh \u2014 but the envelope of possible guitar-tones is tiny compared to what a synthesizer can address. The acoustic instrument collapses the timbral dimension down to a small, coherent region, and gives that region for free.",
+          "startChar": 5127,
+          "endChar": 5527,
+          "blockStart": 12,
+          "blockEnd": 12,
+          "segments": [
+            {
+              "blockId": 12,
+              "startChar": 0,
+              "endChar": 400,
+              "text": "This is worth dwelling on. An acoustic guitar has a timbre. You can change it a little with your right hand \u2014 closer to the bridge, closer to the neck, pick or fingers, nail or flesh \u2014 but the envelope of possible guitar-tones is tiny compared to what a synthesizer can address. The acoustic instrument collapses the timbral dimension down to a small, coherent region, and gives that region for free."
+            }
+          ],
+          "audioFile": "chunk-015.wav",
+          "durationSeconds": 22.88,
+          "startTimeSeconds": 303.0,
+          "endTimeSeconds": 325.88,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 16,
+          "charCount": 478,
+          "text": " The synthesizer exposes the whole dimension, makes every point addressable, and hands you the problem of which points are worth visiting.\n\nThe knob is the representation directly. There is no resonating body to pre-curate which settings will sound good. The filter will cut off at whatever frequency you ask it to, including frequencies that make the sound lifeless, harsh, or inert. The instrument gives you more freedom and more ways to get lost. The new skill is navigation.",
+          "spokenText": "The synthesizer exposes the whole dimension, makes every point addressable, and hands you the problem of which points are worth visiting.\n\nThe knob is the representation directly. There is no resonating body to pre-curate which settings will sound good. The filter will cut off at whatever frequency you ask it to, including frequencies that make the sound lifeless, harsh, or inert. The instrument gives you more freedom and more ways to get lost. The new skill is navigation.",
+          "startChar": 5529,
+          "endChar": 6007,
+          "blockStart": 12,
+          "blockEnd": 13,
+          "segments": [
+            {
+              "blockId": 12,
+              "startChar": 400,
+              "endChar": 538,
+              "text": " The synthesizer exposes the whole dimension, makes every point addressable, and hands you the problem of which points are worth visiting."
+            },
+            {
+              "blockId": 13,
+              "startChar": 0,
+              "endChar": 338,
+              "text": "The knob is the representation directly. There is no resonating body to pre-curate which settings will sound good. The filter will cut off at whatever frequency you ask it to, including frequencies that make the sound lifeless, harsh, or inert. The instrument gives you more freedom and more ways to get lost. The new skill is navigation."
+            }
+          ],
+          "audioFile": "chunk-016.wav",
+          "durationSeconds": 25.76,
+          "startTimeSeconds": 325.98,
+          "endTimeSeconds": 351.74,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 17,
+          "charCount": 446,
+          "text": "Heuristics in wood\n\nStep back and the pattern is clear. Older instruments bake their heuristics into wood and wire. A violin's body, a clarinet's bore, a cymbal's metallurgy \u2014 each of these is a hand-designed feature, optimized over centuries by luthiers and makers who did not know they were optimizing a representation but were. The acoustic instrument says: within this small envelope of possibilities, everything you do will sound like music.",
+          "spokenText": "Heuristics in wood.\n\nStep back and the pattern is clear. Older instruments bake their heuristics into wood and wire. A violin's body, a clarinet's bore, a cymbal's metallurgy \u2014 each of these is a hand-designed feature, optimized over centuries by luthiers and makers who did not know they were optimizing a representation but were. The acoustic instrument says: within this small envelope of possibilities, everything you do will sound like music.",
+          "startChar": 6009,
+          "endChar": 6455,
+          "blockStart": 14,
+          "blockEnd": 15,
+          "segments": [
+            {
+              "blockId": 14,
+              "startChar": 0,
+              "endChar": 18,
+              "text": "Heuristics in wood"
+            },
+            {
+              "blockId": 15,
+              "startChar": 0,
+              "endChar": 426,
+              "text": "Step back and the pattern is clear. Older instruments bake their heuristics into wood and wire. A violin's body, a clarinet's bore, a cymbal's metallurgy \u2014 each of these is a hand-designed feature, optimized over centuries by luthiers and makers who did not know they were optimizing a representation but were. The acoustic instrument says: within this small envelope of possibilities, everything you do will sound like music."
+            }
+          ],
+          "audioFile": "chunk-017.wav",
+          "durationSeconds": 28.72,
+          "startTimeSeconds": 351.84,
+          "endTimeSeconds": 380.56,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 18,
+          "charCount": 194,
+          "text": " Step outside the envelope and you cannot, because the instrument will not let you. The representation is narrow, and the narrowness is doing expressive work \u2014 it is making it hard to sound bad.",
+          "spokenText": "Step outside the envelope and you cannot, because the instrument will not let you. The representation is narrow, and the narrowness is doing expressive work \u2014 it is making it hard to sound bad.",
+          "startChar": 6457,
+          "endChar": 6651,
+          "blockStart": 15,
+          "blockEnd": 15,
+          "segments": [
+            {
+              "blockId": 15,
+              "startChar": 426,
+              "endChar": 620,
+              "text": " Step outside the envelope and you cannot, because the instrument will not let you. The representation is narrow, and the narrowness is doing expressive work \u2014 it is making it hard to sound bad."
+            }
+          ],
+          "audioFile": "chunk-018.wav",
+          "durationSeconds": 11.2,
+          "startTimeSeconds": 380.66,
+          "endTimeSeconds": 391.86,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 19,
+          "charCount": 443,
+          "text": "Modern instruments \u2014 electronic instruments, software instruments \u2014 expose the axes. The knobs are honest about what the physical instrument was hiding: there was always a filter cutoff, it was just glued to one value by the shape of the resonator. There was always an attack envelope, it was just set by how hard you could hit a string. Now those parameters are available. The envelope of possible sounds is enormous. Almost all of it is bad.",
+          "spokenText": "Modern instruments \u2014 electronic instruments, software instruments \u2014 expose the axes. The knobs are honest about what the physical instrument was hiding: there was always a filter cutoff, it was just glued to one value by the shape of the resonator. There was always an attack envelope, it was just set by how hard you could hit a string. Now those parameters are available. The envelope of possible sounds is enormous. Almost all of it is bad.",
+          "startChar": 6653,
+          "endChar": 7096,
+          "blockStart": 16,
+          "blockEnd": 16,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 0,
+              "endChar": 443,
+              "text": "Modern instruments \u2014 electronic instruments, software instruments \u2014 expose the axes. The knobs are honest about what the physical instrument was hiding: there was always a filter cutoff, it was just glued to one value by the shape of the resonator. There was always an attack envelope, it was just set by how hard you could hit a string. Now those parameters are available. The envelope of possible sounds is enormous. Almost all of it is bad."
+            }
+          ],
+          "audioFile": "chunk-019.wav",
+          "durationSeconds": 22.88,
+          "startTimeSeconds": 391.96,
+          "endTimeSeconds": 414.84,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 20,
+          "charCount": 353,
+          "text": " A small part of it is music no previous instrument could make.\n\nMusicianship on an acoustic instrument is largely the skill of getting the most out of a fixed set of collapsed choices. Musicianship on a synthesizer is largely the skill of choosing well among a vast set of exposed choices \u2014 which, as we keep finding, is a different kind of competence.",
+          "spokenText": "A small part of it is music no previous instrument could make.\n\nMusicianship on an acoustic instrument is largely the skill of getting the most out of a fixed set of collapsed choices. Musicianship on a synthesizer is largely the skill of choosing well among a vast set of exposed choices \u2014 which, as we keep finding, is a different kind of competence.",
+          "startChar": 7098,
+          "endChar": 7451,
+          "blockStart": 16,
+          "blockEnd": 17,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 443,
+              "endChar": 506,
+              "text": " A small part of it is music no previous instrument could make."
+            },
+            {
+              "blockId": 17,
+              "startChar": 0,
+              "endChar": 288,
+              "text": "Musicianship on an acoustic instrument is largely the skill of getting the most out of a fixed set of collapsed choices. Musicianship on a synthesizer is largely the skill of choosing well among a vast set of exposed choices \u2014 which, as we keep finding, is a different kind of competence."
+            }
+          ],
+          "audioFile": "chunk-020.wav",
+          "durationSeconds": 19.76,
+          "startTimeSeconds": 414.94,
+          "endTimeSeconds": 434.7,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 21,
+          "charCount": 33,
+          "text": "The same shape in the other place",
+          "spokenText": "The same shape in the other place.",
+          "startChar": 7453,
+          "endChar": 7486,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 0,
+              "endChar": 33,
+              "text": "The same shape in the other place"
+            }
+          ],
+          "audioFile": "chunk-021.wav",
+          "durationSeconds": 2.08,
+          "startTimeSeconds": 434.8,
+          "endTimeSeconds": 436.88,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 22,
+          "charCount": 483,
+          "text": "The shift from acoustic instrument to synthesizer has the same shape as the shift from hand-designed features to learned representations. In both cases, what was hidden in the structure of the object becomes explicit in the parameters of a model. In both cases, the envelope of possible outputs expands by orders of magnitude. In both cases, most of the new possibilities are worthless, and the craft problem becomes one of navigation rather than mastery of a small fixed repertoire.",
+          "spokenText": "The shift from acoustic instrument to synthesizer has the same shape as the shift from hand-designed features to learned representations. In both cases, what was hidden in the structure of the object becomes explicit in the parameters of a model. In both cases, the envelope of possible outputs expands by orders of magnitude. In both cases, most of the new possibilities are worthless, and the craft problem becomes one of navigation rather than mastery of a small fixed repertoire.",
+          "startChar": 7488,
+          "endChar": 7971,
+          "blockStart": 19,
+          "blockEnd": 19,
+          "segments": [
+            {
+              "blockId": 19,
+              "startChar": 0,
+              "endChar": 483,
+              "text": "The shift from acoustic instrument to synthesizer has the same shape as the shift from hand-designed features to learned representations. In both cases, what was hidden in the structure of the object becomes explicit in the parameters of a model. In both cases, the envelope of possible outputs expands by orders of magnitude. In both cases, most of the new possibilities are worthless, and the craft problem becomes one of navigation rather than mastery of a small fixed repertoire."
+            }
+          ],
+          "audioFile": "chunk-022.wav",
+          "durationSeconds": 28.32,
+          "startTimeSeconds": 436.98,
+          "endTimeSeconds": 465.3,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 23,
+          "charCount": 245,
+          "text": " A machine-learning engineer tuning a network, a sound designer tuning a patch, and a modular synthesist patching cables are doing structurally similar work: searching an ambient space for the intrinsic manifold of things that are actually good.",
+          "spokenText": "A machine-learning engineer tuning a network, a sound designer tuning a patch, and a modular synthesist patching cables are doing structurally similar work: searching an ambient space for the intrinsic manifold of things that are actually good.",
+          "startChar": 7973,
+          "endChar": 8218,
+          "blockStart": 19,
+          "blockEnd": 19,
+          "segments": [
+            {
+              "blockId": 19,
+              "startChar": 483,
+              "endChar": 728,
+              "text": " A machine-learning engineer tuning a network, a sound designer tuning a patch, and a modular synthesist patching cables are doing structurally similar work: searching an ambient space for the intrinsic manifold of things that are actually good."
+            }
+          ],
+          "audioFile": "chunk-023.wav",
+          "durationSeconds": 14.48,
+          "startTimeSeconds": 465.4,
+          "endTimeSeconds": 479.88,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 24,
+          "charCount": 454,
+          "text": "And the same anxieties attach. With the acoustic instrument, you knew what a good violin sounded like; centuries of use had told you. With the learned representation, as with the patch, you have to develop new ears \u2014 new criteria for when the unfamiliar thing in front of you is genuinely good and when it is merely novel. Many synthesizer presets and many neural-network outputs share a quality of being superficially interesting and deeply uninhabited.",
+          "spokenText": "And the same anxieties attach. With the acoustic instrument, you knew what a good violin sounded like; centuries of use had told you. With the learned representation, as with the patch, you have to develop new ears \u2014 new criteria for when the unfamiliar thing in front of you is genuinely good and when it is merely novel. Many synthesizer presets and many neural-network outputs share a quality of being superficially interesting and deeply uninhabited.",
+          "startChar": 8220,
+          "endChar": 8674,
+          "blockStart": 20,
+          "blockEnd": 20,
+          "segments": [
+            {
+              "blockId": 20,
+              "startChar": 0,
+              "endChar": 454,
+              "text": "And the same anxieties attach. With the acoustic instrument, you knew what a good violin sounded like; centuries of use had told you. With the learned representation, as with the patch, you have to develop new ears \u2014 new criteria for when the unfamiliar thing in front of you is genuinely good and when it is merely novel. Many synthesizer presets and many neural-network outputs share a quality of being superficially interesting and deeply uninhabited."
+            }
+          ],
+          "audioFile": "chunk-024.wav",
+          "durationSeconds": 26.4,
+          "startTimeSeconds": 479.98,
+          "endTimeSeconds": 506.38,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 25,
+          "charCount": 168,
+          "text": " The ambient space is full of things that look like sounds or look like images without being the kind of thing anyone would return to.\n\nThe dial the situation calls for",
+          "spokenText": "The ambient space is full of things that look like sounds or look like images without being the kind of thing anyone would return to.\n\nThe dial the situation calls for.",
+          "startChar": 8676,
+          "endChar": 8844,
+          "blockStart": 20,
+          "blockEnd": 21,
+          "segments": [
+            {
+              "blockId": 20,
+              "startChar": 454,
+              "endChar": 588,
+              "text": " The ambient space is full of things that look like sounds or look like images without being the kind of thing anyone would return to."
+            },
+            {
+              "blockId": 21,
+              "startChar": 0,
+              "endChar": 32,
+              "text": "The dial the situation calls for"
+            }
+          ],
+          "audioFile": "chunk-025.wav",
+          "durationSeconds": 11.04,
+          "startTimeSeconds": 506.48,
+          "endTimeSeconds": 517.52,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 26,
+          "charCount": 465,
+          "text": "If the instrument is the representation, then the musician's skill is partly the skill of knowing which dial the musical situation calls for \u2014 and, when the instrument does not offer the dial directly, of smuggling the needed dimension in through another axis that does. The pianist bends time because she cannot bend pitch. The guitarist finds polyphony through open tunings, capos, loopers, each a small act of adding an axis the instrument did not natively give.",
+          "spokenText": "If the instrument is the representation, then the musician's skill is partly the skill of knowing which dial the musical situation calls for \u2014 and, when the instrument does not offer the dial directly, of smuggling the needed dimension in through another axis that does. The pianist bends time because she cannot bend pitch. The guitarist finds polyphony through open tunings, capos, loopers, each a small act of adding an axis the instrument did not natively give.",
+          "startChar": 8846,
+          "endChar": 9311,
+          "blockStart": 22,
+          "blockEnd": 22,
+          "segments": [
+            {
+              "blockId": 22,
+              "startChar": 0,
+              "endChar": 465,
+              "text": "If the instrument is the representation, then the musician's skill is partly the skill of knowing which dial the musical situation calls for \u2014 and, when the instrument does not offer the dial directly, of smuggling the needed dimension in through another axis that does. The pianist bends time because she cannot bend pitch. The guitarist finds polyphony through open tunings, capos, loopers, each a small act of adding an axis the instrument did not natively give."
+            }
+          ],
+          "audioFile": "chunk-026.wav",
+          "durationSeconds": 26.4,
+          "startTimeSeconds": 517.62,
+          "endTimeSeconds": 544.02,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 27,
+          "charCount": 192,
+          "text": " The synthesist, given every axis at once, has the opposite problem: enough freedom to do nothing coherent, and a constant need to collapse dimensions back down into something an ear can hold.",
+          "spokenText": "The synthesist, given every axis at once, has the opposite problem: enough freedom to do nothing coherent, and a constant need to collapse dimensions back down into something an ear can hold.",
+          "startChar": 9313,
+          "endChar": 9505,
+          "blockStart": 22,
+          "blockEnd": 22,
+          "segments": [
+            {
+              "blockId": 22,
+              "startChar": 465,
+              "endChar": 657,
+              "text": " The synthesist, given every axis at once, has the opposite problem: enough freedom to do nothing coherent, and a constant need to collapse dimensions back down into something an ear can hold."
+            }
+          ],
+          "audioFile": "chunk-027.wav",
+          "durationSeconds": 11.2,
+          "startTimeSeconds": 544.12,
+          "endTimeSeconds": 555.32,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 28,
+          "charCount": 426,
+          "text": "None of this is a claim that one kind of instrument is better. The argument is that every instrument is a commitment, and that the commitments are now visible to us in a way they were not before. The acoustic instrument hid its commitments inside a resonating object. The synthesizer writes them on a front panel. Neither is the true instrument; they are different bets about which axes should come free and which should cost.",
+          "spokenText": "None of this is a claim that one kind of instrument is better. The argument is that every instrument is a commitment, and that the commitments are now visible to us in a way they were not before. The acoustic instrument hid its commitments inside a resonating object. The synthesizer writes them on a front panel. Neither is the true instrument; they are different bets about which axes should come free and which should cost.",
+          "startChar": 9507,
+          "endChar": 9933,
+          "blockStart": 23,
+          "blockEnd": 23,
+          "segments": [
+            {
+              "blockId": 23,
+              "startChar": 0,
+              "endChar": 426,
+              "text": "None of this is a claim that one kind of instrument is better. The argument is that every instrument is a commitment, and that the commitments are now visible to us in a way they were not before. The acoustic instrument hid its commitments inside a resonating object. The synthesizer writes them on a front panel. Neither is the true instrument; they are different bets about which axes should come free and which should cost."
+            }
+          ],
+          "audioFile": "chunk-028.wav",
+          "durationSeconds": 22.72,
+          "startTimeSeconds": 555.42,
+          "endTimeSeconds": 578.14,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 29,
+          "charCount": 385,
+          "text": "The payoff is that we can now see the same shape elsewhere. When the sequence later turns to representations in domains with no wood and no strings \u2014 languages, institutions, inherited worlds \u2014 the move will be the same. Something has been committed. Some axes are free and some are foreclosed. Expression finds the free axes; craft finds the intrinsic manifold inside the ambient one;",
+          "spokenText": "The payoff is that we can now see the same shape elsewhere. When the sequence later turns to representations in domains with no wood and no strings \u2014 languages, institutions, inherited worlds \u2014 the move will be the same. Something has been committed. Some axes are free and some are foreclosed. Expression finds the free axes; craft finds the intrinsic manifold inside the ambient one;",
+          "startChar": 9935,
+          "endChar": 10320,
+          "blockStart": 24,
+          "blockEnd": 24,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 0,
+              "endChar": 385,
+              "text": "The payoff is that we can now see the same shape elsewhere. When the sequence later turns to representations in domains with no wood and no strings \u2014 languages, institutions, inherited worlds \u2014 the move will be the same. Something has been committed. Some axes are free and some are foreclosed. Expression finds the free axes; craft finds the intrinsic manifold inside the ambient one;"
+            }
+          ],
+          "audioFile": "chunk-029.wav",
+          "durationSeconds": 22.16,
+          "startTimeSeconds": 578.24,
+          "endTimeSeconds": 600.4,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 30,
+          "charCount": 232,
+          "text": " and what feels like the nature of the thing turns out, on inspection, to be a choice someone made and the rest of us inherited.\n\nThe instrument is the representation. Every other representation is, in that sense, an instrument too.",
+          "spokenText": "and what feels like the nature of the thing turns out, on inspection, to be a choice someone made and the rest of us inherited.\n\nThe instrument is the representation. Every other representation is, in that sense, an instrument too.",
+          "startChar": 10322,
+          "endChar": 10554,
+          "blockStart": 24,
+          "blockEnd": 25,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 385,
+              "endChar": 513,
+              "text": " and what feels like the nature of the thing turns out, on inspection, to be a choice someone made and the rest of us inherited."
+            },
+            {
+              "blockId": 25,
+              "startChar": 0,
+              "endChar": 102,
+              "text": "The instrument is the representation. Every other representation is, in that sense, an instrument too."
+            }
+          ],
+          "audioFile": "chunk-030.wav",
+          "durationSeconds": 13.76,
+          "startTimeSeconds": 600.5,
+          "endTimeSeconds": 614.26,
+          "pauseAfterMs": 0
+        }
+      ],
+      "blockCount": 26
+    },
+    "publicAssets": {
+      "audioSrc": "/assets/post-audio/2026-04-20-the-instrument-is-the-representation/post.mp3",
+      "mimeType": "audio/mpeg"
+    },
+    "privateArtifacts": {
+      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-20-the-instrument-is-the-representation/narration-runs/20260424-030859_2026-04-20-the-instrument-is-the-representation",
+      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-20-the-instrument-is-the-representation/narration-runs/20260424-030859_2026-04-20-the-instrument-is-the-representation/metadata.json",
+      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-20-the-instrument-is-the-representation/narration-runs/20260424-030859_2026-04-20-the-instrument-is-the-representation/chunks.json",
+      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-20-the-instrument-is-the-representation/narration-runs/20260424-030859_2026-04-20-the-instrument-is-the-representation/post.wav",
+      "mp3Path": "public/assets/post-audio/2026-04-20-the-instrument-is-the-representation/post.mp3"
+    }
+  }
+}

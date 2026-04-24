@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "postId": "2026-04-20-the-instrument-is-the-representation",
+  "generatedAt": "2026-04-24T02:43:33Z",
+  "style": "gold-fill-transparent",
+  "images": [
+    {
+      "src": "/assets/the-instrument-is-the-representation/ai_img_chatgpt_hero.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_hero.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_hero.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_hero.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_hero.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_hero.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-instrument-is-the-representation/ai_img_chatgpt_piano_ladder.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_piano_ladder.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_piano_ladder.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_piano_ladder.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_piano_ladder.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_piano_ladder.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-instrument-is-the-representation/ai_img_chatgpt_guitar_bend.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_guitar_bend.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_guitar_bend.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_guitar_bend.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_guitar_bend.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_guitar_bend.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-instrument-is-the-representation/ai_img_chatgpt_synth_manifold.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_synth_manifold.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_synth_manifold.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_synth_manifold.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_synth_manifold.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_synth_manifold.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-instrument-is-the-representation/ai_img_chatgpt_wood_heuristics.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_wood_heuristics.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_wood_heuristics.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_wood_heuristics.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_wood_heuristics.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_wood_heuristics.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-instrument-is-the-representation/ai_img_chatgpt_same_shape.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_same_shape.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_same_shape.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_same_shape.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_same_shape.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_same_shape.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/the-instrument-is-the-representation/ai_img_chatgpt_which_dial.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_which_dial.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_which_dial.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_which_dial.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_which_dial.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-instrument-is-the-representation/svg/ai_img_chatgpt_which_dial.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    }
+  ]
+}
