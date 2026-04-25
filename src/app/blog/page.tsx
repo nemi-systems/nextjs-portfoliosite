@@ -28,7 +28,7 @@ const BlogCoverSvg = ({ title, coverSvg }) => {
 
   return (
     <span
-      className="blog-cover-svg border border-box-outline transition group-hover:border-highlight-text ml-4 flex-shrink-0"
+      className="blog-cover-svg border border-box-outline transition group-hover:border-primary-green ml-4 flex-shrink-0"
       role="img"
       aria-label={title}
     >
@@ -74,14 +74,14 @@ const BlogItem = ({ id, date, title, coverImage, coverSvg }) => {
               alt={title}
               width={100}
               height={50}
-              className="border border-box-outline transition group-hover:border-highlight-text ml-4 flex-shrink-0"
+              className="border border-box-outline transition group-hover:border-primary-green ml-4 flex-shrink-0"
               src={image}
               style={{ color: colors.transparent }}
             />
           )}
           {image && isVideoCover && (
             <video
-              className="border border-box-outline transition group-hover:border-highlight-text ml-4 flex-shrink-0"
+              className="border border-box-outline transition group-hover:border-primary-green ml-4 flex-shrink-0"
               width={100}
               height={50}
               src={image}
