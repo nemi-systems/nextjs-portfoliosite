@@ -1,9 +1,45 @@
 {
   "version": 1,
   "postId": "2026-04-21-you-cannot-look-without-touching",
-  "generatedAt": "2026-04-24T14:12:26Z",
+  "generatedAt": "2026-04-25T18:02:20Z",
   "style": "gold-fill-transparent",
   "images": [
+    {
+      "src": "/assets/you-cannot-look-without-touching/ai_img_chatgpt_avatar.png",
+      "status": "ok",
+      "svgSrc": "/assets/you-cannot-look-without-touching/svg/ai_img_chatgpt_avatar.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/you-cannot-look-without-touching/svg/ai_img_chatgpt_avatar.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/you-cannot-look-without-touching/svg/ai_img_chatgpt_avatar.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/you-cannot-look-without-touching/svg/ai_img_chatgpt_avatar.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/you-cannot-look-without-touching/svg/ai_img_chatgpt_avatar.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#000000",
+        "mid": "#5f3b0a",
+        "bright": "#de941f"
+      }
+    },
     {
       "src": "/assets/you-cannot-look-without-touching/ai_img_chatgpt_hero.png",
       "status": "ok",

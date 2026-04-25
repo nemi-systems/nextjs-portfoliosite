@@ -5,6 +5,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 _IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
+_FRONTMATTER_RE = re.compile(r"^---\s*\n([\s\S]*?)\n---\s*(?:\n|$)")
+_FRONTMATTER_IMAGE_KEYS = {"coverImage", "image"}
 
 
 def read_post_markdown(post_path: Path) -> str:
@@ -17,6 +19,41 @@ def extract_markdown_image_sources(markdown: str) -> list[str]:
 
     for match in _IMAGE_RE.findall(markdown):
         src = match.strip()
+        if not src or src in seen:
+            continue
+        seen.add(src)
+        ordered.append(src)
+
+    return ordered
+
+
+def extract_frontmatter_image_sources(markdown: str) -> list[str]:
+    match = _FRONTMATTER_RE.match(markdown)
+    if not match:
+        return []
+
+    sources: list[str] = []
+    for raw_line in match.group(1).splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or ":" not in line:
+            continue
+
+        key, value = line.split(":", 1)
+        if key.strip() not in _FRONTMATTER_IMAGE_KEYS:
+            continue
+
+        src = value.strip().strip("'\"")
+        if src:
+            sources.append(src)
+
+    return sources
+
+
+def dedupe_sources(sources: list[str]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+
+    for src in sources:
         if not src or src in seen:
             continue
         seen.add(src)

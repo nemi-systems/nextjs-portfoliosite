@@ -11,6 +11,8 @@ from typing import Any
 
 from manifest import build_manifest, write_manifest
 from paths import (
+    dedupe_sources,
+    extract_frontmatter_image_sources,
     extract_markdown_image_sources,
     is_local_asset_src,
     layer_svg_src_from_src,
@@ -212,7 +214,10 @@ def main() -> int:
     out_manifest = Path(args.out_manifest) if args.out_manifest else Path("src/_posts") / f"{post_id}.svg-map.json"
 
     markdown = read_post_markdown(post_path)
-    sources = extract_markdown_image_sources(markdown)
+    sources = dedupe_sources([
+        *extract_frontmatter_image_sources(markdown),
+        *extract_markdown_image_sources(markdown),
+    ])
     local_asset_sources = [src for src in sources if is_local_asset_src(src)]
 
     records: list[dict[str, Any]] = []

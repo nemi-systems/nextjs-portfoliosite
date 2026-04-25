@@ -1,9 +1,45 @@
 {
   "version": 1,
   "postId": "2026-04-24-the-gift-is-not-given",
-  "generatedAt": "2026-04-24T15:23:44Z",
+  "generatedAt": "2026-04-25T18:05:42Z",
   "style": "gold-fill-transparent",
   "images": [
+    {
+      "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_avatar.png",
+      "status": "ok",
+      "svgSrc": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_avatar.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_avatar.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_avatar.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_avatar.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/the-gift-is-not-given/svg/ai_img_chatgpt_avatar.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#000000",
+        "mid": "#603e0a",
+        "bright": "#d7901a"
+      }
+    },
     {
       "src": "/assets/the-gift-is-not-given/ai_img_chatgpt_bread_turn_away.png",
       "status": "ok",

@@ -1,9 +1,45 @@
 {
   "version": 1,
   "postId": "2026-04-16-differentiation-and-dimensionality",
-  "generatedAt": "2026-04-24T02:42:17Z",
+  "generatedAt": "2026-04-25T17:59:50Z",
   "style": "gold-fill-transparent",
   "images": [
+    {
+      "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_avatar.png",
+      "status": "ok",
+      "svgSrc": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_avatar.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_avatar.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_avatar.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_avatar.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/differentiation-and-dimensionality/svg/ai_img_chatgpt_avatar.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#000000",
+        "mid": "#5e3e0c",
+        "bright": "#d29121"
+      }
+    },
     {
       "src": "/assets/differentiation-and-dimensionality/ai_img_chatgpt_hero.png",
       "status": "ok",

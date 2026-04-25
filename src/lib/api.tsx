@@ -907,6 +907,51 @@ function getValidatedNarration(narration: PostAudioNarration | null | undefined)
   };
 }
 
+function getValidatedSvgMapEntry(entry: PostSvgMapImageEntry | null | undefined) {
+  if (!entry || typeof entry.src !== "string") {
+    return null;
+  }
+  if (entry.status && entry.status !== "ok") {
+    return null;
+  }
+
+  const hasValidSvg =
+    typeof entry.svgSrc === "string" &&
+    entry.svgSrc.length > 0 &&
+    fs.existsSync(join("public", entry.svgSrc.replace(/^\//, "")));
+
+  const validLayers = Array.isArray(entry.layers)
+    ? entry.layers.filter(
+        (layer) =>
+          layer &&
+          typeof layer.src === "string" &&
+          layer.src.length > 0 &&
+          fs.existsSync(join("public", layer.src.replace(/^\//, "")))
+      )
+    : [];
+
+  if (!hasValidSvg && !validLayers.length) {
+    return null;
+  }
+
+  const validated: PostSvgMapImageEntry = {
+    ...entry,
+    layers: validLayers,
+  };
+
+  const aspectSource =
+    (validLayers.find((l) => l.kind === "line") || validLayers[0])?.src ||
+    validated.svgSrc;
+  if (aspectSource) {
+    const aspect = readSvgAspectRatio(aspectSource);
+    if (aspect) {
+      validated.aspectRatio = aspect;
+    }
+  }
+
+  return validated;
+}
+
 function getParser() {
   if (!p) {
     p = getParserPre().catch((e) => {
@@ -931,47 +976,12 @@ export async function getPostById(id: string) {
   const audioNarration = getValidatedNarration(audioMap?.narration);
   const svgMapBySrc = new Map<string, PostSvgMapImageEntry>(
     (svgMap?.images || [])
-      .filter((entry) => {
-        if (!entry || typeof entry.src !== "string") {
-          return false;
-        }
-        if (entry.status && entry.status !== "ok") {
-          return false;
-        }
-        const hasValidSvg =
-          typeof entry.svgSrc === "string" &&
-          entry.svgSrc.length > 0 &&
-          fs.existsSync(join("public", entry.svgSrc.replace(/^\//, "")));
-
-        const validLayers = Array.isArray(entry.layers)
-          ? entry.layers.filter(
-              (layer) =>
-                layer &&
-                typeof layer.src === "string" &&
-                layer.src.length > 0 &&
-                fs.existsSync(join("public", layer.src.replace(/^\//, "")))
-            )
-          : [];
-
-        if (!hasValidSvg && !validLayers.length) {
-          return false;
-        }
-
-        entry.layers = validLayers;
-
-        const aspectSource =
-          (validLayers.find((l) => l.kind === "line") || validLayers[0])?.src ||
-          entry.svgSrc;
-        if (aspectSource) {
-          const aspect = readSvgAspectRatio(aspectSource);
-          if (aspect) {
-            entry.aspectRatio = aspect;
-          }
-        }
-        return true;
-      })
+      .map(getValidatedSvgMapEntry)
+      .filter((entry): entry is PostSvgMapImageEntry => Boolean(entry))
       .map((entry) => [entry.src, entry])
   );
+  const coverImage = typeof data.coverImage === "string" ? data.coverImage : null;
+  const coverSvg = coverImage ? svgMapBySrc.get(coverImage) || null : null;
 
   const html = await parser.process({
     value: content,
@@ -989,7 +999,8 @@ export async function getPostById(id: string) {
     title: data.title,
     id: realId,
     date: `${data.date?.toISOString().slice(0, 10)}`,
-    coverImage: data.coverImage || null,
+    coverImage,
+    coverSvg,
     html: html.value.toString(),
     audioNarration,
     aiImagePrompts: aiImageMap?.images || [],

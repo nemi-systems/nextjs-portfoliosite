@@ -7,7 +7,53 @@ import { getAllPosts } from "@/lib/api";
 import Image from 'next/image';
 const colors = require('tailwindcss/colors');
 
-const BlogItem = ({ id, date, title, coverImage }) => {
+const isBackgroundSvgLayer = (kind) => {
+  return kind === 'bg' || kind === 'background';
+};
+
+const BlogCoverSvg = ({ title, coverSvg }) => {
+  const layers = Array.isArray(coverSvg?.layers) && coverSvg.layers.length > 0
+    ? coverSvg.layers
+    : coverSvg?.svgSrc
+      ? [
+          { kind: 'tone', src: coverSvg.svgSrc },
+          { kind: 'line', src: coverSvg.svgSrc },
+        ]
+      : [];
+  const visibleLayers = layers.filter((layer) => layer?.src && !isBackgroundSvgLayer(layer.kind));
+
+  if (!visibleLayers.length) {
+    return null;
+  }
+
+  return (
+    <span
+      className="blog-cover-svg border border-box-outline transition group-hover:border-highlight-text ml-4 flex-shrink-0"
+      role="img"
+      aria-label={title}
+    >
+      {visibleLayers.map((layer, index) => {
+        const kind = layer.kind || `layer-${index}`;
+        const isTop = index === visibleLayers.length - 1;
+        const maskValue = `url("${String(layer.src).replace(/"/g, '\\"')}")`;
+
+        return (
+          <span
+            key={`${kind}-${layer.src}`}
+            className={`blog-cover-svg-layer blog-cover-svg-layer-${kind} ${isTop ? 'blog-cover-svg-layer-fg' : ''}`}
+            style={{
+              maskImage: maskValue,
+              WebkitMaskImage: maskValue,
+            }}
+            aria-hidden="true"
+          />
+        );
+      })}
+    </span>
+  );
+};
+
+const BlogItem = ({ id, date, title, coverImage, coverSvg }) => {
   const image = coverImage;
   const isVideoCover = typeof image === 'string' && /\.(webm|mp4|ogg)$/i.test(image);
   return(
@@ -20,7 +66,10 @@ const BlogItem = ({ id, date, title, coverImage }) => {
               <h3 className="text-box-title-bg group-hover:text-primary-green transition-colors text-sm">{title}</h3>
             </div>
           </div>
-          {image && !isVideoCover && (
+          {!isVideoCover && coverSvg && (
+            <BlogCoverSvg title={title} coverSvg={coverSvg} />
+          )}
+          {image && !isVideoCover && !coverSvg && (
             <Image
               alt={title}
               width={100}
@@ -79,7 +128,7 @@ export default async function Page() {
                 {posts.map((post) => {
                   const { id, date, title } = post;
                   return (
-                    <BlogItem key={id} id={id} date={date} title={title} coverImage={post.coverImage}/>
+                    <BlogItem key={id} id={id} date={date} title={title} coverImage={post.coverImage} coverSvg={post.coverSvg}/>
                   );
                 })}
               </ol>
