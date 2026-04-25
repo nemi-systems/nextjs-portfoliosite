@@ -1,6 +1,7 @@
 ---
 title: "The Middle Is Made of Us"
-date: 2026-04-24
+date: 2026-04-25
+coverImage: /assets/the-middle-is-made-of-us/ai_img_chatgpt_avatar.png
 ---
 
 ![A vertical split-frame architectural cross-section: on the left half, a tall tech-project tower rising upward through stacked strata, and on the right half, a descending humanities shaft drilling downward through reframed layers, the two excavations oriented toward each other but not meeting](/assets/the-middle-is-made-of-us/ai_img_chatgpt_hero.png)

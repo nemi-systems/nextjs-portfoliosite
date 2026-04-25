@@ -1,6 +1,7 @@
 ---
 title: "The Instrument Is the Representation"
 date: 2026-04-20
+coverImage: /assets/the-instrument-is-the-representation/ai_img_chatgpt_avatar.png
 ---
 
 ![Split-frame technical schematic: piano key as a quantized threshold mechanism on the left, guitar string bent across a fret as a continuous curved line on the right, meeting at a central axis](/assets/the-instrument-is-the-representation/ai_img_chatgpt_hero.png)

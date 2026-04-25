@@ -53,6 +53,10 @@ image: /assets/<post-slug>/thumb.webp
   - `ffmpeg` must be available for the MP3 transcode step.
   - `audio:post` uses the built-in narration prompt when `--instruct` is omitted.
   - Generated audio defaults to overwriting the public MP3 for the post unless the command is changed to disable overwrite.
+  - The script expects a reference audio file at `reference-audio.wav` in the repo root. Before running `audio:post`, symlink the voice sample from the local machine:
+    - `ln -sf ~/projects/tts/prepared_audio/voice_sample_original_mono_48k_00m15s_00m30s_denoise_2.wav reference-audio.wav`
+    - Do NOT copy the voice sample into the repo or commit it. The symlink must be `.gitignore`d.
+  - Available voice samples live in `~/projects/tts/prepared_audio/`. The preferred sample is `voice_sample_original_mono_48k_00m15s_00m30s_denoise_2.wav`.
 
 ## Validate Before Committing
 

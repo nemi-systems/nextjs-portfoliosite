@@ -1,0 +1,1130 @@
+{
+  "version": 3,
+  "postId": "2026-04-22-what-the-community-keeps-definite",
+  "generatedAt": "2026-04-24T16:47:53Z",
+  "status": "ok",
+  "narration": {
+    "postPath": "src/_posts/2026-04-22-what-the-community-keeps-definite.md",
+    "language": "English",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "taskType": "Base",
+    "refAudio": "reference-audio.wav",
+    "xVectorOnlyMode": true,
+    "instruct": null,
+    "usedDefaultInstruct": false,
+    "generationKwargs": {
+      "do_sample": true,
+      "subtalker_dosample": true,
+      "non_streaming_mode": true
+    },
+    "chunkCount": 46,
+    "pauseMs": 100,
+    "durationSeconds": 961.06,
+    "transcript": {
+      "text": "The easiest thing to say about language is that it gives us words for things, as though the things were sitting there and language were a collection of labels we happened to develop for them. The second-easiest thing to say \u2014 a significant improvement \u2014 is that language gives us the distinctions we use to carve things up in the first place, and that different languages carve differently.\n\n This is the Whorfian intuition, and it has been alternately celebrated and dismissed long enough that most literate readers carry some version of it as a half-formed conviction.\n\nLet me sharpen it first, before complicating it.\n\nA distinction is always made along some axis. To tell two things apart is to locate them at different positions in some coordinate system, and which coordinate system you are using determines which distinctions come for free and which require the speaker to work around the shape of the language. A language, read this way, is a declared coordinate system \u2014 a collection of axes its speakers inherit before they ever begin thinking within it. Some axes are lexical:\n\n the language has a word for schadenfreude or it doesn't, and if it doesn't, the distinction between that feeling and its neighbors takes a sentence or a paragraph rather than a word. Some axes are grammatical: Quechua and Turkish require every utterance to take a position on the source of the speaker's knowledge \u2014 whether the claim is made on direct witness, on hearsay, on inference \u2014 because evidentiality is baked into the verb morphology.\n\n English does not require this, and so English speakers can make claims without committing to a source, which is both a lightness and a deficiency. Grammatical gender, aspect, honorifics, definiteness: each of these is an axis the language either declares for free or leaves to the speaker to reconstruct by circumlocution.\n\nThis is what the representation frame calls ambient dimension \u2014 the number of independent axes a coordinate system has made available. A photograph has a million ambient dimensions, one per pixel. A face-recognition embedding has five hundred and twelve, by design. A language has, in some rough sense, as many as its lexicon and grammar declare. The strong Whorfian claim is just the ambient-dimension claim applied to language:\n\n different languages declare different coordinate systems, and the declared system shapes what its speakers can cheaply distinguish.\n\nAs far as it goes, this is correct. But it treats language as a container the way a photograph is a container, and language is not that.\n\nHere is the difference. A five-hundred-and-twelve-dimensional embedding has exactly five hundred and twelve axes and will until someone trains a new model. The axes are fixed by the architecture. You cannot add one by using the embedding expressively; the embedding has no expressive use, only a read. Language can.\n\n When a speech community picks up a new word \u2014 schadenfreude, say, borrowed into English in the nineteenth century and now doing unassisted work \u2014 a new axis has entered the shared space. The language now distinguishes something its speakers could previously only gesture at. The ambient dimension has gone up by one. Nothing architectural was changed; the change was entirely in use.\n\nAnd the smaller, commoner case of the same move is metaphor. \"Juliet is the sun\" is not a false claim and not a decorative one. It is an axis-import: a proposal that the dimensions a community uses to coordinate the sun \u2014 warmth, centrality, source of light, organizer of a day \u2014 be briefly imported into the space it uses to coordinate Juliet. The proposal lives as long as the metaphor is live. Most such proposals die in the mouth they were spoken in. Some catch, and then something odd happens:\n\n the metaphor goes dead, by which we mean the axis has fully landed. Nobody notices anymore that \"grasping an idea\" imports a kinesthetic axis into cognition, or that an argument's \"strength\" imports a mechanical one. The dead metaphor is simply an axis, now, in the container every competent speaker inherits.\n\nSo language is a coordinate system whose axes are themselves negotiable through use. Which raises a question the container-view does not know what to do with: what is keeping the axes definite in the first place? The embedding's axes are held definite by the weights of the model, fixed once trained. The photograph's axes are held definite by the camera's physics. Language has no such ground. An English speaker who stopped using the word schadenfreude would not thereby remove the axis;\n\n the axis persists because others are still using it. A usage that no others pick up dies, regardless of how elegant the coinage was. The axes of a language are held definite by ongoing use and by nothing else.\n\nWhich means language is neither a static container nor an individual sensor. It is a third thing. To see what kind of thing, we need a piece of vocabulary the earlier essays in this sequence developed: there is no such act as passive observation. Every sensor is also an emitter, every observation a probe that changes what it measures, and what we call perception is a loop closed between an emission and the reception of its altered return \u2014 a probe-loop.\n\n The point, when it was first made, was local: an individual observer, an individual probe, an individual closure. What language is, in the frame this essay now needs, is a shared probe-loop. A coordinate system kept definite not by any one speaker's measurement but by the mutual, continuous, low-level probing of a community. Every utterance is a small emission into the shared space; every act of understanding is a reception;\n\n the axes the community uses are the axes that enough of its members have been keeping alive through this mutual traffic.\n\nThe weight of being inside a language \u2014 the way a first language in particular feels like the shape of the world rather than one shape among possibilities \u2014 is not an illusion to be dispelled by learning a second. It is the accurate reflection of a real fact: every competent speaker is a probe, and the space the probes constitute is the space the speaker has been inhabiting as long as they have been thinking. You do not stand outside a language you speak. You are in the loop that makes it.\n\nAnd this is why a language can die. Dictionaries can remain. Literatures can remain. What cannot remain, when the last fluent speaker stops probing, is the loop. The axes become ambient only \u2014 declared in the dictionary, inert in the world. The same vocabulary is present, and the same grammar, and nothing is held definite by use. Revival is possible, because the dictionary is still there to be re-inhabited, but revival is the work of reconstituting a loop, not of reading a container.\n\n Hebrew was revived; Cornish is being. Dozens of others have not been and will not be. A language is alive to the degree that a community is still probing through it.\n\nThere is a distinction that becomes unusually useful here: between ambient and intrinsic dimension. Ambient dimension is the coordinate system as declared. Intrinsic dimension is the structure the users actually traverse \u2014 the lower-dimensional manifold that the available axes are being used to coordinate. For language, the two come apart in a specific way.\n\nThe ambient dimension of a language is roughly its lexicon plus its grammar: the full catalog of axes available for cheap expression. A large language \u2014 English, Mandarin, any major literary language \u2014 has an ambient dimension far beyond what any individual speaker uses. English contains susurrus and parsimony and tintinnabulation and deixis and some four hundred thousand other words, most of which are dormant for most speakers most of the time.\n\nThe intrinsic dimension is the much smaller space the community is actually using to coordinate behavior. It is the axes currently alive in the loop, not the axes merely declared in the lexicon. And it is not uniform across speakers. For each subcommunity \u2014 a profession, a region, a generation, a hobby \u2014 a different subset of the ambient axes is intrinsically active.\n\n Mathematicians, inside English, are operating in a higher-intrinsic-dimensional subspace than most English speakers, because they have kept alive axes most English speakers have never probed. Homotopy is ambient in English (the word is in the dictionary) and intrinsic only in the mathematical subcommunity. When you enter a field, you do not simply learn its terminology.\n\n You have new axes become intrinsically active in a container that already had them ambient, and you do this the same way anyone learns anything in a language: by being probed until your emissions start coordinating the way the community's do.\n\nHere the essay gets to the application it has been building toward, which is one I find clarifying when I run into it: bureaucratic opacity.\n\nBureaucratic language is the right test case because most of its critics attack the wrong target. The usual complaint is that bureaucratic language is obscure \u2014 that it hides meaning behind jargon, that it is deliberately impenetrable, that it could be translated into plain English if only the bureaucrats cared enough. Some of it could. Most of it could not. Bureaucratic language is not obscure in the way dense poetry is obscure;\n\n it is opaque in a different way, and the difference is worth naming.\n\nA well-built bureaucracy \u2014 a tax code, a benefits administration, a medical coding system, a procurement regulation \u2014 constructs a coordinate system with an enormous ambient dimension. Thousands of distinctions, categories, procedural subtypes, edge-case rulings, carve-outs, forms that trigger different downstream pathways. From the inside, for its practitioners, the intrinsic dimension is nearly as high as the ambient one.\n\n A seasoned case officer is keeping a great many of those axes alive through daily use; they coordinate each new case within a space that is, for them, substantially inhabited. From the outside \u2014 for the citizen, the patient, the applicant \u2014 the ambient dimension of the system is available but almost none of it is intrinsic. You can read the form. You cannot tell what distinctions it is actually tracking, because you are not in the loop that keeps those distinctions definite.\n\nThis is why bureaucratic encounters feel uncanny in a particular way, even when every word is English. You are not in the presence of obscurity but of a loop-structural mismatch. The system is probing you \u2014 every box you check is an emission it reads in coordinates sharp to it and blurred to you \u2014 and your emissions are arriving in a space whose metric you have not learned. You are not refusing to understand.\n\n You cannot be probed by a loop you are outside of and produce coordinates definite to that loop, because definiteness is exactly the thing a loop confers, and you are not in this one. Translation will not fix it. Translation is a lexical operation, and the mismatch is not lexical. It is the mismatch between a language whose axes are ambient to you and intrinsic to them.\n\nWhich suggests, incidentally, something about why such encounters produce the peculiar affect they produce. It is not only that the institution is indifferent, though some are. It is not only that the individual behind the desk is harried, though they usually are. It is that the person subject to the system is being continuously probed by a loop they cannot close at the same rate. The asymmetry is not one of power alone. It is one of loop-structure.\n\n The coordinate system that is shaping your life is intrinsically alive for someone else and only ambient for you, and no amount of plain-language rewriting closes that gap, because the gap is not in the words.\n\nThere is a smaller consequence of the shared-probe-loop frame worth drawing out, because it corrects a misunderstanding many careful readers carry about how language is learned.\n\nIf language were a container in the embedding sense, learning a language would be memorizing its axes. You would acquire the coordinate system by sitting with a list of its dimensions, making each one precise in turn, and then you would be ready to speak. Textbooks are built on something close to this assumption.\n\n The textbook assumption is not wholly wrong \u2014 vocabulary and grammar can be studied, and the study helps \u2014 but it cannot account for the fact that nobody who has only studied a language, however thoroughly, can use it with the fluency of a speaker. There is always a remainder.\n\nThe remainder is the loop. You cannot memorize your way into it. You can only be probed by it and probe back until your emissions start coming out coordinated the way the community's do, and this is why immersion works and textbooks plateau, why children acquire and adults strain, why a working translation is possible and a perfect one is not. Translation is possible because there is enough structural overlap between loops that many coordinates can be mapped across.\n\n It is never perfect because the axes alive in one loop are never exactly the ones alive in another, and the coordinating emissions carry small signals that do not land the same way in a different space. A translated poem is a good translated poem to the degree that the translator has re-inhabited both loops long enough to find emissions in the target that produce receptions functionally similar to the originals. It is never the same poem, and the honest translators say so.\n\nOne more move, and then I will stop.\n\nThe representation frame, read carefully, leaves a question not quite answered: where do the representations we use come from, before we tune them? Most of the worked examples in the tradition \u2014 feature engineering, metric learning, the tuning of learned embeddings \u2014 are cases in which a representation gets actively refined, as though representation were always ours to make.\n\nThe honest answer, which this essay has been closing in on, is that most of the representations we use were not tuned by us at all. They were handed to us by language, and language was tuned by the probe-loops of everyone who came before. Every axis your first language offers you is an axis some earlier community kept alive long enough to pass it on.\n\n Millennia of use are embedded in the coordinate system you inherit, and most of the work of becoming a competent thinker in a language is the work of inheriting \u2014 which means: the work of having those axes become intrinsically active in you because you have been probed by them and have probed back.\n\nThis is not a romantic observation. It is the structural reality of how representations get made and maintained. And it has a corollary worth stating plainly.\n\nMost people, most of the time, work inside the inherited coordinate system without modifying it. This is not a failing; it is the ordinary condition of thought, and it is how the axes stay alive. But some people, some of the time, are doing something else: they are proposing a new axis. A writer who finds the word that has not been said and finds it catches has added a dimension to the shared space.\n\n A scientist who coins a term for a structure that had not been distinguished, and whose term is taken up, has done the same. An artist who makes visible a distinction the audience had not been probing, and whose work rearranges what other artists then make, has done the same. These are rare cases, and they are rare for a reason: the proposal succeeds or fails not by its elegance but by whether the shared probe-loop of a community keeps the axis alive once its originator is gone.\n\nThe work that makes writers and scientists and artists matter, when it matters, is not the production of content in a fixed container. It is the proposal that the container have one more axis. The proposal lands, or it doesn't. The axes the community keeps definite after you are what you will have added to the world of available distinctions. Almost all such proposals fail.\n\n The axes that succeed \u2014 evidentiality in Quechua, aspect in Russian, schadenfreude in English, homotopy among mathematicians, a thousand dead metaphors no one remembers were once proposals \u2014 are the legacy a speech community carries forward for the next generation to inherit without noticing they are inheriting.\n\nWhich leaves a sharper way of saying the thing the first paragraph of this essay was already trying to say. A language is not the labels we use for the things. It is not even the distinctions we inherit. It is the loop that keeps those distinctions definite, continuously, by the mutual probing of everyone currently speaking. The world of cheap, shared distinctions that every thought in a language rests on is held up, at every moment, by the emissions of the community that still inhabits it.\n\nThe weight of this is not illusion. The walls are the world, for as long as they are kept alive.",
+      "chunkSeparator": "\n\n",
+      "chunks": [
+        {
+          "index": 1,
+          "charCount": 390,
+          "text": "The easiest thing to say about language is that it gives us words for things, as though the things were sitting there and language were a collection of labels we happened to develop for them. The second-easiest thing to say \u2014 a significant improvement \u2014 is that language gives us the distinctions we use to carve things up in the first place, and that different languages carve differently.",
+          "spokenText": "The easiest thing to say about language is that it gives us words for things, as though the things were sitting there and language were a collection of labels we happened to develop for them. The second-easiest thing to say \u2014 a significant improvement \u2014 is that language gives us the distinctions we use to carve things up in the first place, and that different languages carve differently.",
+          "startChar": 0,
+          "endChar": 390,
+          "blockStart": 0,
+          "blockEnd": 0,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 0,
+              "endChar": 390,
+              "text": "The easiest thing to say about language is that it gives us words for things, as though the things were sitting there and language were a collection of labels we happened to develop for them. The second-easiest thing to say \u2014 a significant improvement \u2014 is that language gives us the distinctions we use to carve things up in the first place, and that different languages carve differently."
+            }
+          ],
+          "audioFile": "chunk-001.wav",
+          "durationSeconds": 21.2,
+          "startTimeSeconds": 0.0,
+          "endTimeSeconds": 21.2,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 2,
+          "charCount": 228,
+          "text": " This is the Whorfian intuition, and it has been alternately celebrated and dismissed long enough that most literate readers carry some version of it as a half-formed conviction.\n\nLet me sharpen it first, before complicating it.",
+          "spokenText": "This is the Whorfian intuition, and it has been alternately celebrated and dismissed long enough that most literate readers carry some version of it as a half-formed conviction.\n\nLet me sharpen it first, before complicating it.",
+          "startChar": 392,
+          "endChar": 620,
+          "blockStart": 0,
+          "blockEnd": 1,
+          "segments": [
+            {
+              "blockId": 0,
+              "startChar": 390,
+              "endChar": 568,
+              "text": " This is the Whorfian intuition, and it has been alternately celebrated and dismissed long enough that most literate readers carry some version of it as a half-formed conviction."
+            },
+            {
+              "blockId": 1,
+              "startChar": 0,
+              "endChar": 48,
+              "text": "Let me sharpen it first, before complicating it."
+            }
+          ],
+          "audioFile": "chunk-002.wav",
+          "durationSeconds": 13.2,
+          "startTimeSeconds": 21.3,
+          "endTimeSeconds": 34.5,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 3,
+          "charCount": 465,
+          "text": "A distinction is always made along some axis. To tell two things apart is to locate them at different positions in some coordinate system, and which coordinate system you are using determines which distinctions come for free and which require the speaker to work around the shape of the language. A language, read this way, is a declared coordinate system \u2014 a collection of axes its speakers inherit before they ever begin thinking within it. Some axes are lexical:",
+          "spokenText": "A distinction is always made along some axis. To tell two things apart is to locate them at different positions in some coordinate system, and which coordinate system you are using determines which distinctions come for free and which require the speaker to work around the shape of the language. A language, read this way, is a declared coordinate system \u2014 a collection of axes its speakers inherit before they ever begin thinking within it. Some axes are lexical:",
+          "startChar": 622,
+          "endChar": 1087,
+          "blockStart": 2,
+          "blockEnd": 2,
+          "segments": [
+            {
+              "blockId": 2,
+              "startChar": 0,
+              "endChar": 465,
+              "text": "A distinction is always made along some axis. To tell two things apart is to locate them at different positions in some coordinate system, and which coordinate system you are using determines which distinctions come for free and which require the speaker to work around the shape of the language. A language, read this way, is a declared coordinate system \u2014 a collection of axes its speakers inherit before they ever begin thinking within it. Some axes are lexical:"
+            }
+          ],
+          "audioFile": "chunk-003.wav",
+          "durationSeconds": 24.56,
+          "startTimeSeconds": 34.6,
+          "endTimeSeconds": 59.16,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 4,
+          "charCount": 445,
+          "text": " the language has a word for schadenfreude or it doesn't, and if it doesn't, the distinction between that feeling and its neighbors takes a sentence or a paragraph rather than a word. Some axes are grammatical: Quechua and Turkish require every utterance to take a position on the source of the speaker's knowledge \u2014 whether the claim is made on direct witness, on hearsay, on inference \u2014 because evidentiality is baked into the verb morphology.",
+          "spokenText": "the language has a word for schadenfreude or it doesn't, and if it doesn't, the distinction between that feeling and its neighbors takes a sentence or a paragraph rather than a word. Some axes are grammatical: Quechua and Turkish require every utterance to take a position on the source of the speaker's knowledge \u2014 whether the claim is made on direct witness, on hearsay, on inference \u2014 because evidentiality is baked into the verb morphology.",
+          "startChar": 1089,
+          "endChar": 1534,
+          "blockStart": 2,
+          "blockEnd": 2,
+          "segments": [
+            {
+              "blockId": 2,
+              "startChar": 465,
+              "endChar": 910,
+              "text": " the language has a word for schadenfreude or it doesn't, and if it doesn't, the distinction between that feeling and its neighbors takes a sentence or a paragraph rather than a word. Some axes are grammatical: Quechua and Turkish require every utterance to take a position on the source of the speaker's knowledge \u2014 whether the claim is made on direct witness, on hearsay, on inference \u2014 because evidentiality is baked into the verb morphology."
+            }
+          ],
+          "audioFile": "chunk-004.wav",
+          "durationSeconds": 23.68,
+          "startTimeSeconds": 59.26,
+          "endTimeSeconds": 82.94,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 5,
+          "charCount": 323,
+          "text": " English does not require this, and so English speakers can make claims without committing to a source, which is both a lightness and a deficiency. Grammatical gender, aspect, honorifics, definiteness: each of these is an axis the language either declares for free or leaves to the speaker to reconstruct by circumlocution.",
+          "spokenText": "English does not require this, and so English speakers can make claims without committing to a source, which is both a lightness and a deficiency. Grammatical gender, aspect, honorifics, definiteness: each of these is an axis the language either declares for free or leaves to the speaker to reconstruct by circumlocution.",
+          "startChar": 1536,
+          "endChar": 1859,
+          "blockStart": 2,
+          "blockEnd": 2,
+          "segments": [
+            {
+              "blockId": 2,
+              "startChar": 910,
+              "endChar": 1233,
+              "text": " English does not require this, and so English speakers can make claims without committing to a source, which is both a lightness and a deficiency. Grammatical gender, aspect, honorifics, definiteness: each of these is an axis the language either declares for free or leaves to the speaker to reconstruct by circumlocution."
+            }
+          ],
+          "audioFile": "chunk-005.wav",
+          "durationSeconds": 19.28,
+          "startTimeSeconds": 83.04,
+          "endTimeSeconds": 102.32,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 6,
+          "charCount": 429,
+          "text": "This is what the representation frame calls ambient dimension \u2014 the number of independent axes a coordinate system has made available. A photograph has a million ambient dimensions, one per pixel. A face-recognition embedding has five hundred and twelve, by design. A language has, in some rough sense, as many as its lexicon and grammar declare. The strong Whorfian claim is just the ambient-dimension claim applied to language:",
+          "spokenText": "This is what the representation frame calls ambient dimension \u2014 the number of independent axes a coordinate system has made available. A photograph has a million ambient dimensions, one per pixel. A face-recognition embedding has five hundred and twelve, by design. A language has, in some rough sense, as many as its lexicon and grammar declare. The strong Whorfian claim is just the ambient-dimension claim applied to language:",
+          "startChar": 1861,
+          "endChar": 2290,
+          "blockStart": 3,
+          "blockEnd": 3,
+          "segments": [
+            {
+              "blockId": 3,
+              "startChar": 0,
+              "endChar": 429,
+              "text": "This is what the representation frame calls ambient dimension \u2014 the number of independent axes a coordinate system has made available. A photograph has a million ambient dimensions, one per pixel. A face-recognition embedding has five hundred and twelve, by design. A language has, in some rough sense, as many as its lexicon and grammar declare. The strong Whorfian claim is just the ambient-dimension claim applied to language:"
+            }
+          ],
+          "audioFile": "chunk-006.wav",
+          "durationSeconds": 25.36,
+          "startTimeSeconds": 102.42,
+          "endTimeSeconds": 127.78,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 7,
+          "charCount": 270,
+          "text": " different languages declare different coordinate systems, and the declared system shapes what its speakers can cheaply distinguish.\n\nAs far as it goes, this is correct. But it treats language as a container the way a photograph is a container, and language is not that.",
+          "spokenText": "different languages declare different coordinate systems, and the declared system shapes what its speakers can cheaply distinguish.\n\nAs far as it goes, this is correct. But it treats language as a container the way a photograph is a container, and language is not that.",
+          "startChar": 2292,
+          "endChar": 2562,
+          "blockStart": 3,
+          "blockEnd": 4,
+          "segments": [
+            {
+              "blockId": 3,
+              "startChar": 429,
+              "endChar": 561,
+              "text": " different languages declare different coordinate systems, and the declared system shapes what its speakers can cheaply distinguish."
+            },
+            {
+              "blockId": 4,
+              "startChar": 0,
+              "endChar": 136,
+              "text": "As far as it goes, this is correct. But it treats language as a container the way a photograph is a container, and language is not that."
+            }
+          ],
+          "audioFile": "chunk-007.wav",
+          "durationSeconds": 15.44,
+          "startTimeSeconds": 127.88,
+          "endTimeSeconds": 143.32,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 8,
+          "charCount": 315,
+          "text": "Here is the difference. A five-hundred-and-twelve-dimensional embedding has exactly five hundred and twelve axes and will until someone trains a new model. The axes are fixed by the architecture. You cannot add one by using the embedding expressively; the embedding has no expressive use, only a read. Language can.",
+          "spokenText": "Here is the difference. A five-hundred-and-twelve-dimensional embedding has exactly five hundred and twelve axes and will until someone trains a new model. The axes are fixed by the architecture. You cannot add one by using the embedding expressively; the embedding has no expressive use, only a read. Language can.",
+          "startChar": 2564,
+          "endChar": 2879,
+          "blockStart": 5,
+          "blockEnd": 5,
+          "segments": [
+            {
+              "blockId": 5,
+              "startChar": 0,
+              "endChar": 315,
+              "text": "Here is the difference. A five-hundred-and-twelve-dimensional embedding has exactly five hundred and twelve axes and will until someone trains a new model. The axes are fixed by the architecture. You cannot add one by using the embedding expressively; the embedding has no expressive use, only a read. Language can."
+            }
+          ],
+          "audioFile": "chunk-008.wav",
+          "durationSeconds": 18.32,
+          "startTimeSeconds": 143.42,
+          "endTimeSeconds": 161.74,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 9,
+          "charCount": 384,
+          "text": " When a speech community picks up a new word \u2014 schadenfreude, say, borrowed into English in the nineteenth century and now doing unassisted work \u2014 a new axis has entered the shared space. The language now distinguishes something its speakers could previously only gesture at. The ambient dimension has gone up by one. Nothing architectural was changed; the change was entirely in use.",
+          "spokenText": "When a speech community picks up a new word \u2014 schadenfreude, say, borrowed into English in the nineteenth century and now doing unassisted work \u2014 a new axis has entered the shared space. The language now distinguishes something its speakers could previously only gesture at. The ambient dimension has gone up by one. Nothing architectural was changed; the change was entirely in use.",
+          "startChar": 2881,
+          "endChar": 3265,
+          "blockStart": 5,
+          "blockEnd": 5,
+          "segments": [
+            {
+              "blockId": 5,
+              "startChar": 315,
+              "endChar": 699,
+              "text": " When a speech community picks up a new word \u2014 schadenfreude, say, borrowed into English in the nineteenth century and now doing unassisted work \u2014 a new axis has entered the shared space. The language now distinguishes something its speakers could previously only gesture at. The ambient dimension has gone up by one. Nothing architectural was changed; the change was entirely in use."
+            }
+          ],
+          "audioFile": "chunk-009.wav",
+          "durationSeconds": 21.44,
+          "startTimeSeconds": 161.84,
+          "endTimeSeconds": 183.28,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 10,
+          "charCount": 498,
+          "text": "And the smaller, commoner case of the same move is metaphor. \"Juliet is the sun\" is not a false claim and not a decorative one. It is an axis-import: a proposal that the dimensions a community uses to coordinate the sun \u2014 warmth, centrality, source of light, organizer of a day \u2014 be briefly imported into the space it uses to coordinate Juliet. The proposal lives as long as the metaphor is live. Most such proposals die in the mouth they were spoken in. Some catch, and then something odd happens:",
+          "spokenText": "And the smaller, commoner case of the same move is metaphor. \"Juliet is the sun\" is not a false claim and not a decorative one. It is an axis-import: a proposal that the dimensions a community uses to coordinate the sun \u2014 warmth, centrality, source of light, organizer of a day \u2014 be briefly imported into the space it uses to coordinate Juliet. The proposal lives as long as the metaphor is live. Most such proposals die in the mouth they were spoken in. Some catch, and then something odd happens:",
+          "startChar": 3267,
+          "endChar": 3765,
+          "blockStart": 6,
+          "blockEnd": 6,
+          "segments": [
+            {
+              "blockId": 6,
+              "startChar": 0,
+              "endChar": 498,
+              "text": "And the smaller, commoner case of the same move is metaphor. \"Juliet is the sun\" is not a false claim and not a decorative one. It is an axis-import: a proposal that the dimensions a community uses to coordinate the sun \u2014 warmth, centrality, source of light, organizer of a day \u2014 be briefly imported into the space it uses to coordinate Juliet. The proposal lives as long as the metaphor is live. Most such proposals die in the mouth they were spoken in. Some catch, and then something odd happens:"
+            }
+          ],
+          "audioFile": "chunk-010.wav",
+          "durationSeconds": 30.64,
+          "startTimeSeconds": 183.38,
+          "endTimeSeconds": 214.02,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 11,
+          "charCount": 310,
+          "text": " the metaphor goes dead, by which we mean the axis has fully landed. Nobody notices anymore that \"grasping an idea\" imports a kinesthetic axis into cognition, or that an argument's \"strength\" imports a mechanical one. The dead metaphor is simply an axis, now, in the container every competent speaker inherits.",
+          "spokenText": "the metaphor goes dead, by which we mean the axis has fully landed. Nobody notices anymore that \"grasping an idea\" imports a kinesthetic axis into cognition, or that an argument's \"strength\" imports a mechanical one. The dead metaphor is simply an axis, now, in the container every competent speaker inherits.",
+          "startChar": 3767,
+          "endChar": 4077,
+          "blockStart": 6,
+          "blockEnd": 6,
+          "segments": [
+            {
+              "blockId": 6,
+              "startChar": 498,
+              "endChar": 808,
+              "text": " the metaphor goes dead, by which we mean the axis has fully landed. Nobody notices anymore that \"grasping an idea\" imports a kinesthetic axis into cognition, or that an argument's \"strength\" imports a mechanical one. The dead metaphor is simply an axis, now, in the container every competent speaker inherits."
+            }
+          ],
+          "audioFile": "chunk-011.wav",
+          "durationSeconds": 19.2,
+          "startTimeSeconds": 214.12,
+          "endTimeSeconds": 233.32,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 12,
+          "charCount": 489,
+          "text": "So language is a coordinate system whose axes are themselves negotiable through use. Which raises a question the container-view does not know what to do with: what is keeping the axes definite in the first place? The embedding's axes are held definite by the weights of the model, fixed once trained. The photograph's axes are held definite by the camera's physics. Language has no such ground. An English speaker who stopped using the word schadenfreude would not thereby remove the axis;",
+          "spokenText": "So language is a coordinate system whose axes are themselves negotiable through use. Which raises a question the container-view does not know what to do with: what is keeping the axes definite in the first place? The embedding's axes are held definite by the weights of the model, fixed once trained. The photograph's axes are held definite by the camera's physics. Language has no such ground. An English speaker who stopped using the word schadenfreude would not thereby remove the axis;",
+          "startChar": 4079,
+          "endChar": 4568,
+          "blockStart": 7,
+          "blockEnd": 7,
+          "segments": [
+            {
+              "blockId": 7,
+              "startChar": 0,
+              "endChar": 489,
+              "text": "So language is a coordinate system whose axes are themselves negotiable through use. Which raises a question the container-view does not know what to do with: what is keeping the axes definite in the first place? The embedding's axes are held definite by the weights of the model, fixed once trained. The photograph's axes are held definite by the camera's physics. Language has no such ground. An English speaker who stopped using the word schadenfreude would not thereby remove the axis;"
+            }
+          ],
+          "audioFile": "chunk-012.wav",
+          "durationSeconds": 28.0,
+          "startTimeSeconds": 233.42,
+          "endTimeSeconds": 261.42,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 13,
+          "charCount": 210,
+          "text": " the axis persists because others are still using it. A usage that no others pick up dies, regardless of how elegant the coinage was. The axes of a language are held definite by ongoing use and by nothing else.",
+          "spokenText": "the axis persists because others are still using it. A usage that no others pick up dies, regardless of how elegant the coinage was. The axes of a language are held definite by ongoing use and by nothing else.",
+          "startChar": 4570,
+          "endChar": 4780,
+          "blockStart": 7,
+          "blockEnd": 7,
+          "segments": [
+            {
+              "blockId": 7,
+              "startChar": 489,
+              "endChar": 699,
+              "text": " the axis persists because others are still using it. A usage that no others pick up dies, regardless of how elegant the coinage was. The axes of a language are held definite by ongoing use and by nothing else."
+            }
+          ],
+          "audioFile": "chunk-013.wav",
+          "durationSeconds": 14.56,
+          "startTimeSeconds": 261.52,
+          "endTimeSeconds": 276.08,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 14,
+          "charCount": 457,
+          "text": "Which means language is neither a static container nor an individual sensor. It is a third thing. To see what kind of thing, we need a piece of vocabulary the earlier essays in this sequence developed: there is no such act as passive observation. Every sensor is also an emitter, every observation a probe that changes what it measures, and what we call perception is a loop closed between an emission and the reception of its altered return \u2014 a probe-loop.",
+          "spokenText": "Which means language is neither a static container nor an individual sensor. It is a third thing. To see what kind of thing, we need a piece of vocabulary the earlier essays in this sequence developed: there is no such act as passive observation. Every sensor is also an emitter, every observation a probe that changes what it measures, and what we call perception is a loop closed between an emission and the reception of its altered return \u2014 a probe-loop.",
+          "startChar": 4782,
+          "endChar": 5239,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 0,
+              "endChar": 457,
+              "text": "Which means language is neither a static container nor an individual sensor. It is a third thing. To see what kind of thing, we need a piece of vocabulary the earlier essays in this sequence developed: there is no such act as passive observation. Every sensor is also an emitter, every observation a probe that changes what it measures, and what we call perception is a loop closed between an emission and the reception of its altered return \u2014 a probe-loop."
+            }
+          ],
+          "audioFile": "chunk-014.wav",
+          "durationSeconds": 24.8,
+          "startTimeSeconds": 276.18,
+          "endTimeSeconds": 300.98,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 15,
+          "charCount": 429,
+          "text": " The point, when it was first made, was local: an individual observer, an individual probe, an individual closure. What language is, in the frame this essay now needs, is a shared probe-loop. A coordinate system kept definite not by any one speaker's measurement but by the mutual, continuous, low-level probing of a community. Every utterance is a small emission into the shared space; every act of understanding is a reception;",
+          "spokenText": "The point, when it was first made, was local: an individual observer, an individual probe, an individual closure. What language is, in the frame this essay now needs, is a shared probe-loop. A coordinate system kept definite not by any one speaker's measurement but by the mutual, continuous, low-level probing of a community. Every utterance is a small emission into the shared space; every act of understanding is a reception;",
+          "startChar": 5241,
+          "endChar": 5670,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 457,
+              "endChar": 886,
+              "text": " The point, when it was first made, was local: an individual observer, an individual probe, an individual closure. What language is, in the frame this essay now needs, is a shared probe-loop. A coordinate system kept definite not by any one speaker's measurement but by the mutual, continuous, low-level probing of a community. Every utterance is a small emission into the shared space; every act of understanding is a reception;"
+            }
+          ],
+          "audioFile": "chunk-015.wav",
+          "durationSeconds": 26.08,
+          "startTimeSeconds": 301.08,
+          "endTimeSeconds": 327.16,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 16,
+          "charCount": 121,
+          "text": " the axes the community uses are the axes that enough of its members have been keeping alive through this mutual traffic.",
+          "spokenText": "the axes the community uses are the axes that enough of its members have been keeping alive through this mutual traffic.",
+          "startChar": 5672,
+          "endChar": 5793,
+          "blockStart": 8,
+          "blockEnd": 8,
+          "segments": [
+            {
+              "blockId": 8,
+              "startChar": 886,
+              "endChar": 1007,
+              "text": " the axes the community uses are the axes that enough of its members have been keeping alive through this mutual traffic."
+            }
+          ],
+          "audioFile": "chunk-016.wav",
+          "durationSeconds": 7.2,
+          "startTimeSeconds": 327.26,
+          "endTimeSeconds": 334.46,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 17,
+          "charCount": 494,
+          "text": "The weight of being inside a language \u2014 the way a first language in particular feels like the shape of the world rather than one shape among possibilities \u2014 is not an illusion to be dispelled by learning a second. It is the accurate reflection of a real fact: every competent speaker is a probe, and the space the probes constitute is the space the speaker has been inhabiting as long as they have been thinking. You do not stand outside a language you speak. You are in the loop that makes it.",
+          "spokenText": "The weight of being inside a language \u2014 the way a first language in particular feels like the shape of the world rather than one shape among possibilities \u2014 is not an illusion to be dispelled by learning a second. It is the accurate reflection of a real fact: every competent speaker is a probe, and the space the probes constitute is the space the speaker has been inhabiting as long as they have been thinking. You do not stand outside a language you speak. You are in the loop that makes it.",
+          "startChar": 5795,
+          "endChar": 6289,
+          "blockStart": 9,
+          "blockEnd": 9,
+          "segments": [
+            {
+              "blockId": 9,
+              "startChar": 0,
+              "endChar": 494,
+              "text": "The weight of being inside a language \u2014 the way a first language in particular feels like the shape of the world rather than one shape among possibilities \u2014 is not an illusion to be dispelled by learning a second. It is the accurate reflection of a real fact: every competent speaker is a probe, and the space the probes constitute is the space the speaker has been inhabiting as long as they have been thinking. You do not stand outside a language you speak. You are in the loop that makes it."
+            }
+          ],
+          "audioFile": "chunk-017.wav",
+          "durationSeconds": 24.32,
+          "startTimeSeconds": 334.56,
+          "endTimeSeconds": 358.88,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 18,
+          "charCount": 488,
+          "text": "And this is why a language can die. Dictionaries can remain. Literatures can remain. What cannot remain, when the last fluent speaker stops probing, is the loop. The axes become ambient only \u2014 declared in the dictionary, inert in the world. The same vocabulary is present, and the same grammar, and nothing is held definite by use. Revival is possible, because the dictionary is still there to be re-inhabited, but revival is the work of reconstituting a loop, not of reading a container.",
+          "spokenText": "And this is why a language can die. Dictionaries can remain. Literatures can remain. What cannot remain, when the last fluent speaker stops probing, is the loop. The axes become ambient only \u2014 declared in the dictionary, inert in the world. The same vocabulary is present, and the same grammar, and nothing is held definite by use. Revival is possible, because the dictionary is still there to be re-inhabited, but revival is the work of reconstituting a loop, not of reading a container.",
+          "startChar": 6291,
+          "endChar": 6779,
+          "blockStart": 10,
+          "blockEnd": 10,
+          "segments": [
+            {
+              "blockId": 10,
+              "startChar": 0,
+              "endChar": 488,
+              "text": "And this is why a language can die. Dictionaries can remain. Literatures can remain. What cannot remain, when the last fluent speaker stops probing, is the loop. The axes become ambient only \u2014 declared in the dictionary, inert in the world. The same vocabulary is present, and the same grammar, and nothing is held definite by use. Revival is possible, because the dictionary is still there to be re-inhabited, but revival is the work of reconstituting a loop, not of reading a container."
+            }
+          ],
+          "audioFile": "chunk-018.wav",
+          "durationSeconds": 31.28,
+          "startTimeSeconds": 358.98,
+          "endTimeSeconds": 390.26,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 19,
+          "charCount": 166,
+          "text": " Hebrew was revived; Cornish is being. Dozens of others have not been and will not be. A language is alive to the degree that a community is still probing through it.",
+          "spokenText": "Hebrew was revived; Cornish is being. Dozens of others have not been and will not be. A language is alive to the degree that a community is still probing through it.",
+          "startChar": 6781,
+          "endChar": 6947,
+          "blockStart": 10,
+          "blockEnd": 10,
+          "segments": [
+            {
+              "blockId": 10,
+              "startChar": 488,
+              "endChar": 654,
+              "text": " Hebrew was revived; Cornish is being. Dozens of others have not been and will not be. A language is alive to the degree that a community is still probing through it."
+            }
+          ],
+          "audioFile": "chunk-019.wav",
+          "durationSeconds": 11.2,
+          "startTimeSeconds": 390.36,
+          "endTimeSeconds": 401.56,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 20,
+          "charCount": 359,
+          "text": "There is a distinction that becomes unusually useful here: between ambient and intrinsic dimension. Ambient dimension is the coordinate system as declared. Intrinsic dimension is the structure the users actually traverse \u2014 the lower-dimensional manifold that the available axes are being used to coordinate. For language, the two come apart in a specific way.",
+          "spokenText": "There is a distinction that becomes unusually useful here: between ambient and intrinsic dimension. Ambient dimension is the coordinate system as declared. Intrinsic dimension is the structure the users actually traverse \u2014 the lower-dimensional manifold that the available axes are being used to coordinate. For language, the two come apart in a specific way.",
+          "startChar": 6949,
+          "endChar": 7308,
+          "blockStart": 11,
+          "blockEnd": 11,
+          "segments": [
+            {
+              "blockId": 11,
+              "startChar": 0,
+              "endChar": 359,
+              "text": "There is a distinction that becomes unusually useful here: between ambient and intrinsic dimension. Ambient dimension is the coordinate system as declared. Intrinsic dimension is the structure the users actually traverse \u2014 the lower-dimensional manifold that the available axes are being used to coordinate. For language, the two come apart in a specific way."
+            }
+          ],
+          "audioFile": "chunk-020.wav",
+          "durationSeconds": 19.76,
+          "startTimeSeconds": 401.66,
+          "endTimeSeconds": 421.42,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 21,
+          "charCount": 449,
+          "text": "The ambient dimension of a language is roughly its lexicon plus its grammar: the full catalog of axes available for cheap expression. A large language \u2014 English, Mandarin, any major literary language \u2014 has an ambient dimension far beyond what any individual speaker uses. English contains susurrus and parsimony and tintinnabulation and deixis and some four hundred thousand other words, most of which are dormant for most speakers most of the time.",
+          "spokenText": "The ambient dimension of a language is roughly its lexicon plus its grammar: the full catalog of axes available for cheap expression. A large language \u2014 English, Mandarin, any major literary language \u2014 has an ambient dimension far beyond what any individual speaker uses. English contains susurrus and parsimony and tintinnabulation and deixis and some four hundred thousand other words, most of which are dormant for most speakers most of the time.",
+          "startChar": 7310,
+          "endChar": 7759,
+          "blockStart": 12,
+          "blockEnd": 12,
+          "segments": [
+            {
+              "blockId": 12,
+              "startChar": 0,
+              "endChar": 449,
+              "text": "The ambient dimension of a language is roughly its lexicon plus its grammar: the full catalog of axes available for cheap expression. A large language \u2014 English, Mandarin, any major literary language \u2014 has an ambient dimension far beyond what any individual speaker uses. English contains susurrus and parsimony and tintinnabulation and deixis and some four hundred thousand other words, most of which are dormant for most speakers most of the time."
+            }
+          ],
+          "audioFile": "chunk-021.wav",
+          "durationSeconds": 25.52,
+          "startTimeSeconds": 421.52,
+          "endTimeSeconds": 447.04,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 22,
+          "charCount": 369,
+          "text": "The intrinsic dimension is the much smaller space the community is actually using to coordinate behavior. It is the axes currently alive in the loop, not the axes merely declared in the lexicon. And it is not uniform across speakers. For each subcommunity \u2014 a profession, a region, a generation, a hobby \u2014 a different subset of the ambient axes is intrinsically active.",
+          "spokenText": "The intrinsic dimension is the much smaller space the community is actually using to coordinate behavior. It is the axes currently alive in the loop, not the axes merely declared in the lexicon. And it is not uniform across speakers. For each subcommunity \u2014 a profession, a region, a generation, a hobby \u2014 a different subset of the ambient axes is intrinsically active.",
+          "startChar": 7761,
+          "endChar": 8130,
+          "blockStart": 13,
+          "blockEnd": 13,
+          "segments": [
+            {
+              "blockId": 13,
+              "startChar": 0,
+              "endChar": 369,
+              "text": "The intrinsic dimension is the much smaller space the community is actually using to coordinate behavior. It is the axes currently alive in the loop, not the axes merely declared in the lexicon. And it is not uniform across speakers. For each subcommunity \u2014 a profession, a region, a generation, a hobby \u2014 a different subset of the ambient axes is intrinsically active."
+            }
+          ],
+          "audioFile": "chunk-022.wav",
+          "durationSeconds": 23.12,
+          "startTimeSeconds": 447.14,
+          "endTimeSeconds": 470.26,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 23,
+          "charCount": 373,
+          "text": " Mathematicians, inside English, are operating in a higher-intrinsic-dimensional subspace than most English speakers, because they have kept alive axes most English speakers have never probed. Homotopy is ambient in English (the word is in the dictionary) and intrinsic only in the mathematical subcommunity. When you enter a field, you do not simply learn its terminology.",
+          "spokenText": "Mathematicians, inside English, are operating in a higher-intrinsic-dimensional subspace than most English speakers, because they have kept alive axes most English speakers have never probed. Homotopy is ambient in English (the word is in the dictionary) and intrinsic only in the mathematical subcommunity. When you enter a field, you do not simply learn its terminology.",
+          "startChar": 8132,
+          "endChar": 8505,
+          "blockStart": 13,
+          "blockEnd": 13,
+          "segments": [
+            {
+              "blockId": 13,
+              "startChar": 369,
+              "endChar": 742,
+              "text": " Mathematicians, inside English, are operating in a higher-intrinsic-dimensional subspace than most English speakers, because they have kept alive axes most English speakers have never probed. Homotopy is ambient in English (the word is in the dictionary) and intrinsic only in the mathematical subcommunity. When you enter a field, you do not simply learn its terminology."
+            }
+          ],
+          "audioFile": "chunk-023.wav",
+          "durationSeconds": 21.12,
+          "startTimeSeconds": 470.36,
+          "endTimeSeconds": 491.48,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 24,
+          "charCount": 243,
+          "text": " You have new axes become intrinsically active in a container that already had them ambient, and you do this the same way anyone learns anything in a language: by being probed until your emissions start coordinating the way the community's do.",
+          "spokenText": "You have new axes become intrinsically active in a container that already had them ambient, and you do this the same way anyone learns anything in a language: by being probed until your emissions start coordinating the way the community's do.",
+          "startChar": 8507,
+          "endChar": 8750,
+          "blockStart": 13,
+          "blockEnd": 13,
+          "segments": [
+            {
+              "blockId": 13,
+              "startChar": 742,
+              "endChar": 985,
+              "text": " You have new axes become intrinsically active in a container that already had them ambient, and you do this the same way anyone learns anything in a language: by being probed until your emissions start coordinating the way the community's do."
+            }
+          ],
+          "audioFile": "chunk-024.wav",
+          "durationSeconds": 13.84,
+          "startTimeSeconds": 491.58,
+          "endTimeSeconds": 505.42,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 25,
+          "charCount": 140,
+          "text": "Here the essay gets to the application it has been building toward, which is one I find clarifying when I run into it: bureaucratic opacity.",
+          "spokenText": "Here the essay gets to the application it has been building toward, which is one I find clarifying when I run into it: bureaucratic opacity.",
+          "startChar": 8752,
+          "endChar": 8892,
+          "blockStart": 14,
+          "blockEnd": 14,
+          "segments": [
+            {
+              "blockId": 14,
+              "startChar": 0,
+              "endChar": 140,
+              "text": "Here the essay gets to the application it has been building toward, which is one I find clarifying when I run into it: bureaucratic opacity."
+            }
+          ],
+          "audioFile": "chunk-025.wav",
+          "durationSeconds": 8.72,
+          "startTimeSeconds": 505.52,
+          "endTimeSeconds": 514.24,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 26,
+          "charCount": 433,
+          "text": "Bureaucratic language is the right test case because most of its critics attack the wrong target. The usual complaint is that bureaucratic language is obscure \u2014 that it hides meaning behind jargon, that it is deliberately impenetrable, that it could be translated into plain English if only the bureaucrats cared enough. Some of it could. Most of it could not. Bureaucratic language is not obscure in the way dense poetry is obscure;",
+          "spokenText": "Bureaucratic language is the right test case because most of its critics attack the wrong target. The usual complaint is that bureaucratic language is obscure \u2014 that it hides meaning behind jargon, that it is deliberately impenetrable, that it could be translated into plain English if only the bureaucrats cared enough. Some of it could. Most of it could not. Bureaucratic language is not obscure in the way dense poetry is obscure;",
+          "startChar": 8894,
+          "endChar": 9327,
+          "blockStart": 15,
+          "blockEnd": 15,
+          "segments": [
+            {
+              "blockId": 15,
+              "startChar": 0,
+              "endChar": 433,
+              "text": "Bureaucratic language is the right test case because most of its critics attack the wrong target. The usual complaint is that bureaucratic language is obscure \u2014 that it hides meaning behind jargon, that it is deliberately impenetrable, that it could be translated into plain English if only the bureaucrats cared enough. Some of it could. Most of it could not. Bureaucratic language is not obscure in the way dense poetry is obscure;"
+            }
+          ],
+          "audioFile": "chunk-026.wav",
+          "durationSeconds": 21.2,
+          "startTimeSeconds": 514.34,
+          "endTimeSeconds": 535.54,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 27,
+          "charCount": 498,
+          "text": " it is opaque in a different way, and the difference is worth naming.\n\nA well-built bureaucracy \u2014 a tax code, a benefits administration, a medical coding system, a procurement regulation \u2014 constructs a coordinate system with an enormous ambient dimension. Thousands of distinctions, categories, procedural subtypes, edge-case rulings, carve-outs, forms that trigger different downstream pathways. From the inside, for its practitioners, the intrinsic dimension is nearly as high as the ambient one.",
+          "spokenText": "it is opaque in a different way, and the difference is worth naming.\n\nA well-built bureaucracy \u2014 a tax code, a benefits administration, a medical coding system, a procurement regulation \u2014 constructs a coordinate system with an enormous ambient dimension. Thousands of distinctions, categories, procedural subtypes, edge-case rulings, carve-outs, forms that trigger different downstream pathways. From the inside, for its practitioners, the intrinsic dimension is nearly as high as the ambient one.",
+          "startChar": 9329,
+          "endChar": 9827,
+          "blockStart": 15,
+          "blockEnd": 16,
+          "segments": [
+            {
+              "blockId": 15,
+              "startChar": 433,
+              "endChar": 502,
+              "text": " it is opaque in a different way, and the difference is worth naming."
+            },
+            {
+              "blockId": 16,
+              "startChar": 0,
+              "endChar": 427,
+              "text": "A well-built bureaucracy \u2014 a tax code, a benefits administration, a medical coding system, a procurement regulation \u2014 constructs a coordinate system with an enormous ambient dimension. Thousands of distinctions, categories, procedural subtypes, edge-case rulings, carve-outs, forms that trigger different downstream pathways. From the inside, for its practitioners, the intrinsic dimension is nearly as high as the ambient one."
+            }
+          ],
+          "audioFile": "chunk-027.wav",
+          "durationSeconds": 30.48,
+          "startTimeSeconds": 535.64,
+          "endTimeSeconds": 566.12,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 28,
+          "charCount": 480,
+          "text": " A seasoned case officer is keeping a great many of those axes alive through daily use; they coordinate each new case within a space that is, for them, substantially inhabited. From the outside \u2014 for the citizen, the patient, the applicant \u2014 the ambient dimension of the system is available but almost none of it is intrinsic. You can read the form. You cannot tell what distinctions it is actually tracking, because you are not in the loop that keeps those distinctions definite.",
+          "spokenText": "A seasoned case officer is keeping a great many of those axes alive through daily use; they coordinate each new case within a space that is, for them, substantially inhabited. From the outside \u2014 for the citizen, the patient, the applicant \u2014 the ambient dimension of the system is available but almost none of it is intrinsic. You can read the form. You cannot tell what distinctions it is actually tracking, because you are not in the loop that keeps those distinctions definite.",
+          "startChar": 9829,
+          "endChar": 10309,
+          "blockStart": 16,
+          "blockEnd": 16,
+          "segments": [
+            {
+              "blockId": 16,
+              "startChar": 427,
+              "endChar": 907,
+              "text": " A seasoned case officer is keeping a great many of those axes alive through daily use; they coordinate each new case within a space that is, for them, substantially inhabited. From the outside \u2014 for the citizen, the patient, the applicant \u2014 the ambient dimension of the system is available but almost none of it is intrinsic. You can read the form. You cannot tell what distinctions it is actually tracking, because you are not in the loop that keeps those distinctions definite."
+            }
+          ],
+          "audioFile": "chunk-028.wav",
+          "durationSeconds": 24.96,
+          "startTimeSeconds": 566.22,
+          "endTimeSeconds": 591.18,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 29,
+          "charCount": 412,
+          "text": "This is why bureaucratic encounters feel uncanny in a particular way, even when every word is English. You are not in the presence of obscurity but of a loop-structural mismatch. The system is probing you \u2014 every box you check is an emission it reads in coordinates sharp to it and blurred to you \u2014 and your emissions are arriving in a space whose metric you have not learned. You are not refusing to understand.",
+          "spokenText": "This is why bureaucratic encounters feel uncanny in a particular way, even when every word is English. You are not in the presence of obscurity but of a loop-structural mismatch. The system is probing you \u2014 every box you check is an emission it reads in coordinates sharp to it and blurred to you \u2014 and your emissions are arriving in a space whose metric you have not learned. You are not refusing to understand.",
+          "startChar": 10311,
+          "endChar": 10723,
+          "blockStart": 17,
+          "blockEnd": 17,
+          "segments": [
+            {
+              "blockId": 17,
+              "startChar": 0,
+              "endChar": 412,
+              "text": "This is why bureaucratic encounters feel uncanny in a particular way, even when every word is English. You are not in the presence of obscurity but of a loop-structural mismatch. The system is probing you \u2014 every box you check is an emission it reads in coordinates sharp to it and blurred to you \u2014 and your emissions are arriving in a space whose metric you have not learned. You are not refusing to understand."
+            }
+          ],
+          "audioFile": "chunk-029.wav",
+          "durationSeconds": 23.92,
+          "startTimeSeconds": 591.28,
+          "endTimeSeconds": 615.2,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 30,
+          "charCount": 373,
+          "text": " You cannot be probed by a loop you are outside of and produce coordinates definite to that loop, because definiteness is exactly the thing a loop confers, and you are not in this one. Translation will not fix it. Translation is a lexical operation, and the mismatch is not lexical. It is the mismatch between a language whose axes are ambient to you and intrinsic to them.",
+          "spokenText": "You cannot be probed by a loop you are outside of and produce coordinates definite to that loop, because definiteness is exactly the thing a loop confers, and you are not in this one. Translation will not fix it. Translation is a lexical operation, and the mismatch is not lexical. It is the mismatch between a language whose axes are ambient to you and intrinsic to them.",
+          "startChar": 10725,
+          "endChar": 11098,
+          "blockStart": 17,
+          "blockEnd": 17,
+          "segments": [
+            {
+              "blockId": 17,
+              "startChar": 412,
+              "endChar": 785,
+              "text": " You cannot be probed by a loop you are outside of and produce coordinates definite to that loop, because definiteness is exactly the thing a loop confers, and you are not in this one. Translation will not fix it. Translation is a lexical operation, and the mismatch is not lexical. It is the mismatch between a language whose axes are ambient to you and intrinsic to them."
+            }
+          ],
+          "audioFile": "chunk-030.wav",
+          "durationSeconds": 20.56,
+          "startTimeSeconds": 615.3,
+          "endTimeSeconds": 635.86,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 31,
+          "charCount": 453,
+          "text": "Which suggests, incidentally, something about why such encounters produce the peculiar affect they produce. It is not only that the institution is indifferent, though some are. It is not only that the individual behind the desk is harried, though they usually are. It is that the person subject to the system is being continuously probed by a loop they cannot close at the same rate. The asymmetry is not one of power alone. It is one of loop-structure.",
+          "spokenText": "Which suggests, incidentally, something about why such encounters produce the peculiar affect they produce. It is not only that the institution is indifferent, though some are. It is not only that the individual behind the desk is harried, though they usually are. It is that the person subject to the system is being continuously probed by a loop they cannot close at the same rate. The asymmetry is not one of power alone. It is one of loop-structure.",
+          "startChar": 11100,
+          "endChar": 11553,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 0,
+              "endChar": 453,
+              "text": "Which suggests, incidentally, something about why such encounters produce the peculiar affect they produce. It is not only that the institution is indifferent, though some are. It is not only that the individual behind the desk is harried, though they usually are. It is that the person subject to the system is being continuously probed by a loop they cannot close at the same rate. The asymmetry is not one of power alone. It is one of loop-structure."
+            }
+          ],
+          "audioFile": "chunk-031.wav",
+          "durationSeconds": 24.64,
+          "startTimeSeconds": 635.96,
+          "endTimeSeconds": 660.6,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 32,
+          "charCount": 210,
+          "text": " The coordinate system that is shaping your life is intrinsically alive for someone else and only ambient for you, and no amount of plain-language rewriting closes that gap, because the gap is not in the words.",
+          "spokenText": "The coordinate system that is shaping your life is intrinsically alive for someone else and only ambient for you, and no amount of plain-language rewriting closes that gap, because the gap is not in the words.",
+          "startChar": 11555,
+          "endChar": 11765,
+          "blockStart": 18,
+          "blockEnd": 18,
+          "segments": [
+            {
+              "blockId": 18,
+              "startChar": 453,
+              "endChar": 663,
+              "text": " The coordinate system that is shaping your life is intrinsically alive for someone else and only ambient for you, and no amount of plain-language rewriting closes that gap, because the gap is not in the words."
+            }
+          ],
+          "audioFile": "chunk-032.wav",
+          "durationSeconds": 12.56,
+          "startTimeSeconds": 660.7,
+          "endTimeSeconds": 673.26,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 33,
+          "charCount": 493,
+          "text": "There is a smaller consequence of the shared-probe-loop frame worth drawing out, because it corrects a misunderstanding many careful readers carry about how language is learned.\n\nIf language were a container in the embedding sense, learning a language would be memorizing its axes. You would acquire the coordinate system by sitting with a list of its dimensions, making each one precise in turn, and then you would be ready to speak. Textbooks are built on something close to this assumption.",
+          "spokenText": "There is a smaller consequence of the shared-probe-loop frame worth drawing out, because it corrects a misunderstanding many careful readers carry about how language is learned.\n\nIf language were a container in the embedding sense, learning a language would be memorizing its axes. You would acquire the coordinate system by sitting with a list of its dimensions, making each one precise in turn, and then you would be ready to speak. Textbooks are built on something close to this assumption.",
+          "startChar": 11767,
+          "endChar": 12260,
+          "blockStart": 19,
+          "blockEnd": 20,
+          "segments": [
+            {
+              "blockId": 19,
+              "startChar": 0,
+              "endChar": 177,
+              "text": "There is a smaller consequence of the shared-probe-loop frame worth drawing out, because it corrects a misunderstanding many careful readers carry about how language is learned."
+            },
+            {
+              "blockId": 20,
+              "startChar": 0,
+              "endChar": 314,
+              "text": "If language were a container in the embedding sense, learning a language would be memorizing its axes. You would acquire the coordinate system by sitting with a list of its dimensions, making each one precise in turn, and then you would be ready to speak. Textbooks are built on something close to this assumption."
+            }
+          ],
+          "audioFile": "chunk-033.wav",
+          "durationSeconds": 26.32,
+          "startTimeSeconds": 673.36,
+          "endTimeSeconds": 699.68,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 34,
+          "charCount": 278,
+          "text": " The textbook assumption is not wholly wrong \u2014 vocabulary and grammar can be studied, and the study helps \u2014 but it cannot account for the fact that nobody who has only studied a language, however thoroughly, can use it with the fluency of a speaker. There is always a remainder.",
+          "spokenText": "The textbook assumption is not wholly wrong \u2014 vocabulary and grammar can be studied, and the study helps \u2014 but it cannot account for the fact that nobody who has only studied a language, however thoroughly, can use it with the fluency of a speaker. There is always a remainder.",
+          "startChar": 12262,
+          "endChar": 12540,
+          "blockStart": 20,
+          "blockEnd": 20,
+          "segments": [
+            {
+              "blockId": 20,
+              "startChar": 314,
+              "endChar": 592,
+              "text": " The textbook assumption is not wholly wrong \u2014 vocabulary and grammar can be studied, and the study helps \u2014 but it cannot account for the fact that nobody who has only studied a language, however thoroughly, can use it with the fluency of a speaker. There is always a remainder."
+            }
+          ],
+          "audioFile": "chunk-034.wav",
+          "durationSeconds": 16.64,
+          "startTimeSeconds": 699.78,
+          "endTimeSeconds": 716.42,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 35,
+          "charCount": 470,
+          "text": "The remainder is the loop. You cannot memorize your way into it. You can only be probed by it and probe back until your emissions start coming out coordinated the way the community's do, and this is why immersion works and textbooks plateau, why children acquire and adults strain, why a working translation is possible and a perfect one is not. Translation is possible because there is enough structural overlap between loops that many coordinates can be mapped across.",
+          "spokenText": "The remainder is the loop. You cannot memorize your way into it. You can only be probed by it and probe back until your emissions start coming out coordinated the way the community's do, and this is why immersion works and textbooks plateau, why children acquire and adults strain, why a working translation is possible and a perfect one is not. Translation is possible because there is enough structural overlap between loops that many coordinates can be mapped across.",
+          "startChar": 12542,
+          "endChar": 13012,
+          "blockStart": 21,
+          "blockEnd": 21,
+          "segments": [
+            {
+              "blockId": 21,
+              "startChar": 0,
+              "endChar": 470,
+              "text": "The remainder is the loop. You cannot memorize your way into it. You can only be probed by it and probe back until your emissions start coming out coordinated the way the community's do, and this is why immersion works and textbooks plateau, why children acquire and adults strain, why a working translation is possible and a perfect one is not. Translation is possible because there is enough structural overlap between loops that many coordinates can be mapped across."
+            }
+          ],
+          "audioFile": "chunk-035.wav",
+          "durationSeconds": 25.76,
+          "startTimeSeconds": 716.52,
+          "endTimeSeconds": 742.28,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 36,
+          "charCount": 478,
+          "text": " It is never perfect because the axes alive in one loop are never exactly the ones alive in another, and the coordinating emissions carry small signals that do not land the same way in a different space. A translated poem is a good translated poem to the degree that the translator has re-inhabited both loops long enough to find emissions in the target that produce receptions functionally similar to the originals. It is never the same poem, and the honest translators say so.",
+          "spokenText": "It is never perfect because the axes alive in one loop are never exactly the ones alive in another, and the coordinating emissions carry small signals that do not land the same way in a different space. A translated poem is a good translated poem to the degree that the translator has re-inhabited both loops long enough to find emissions in the target that produce receptions functionally similar to the originals. It is never the same poem, and the honest translators say so.",
+          "startChar": 13014,
+          "endChar": 13492,
+          "blockStart": 21,
+          "blockEnd": 21,
+          "segments": [
+            {
+              "blockId": 21,
+              "startChar": 470,
+              "endChar": 948,
+              "text": " It is never perfect because the axes alive in one loop are never exactly the ones alive in another, and the coordinating emissions carry small signals that do not land the same way in a different space. A translated poem is a good translated poem to the degree that the translator has re-inhabited both loops long enough to find emissions in the target that produce receptions functionally similar to the originals. It is never the same poem, and the honest translators say so."
+            }
+          ],
+          "audioFile": "chunk-036.wav",
+          "durationSeconds": 24.16,
+          "startTimeSeconds": 742.38,
+          "endTimeSeconds": 766.54,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 37,
+          "charCount": 415,
+          "text": "One more move, and then I will stop.\n\nThe representation frame, read carefully, leaves a question not quite answered: where do the representations we use come from, before we tune them? Most of the worked examples in the tradition \u2014 feature engineering, metric learning, the tuning of learned embeddings \u2014 are cases in which a representation gets actively refined, as though representation were always ours to make.",
+          "spokenText": "One more move, and then I will stop.\n\nThe representation frame, read carefully, leaves a question not quite answered: where do the representations we use come from, before we tune them? Most of the worked examples in the tradition \u2014 feature engineering, metric learning, the tuning of learned embeddings \u2014 are cases in which a representation gets actively refined, as though representation were always ours to make.",
+          "startChar": 13494,
+          "endChar": 13909,
+          "blockStart": 22,
+          "blockEnd": 23,
+          "segments": [
+            {
+              "blockId": 22,
+              "startChar": 0,
+              "endChar": 36,
+              "text": "One more move, and then I will stop."
+            },
+            {
+              "blockId": 23,
+              "startChar": 0,
+              "endChar": 377,
+              "text": "The representation frame, read carefully, leaves a question not quite answered: where do the representations we use come from, before we tune them? Most of the worked examples in the tradition \u2014 feature engineering, metric learning, the tuning of learned embeddings \u2014 are cases in which a representation gets actively refined, as though representation were always ours to make."
+            }
+          ],
+          "audioFile": "chunk-037.wav",
+          "durationSeconds": 25.04,
+          "startTimeSeconds": 766.64,
+          "endTimeSeconds": 791.68,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 38,
+          "charCount": 352,
+          "text": "The honest answer, which this essay has been closing in on, is that most of the representations we use were not tuned by us at all. They were handed to us by language, and language was tuned by the probe-loops of everyone who came before. Every axis your first language offers you is an axis some earlier community kept alive long enough to pass it on.",
+          "spokenText": "The honest answer, which this essay has been closing in on, is that most of the representations we use were not tuned by us at all. They were handed to us by language, and language was tuned by the probe-loops of everyone who came before. Every axis your first language offers you is an axis some earlier community kept alive long enough to pass it on.",
+          "startChar": 13911,
+          "endChar": 14263,
+          "blockStart": 24,
+          "blockEnd": 24,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 0,
+              "endChar": 352,
+              "text": "The honest answer, which this essay has been closing in on, is that most of the representations we use were not tuned by us at all. They were handed to us by language, and language was tuned by the probe-loops of everyone who came before. Every axis your first language offers you is an axis some earlier community kept alive long enough to pass it on."
+            }
+          ],
+          "audioFile": "chunk-038.wav",
+          "durationSeconds": 21.68,
+          "startTimeSeconds": 791.78,
+          "endTimeSeconds": 813.46,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 39,
+          "charCount": 300,
+          "text": " Millennia of use are embedded in the coordinate system you inherit, and most of the work of becoming a competent thinker in a language is the work of inheriting \u2014 which means: the work of having those axes become intrinsically active in you because you have been probed by them and have probed back.",
+          "spokenText": "Millennia of use are embedded in the coordinate system you inherit, and most of the work of becoming a competent thinker in a language is the work of inheriting \u2014 which means: the work of having those axes become intrinsically active in you because you have been probed by them and have probed back.",
+          "startChar": 14265,
+          "endChar": 14565,
+          "blockStart": 24,
+          "blockEnd": 24,
+          "segments": [
+            {
+              "blockId": 24,
+              "startChar": 352,
+              "endChar": 652,
+              "text": " Millennia of use are embedded in the coordinate system you inherit, and most of the work of becoming a competent thinker in a language is the work of inheriting \u2014 which means: the work of having those axes become intrinsically active in you because you have been probed by them and have probed back."
+            }
+          ],
+          "audioFile": "chunk-039.wav",
+          "durationSeconds": 15.2,
+          "startTimeSeconds": 813.56,
+          "endTimeSeconds": 828.76,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 40,
+          "charCount": 158,
+          "text": "This is not a romantic observation. It is the structural reality of how representations get made and maintained. And it has a corollary worth stating plainly.",
+          "spokenText": "This is not a romantic observation. It is the structural reality of how representations get made and maintained. And it has a corollary worth stating plainly.",
+          "startChar": 14567,
+          "endChar": 14725,
+          "blockStart": 25,
+          "blockEnd": 25,
+          "segments": [
+            {
+              "blockId": 25,
+              "startChar": 0,
+              "endChar": 158,
+              "text": "This is not a romantic observation. It is the structural reality of how representations get made and maintained. And it has a corollary worth stating plainly."
+            }
+          ],
+          "audioFile": "chunk-040.wav",
+          "durationSeconds": 10.4,
+          "startTimeSeconds": 828.86,
+          "endTimeSeconds": 839.26,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 41,
+          "charCount": 402,
+          "text": "Most people, most of the time, work inside the inherited coordinate system without modifying it. This is not a failing; it is the ordinary condition of thought, and it is how the axes stay alive. But some people, some of the time, are doing something else: they are proposing a new axis. A writer who finds the word that has not been said and finds it catches has added a dimension to the shared space.",
+          "spokenText": "Most people, most of the time, work inside the inherited coordinate system without modifying it. This is not a failing; it is the ordinary condition of thought, and it is how the axes stay alive. But some people, some of the time, are doing something else: they are proposing a new axis. A writer who finds the word that has not been said and finds it catches has added a dimension to the shared space.",
+          "startChar": 14727,
+          "endChar": 15129,
+          "blockStart": 26,
+          "blockEnd": 26,
+          "segments": [
+            {
+              "blockId": 26,
+              "startChar": 0,
+              "endChar": 402,
+              "text": "Most people, most of the time, work inside the inherited coordinate system without modifying it. This is not a failing; it is the ordinary condition of thought, and it is how the axes stay alive. But some people, some of the time, are doing something else: they are proposing a new axis. A writer who finds the word that has not been said and finds it catches has added a dimension to the shared space."
+            }
+          ],
+          "audioFile": "chunk-041.wav",
+          "durationSeconds": 22.64,
+          "startTimeSeconds": 839.36,
+          "endTimeSeconds": 862.0,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 42,
+          "charCount": 484,
+          "text": " A scientist who coins a term for a structure that had not been distinguished, and whose term is taken up, has done the same. An artist who makes visible a distinction the audience had not been probing, and whose work rearranges what other artists then make, has done the same. These are rare cases, and they are rare for a reason: the proposal succeeds or fails not by its elegance but by whether the shared probe-loop of a community keeps the axis alive once its originator is gone.",
+          "spokenText": "A scientist who coins a term for a structure that had not been distinguished, and whose term is taken up, has done the same. An artist who makes visible a distinction the audience had not been probing, and whose work rearranges what other artists then make, has done the same. These are rare cases, and they are rare for a reason: the proposal succeeds or fails not by its elegance but by whether the shared probe-loop of a community keeps the axis alive once its originator is gone.",
+          "startChar": 15131,
+          "endChar": 15615,
+          "blockStart": 26,
+          "blockEnd": 26,
+          "segments": [
+            {
+              "blockId": 26,
+              "startChar": 402,
+              "endChar": 886,
+              "text": " A scientist who coins a term for a structure that had not been distinguished, and whose term is taken up, has done the same. An artist who makes visible a distinction the audience had not been probing, and whose work rearranges what other artists then make, has done the same. These are rare cases, and they are rare for a reason: the proposal succeeds or fails not by its elegance but by whether the shared probe-loop of a community keeps the axis alive once its originator is gone."
+            }
+          ],
+          "audioFile": "chunk-042.wav",
+          "durationSeconds": 26.32,
+          "startTimeSeconds": 862.1,
+          "endTimeSeconds": 888.42,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 43,
+          "charCount": 376,
+          "text": "The work that makes writers and scientists and artists matter, when it matters, is not the production of content in a fixed container. It is the proposal that the container have one more axis. The proposal lands, or it doesn't. The axes the community keeps definite after you are what you will have added to the world of available distinctions. Almost all such proposals fail.",
+          "spokenText": "The work that makes writers and scientists and artists matter, when it matters, is not the production of content in a fixed container. It is the proposal that the container have one more axis. The proposal lands, or it doesn't. The axes the community keeps definite after you are what you will have added to the world of available distinctions. Almost all such proposals fail.",
+          "startChar": 15617,
+          "endChar": 15993,
+          "blockStart": 27,
+          "blockEnd": 27,
+          "segments": [
+            {
+              "blockId": 27,
+              "startChar": 0,
+              "endChar": 376,
+              "text": "The work that makes writers and scientists and artists matter, when it matters, is not the production of content in a fixed container. It is the proposal that the container have one more axis. The proposal lands, or it doesn't. The axes the community keeps definite after you are what you will have added to the world of available distinctions. Almost all such proposals fail."
+            }
+          ],
+          "audioFile": "chunk-043.wav",
+          "durationSeconds": 20.24,
+          "startTimeSeconds": 888.52,
+          "endTimeSeconds": 908.76,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 44,
+          "charCount": 314,
+          "text": " The axes that succeed \u2014 evidentiality in Quechua, aspect in Russian, schadenfreude in English, homotopy among mathematicians, a thousand dead metaphors no one remembers were once proposals \u2014 are the legacy a speech community carries forward for the next generation to inherit without noticing they are inheriting.",
+          "spokenText": "The axes that succeed \u2014 evidentiality in Quechua, aspect in Russian, schadenfreude in English, homotopy among mathematicians, a thousand dead metaphors no one remembers were once proposals \u2014 are the legacy a speech community carries forward for the next generation to inherit without noticing they are inheriting.",
+          "startChar": 15995,
+          "endChar": 16309,
+          "blockStart": 27,
+          "blockEnd": 27,
+          "segments": [
+            {
+              "blockId": 27,
+              "startChar": 376,
+              "endChar": 690,
+              "text": " The axes that succeed \u2014 evidentiality in Quechua, aspect in Russian, schadenfreude in English, homotopy among mathematicians, a thousand dead metaphors no one remembers were once proposals \u2014 are the legacy a speech community carries forward for the next generation to inherit without noticing they are inheriting."
+            }
+          ],
+          "audioFile": "chunk-044.wav",
+          "durationSeconds": 19.12,
+          "startTimeSeconds": 908.86,
+          "endTimeSeconds": 927.98,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 45,
+          "charCount": 495,
+          "text": "Which leaves a sharper way of saying the thing the first paragraph of this essay was already trying to say. A language is not the labels we use for the things. It is not even the distinctions we inherit. It is the loop that keeps those distinctions definite, continuously, by the mutual probing of everyone currently speaking. The world of cheap, shared distinctions that every thought in a language rests on is held up, at every moment, by the emissions of the community that still inhabits it.",
+          "spokenText": "Which leaves a sharper way of saying the thing the first paragraph of this essay was already trying to say. A language is not the labels we use for the things. It is not even the distinctions we inherit. It is the loop that keeps those distinctions definite, continuously, by the mutual probing of everyone currently speaking. The world of cheap, shared distinctions that every thought in a language rests on is held up, at every moment, by the emissions of the community that still inhabits it.",
+          "startChar": 16311,
+          "endChar": 16806,
+          "blockStart": 28,
+          "blockEnd": 28,
+          "segments": [
+            {
+              "blockId": 28,
+              "startChar": 0,
+              "endChar": 495,
+              "text": "Which leaves a sharper way of saying the thing the first paragraph of this essay was already trying to say. A language is not the labels we use for the things. It is not even the distinctions we inherit. It is the loop that keeps those distinctions definite, continuously, by the mutual probing of everyone currently speaking. The world of cheap, shared distinctions that every thought in a language rests on is held up, at every moment, by the emissions of the community that still inhabits it."
+            }
+          ],
+          "audioFile": "chunk-045.wav",
+          "durationSeconds": 26.56,
+          "startTimeSeconds": 928.08,
+          "endTimeSeconds": 954.64,
+          "pauseAfterMs": 100
+        },
+        {
+          "index": 46,
+          "charCount": 96,
+          "text": "The weight of this is not illusion. The walls are the world, for as long as they are kept alive.",
+          "spokenText": "The weight of this is not illusion. The walls are the world, for as long as they are kept alive.",
+          "startChar": 16808,
+          "endChar": 16904,
+          "blockStart": 29,
+          "blockEnd": 29,
+          "segments": [
+            {
+              "blockId": 29,
+              "startChar": 0,
+              "endChar": 96,
+              "text": "The weight of this is not illusion. The walls are the world, for as long as they are kept alive."
+            }
+          ],
+          "audioFile": "chunk-046.wav",
+          "durationSeconds": 6.32,
+          "startTimeSeconds": 954.74,
+          "endTimeSeconds": 961.06,
+          "pauseAfterMs": 0
+        }
+      ],
+      "blockCount": 30
+    },
+    "publicAssets": {
+      "audioSrc": "/assets/post-audio/2026-04-22-what-the-community-keeps-definite/post.mp3",
+      "mimeType": "audio/mpeg"
+    },
+    "privateArtifacts": {
+      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-22-what-the-community-keeps-definite/narration-runs/20260424-164054_2026-04-22-what-the-community-keeps-definite",
+      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-22-what-the-community-keeps-definite/narration-runs/20260424-164054_2026-04-22-what-the-community-keeps-definite/metadata.json",
+      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-22-what-the-community-keeps-definite/narration-runs/20260424-164054_2026-04-22-what-the-community-keeps-definite/chunks.json",
+      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-22-what-the-community-keeps-definite/narration-runs/20260424-164054_2026-04-22-what-the-community-keeps-definite/post.wav",
+      "mp3Path": "public/assets/post-audio/2026-04-22-what-the-community-keeps-definite/post.mp3"
+    }
+  }
+}

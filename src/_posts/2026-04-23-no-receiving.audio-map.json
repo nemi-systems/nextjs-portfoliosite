@@ -1,10 +1,10 @@
 {
   "version": 3,
-  "postId": "2026-04-22-no-receiving",
+  "postId": "2026-04-23-no-receiving",
   "generatedAt": "2026-04-24T03:41:55Z",
   "status": "ok",
   "narration": {
-    "postPath": "src/_posts/2026-04-22-no-receiving.md",
+    "postPath": "src/_posts/2026-04-23-no-receiving.md",
     "language": "English",
     "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
     "taskType": "Base",
@@ -1088,15 +1088,15 @@
       "blockCount": 33
     },
     "publicAssets": {
-      "audioSrc": "/assets/post-audio/2026-04-22-no-receiving/post.mp3",
+      "audioSrc": "/assets/post-audio/2026-04-23-no-receiving/post.mp3",
       "mimeType": "audio/mpeg"
     },
     "privateArtifacts": {
-      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving",
-      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving/metadata.json",
-      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving/chunks.json",
-      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-22-no-receiving/narration-runs/20260424-033611_2026-04-22-no-receiving/post.wav",
-      "mp3Path": "public/assets/post-audio/2026-04-22-no-receiving/post.mp3"
+      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-23-no-receiving/narration-runs/20260424-033611_2026-04-23-no-receiving",
+      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-23-no-receiving/narration-runs/20260424-033611_2026-04-23-no-receiving/metadata.json",
+      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-23-no-receiving/narration-runs/20260424-033611_2026-04-23-no-receiving/chunks.json",
+      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-23-no-receiving/narration-runs/20260424-033611_2026-04-23-no-receiving/post.wav",
+      "mp3Path": "public/assets/post-audio/2026-04-23-no-receiving/post.mp3"
     }
   }
 }

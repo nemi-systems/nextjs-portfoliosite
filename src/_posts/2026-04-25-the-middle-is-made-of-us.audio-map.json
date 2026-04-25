@@ -1,10 +1,10 @@
 {
   "version": 3,
-  "postId": "2026-04-24-the-middle-is-made-of-us",
+  "postId": "2026-04-25-the-middle-is-made-of-us",
   "generatedAt": "2026-04-24T04:55:50Z",
   "status": "ok",
   "narration": {
-    "postPath": "src/_posts/2026-04-24-the-middle-is-made-of-us.md",
+    "postPath": "src/_posts/2026-04-25-the-middle-is-made-of-us.md",
     "language": "English",
     "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
     "taskType": "Base",
@@ -984,15 +984,15 @@
       "blockCount": 28
     },
     "publicAssets": {
-      "audioSrc": "/assets/post-audio/2026-04-24-the-middle-is-made-of-us/post.mp3",
+      "audioSrc": "/assets/post-audio/2026-04-25-the-middle-is-made-of-us/post.mp3",
       "mimeType": "audio/mpeg"
     },
     "privateArtifacts": {
-      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-24-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-24-the-middle-is-made-of-us",
-      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-24-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-24-the-middle-is-made-of-us/metadata.json",
-      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-24-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-24-the-middle-is-made-of-us/chunks.json",
-      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-24-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-24-the-middle-is-made-of-us/post.wav",
-      "mp3Path": "public/assets/post-audio/2026-04-24-the-middle-is-made-of-us/post.mp3"
+      "runDir": "scripts/blog-audio/.local/post-audio/2026-04-25-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-25-the-middle-is-made-of-us",
+      "metadataPath": "scripts/blog-audio/.local/post-audio/2026-04-25-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-25-the-middle-is-made-of-us/metadata.json",
+      "chunkManifestPath": "scripts/blog-audio/.local/post-audio/2026-04-25-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-25-the-middle-is-made-of-us/chunks.json",
+      "stitchedWavPath": "scripts/blog-audio/.local/post-audio/2026-04-25-the-middle-is-made-of-us/narration-runs/20260424-045108_2026-04-25-the-middle-is-made-of-us/post.wav",
+      "mp3Path": "public/assets/post-audio/2026-04-25-the-middle-is-made-of-us/post.mp3"
     }
   }
 }

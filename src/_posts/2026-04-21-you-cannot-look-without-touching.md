@@ -1,6 +1,7 @@
 ---
 title: "You Cannot Look Without Touching"
 date: 2026-04-21
+coverImage: /assets/you-cannot-look-without-touching/ai_img_chatgpt_avatar.png
 ---
 
 ![Split-frame allegorical diagram: a severed window-pane with a one-way arrow of light into a disembodied eye on the left; a closed probe-loop of emission and return into a single observer on the right](/assets/you-cannot-look-without-touching/ai_img_chatgpt_hero.png)

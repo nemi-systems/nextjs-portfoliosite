@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "postId": "2026-04-22-what-the-community-keeps-definite",
+  "generatedAt": "2026-04-25T03:53:10Z",
+  "style": "gold-fill-transparent",
+  "images": [
+    {
+      "src": "/assets/what-the-community-keeps-definite/ai_img_chatgpt_hero.png",
+      "status": "ok",
+      "svgSrc": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_hero.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_hero.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_hero.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_hero.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_hero.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/what-the-community-keeps-definite/ai_img_chatgpt_axis_insertion.png",
+      "status": "ok",
+      "svgSrc": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_insertion.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_insertion.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_insertion.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_insertion.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_insertion.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/what-the-community-keeps-definite/ai_img_chatgpt_dead_metaphor.png",
+      "status": "ok",
+      "svgSrc": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_dead_metaphor.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_dead_metaphor.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_dead_metaphor.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_dead_metaphor.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_dead_metaphor.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/what-the-community-keeps-definite/ai_img_chatgpt_subcommunity_manifolds.png",
+      "status": "ok",
+      "svgSrc": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_subcommunity_manifolds.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_subcommunity_manifolds.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_subcommunity_manifolds.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_subcommunity_manifolds.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_subcommunity_manifolds.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/what-the-community-keeps-definite/ai_img_chatgpt_bureaucracy_mismatch.png",
+      "status": "ok",
+      "svgSrc": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_bureaucracy_mismatch.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_bureaucracy_mismatch.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_bureaucracy_mismatch.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_bureaucracy_mismatch.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_bureaucracy_mismatch.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/what-the-community-keeps-definite/ai_img_chatgpt_immersion_sequence.png",
+      "status": "ok",
+      "svgSrc": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_immersion_sequence.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_immersion_sequence.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_immersion_sequence.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_immersion_sequence.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_immersion_sequence.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    },
+    {
+      "src": "/assets/what-the-community-keeps-definite/ai_img_chatgpt_axis_proposal.png",
+      "status": "ok",
+      "svgSrc": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_proposal.svg",
+      "layers": [
+        {
+          "kind": "bg",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_proposal.bg.svg",
+          "opacity": 1.0,
+          "blend": "normal"
+        },
+        {
+          "kind": "tone",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_proposal.tone.svg",
+          "opacity": 0.88,
+          "blend": "normal"
+        },
+        {
+          "kind": "highlight",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_proposal.highlight.svg",
+          "opacity": 0.72,
+          "blend": "normal"
+        },
+        {
+          "kind": "line",
+          "src": "/assets/what-the-community-keeps-definite/svg/ai_img_chatgpt_axis_proposal.line.svg",
+          "opacity": 0.62,
+          "blend": "normal"
+        }
+      ],
+      "palette": {
+        "dark": "#101010",
+        "mid": "#5d4a1f",
+        "bright": "#d4af37"
+      }
+    }
+  ]
+}

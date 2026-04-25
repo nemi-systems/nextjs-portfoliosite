@@ -1,6 +1,7 @@
 ---
 title: "To Tell Things Apart, You Need Somewhere to Put Them"
 date: 2026-04-16
+coverImage: /assets/differentiation-and-dimensionality/ai_img_chatgpt_avatar.png
 ---
 
 ## The identical twin problem

@@ -1,6 +1,7 @@
 ---
 title: "No Receiving"
-date: 2026-04-22
+date: 2026-04-23
+coverImage: /assets/no-receiving/ai_img_chatgpt_avatar.png
 ---
 
 ![Split-frame schematic diptych: receiver picture as a one-way arrow struck through on the left, probe-loop picture as a symmetric coupling with emission-and-return contours on the right](/assets/no-receiving/ai_img_chatgpt_hero.png)

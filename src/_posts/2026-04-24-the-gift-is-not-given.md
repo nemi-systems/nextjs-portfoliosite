@@ -1,6 +1,7 @@
 ---
 title: "The Gift Is Not Given Until It Is Seen to Land"
-date: 2026-04-23
+date: 2026-04-24
+coverImage: /assets/the-gift-is-not-given/ai_img_chatgpt_avatar.png
 ---
 
 ![A host sets bread on a table and turns away as a guest reaches for it, while a faint broken loop above suggests the gift has not yet been seen to land.](/assets/the-gift-is-not-given/ai_img_chatgpt_bread_turn_away.png)
