@@ -52,6 +52,24 @@ type Dimensions = {
 
 const INITIAL_DIMENSIONS: Dimensions = { width: 960, height: 720 }
 const DEFAULT_NODE_LABEL_LIMIT = 90
+const FULL_NODE_LABEL_ZOOM = 2.4
+const CONNECTED_NODE_LABEL_ZOOM = 1.08
+const ISOLATED_NODE_LABEL_ZOOM = 1.45
+
+function getZoomLabelLimit(zoomScale: number, totalNodeCount: number): number {
+  if (totalNodeCount <= DEFAULT_NODE_LABEL_LIMIT) {
+    return totalNodeCount
+  }
+
+  const clampedZoom = Math.max(1, Math.min(FULL_NODE_LABEL_ZOOM, zoomScale))
+  const zoomProgress = (clampedZoom - 1) / (FULL_NODE_LABEL_ZOOM - 1)
+  const easedProgress = zoomProgress ** 1.35
+
+  return Math.min(
+    totalNodeCount,
+    Math.round(DEFAULT_NODE_LABEL_LIMIT + (totalNodeCount - DEFAULT_NODE_LABEL_LIMIT) * easedProgress),
+  )
+}
 
 export type GraphCanvasHandle = {
   resetView: () => void
@@ -262,12 +280,24 @@ export function GraphCanvas({
 
   const labelIds = useMemo(() => {
     const ids = new Set<string>()
+    const minLabelDegree =
+      transform.k >= ISOLATED_NODE_LABEL_ZOOM
+        ? 0
+        : transform.k >= CONNECTED_NODE_LABEL_ZOOM
+          ? 1
+          : HUB_LABEL_DEGREE
+    const labelLimit = getZoomLabelLimit(transform.k, nodes.length)
     const highPriorityNodes = [...nodes]
-      .sort((left, right) => right.degree - left.degree || right.confidence - left.confidence)
-      .slice(0, DEFAULT_NODE_LABEL_LIMIT)
+      .sort(
+        (left, right) =>
+          right.degree - left.degree ||
+          right.confidence - left.confidence ||
+          left.label.localeCompare(right.label),
+      )
+      .slice(0, labelLimit)
 
     for (const node of highPriorityNodes) {
-      if (node.degree >= HUB_LABEL_DEGREE) ids.add(node.id)
+      if (node.degree >= minLabelDegree) ids.add(node.id)
     }
 
     if (selection?.kind === 'node') ids.add(selection.id)
@@ -275,7 +305,7 @@ export function GraphCanvas({
     for (const id of layout.matchNodeIds) ids.add(id)
 
     return ids
-  }, [hoveredNodeId, layout.matchNodeIds, nodes, selection])
+  }, [hoveredNodeId, layout.matchNodeIds, nodes, selection, transform.k])
 
   function toGraphPoint(event: ReactPointerEvent<SVGElement>) {
     const bounds = svgRef.current?.getBoundingClientRect()
