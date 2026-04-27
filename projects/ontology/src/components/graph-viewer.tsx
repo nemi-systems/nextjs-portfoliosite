@@ -1,14 +1,14 @@
 'use client'
 
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { GraphCanvas, type GraphCanvasHandle, type Selection } from '@/components/graph-canvas'
 import { FloatingControls } from '@/components/floating-controls'
 import { DetailsDrawer } from '@/components/details-drawer'
+import { FlamegraphPanel } from '@/components/flamegraph-panel'
 import { SynthesisDrawer } from '@/components/synthesis-drawer'
-import { GraphLegend } from '@/components/graph-legend'
 import type { GraphManifestEntry } from '@/lib/manifest'
 import type { GraphEdge, GraphNode } from '@/lib/graph'
-import type { SynthesisBlock } from '@/lib/artifact'
+import type { FlamegraphData, SynthesisBlock } from '@/lib/artifact'
 
 type GraphViewerProps = {
   graphs: GraphManifestEntry[]
@@ -26,6 +26,8 @@ type GraphViewerProps = {
   onSelectedTypeChange: (value: string) => void
   onShowIsolatesChange: (value: boolean) => void
   synthesis: SynthesisBlock | null
+  strataOrder: string[]
+  flamegraph: FlamegraphData | null
   isSynthesisOpen: boolean
   onSynthesisToggle: (open: boolean) => void
 }
@@ -46,18 +48,31 @@ export function GraphViewer({
   onSelectedTypeChange,
   onShowIsolatesChange,
   synthesis,
+  strataOrder,
+  flamegraph,
   isSynthesisOpen,
   onSynthesisToggle,
 }: GraphViewerProps) {
   const canvasRef = useRef<GraphCanvasHandle | null>(null)
   const [selection, setSelection] = useState<Selection>(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(true)
+  const [isTimelineOpen, setIsTimelineOpen] = useState(false)
 
   const handleSelect = useCallback((next: Selection) => {
     setSelection(next)
   }, [])
 
+  useEffect(() => {
+    setIsMenuOpen(true)
+  }, [activeSlug])
+
+  const hasFlamegraph = flamegraph !== null
+  const hasDetailsOpen = selection !== null
+
   return (
-    <div className="viewer-fullscreen">
+    <div
+      className={`viewer-fullscreen${hasFlamegraph ? ' has-flamegraph' : ''}${isTimelineOpen ? ' has-flamegraph-open' : ''}${hasDetailsOpen ? ' has-details-open' : ''}`}
+    >
       <GraphCanvas
         nodes={nodes}
         edges={edges}
@@ -87,6 +102,8 @@ export function GraphViewer({
         hasSynthesis={synthesis !== null}
         isSynthesisOpen={isSynthesisOpen}
         onSynthesisToggle={onSynthesisToggle}
+        isOpen={isMenuOpen}
+        onOpenChange={setIsMenuOpen}
       />
 
       <SynthesisDrawer
@@ -105,7 +122,17 @@ export function GraphViewer({
         edges={edges}
       />
 
-      <GraphLegend nodeTypeCounts={nodeTypeCounts} />
+      {flamegraph ? (
+        <FlamegraphPanel
+          flamegraph={flamegraph}
+          strataOrder={strataOrder}
+          nodes={nodes}
+          selection={selection}
+          isOpen={isTimelineOpen}
+          onOpenChange={setIsTimelineOpen}
+          onSelect={handleSelect}
+        />
+      ) : null}
     </div>
   )
 }

@@ -12,6 +12,8 @@ export type OntologyChunk = {
   lineEnd: number
   charCount: number
   ordinal?: number
+  charStart?: number
+  charEnd?: number
   headingGroup?: string
 }
 
@@ -87,6 +89,46 @@ export type SavedView = {
   unresolvedCount: number
 }
 
+export type FlamegraphXAxis = {
+  unit: 'character'
+  documentCharCount: number
+}
+
+export type FlamegraphMention = {
+  id: string
+  conceptId: string
+  chunkId: string
+  surfaceText: string
+  lineStart: number
+  lineEnd: number
+  charStart: number
+  charEnd: number
+  startRatio: number
+  endRatio: number
+  stratumIndex: number
+}
+
+export type FlamegraphBar = {
+  id: string
+  conceptId: string
+  chunkId: string
+  charStart: number
+  charEnd: number
+  startRatio: number
+  endRatio: number
+  mentionCount: number
+  heightWeight: number
+  stratumIndex: number
+}
+
+export type FlamegraphData = {
+  schemaVersion: 'ontology-flamegraph/v1'
+  xAxis: FlamegraphXAxis
+  mentions: FlamegraphMention[]
+  bars: FlamegraphBar[]
+  omittedMentionCount: number
+}
+
 export type OntologyArtifact = {
   schemaVersion: 'ontology-artifact/v1'
   generatedAt: string
@@ -101,6 +143,7 @@ export type OntologyArtifact = {
   warnings: string[]
   synthesis?: SynthesisBlock
   strataOrder?: string[]
+  flamegraph?: FlamegraphData | null
   shortlist?: string[]
   savedViews?: SavedView[]
 }
@@ -149,6 +192,8 @@ function isChunk(value: unknown): value is OntologyChunk {
     typeof value.lineEnd === 'number' &&
     typeof value.charCount === 'number' &&
     (value.ordinal === undefined || typeof value.ordinal === 'number') &&
+    (value.charStart === undefined || typeof value.charStart === 'number') &&
+    (value.charEnd === undefined || typeof value.charEnd === 'number') &&
     (value.headingGroup === undefined || typeof value.headingGroup === 'string')
   )
 }
@@ -252,6 +297,58 @@ function isSavedView(value: unknown): value is SavedView {
   )
 }
 
+function isRatio(value: unknown): value is number {
+  return typeof value === 'number' && value >= 0 && value <= 1
+}
+
+function isFlamegraphMention(value: unknown): value is FlamegraphMention {
+  return (
+    isRecord(value) &&
+    typeof value.id === 'string' &&
+    typeof value.conceptId === 'string' &&
+    typeof value.chunkId === 'string' &&
+    typeof value.surfaceText === 'string' &&
+    typeof value.lineStart === 'number' &&
+    typeof value.lineEnd === 'number' &&
+    typeof value.charStart === 'number' &&
+    typeof value.charEnd === 'number' &&
+    isRatio(value.startRatio) &&
+    isRatio(value.endRatio) &&
+    typeof value.stratumIndex === 'number'
+  )
+}
+
+function isFlamegraphBar(value: unknown): value is FlamegraphBar {
+  return (
+    isRecord(value) &&
+    typeof value.id === 'string' &&
+    typeof value.conceptId === 'string' &&
+    typeof value.chunkId === 'string' &&
+    typeof value.charStart === 'number' &&
+    typeof value.charEnd === 'number' &&
+    isRatio(value.startRatio) &&
+    isRatio(value.endRatio) &&
+    typeof value.mentionCount === 'number' &&
+    typeof value.heightWeight === 'number' &&
+    typeof value.stratumIndex === 'number'
+  )
+}
+
+function isFlamegraphData(value: unknown): value is FlamegraphData {
+  return (
+    isRecord(value) &&
+    value.schemaVersion === 'ontology-flamegraph/v1' &&
+    isRecord(value.xAxis) &&
+    value.xAxis.unit === 'character' &&
+    typeof value.xAxis.documentCharCount === 'number' &&
+    Array.isArray(value.mentions) &&
+    value.mentions.every(isFlamegraphMention) &&
+    Array.isArray(value.bars) &&
+    value.bars.every(isFlamegraphBar) &&
+    typeof value.omittedMentionCount === 'number'
+  )
+}
+
 export function isOntologyArtifact(value: unknown): value is OntologyArtifact {
   if (!isRecord(value)) {
     return false
@@ -259,6 +356,8 @@ export function isOntologyArtifact(value: unknown): value is OntologyArtifact {
 
   const synthesisOk = value.synthesis === undefined || isSynthesisBlock(value.synthesis)
   const strataOrderOk = value.strataOrder === undefined || isStringArray(value.strataOrder)
+  const flamegraphOk =
+    value.flamegraph === undefined || value.flamegraph === null || isFlamegraphData(value.flamegraph)
   const shortlistOk = value.shortlist === undefined || isStringArray(value.shortlist)
   const savedViewsOk = value.savedViews === undefined || (Array.isArray(value.savedViews) && value.savedViews.every(isSavedView))
 
@@ -279,6 +378,7 @@ export function isOntologyArtifact(value: unknown): value is OntologyArtifact {
     value.warnings.every((entry) => typeof entry === 'string') &&
     synthesisOk &&
     strataOrderOk &&
+    flamegraphOk &&
     shortlistOk &&
     savedViewsOk
   )

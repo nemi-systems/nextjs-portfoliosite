@@ -11,6 +11,8 @@
   --soft: rgba(255, 255, 255, 0.04);
   --good: #8ae9b5;
   --bad: #ff9a9a;
+  --drawer-edge-gap: 16px;
+  --timeline-drawer-height: min(46vh, 380px);
 }
 
 * {
@@ -164,22 +166,69 @@ body {
     0 0 12px rgba(0, 0, 0, 0.8);
 }
 
-/* ── Floating controls ─────────────────────────────── */
+/* ── Left drawers ──────────────────────────────────── */
 
-.floating-controls {
+.left-drawer {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 10;
-  display: grid;
-  gap: 8px;
-  width: 240px;
-  padding: 14px;
-  border-radius: 16px;
+  left: 0;
+  border-radius: 0 16px 16px 0;
   border: 1px solid var(--line);
+  border-left: none;
   background: var(--panel-strong);
   backdrop-filter: blur(20px);
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  transform: translateX(-100%);
+  transition: transform 220ms ease;
+}
+
+.left-drawer.is-open {
+  transform: translateX(0);
+}
+
+.left-drawer-tab {
+  position: absolute;
+  top: 12px;
+  right: -42px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  min-height: 94px;
+  padding: 10px 0;
+  border: 1px solid var(--line);
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+  background: var(--panel-strong);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  cursor: pointer;
+  box-shadow: 8px 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+.left-drawer-tab:hover,
+.left-drawer.is-open .left-drawer-tab {
+  border-color: var(--line-strong);
+  background: rgba(14, 34, 49, 0.98);
+}
+
+/* ── Floating controls ─────────────────────────────── */
+
+.floating-controls {
+  top: 16px;
+  z-index: 18;
+  width: 260px;
+}
+
+.floating-controls-content {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
 }
 
 .graph-title {
@@ -819,67 +868,212 @@ body {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* ── Floating legend ───────────────────────────────── */
+/* ── Flamegraph panel ─────────────────────────────── */
 
-.legend-floating {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+.flamegraph-panel {
+  bottom: var(--drawer-edge-gap);
+  z-index: 14;
+  height: var(--timeline-drawer-height);
+  width: min(980px, calc(100vw - 72px));
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.flamegraph-panel.is-open {
+  transform: translateX(0);
+}
+
+.flamegraph-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  max-width: calc(100vw - 32px);
-  padding: 8px 14px;
-  border-radius: 16px;
-  border: 1px solid var(--line);
-  background: var(--panel-strong);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px 10px 16px;
 }
 
-.legend-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 2px 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--fg-muted);
-  font-size: 0.78rem;
-  font-family: inherit;
-  line-height: 1;
-  border-radius: 6px;
-  transition: color 0.15s;
+.flamegraph-toggle {
+  top: auto;
+  bottom: 12px;
 }
 
-.legend-toggle:hover {
-  color: var(--fg);
+.flamegraph-toggle:hover {
+  background: rgba(14, 34, 49, 0.98);
 }
 
-.legend-toggle-chevron {
-  transition: transform 0.2s;
+.flamegraph-chevron {
+  display: none;
 }
 
-.legend-toggle-chevron--open {
+.flamegraph-chevron.is-open {
   transform: rotate(180deg);
 }
 
-.legend-chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
+.flamegraph-stats {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.legend-floating .legend-chip {
-  padding: 5px 8px;
-  font-size: 0.78rem;
-  border: none;
-  background: transparent;
+.flamegraph-body {
+  min-height: 0;
+  overflow: auto;
+  border-top: 1px solid var(--line);
+}
+
+.flamegraph-ruler {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 168px minmax(760px, 1fr);
+  min-width: 928px;
+  border-bottom: 1px solid rgba(137, 197, 255, 0.12);
+  background: rgba(5, 16, 23, 0.96);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.flamegraph-ruler-label {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-right: 1px solid rgba(137, 197, 255, 0.14);
+  background: rgba(5, 16, 23, 0.96);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flamegraph-ruler-numbers {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 8px 12px 7px;
+}
+
+.flamegraph-ruler-numbers span {
+  text-align: center;
+}
+
+.flamegraph-ruler-numbers span:first-child {
+  text-align: left;
+}
+
+.flamegraph-ruler-numbers span:last-child {
+  text-align: right;
+}
+
+.flamegraph-rows {
+  display: grid;
+  min-width: 928px;
+}
+
+.flamegraph-row {
+  display: grid;
+  grid-template-columns: 168px minmax(760px, 1fr);
+  border-bottom: 1px solid rgba(137, 197, 255, 0.1);
+}
+
+.flamegraph-row:last-child {
+  border-bottom: none;
+}
+
+.flamegraph-row-label {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0 12px;
+  border-right: 1px solid rgba(137, 197, 255, 0.14);
+  background: rgba(5, 16, 23, 0.96);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.flamegraph-track {
+  position: relative;
+  min-height: inherit;
+  background:
+    linear-gradient(90deg, rgba(137, 197, 255, 0.12) 1px, transparent 1px) 0 0 / 25% 100%,
+    rgba(255, 255, 255, 0.015);
+}
+
+.flamegraph-bar {
+  position: absolute;
+  min-width: 2px;
+  border: 1px solid rgba(5, 16, 23, 0.72);
+  border-radius: 4px;
+  opacity: 0.78;
+  cursor: pointer;
+  transition:
+    opacity 120ms ease,
+    filter 120ms ease,
+    transform 120ms ease;
+}
+
+.flamegraph-bar:hover,
+.flamegraph-bar.is-selected {
+  opacity: 1;
+  filter: brightness(1.18);
+  transform: translateY(-1px);
+}
+
+.flamegraph-bar.is-selected {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 1px;
+}
+
+.flamegraph-empty {
+  margin: 0;
+  padding: 24px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.flamegraph-tooltip {
+  position: fixed;
+  z-index: 40;
+  display: grid;
+  gap: 4px;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: rgba(5, 16, 23, 0.96);
+  color: var(--text);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42);
+  pointer-events: none;
+}
+
+.flamegraph-tooltip strong {
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.flamegraph-tooltip span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 861px) {
+  .viewer-fullscreen.has-details-open .flamegraph-panel {
+    width: min(980px, calc(100vw - 488px));
+  }
 }
 
 /* ── Overlay cards (loading / error states) ────────── */
@@ -950,8 +1144,7 @@ body {
   }
 
   .floating-controls {
-    width: 200px;
-    padding: 10px;
+    width: 240px;
   }
 
   .synthesis-drawer {
@@ -965,6 +1158,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --timeline-drawer-height: min(52vh, 380px);
+  }
+
   .matrix-grid {
     --matrix-label-width: 180px;
     --matrix-cell-size: 28px;
@@ -980,14 +1177,42 @@ body {
 
   .floating-controls {
     top: 8px;
-    left: 8px;
-    width: 180px;
-    padding: 8px;
+    width: min(250px, calc(100vw - 56px));
   }
 
-  .legend-floating {
+  .flamegraph-panel {
     bottom: 8px;
-    padding: 6px 10px;
+    height: var(--timeline-drawer-height);
+    width: calc(100vw - 56px);
+  }
+
+  .flamegraph-panel.is-open {
+    transform: translateX(0);
+  }
+
+  .flamegraph-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 10px;
+  }
+
+  .flamegraph-ruler {
+    grid-template-columns: 132px minmax(620px, 1fr);
+    min-width: 752px;
+  }
+
+  .flamegraph-rows {
+    min-width: 752px;
+  }
+
+  .flamegraph-row {
+    grid-template-columns: 132px minmax(620px, 1fr);
+  }
+
+  .flamegraph-row-label {
+    padding: 0 8px;
+    font-size: 0.66rem;
   }
 
   .synthesis-drawer {

@@ -231,6 +231,8 @@ export default function OntologyPage() {
       onSelectedTypeChange={setSelectedType}
       onShowIsolatesChange={setShowIsolates}
       synthesis={state.artifact.synthesis ?? null}
+      strataOrder={state.artifact.strataOrder ?? []}
+      flamegraph={state.artifact.flamegraph ?? null}
       isSynthesisOpen={isSynthesisOpen}
       onSynthesisToggle={setIsSynthesisOpen}
     />
