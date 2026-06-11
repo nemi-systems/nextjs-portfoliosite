@@ -5,7 +5,7 @@
 Current production:
 
 - Site: `https://xand1.n3mi.net`
-- API: `https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com`
+- API: `https://<api-id>.execute-api.us-east-1.amazonaws.com`
 - Active boards use Anthropic `claude-fable-5` (`95cf7d2e-ca4f-4a4a-a141-d9a5848bed97` English, `29458db9-dd50-49b0-9847-3f4051333a30` emoji).
 - OpenAI generation is still supported for manual refreshes.
 
@@ -236,7 +236,7 @@ npm --prefix projects/xand1 run test
 npm --prefix infra run test:xand1
 npm --prefix infra run build
 npm --prefix infra run synth
-NEXT_PUBLIC_XAND1_API_BASE_URL=https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com npm run build:xand1
+NEXT_PUBLIC_XAND1_API_BASE_URL=https://<api-id>.execute-api.us-east-1.amazonaws.com npm run build:xand1
 ```
 
 Deploy API:
@@ -270,6 +270,6 @@ npm --prefix infra run cdk -- deploy NemiPortfolioSiteStack \
 Quick checks:
 
 ```bash
-curl 'https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com/boards?mode=emoji'
-curl 'https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com/board?mode=emoji'
+curl 'https://<api-id>.execute-api.us-east-1.amazonaws.com/boards?mode=emoji'
+curl 'https://<api-id>.execute-api.us-east-1.amazonaws.com/board?mode=emoji'
 ```
