@@ -118,15 +118,15 @@ sequenceDiagram
 ```mermaid
 erDiagram
   ACTIVE_POINTER {
-    string pk "ACTIVE"
-    string sk "BOARD"
+    string partitionKey "pk = ACTIVE"
+    string sortKey "sk = BOARD"
     string boardId
     string updatedAt
   }
 
   BOARD_META {
-    string pk "BOARD#<boardId>"
-    string sk "META"
+    string partitionKey "pk = BOARD#<boardId>"
+    string sortKey "sk = META"
     string boardId
     string createdAt
     string status
