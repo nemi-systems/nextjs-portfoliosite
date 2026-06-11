@@ -2,9 +2,10 @@ import type { SolvedGuessResponse } from '@/lib/api'
 
 interface SolvedGroupProps {
   category: SolvedGuessResponse['category']
+  similarity: string
 }
 
-export function SolvedGroup({ category }: SolvedGroupProps) {
+export function SolvedGroup({ category, similarity }: SolvedGroupProps) {
   const textColor = category.difficultyIndex === 3 ? 'text-black' : 'text-white'
 
   return (
@@ -16,8 +17,11 @@ export function SolvedGroup({ category }: SolvedGroupProps) {
       <p className="mt-2 text-sm font-semibold uppercase tracking-[0.08em]">
         {category.terms.join(' · ')}
       </p>
+      <p className="mt-3 text-xs font-black uppercase tracking-[0.14em] opacity-90">
+        Semantic score: {similarity} similarity
+      </p>
       {category.explanation ? (
-        <p className="mx-auto mt-3 max-w-2xl text-sm opacity-90">{category.explanation}</p>
+        <p className="mx-auto mt-2 max-w-2xl text-sm opacity-90">{category.explanation}</p>
       ) : null}
     </section>
   )

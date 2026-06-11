@@ -56,7 +56,7 @@ export class Xand1ApiStack extends Stack {
       memorySize: 1024,
       environment: {
         ...commonEnvironment,
-        OPENAI_MODEL: props.openAiModel ?? 'gpt-4.1-mini',
+        OPENAI_MODEL: props.openAiModel ?? 'gpt-5.5',
         OPENAI_API_KEY_SECRET_ARN: props.openAiApiKeySecretArn ?? '',
         GENERATION_PROMPT_VERSION: '2026-06-11',
       },

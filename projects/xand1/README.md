@@ -228,7 +228,7 @@ NEXT_PUBLIC_XAND1_API_BASE_URL=https://<api-id>.execute-api.us-east-1.amazonaws.
 | Context key | Environment variable | Purpose |
 | --- | --- | --- |
 | `xand1OpenAiApiKeySecretArn` | `XAND1_OPENAI_API_KEY_SECRET_ARN` | Secrets Manager ARN containing the OpenAI API key. |
-| `xand1OpenAiModel` | `XAND1_OPENAI_MODEL` | OpenAI model for board generation. Defaults to `gpt-4.1-mini`. |
+| `xand1OpenAiModel` | `XAND1_OPENAI_MODEL` | OpenAI model for board generation. Defaults to `gpt-5.5`. |
 | `xand1BedrockModelId` | `XAND1_BEDROCK_MODEL_ID` | Bedrock embedding model. Defaults to `cohere.embed-v4:0`. |
 | `xand1CategoryLabelThreshold` | `XAND1_CATEGORY_LABEL_THRESHOLD` | Cosine acceptance threshold. Defaults to `0.35`. |
 

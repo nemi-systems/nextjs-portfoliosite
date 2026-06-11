@@ -65,7 +65,6 @@ async function generateBoard(apiKey: string, model: string) {
     },
     body: JSON.stringify({
       model,
-      temperature: 0.9,
       messages: [
         {
           role: 'system',
@@ -162,7 +161,7 @@ function buildStoredCategories(board: GeneratedBoard, embeddings: number[][]) {
 export async function handler() {
   const tableName = requiredEnv('TABLE_NAME')
   const embeddingModel = requiredEnv('BEDROCK_MODEL_ID')
-  const openAiModel = process.env.OPENAI_MODEL ?? 'gpt-4.1-mini'
+  const openAiModel = process.env.OPENAI_MODEL ?? 'gpt-5.5'
   const promptVersion = process.env.GENERATION_PROMPT_VERSION ?? '2026-06-11'
 
   const apiKey = await getOpenAiApiKey()

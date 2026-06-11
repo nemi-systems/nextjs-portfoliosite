@@ -10,6 +10,10 @@ import { SolvedGroup } from './SolvedGroup'
 
 type LoadState = 'loading' | 'ready' | 'error'
 
+type SolvedCategory = SolvedGuessResponse['category'] & {
+  score: number
+}
+
 function formatSimilarity(score: number) {
   return `${Math.round(score * 100)}%`
 }
@@ -18,7 +22,7 @@ export function Xand1Game() {
   const [loadState, setLoadState] = useState<LoadState>('loading')
   const [board, setBoard] = useState<BoardResponse | null>(null)
   const [selected, setSelected] = useState<string[]>([])
-  const [solved, setSolved] = useState<SolvedGuessResponse['category'][]>([])
+  const [solved, setSolved] = useState<SolvedCategory[]>([])
   const [label, setLabel] = useState('')
   const [message, setMessage] = useState('')
   const [pending, setPending] = useState(false)
@@ -80,11 +84,11 @@ export function Xand1Game() {
       if (response.status === 'solved') {
         const key = termSetKey(response.category.terms)
         if (!solvedTermKeys.has(key)) {
-          setSolved((current) => [...current, response.category].sort((a, b) => a.difficultyIndex - b.difficultyIndex))
+          setSolved((current) => [...current, { ...response.category, score: response.score }].sort((a, b) => a.difficultyIndex - b.difficultyIndex))
         }
         setSelected([])
         setLabel('')
-        setMessage(`Accepted. Semantic score: ${formatSimilarity(response.score)} similarity.`)
+        setMessage('')
       } else if (response.status === 'label_rejected') {
         setMessage(`Terms match, but the name is not close enough. Semantic score: ${formatSimilarity(response.score)} similarity (needs ${formatSimilarity(response.threshold)}).`)
       } else {
@@ -121,7 +125,7 @@ export function Xand1Game() {
         {loadState === 'ready' && board ? (
           <>
             {solved.map((category) => (
-              <SolvedGroup key={category.title} category={category} />
+              <SolvedGroup key={category.title} category={category} similarity={formatSimilarity(category.score)} />
             ))}
 
             {visibleTerms.length > 0 ? (
