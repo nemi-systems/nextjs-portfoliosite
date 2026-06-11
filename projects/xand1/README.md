@@ -2,13 +2,6 @@
 
 `xand1` is a statically hosted 4x4 Connections-style game. Players select four terms and submit the category name in the same move; the API checks both the exact term set and the semantic fit of the submitted label.
 
-Current production:
-
-- Site: `https://xand1.n3mi.net`
-- API: `https://<api-id>.execute-api.us-east-1.amazonaws.com`
-- Active boards use Anthropic `claude-fable-5` (`95cf7d2e-ca4f-4a4a-a141-d9a5848bed97` English, `29458db9-dd50-49b0-9847-3f4051333a30` emoji).
-- OpenAI generation is still supported for manual refreshes.
-
 ## Gameplay
 
 - Boards have 16 shuffled terms in four hidden categories.
