@@ -1,5 +1,5 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
-import { DynamoDBDocumentClient, GetCommand, TransactWriteCommand } from '@aws-sdk/lib-dynamodb'
+import { DynamoDBDocumentClient, GetCommand, QueryCommand, TransactWriteCommand } from '@aws-sdk/lib-dynamodb'
 import type { ActiveBoardRecord, BoardMode, BoardRecord } from './types'
 import { activeBoardSk } from './validation'
 
@@ -47,6 +47,34 @@ export async function getActiveBoard(tableName: string, mode: BoardMode = 'engli
     return undefined
   }
   return getBoardRecord(tableName, active.boardId)
+}
+
+export async function listBoardsByMode(tableName: string, indexName: string, mode: BoardMode) {
+  const boards: BoardRecord[] = []
+  let exclusiveStartKey: Record<string, unknown> | undefined
+
+  do {
+    const response = await documentClient.send(new QueryCommand({
+      TableName: tableName,
+      IndexName: indexName,
+      KeyConditionExpression: '#mode = :mode',
+      ExpressionAttributeNames: {
+        '#mode': 'mode',
+      },
+      ExpressionAttributeValues: {
+        ':mode': mode,
+      },
+      ScanIndexForward: true,
+      ExclusiveStartKey: exclusiveStartKey,
+    }))
+
+    if (response.Items) {
+      boards.push(...(response.Items as BoardRecord[]))
+    }
+    exclusiveStartKey = response.LastEvaluatedKey
+  } while (exclusiveStartKey)
+
+  return boards
 }
 
 export async function writeActiveBoard(tableName: string, board: BoardRecord, updatedAt: string) {

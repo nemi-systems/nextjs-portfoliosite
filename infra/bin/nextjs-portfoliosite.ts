@@ -44,6 +44,12 @@ new Xand1ApiStack(app, 'Xand1ApiStack', {
   categoryLabelThreshold:
     app.node.tryGetContext('xand1CategoryLabelThreshold') ??
     process.env.XAND1_CATEGORY_LABEL_THRESHOLD,
+  anthropicApiKeySecretArn:
+    app.node.tryGetContext('xand1AnthropicApiKeySecretArn') ??
+    process.env.XAND1_ANTHROPIC_API_KEY_SECRET_ARN,
+  anthropicModel:
+    app.node.tryGetContext('xand1AnthropicModel') ??
+    process.env.XAND1_ANTHROPIC_MODEL,
   openAiApiKeySecretArn:
     app.node.tryGetContext('xand1OpenAiApiKeySecretArn') ??
     process.env.XAND1_OPENAI_API_KEY_SECRET_ARN,

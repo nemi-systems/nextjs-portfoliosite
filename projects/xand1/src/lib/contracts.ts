@@ -1,10 +1,26 @@
 export type BoardMode = 'english' | 'emoji'
 
+export type GenerationProvider = 'openai' | 'anthropic'
+
+
 export type BoardResponse = {
   boardId: string
   mode: BoardMode
   terms: string[]
   difficultyColors: string[]
+}
+
+export type BoardSummary = {
+  boardId: string
+  mode: BoardMode
+  createdAt: string
+  model: string
+  provider: GenerationProvider
+  isActive: boolean
+}
+
+export type BoardListResponse = {
+  boards: BoardSummary[]
 }
 
 export type GuessRequest = {

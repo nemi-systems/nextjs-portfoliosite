@@ -13,6 +13,8 @@ export interface Xand1ApiStackProps extends StackProps {
   allowedOrigins?: string[]
   bedrockModelId?: string
   categoryLabelThreshold?: string
+  anthropicApiKeySecretArn?: string
+  anthropicModel?: string
   openAiApiKeySecretArn?: string
   openAiModel?: string
 }
@@ -22,6 +24,9 @@ const DEFAULT_ALLOWED_ORIGINS = [
   'http://localhost:3000',
   'http://localhost:3001',
 ]
+
+const BOARDS_BY_MODE_INDEX_NAME = 'BoardsByModeCreatedAt'
+
 
 export class Xand1ApiStack extends Stack {
   constructor(scope: Construct, id: string, props: Xand1ApiStackProps = {}) {
@@ -33,6 +38,14 @@ export class Xand1ApiStack extends Stack {
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       encryption: dynamodb.TableEncryption.AWS_MANAGED,
       removalPolicy: RemovalPolicy.RETAIN,
+    })
+
+    table.addGlobalSecondaryIndex({
+      indexName: BOARDS_BY_MODE_INDEX_NAME,
+      partitionKey: { name: 'mode', type: dynamodb.AttributeType.STRING },
+      sortKey: { name: 'createdAt', type: dynamodb.AttributeType.STRING },
+      projectionType: dynamodb.ProjectionType.INCLUDE,
+      nonKeyAttributes: ['boardId', 'status', 'model', 'embeddingModel', 'provider'],
     })
 
     const bedrockModelId = props.bedrockModelId ?? 'cohere.embed-v4:0'
@@ -58,6 +71,8 @@ export class Xand1ApiStack extends Stack {
         ...commonEnvironment,
         OPENAI_MODEL: props.openAiModel ?? 'gpt-5.5',
         OPENAI_API_KEY_SECRET_ARN: props.openAiApiKeySecretArn ?? '',
+        ANTHROPIC_API_KEY_SECRET_ARN: props.anthropicApiKeySecretArn ?? '',
+        XAND1_ANTHROPIC_MODEL: props.anthropicModel ?? '',
         GENERATION_PROMPT_VERSION: '2026-06-11',
       },
       bundling,
@@ -72,6 +87,7 @@ export class Xand1ApiStack extends Stack {
       memorySize: 512,
       environment: {
         ...commonEnvironment,
+        BOARDS_BY_MODE_INDEX_NAME,
         CATEGORY_LABEL_THRESHOLD: props.categoryLabelThreshold ?? '0.35',
       },
       bundling,
@@ -100,6 +116,15 @@ export class Xand1ApiStack extends Stack {
       openAiSecret.grantRead(refreshBoardFunction)
     }
 
+    if (props.anthropicApiKeySecretArn) {
+      const anthropicSecret = secretsmanager.Secret.fromSecretCompleteArn(
+        this,
+        'AnthropicApiKeySecret',
+        props.anthropicApiKeySecretArn,
+      )
+      anthropicSecret.grantRead(refreshBoardFunction)
+    }
+
     const integration = new integrations.HttpLambdaIntegration('GameApiIntegration', gameApiFunction)
     const api = new apigatewayv2.HttpApi(this, 'GameHttpApi', {
       apiName: 'xand1-game-api',
@@ -113,6 +138,11 @@ export class Xand1ApiStack extends Stack {
 
     api.addRoutes({
       path: '/board',
+      methods: [apigatewayv2.HttpMethod.GET],
+      integration,
+    })
+    api.addRoutes({
+      path: '/boards',
       methods: [apigatewayv2.HttpMethod.GET],
       integration,
     })

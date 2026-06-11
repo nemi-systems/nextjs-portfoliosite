@@ -1,7 +1,7 @@
 import { BedrockRuntimeClient } from '@aws-sdk/client-bedrock-runtime'
 import { cosineSimilarity, embedTexts, normalizeTerm, termSetKey } from './shared/embedding'
-import { getActiveBoard, getBoardRecord } from './shared/dynamo'
-import type { BoardMode, BoardRecord, BoardResponse, GuessRequest, GuessResponse, StoredCategory } from './shared/types'
+import { getActiveBoard, getActiveBoardRecord, getBoardRecord, listBoardsByMode } from './shared/dynamo'
+import type { BoardListResponse, BoardMode, BoardRecord, BoardResponse, BoardSummary, GuessRequest, GuessResponse, StoredCategory } from './shared/types'
 
 type HttpEvent = {
   rawPath?: string
@@ -54,6 +54,18 @@ function publicBoard(board: BoardRecord): BoardResponse {
   }
 }
 
+function publicBoardSummary(board: BoardRecord, activeBoardId: string | undefined): BoardSummary {
+  return {
+    boardId: board.boardId,
+    mode: board.mode,
+    createdAt: board.createdAt,
+    model: board.model,
+    provider: board.provider ?? 'openai',
+    isActive: board.boardId === activeBoardId,
+  }
+}
+
+
 function parseBoardMode(value: string | undefined): BoardMode {
   if (!value || value === 'english') {
     return 'english'
@@ -72,6 +84,16 @@ function boardModeFromEvent(event: HttpEvent) {
   const params = new URLSearchParams(event.rawQueryString ?? '')
   return parseBoardMode(params.get('mode') ?? undefined)
 }
+
+function queryParameter(event: HttpEvent, name: string) {
+  const direct = event.queryStringParameters?.[name]
+  if (direct !== undefined) {
+    return direct
+  }
+  const params = new URLSearchParams(event.rawQueryString ?? '')
+  return params.get(name) ?? undefined
+}
+
 
 function parseBody(event: HttpEvent) {
   if (!event.body) {
@@ -165,11 +187,39 @@ function solvedResponse(category: StoredCategory, score: number, threshold: numb
 async function handleGetBoard(event: HttpEvent) {
   const tableName = requiredEnv('TABLE_NAME')
   const mode = boardModeFromEvent(event)
-  const board = await getActiveBoard(tableName, mode)
+  const boardId = queryParameter(event, 'boardId')?.trim()
+  const board = boardId ? await getBoardRecord(tableName, boardId) : await getActiveBoard(tableName, mode)
   if (!board) {
-    return json(404, { message: 'No active xand1 board is available.' })
+    return json(404, { message: boardId ? 'Board not found.' : 'No active xand1 board is available.' })
+  }
+  if (board.mode !== mode) {
+    return json(404, { message: 'Board not found for mode.' })
   }
   return json(200, publicBoard(board))
+}
+
+async function handleGetBoards(event: HttpEvent) {
+  const tableName = requiredEnv('TABLE_NAME')
+  const indexName = requiredEnv('BOARDS_BY_MODE_INDEX_NAME')
+  const mode = boardModeFromEvent(event)
+  const [active, indexedBoards] = await Promise.all([
+    getActiveBoardRecord(tableName, mode),
+    listBoardsByMode(tableName, indexName, mode),
+  ])
+  const boards = [...indexedBoards]
+
+  if (active && !boards.some((board) => board.boardId === active.boardId)) {
+    const activeBoard = await getBoardRecord(tableName, active.boardId)
+    if (activeBoard?.mode === mode) {
+      boards.unshift(activeBoard)
+    }
+  }
+
+  boards.sort((left, right) => left.createdAt.localeCompare(right.createdAt))
+
+  return json(200, {
+    boards: boards.map((board) => publicBoardSummary(board, active?.boardId)),
+  } satisfies BoardListResponse)
 }
 
 async function handleGuess(event: HttpEvent) {
@@ -212,6 +262,9 @@ export async function handler(event: HttpEvent) {
 
     if (method === 'GET' && path.endsWith('/board')) {
       return await handleGetBoard(event)
+    }
+    if (method === 'GET' && path.endsWith('/boards')) {
+      return await handleGetBoards(event)
     }
     if (method === 'GET' && path.endsWith('/warm')) {
       return await handleWarm()

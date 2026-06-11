@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Card } from '@/components/ui/card'
-import { getBoard, submitGuess, warmApi, type BoardMode, type BoardResponse, type SolvedGuessResponse } from '@/lib/api'
-import { calculateScoreSummary, MISTAKE_PENALTY, shuffledTerms, termSetKey, wordmarkToneForToken, type WordmarkTone } from '@/lib/game'
+import { getBoard, getBoards, submitGuess, warmApi, type BoardMode, type BoardResponse, type BoardSummary, type SolvedGuessResponse } from '@/lib/api'
+import { calculateScoreSummary, MISTAKE_PENALTY, modelAbbreviation, shuffledTerms, termSetKey, wordmarkToneForToken, type WordmarkTone } from '@/lib/game'
 import { cn } from '@/lib/utils'
 import { GameTile } from './GameTile'
 import { GuessTray } from './GuessTray'
@@ -169,6 +169,77 @@ function FinalScorePanel({
   )
 }
 
+function BoardSelector({
+  boards,
+  selectedBoardId,
+  open,
+  disabled,
+  onOpenChange,
+  onSelect,
+}: {
+  boards: BoardSummary[]
+  selectedBoardId: string | null
+  open: boolean
+  disabled: boolean
+  onOpenChange: (open: boolean) => void
+  onSelect: (boardId: string) => void
+}) {
+  const numberedBoards = [...boards]
+    .sort((left, right) => left.createdAt.localeCompare(right.createdAt))
+    .map((summary, index) => ({ summary, label: `#${index + 1}` }))
+  const menuBoards = [...numberedBoards].sort((left, right) => right.summary.createdAt.localeCompare(left.summary.createdAt))
+  const selectedBoard = numberedBoards.find((board) => board.summary.boardId === selectedBoardId)
+  const selectedLabel = selectedBoard?.label ?? 'Board'
+
+  return (
+    <div className="relative justify-self-start">
+      <button
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        disabled={disabled || boards.length === 0}
+        onClick={() => onOpenChange(!open)}
+        className="inline-flex h-10 min-w-32 items-center justify-between gap-3 rounded-full border-2 border-black bg-white px-4 text-left font-black text-black shadow-[0_6px_0_#111] transition hover:bg-neutral-100 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        <span>{selectedLabel}</span>
+        {selectedBoard ? (
+          <span className="text-xs font-semibold lowercase tracking-wide text-muted-foreground">
+            {modelAbbreviation(selectedBoard.summary.model, selectedBoard.summary.provider)}
+          </span>
+        ) : null}
+      </button>
+
+      {open && !disabled && boards.length > 0 ? (
+        <div
+          role="listbox"
+          aria-label="Board"
+          className="absolute left-0 z-20 mt-2 w-56 overflow-hidden rounded-2xl border-2 border-black bg-white py-1 shadow-[0_8px_0_#111]"
+        >
+          {menuBoards.map(({ summary, label }) => (
+            <button
+              key={summary.boardId}
+              type="button"
+              role="option"
+              aria-selected={summary.boardId === selectedBoardId}
+              onClick={() => onSelect(summary.boardId)}
+              className={cn(
+                'flex w-full items-center justify-between gap-3 px-4 py-2 text-left transition hover:bg-neutral-100',
+                summary.boardId === selectedBoardId && 'bg-black text-white hover:bg-black',
+              )}
+            >
+              <span className="font-black">{label}</span>
+              <span className={cn('ml-auto text-xs font-semibold lowercase tracking-wide', summary.boardId === selectedBoardId ? 'text-neutral-300' : 'text-muted-foreground')}>
+                {modelAbbreviation(summary.model, summary.provider)}
+              </span>
+              {summary.isActive ? <span className="text-[0.6rem] font-black uppercase tracking-[0.16em] text-emerald-500">active</span> : null}
+            </button>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 export function Xand1Game() {
   const [loadState, setLoadState] = useState<LoadState>('loading')
   const [board, setBoard] = useState<BoardResponse | null>(null)
@@ -186,11 +257,13 @@ export function Xand1Game() {
   const [gameOver, setGameOver] = useState(false)
   const [wobblingTerms, setWobblingTerms] = useState<string[]>([])
   const [displayMode, setDisplayMode] = useState<DisplayMode>('english')
+  const [boardSummaries, setBoardSummaries] = useState<BoardSummary[]>([])
+  const [selectedBoardId, setSelectedBoardId] = useState<string | null>(null)
+  const [boardMenuOpen, setBoardMenuOpen] = useState(false)
+  const loadRequestId = useRef(0)
 
-  useEffect(() => {
-    let cancelled = false
-
-    setLoadState('loading')
+  const resetGameProgress = useCallback((nextLoadState: LoadState = 'loading') => {
+    setLoadState(nextLoadState)
     setBoard(null)
     setTermOrder([])
     setSelected([])
@@ -205,26 +278,46 @@ export function Xand1Game() {
     setCoinFlip(null)
     setGameOver(false)
     setWobblingTerms([])
+  }, [])
 
-    getBoard(displayMode)
-      .then((nextBoard) => {
-        if (!cancelled) {
-          setBoard(nextBoard)
-          setTermOrder(nextBoard.terms)
-          setLoadState('ready')
+
+  useEffect(() => {
+    const requestId = loadRequestId.current + 1
+    loadRequestId.current = requestId
+
+    resetGameProgress('loading')
+    setBoardSummaries([])
+    setSelectedBoardId(null)
+    setBoardMenuOpen(false)
+
+    getBoards(displayMode)
+      .then(async ({ boards }) => {
+        if (loadRequestId.current !== requestId) {
+          return
         }
+
+        setBoardSummaries(boards)
+        const selectedSummary = boards.find((summary) => summary.isActive) ?? boards[0]
+        if (!selectedSummary) {
+          throw new Error('No xand1 boards are available for this mode.')
+        }
+
+        setSelectedBoardId(selectedSummary.boardId)
+        const nextBoard = await getBoard(displayMode, selectedSummary.boardId)
+        if (loadRequestId.current !== requestId) {
+          return
+        }
+        setBoard(nextBoard)
+        setTermOrder(nextBoard.terms)
+        setLoadState('ready')
       })
       .catch((error: unknown) => {
-        if (!cancelled) {
+        if (loadRequestId.current === requestId) {
           setMessage(error instanceof Error ? error.message : 'Unable to load board.')
           setLoadState('error')
         }
       })
-
-    return () => {
-      cancelled = true
-    }
-  }, [displayMode])
+  }, [displayMode, resetGameProgress])
 
   useEffect(() => {
     if (loadState !== 'ready' || gameOver || solved.length === 4) {
@@ -244,6 +337,7 @@ export function Xand1Game() {
   const solvedTerms = useMemo(() => new Set(solved.flatMap((category) => category.terms)), [solved])
   const visibleTerms = termOrder.filter((term) => !solvedTerms.has(term))
   const interactionLocked = pending || coinFlip !== null || gameOver
+  const controlsDisabled = loadState === 'loading' || pending
   const allSolved = solved.length === 4
   const lostLives = STARTING_LIVES - livesRemaining
   const wordmarkOutlined = gameOver
@@ -257,6 +351,36 @@ export function Xand1Game() {
   }
   const emojiWordmarkClass = wordmarkClassByTone[wordmarkOutlined ? 'outline' : lostLives > 0 ? 'red' : 'black']
   const englishWordmarkClass = (index: number) => wordmarkClassByTone[wordmarkToneForToken(index, lostLives, wordmarkOutlined)]
+
+  async function handleBoardSelect(boardId: string) {
+    if (controlsDisabled) {
+      return
+    }
+    setBoardMenuOpen(false)
+    if (boardId === selectedBoardId) {
+      return
+    }
+
+    const requestId = loadRequestId.current + 1
+    loadRequestId.current = requestId
+    setSelectedBoardId(boardId)
+    resetGameProgress('loading')
+
+    try {
+      const nextBoard = await getBoard(displayMode, boardId)
+      if (loadRequestId.current !== requestId) {
+        return
+      }
+      setBoard(nextBoard)
+      setTermOrder(nextBoard.terms)
+      setLoadState('ready')
+    } catch (error) {
+      if (loadRequestId.current === requestId) {
+        setMessage(error instanceof Error ? error.message : 'Unable to load board.')
+        setLoadState('error')
+      }
+    }
+  }
 
   function toggleTerm(term: string) {
     if (interactionLocked) {
@@ -390,14 +514,23 @@ export function Xand1Game() {
         <LivesMeter livesRemaining={livesRemaining} />
       </header>
 
-      <div className="mb-5 flex justify-center">
-        <div className="inline-flex overflow-hidden rounded-full border-2 border-black bg-white shadow-[0_6px_0_#111]" role="group" aria-label="Board mode">
+      <div className="mb-5 grid min-h-10 grid-cols-[1fr_auto_1fr] items-center gap-3">
+        <BoardSelector
+          boards={boardSummaries}
+          selectedBoardId={selectedBoardId}
+          open={boardMenuOpen}
+          disabled={controlsDisabled}
+          onOpenChange={setBoardMenuOpen}
+          onSelect={handleBoardSelect}
+        />
+        <div className="inline-flex justify-self-center overflow-hidden rounded-full border-2 border-black bg-white shadow-[0_6px_0_#111]" role="group" aria-label="Board mode">
           <button
             type="button"
             aria-pressed={displayMode === 'english'}
+            disabled={controlsDisabled}
             onClick={() => setDisplayMode('english')}
             className={cn(
-              'h-10 px-5 text-lg font-black transition-colors',
+              'h-10 px-5 text-lg font-black transition-colors disabled:cursor-not-allowed disabled:opacity-50',
               displayMode === 'english' ? 'bg-black text-white' : 'bg-white text-black hover:bg-neutral-100',
             )}
           >
@@ -407,15 +540,17 @@ export function Xand1Game() {
           <button
             type="button"
             aria-pressed={displayMode === 'emoji'}
+            disabled={controlsDisabled}
             onClick={() => setDisplayMode('emoji')}
             className={cn(
-              'h-10 px-5 text-lg font-black transition-colors',
+              'h-10 px-5 text-lg font-black transition-colors disabled:cursor-not-allowed disabled:opacity-50',
               displayMode === 'emoji' ? 'bg-black text-white' : 'bg-white text-black hover:bg-neutral-100',
             )}
           >
             🧠
           </button>
         </div>
+        <span aria-hidden="true" />
       </div>
 
       <Card className="space-y-4 p-4 sm:p-6" style={{ borderRadius: '1.5rem' }}>

@@ -3,13 +3,15 @@ import { GetSecretValueCommand, SecretsManagerClient } from '@aws-sdk/client-sec
 import { randomUUID } from 'crypto'
 import { centroid, embedTexts, termSetKey, vectorNorm } from './shared/embedding'
 import { writeActiveBoard } from './shared/dynamo'
-import type { BoardMode, BoardRecord, GeneratedBoard, StoredCategory } from './shared/types'
+import type { BoardMode, BoardRecord, GeneratedBoard, GenerationProvider, StoredCategory } from './shared/types'
 import { DIFFICULTY_COLORS, shuffled, validateGeneratedBoard } from './shared/validation'
 
 const bedrock = new BedrockRuntimeClient({})
 const secrets = new SecretsManagerClient({})
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
+const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages'
+
 
 type OpenAiChatResponse = {
   choices?: Array<{
@@ -19,8 +21,17 @@ type OpenAiChatResponse = {
   }>
 }
 
+type AnthropicMessageResponse = {
+  content?: Array<{
+    type?: string
+    text?: string
+  }>
+}
+
 type RefreshEvent = {
   mode: BoardMode
+  provider?: GenerationProvider
+  model?: string
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -37,6 +48,26 @@ function parseBoardMode(value: unknown): BoardMode {
   throw new Error('mode must be english or emoji.')
 }
 
+function parseGenerationProvider(value: unknown): GenerationProvider | undefined {
+  if (value === undefined || value === null || value === '') {
+    return undefined
+  }
+  if (value === 'openai' || value === 'anthropic') {
+    return value
+  }
+  throw new Error('provider must be openai or anthropic.')
+}
+
+function parseOptionalString(value: unknown, name: string) {
+  if (value === undefined || value === null || value === '') {
+    return undefined
+  }
+  if (typeof value === 'string' && value.trim()) {
+    return value.trim()
+  }
+  throw new Error(`${name} must be a non-empty string when provided.`)
+}
+
 function parseRefreshEvent(event: unknown): RefreshEvent {
   if (event === undefined || event === null) {
     return { mode: 'english' }
@@ -44,7 +75,11 @@ function parseRefreshEvent(event: unknown): RefreshEvent {
   if (!isRecord(event)) {
     throw new Error('Refresh event must be an object when provided.')
   }
-  return { mode: parseBoardMode(event.mode) }
+  return {
+    mode: parseBoardMode(event.mode),
+    provider: parseGenerationProvider(event.provider),
+    model: parseOptionalString(event.model, 'model'),
+  }
 }
 
 function requiredEnv(name: string) {
@@ -55,6 +90,35 @@ function requiredEnv(name: string) {
   return value
 }
 
+function secretStringValue(secretString: string, keys: readonly string[]) {
+  try {
+    const parsed = JSON.parse(secretString) as Record<string, unknown>
+    for (const keyName of keys) {
+      const key = parsed[keyName]
+      if (typeof key === 'string' && key.trim()) {
+        return key.trim()
+      }
+    }
+  } catch {
+    // Plain secret strings are supported below.
+  }
+
+  const trimmed = secretString.trim()
+  if (!trimmed) {
+    throw new Error('API key secret string is empty.')
+  }
+  return trimmed
+}
+
+async function secretApiKey(secretArn: string, keys: readonly string[], label: string) {
+  const response = await secrets.send(new GetSecretValueCommand({ SecretId: secretArn }))
+  const secretString = response.SecretString
+  if (!secretString) {
+    throw new Error(`${label} API key secret has no string value.`)
+  }
+  return secretStringValue(secretString, keys)
+}
+
 async function getOpenAiApiKey() {
   if (process.env.OPENAI_API_KEY) {
     return process.env.OPENAI_API_KEY
@@ -62,26 +126,23 @@ async function getOpenAiApiKey() {
 
   const secretArn = process.env.OPENAI_API_KEY_SECRET_ARN
   if (!secretArn) {
-    throw new Error('OPENAI_API_KEY_SECRET_ARN or OPENAI_API_KEY is required to refresh the board.')
+    throw new Error('OPENAI_API_KEY_SECRET_ARN or OPENAI_API_KEY is required to refresh an OpenAI board.')
   }
 
-  const response = await secrets.send(new GetSecretValueCommand({ SecretId: secretArn }))
-  const secretString = response.SecretString
-  if (!secretString) {
-    throw new Error('OpenAI API key secret has no string value.')
+  return secretApiKey(secretArn, ['OPENAI_API_KEY', 'openaiApiKey', 'apiKey'], 'OpenAI')
+}
+
+async function getAnthropicApiKey() {
+  if (process.env.ANTHROPIC_API_KEY) {
+    return process.env.ANTHROPIC_API_KEY
   }
 
-  try {
-    const parsed = JSON.parse(secretString) as Record<string, unknown>
-    const key = parsed.OPENAI_API_KEY ?? parsed.openaiApiKey ?? parsed.apiKey
-    if (typeof key === 'string' && key.trim()) {
-      return key
-    }
-  } catch {
-    // Plain secret strings are supported below.
+  const secretArn = process.env.ANTHROPIC_API_KEY_SECRET_ARN
+  if (!secretArn) {
+    throw new Error('ANTHROPIC_API_KEY_SECRET_ARN or ANTHROPIC_API_KEY is required to refresh an Anthropic board.')
   }
 
-  return secretString.trim()
+  return secretApiKey(secretArn, ['ANTHROPIC_API_KEY', 'anthropicApiKey', 'apiKey'], 'Anthropic')
 }
 
 function boardPrompt(mode: BoardMode) {
@@ -153,7 +214,7 @@ function boardJsonSchema(mode: BoardMode) {
   }
 }
 
-async function generateBoard(apiKey: string, model: string, mode: BoardMode) {
+async function generateOpenAiBoard(apiKey: string, model: string, mode: BoardMode) {
   const prompt = boardPrompt(mode)
   const response = await fetch(OPENAI_URL, {
     method: 'POST',
@@ -197,6 +258,53 @@ async function generateBoard(apiKey: string, model: string, mode: BoardMode) {
   return validateGeneratedBoard(JSON.parse(content), mode)
 }
 
+async function generateAnthropicBoard(apiKey: string, model: string, mode: BoardMode) {
+  const prompt = boardPrompt(mode)
+  const schema = boardJsonSchema(mode)
+  const response = await fetch(ANTHROPIC_URL, {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: 4096,
+      system: prompt.system,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            prompt.user,
+            'Return only a single JSON object. Do not include markdown fences, commentary, or extra keys.',
+            `JSON schema: ${JSON.stringify(schema)}`,
+          ].join('\n\n'),
+        },
+      ],
+    }),
+  })
+
+  if (!response.ok) {
+    throw new Error(`Anthropic board generation failed with status ${response.status}: ${await response.text()}`)
+  }
+
+  const body = (await response.json()) as AnthropicMessageResponse
+  const content = body.content?.find((part) => part.type === 'text' && part.text)?.text
+  if (!content) {
+    throw new Error('Anthropic board generation returned no text content.')
+  }
+
+  return validateGeneratedBoard(JSON.parse(content), mode)
+}
+
+async function generateBoard(provider: GenerationProvider, apiKey: string, model: string, mode: BoardMode) {
+  if (provider === 'anthropic') {
+    return generateAnthropicBoard(apiKey, model, mode)
+  }
+  return generateOpenAiBoard(apiKey, model, mode)
+}
+
 function buildStoredCategories(board: GeneratedBoard, embeddings: number[][]) {
   const categories: StoredCategory[] = []
   let offset = 0
@@ -225,14 +333,18 @@ function buildStoredCategories(board: GeneratedBoard, embeddings: number[][]) {
 }
 
 export async function handler(event?: unknown) {
-  const { mode } = parseRefreshEvent(event)
+  const refreshEvent = parseRefreshEvent(event)
+  const provider = refreshEvent.provider ?? parseGenerationProvider(process.env.GENERATION_PROVIDER) ?? 'openai'
+  const mode = refreshEvent.mode
   const tableName = requiredEnv('TABLE_NAME')
   const embeddingModel = requiredEnv('BEDROCK_MODEL_ID')
-  const openAiModel = process.env.OPENAI_MODEL ?? 'gpt-5.5'
+  const model = refreshEvent.model ?? (provider === 'anthropic'
+    ? requiredEnv('XAND1_ANTHROPIC_MODEL')
+    : process.env.OPENAI_MODEL ?? 'gpt-5.5')
   const promptVersion = process.env.GENERATION_PROMPT_VERSION ?? '2026-06-11-mode-aware'
 
-  const apiKey = await getOpenAiApiKey()
-  const generatedBoard = await generateBoard(apiKey, openAiModel, mode)
+  const apiKey = provider === 'anthropic' ? await getAnthropicApiKey() : await getOpenAiApiKey()
+  const generatedBoard = await generateBoard(provider, apiKey, model, mode)
   const allTerms = generatedBoard.categories.flatMap((category) => category.terms)
   const semanticTargets = generatedBoard.categories.flatMap((category) => [category.title, ...category.alternativeTitles])
   const embeddings = await embedTexts(bedrock, embeddingModel, semanticTargets, 'search_document')
@@ -246,11 +358,12 @@ export async function handler(event?: unknown) {
     mode,
     createdAt,
     status: 'active',
-    model: openAiModel,
+    model,
     embeddingModel,
+    provider,
     terms: shuffled(allTerms),
     categories: buildStoredCategories(generatedBoard, embeddings),
-    generationPromptVersion: `${promptVersion}:${mode}`,
+    generationPromptVersion: `${promptVersion}:${mode}:${provider}`,
     rawGeneration: generatedBoard,
   }
 
@@ -259,6 +372,8 @@ export async function handler(event?: unknown) {
   return {
     boardId,
     mode,
+    provider,
+    model,
     terms: boardRecord.terms.length,
     categories: boardRecord.categories.map((category) => ({
       title: category.title,

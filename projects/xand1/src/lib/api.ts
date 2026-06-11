@@ -1,7 +1,9 @@
-import type { BoardMode, BoardResponse, GuessRequest, GuessResponse } from './contracts'
+import type { BoardListResponse, BoardMode, BoardResponse, GuessRequest, GuessResponse } from './contracts'
 
 export type {
   BoardMode,
+  BoardListResponse,
+  BoardSummary,
   BoardResponse,
   GuessRequest,
   GuessResponse,
@@ -32,8 +34,16 @@ async function requestJson<T>(path: string, init?: RequestInit): Promise<T> {
   return response.json() as Promise<T>
 }
 
-export function getBoard(mode: BoardMode = 'english') {
-  return requestJson<BoardResponse>(`/board?mode=${encodeURIComponent(mode)}`)
+export function getBoards(mode: BoardMode = 'english') {
+  return requestJson<BoardListResponse>(`/boards?mode=${encodeURIComponent(mode)}`)
+}
+
+export function getBoard(mode: BoardMode = 'english', boardId?: string) {
+  const params = new URLSearchParams({ mode })
+  if (boardId) {
+    params.set('boardId', boardId)
+  }
+  return requestJson<BoardResponse>(`/board?${params.toString()}`)
 }
 
 export function submitGuess(request: GuessRequest) {

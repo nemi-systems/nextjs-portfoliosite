@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { calculateScoreSummary, normalizeTerm, sameTermSet, splitTermForMobile, termSetKey, wordmarkToneForToken } from './game'
+import { calculateScoreSummary, modelAbbreviation, normalizeTerm, sameTermSet, splitTermForMobile, termSetKey, wordmarkToneForToken } from './game'
 
 describe('game helpers', () => {
   it('normalizes display terms without changing semantic content', () => {
@@ -19,6 +19,12 @@ describe('game helpers', () => {
     expect(splitTermForMobile('Arabesque')).toEqual(['Arabe', 'sque'])
     expect(splitTermForMobile('electromagnetic')).toEqual(['elect', 'romag', 'netic'])
     expect(splitTermForMobile('coffee-table-book')).toEqual(['coffee', 'table', 'book'])
+  })
+
+  it('abbreviates generation model names for board labels', () => {
+    expect(modelAbbreviation('gpt-5.5', 'openai')).toBe('5.5')
+    expect(modelAbbreviation('claude-fable-20260611', 'anthropic')).toBe('fable')
+    expect(modelAbbreviation('vendor/model-family-20260611')).toBe('family')
   })
 
 

@@ -43,6 +43,10 @@ yarn-error.log*
 next-env.d.ts
 .aider*
 .env
+.anth-api
+.anth-key
+projects/*/.anth-api
+projects/*/.anth-key
 
 # fonts
 public/fonts/
@@ -65,6 +69,7 @@ tmp-home-trace.json
 todo.txt
 differentiation_dimensionality_v2.md
 typescript/
+projects/xand1/CORE_GAMEPLAY_STATUS.md
 
 # submodule-pending (no remote yet)
 projects/black-hole-laboratory/

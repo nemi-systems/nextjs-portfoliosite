@@ -1,28 +1,34 @@
 # xand1
 
-`xand1` is a standalone hosted app for a 4x4 Connections-style game with English and emoji boards. A player must select four related terms and submit a category label in the same move. The backend validates both the exact term set and the semantic fit of the submitted label.
+`xand1` is a statically hosted 4x4 Connections-style game. Players select four terms and submit the category name in the same move; the API checks both the exact term set and the semantic fit of the submitted label.
+
+Current production:
+
+- Site: `https://xand1.n3mi.net`
+- API: `https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com`
+- Active boards use Anthropic `claude-fable-5` (`95cf7d2e-ca4f-4a4a-a141-d9a5848bed97` English, `29458db9-dd50-49b0-9847-3f4051333a30` emoji).
+- OpenAI generation is still supported for manual refreshes.
 
 ## Gameplay
 
-- Each board has 16 shuffled terms, grouped into four hidden categories; emoji mode uses emoji terms with English category labels for scoring.
-- A guess contains exactly four selected terms plus a category name.
-- The selected terms must exactly match one category.
-- The category name is embedded with Cohere Embed v4 on AWS Bedrock and compared with the stored centroid for that category.
-- A solve reveals the matched category title, color or outline, terms, explanation, and submitted label.
-- Wrong term sets do not reveal answer data.
+- Boards have 16 shuffled terms in four hidden categories.
+- Emoji boards use emoji terms and English category labels for scoring.
+- Exact term-set misses return only `wrong_terms`; answer data stays hidden.
+- Exact term-set hits embed the submitted label with Cohere Embed v4 on Bedrock and compare it to the stored category centroid.
+- Solves reveal title, terms, explanation, submitted label, score, threshold, and weak-label outline styling when applicable.
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-  Browser[Browser\nstatic xand1 UI] -->|GET /board?mode=...| Api[API Gateway HTTP API]
+  Browser[Browser\nstatic xand1 UI] -->|GET /boards?mode=...\nGET /board?mode=...&boardId=...| Api[API Gateway HTTP API]
   Browser -->|POST /guess\nterms + label| Api
   Api --> GameLambda[xand1-game-api Lambda]
   GameLambda --> Ddb[(DynamoDB\nXand1Boards)]
   GameLambda -->|embed submitted label| Bedrock[AWS Bedrock\nCohere Embed v4]
 
   Admin[Manual operator] -->|invoke| RefreshLambda[xand1-refresh-board Lambda]
-  RefreshLambda -->|generate strict JSON board for one mode| OpenAI[OpenAI]
+  RefreshLambda -->|generate strict JSON board for one mode| Providers[OpenAI or Anthropic]
   RefreshLambda -->|embed titles + alternatives| Bedrock
   RefreshLambda -->|store board + centroids| Ddb
 
@@ -32,30 +38,16 @@ flowchart LR
   S3 --> CloudFront --> Browser
 ```
 
-### Frontend
+Key paths:
 
-The frontend lives entirely in `projects/xand1` and uses a static Next.js export:
-
-- `src/app/page.tsx`: page entry.
-- `src/components/game/*`: board, tile, solved group, and guess tray UI.
-- `src/components/ui/*`: local shadcn-style primitives used by the game.
-- `src/lib/api.ts`: typed HTTP client for the game API.
-- `src/lib/contracts.ts`: public board and guess response contracts.
-- `src/lib/game.ts`: client helpers for term-set normalization and difficulty colors.
-
-The UI is intentionally minimal: white background, black text, rounded 4x4 tiles, and solved groups colored with the backend-provided parula-like ramp.
-
-### Backend
-
-The backend is defined in the infra workspace:
-
-- `infra/lib/xand1-api-stack.ts`: DynamoDB table, HTTP API, Lambdas, IAM grants, and outputs.
-- `infra/lambda/xand1/refresh-board.ts`: private/manual board generation path.
-- `infra/lambda/xand1/game-api.ts`: public `/board` and `/guess` API.
-- `infra/lambda/xand1/shared/embedding.ts`: Bedrock embedding, centroid, cosine, and term-set helpers.
-- `infra/lambda/xand1/shared/dynamo.ts`: DynamoDB read/write helpers.
-- `infra/lambda/xand1/shared/validation.ts`: generated-board schema validation and difficulty colors.
-- `infra/lambda/xand1/shared/types.ts`: stored board and API contract types.
+- `projects/xand1/src/components/game/*`: game UI, board selector, tiles, solved groups, and guess tray.
+- `projects/xand1/src/lib/api.ts`: public API client.
+- `projects/xand1/src/lib/contracts.ts`: public response/request types.
+- `projects/xand1/src/lib/game.ts`: client helpers, scoring display helpers, and model-label abbreviations.
+- `infra/lib/xand1-api-stack.ts`: DynamoDB table, GSI, HTTP API, Lambdas, IAM grants, and outputs.
+- `infra/lambda/xand1/refresh-board.ts`: manual OpenAI/Anthropic board generation.
+- `infra/lambda/xand1/game-api.ts`: public `/boards`, `/board`, `/guess`, and `/warm`.
+- `infra/lambda/xand1/shared/*`: DynamoDB, embedding, validation, and shared types.
 
 ## Generation flow
 
@@ -64,15 +56,15 @@ sequenceDiagram
   actor Operator
   participant Refresh as xand1-refresh-board Lambda
   participant Secrets as AWS Secrets Manager
-  participant OpenAI
+  participant Provider as OpenAI or Anthropic
   participant Bedrock as AWS Bedrock Cohere Embed v4
   participant DDB as DynamoDB Xand1Boards
 
-  Operator->>Refresh: Invoke Lambda with mode english or emoji
-  Refresh->>Secrets: Read OpenAI API key from project secret
+  Operator->>Refresh: Invoke Lambda with mode and optional provider/model
+  Refresh->>Secrets: Read selected provider API key
   Secrets-->>Refresh: API key
-  Refresh->>OpenAI: Request strict JSON board for one mode
-  OpenAI-->>Refresh: 4 categories x 4 terms
+  Refresh->>Provider: Request strict JSON board for one mode
+  Provider-->>Refresh: 4 categories x 4 terms
   Refresh->>Refresh: Validate category count, unique terms, difficulty set, and emoji terms when mode=emoji
   Refresh->>Bedrock: Embed category titles and alternative titles as search_document
   Bedrock-->>Refresh: Float vectors
@@ -80,6 +72,13 @@ sequenceDiagram
   Refresh->>DDB: Put BOARD#<boardId>/META and ACTIVE/BOARD#<mode> pointer
   Refresh-->>Operator: boardId, mode, and category summary
 ```
+
+Refresh behavior:
+
+- `provider` is `openai` or `anthropic`; omitted provider defaults to `openai`.
+- OpenAI defaults to `gpt-5.5`.
+- Anthropic/Fable requires `XAND1_ANTHROPIC_MODEL` or an event `model`; production uses `claude-fable-5`.
+- Secrets may be JSON (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `openaiApiKey`, `anthropicApiKey`, or `apiKey`) or a plain secret string.
 
 ## Guess validation flow
 
@@ -104,7 +103,7 @@ sequenceDiagram
     Bedrock-->>Game: Float vector
     Game->>Game: Cosine similarity(label, stored centroid)
     Game-->>UI: { status: "solved", category, guessedLabel, score, threshold, passedThreshold }
-    UI->>Player: Reveal solved group; weak labels use outline styling
+    UI->>Player: Reveal solved group and weak labels use outline styling
   end
 ```
 
@@ -126,6 +125,7 @@ erDiagram
     string createdAt
     string mode
     string status
+    string provider
     string model
     string embeddingModel
     stringArray terms
@@ -149,7 +149,32 @@ erDiagram
   BOARD_META ||--|{ CATEGORY : contains
 ```
 
-The public `GET /board` response returns only:
+Board metadata records are also indexed by `mode` + `createdAt` through the `BoardsByModeCreatedAt` GSI for the board selector.
+
+## API
+
+Public board endpoints never return category answers, centroids, or term sets.
+
+### `GET /boards?mode=english|emoji`
+
+Returns board summaries for the dropdown, oldest first (`#1`, `#2`, ...). Missing `mode` defaults to English.
+
+```ts
+type BoardListResponse = {
+  boards: Array<{
+    boardId: string
+    mode: 'english' | 'emoji'
+    createdAt: string
+    model: string
+    provider: 'openai' | 'anthropic'
+    isActive: boolean
+  }>
+}
+```
+
+### `GET /board?mode=english|emoji&boardId=<id>`
+
+Returns the active board for `mode`, or the requested board when `boardId` is present.
 
 ```ts
 type BoardResponse = {
@@ -160,38 +185,15 @@ type BoardResponse = {
 }
 ```
 
-It intentionally omits titles, category term sets, centroids, and explanations.
-
-## API
-
-### `GET /board?mode=english|emoji`
-
-Returns the active public board for the requested mode. Omitting `mode` defaults to English.
-
-```json
-{
-  "boardId": "...",
-  "mode": "english",
-  "terms": ["Oxygen", "Mango", "Madrid"],
-  "difficultyColors": ["#352A87", "#0F5CDD", "#00A6A6", "#F9D423"]
-}
-```
-
 ### `POST /guess`
 
-Request:
-
-```json
-{
-  "boardId": "...",
-  "terms": ["Mango", "Banana", "Fig", "Apple"],
-  "label": "Fruits"
-}
-```
-
-Possible responses:
-
 ```ts
+type GuessRequest = {
+  boardId: string
+  terms: string[]
+  label: string
+}
+
 type GuessResponse =
   | { status: 'wrong_terms'; message: string; oneAway: boolean }
   | {
@@ -212,103 +214,62 @@ type GuessResponse =
 
 ## Configuration
 
-### Frontend
+`NEXT_PUBLIC_XAND1_API_BASE_URL` is required at static build time. Hosted app builds can load it from the xand1 JSON secret named by `XAND1_OPENAI_API_KEY_SECRET_ARN`; explicit environment variables override the secret.
 
-`NEXT_PUBLIC_XAND1_API_BASE_URL` must be present at build time because the app is statically exported. Hosted builds read it from the existing xand1/project Secrets Manager JSON secret identified by `XAND1_OPENAI_API_KEY_SECRET_ARN`; explicit shell environment values still override the secret.
-
-Add this public configuration key to the same JSON secret that stores the OpenAI key:
-
-```json
-{
-  "OPENAI_API_KEY": "...",
-  "NEXT_PUBLIC_XAND1_API_BASE_URL": "https://<api-id>.execute-api.us-east-1.amazonaws.com"
-}
-```
-
-### Backend CDK context and environment
-
-`Xand1ApiStack` accepts these context values or environment variables:
+`Xand1ApiStack` context/env:
 
 | Context key | Environment variable | Purpose |
 | --- | --- | --- |
-| `xand1OpenAiApiKeySecretArn` | `XAND1_OPENAI_API_KEY_SECRET_ARN` | Secrets Manager ARN containing the OpenAI API key. |
-| `xand1OpenAiModel` | `XAND1_OPENAI_MODEL` | OpenAI model for board generation. Defaults to `gpt-5.5`. |
-| `xand1BedrockModelId` | `XAND1_BEDROCK_MODEL_ID` | Bedrock embedding model. Defaults to `cohere.embed-v4:0`. |
-| `xand1CategoryLabelThreshold` | `XAND1_CATEGORY_LABEL_THRESHOLD` | Cosine acceptance threshold. Defaults to `0.35`. |
+| `xand1OpenAiApiKeySecretArn` | `XAND1_OPENAI_API_KEY_SECRET_ARN` | OpenAI secret ARN. |
+| `xand1OpenAiModel` | `XAND1_OPENAI_MODEL` | OpenAI model; defaults to `gpt-5.5`. |
+| `xand1AnthropicApiKeySecretArn` | `XAND1_ANTHROPIC_API_KEY_SECRET_ARN` | Anthropic secret ARN. |
+| `xand1AnthropicModel` | `XAND1_ANTHROPIC_MODEL` | Anthropic model; production uses `claude-fable-5`. |
+| `xand1BedrockModelId` | `XAND1_BEDROCK_MODEL_ID` | Bedrock embedding model; defaults to `cohere.embed-v4:0`. |
+| `xand1CategoryLabelThreshold` | `XAND1_CATEGORY_LABEL_THRESHOLD` | Cosine acceptance threshold; defaults to `0.35`. |
 
-The project secret must be JSON for hosted build env injection. The refresh Lambda reads the OpenAI API key from one of:
-
-- `OPENAI_API_KEY`
-- `openaiApiKey`
-- `apiKey`
-
-## Local build and preview
+## Build, deploy, refresh
 
 From the repo root:
 
 ```bash
-npm run build:xand1
+npm --prefix projects/xand1 run test
+npm --prefix infra run test:xand1
+npm --prefix infra run build
+npm --prefix infra run synth
+NEXT_PUBLIC_XAND1_API_BASE_URL=https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com npm run build:xand1
 ```
 
-For a local preview with a deployed API, either set `NEXT_PUBLIC_XAND1_API_BASE_URL` explicitly or set `XAND1_OPENAI_API_KEY_SECRET_ARN` so `npm run build:xand1` can load it from the project secret:
-
-```bash
-NEXT_PUBLIC_XAND1_API_BASE_URL=https://<api-id>.execute-api.us-east-1.amazonaws.com npm run build:xand1
-npm run serve
-```
-
-The preview server serves the static export at `http://localhost:3000`.
-
-## Deployment and board refresh
-
-Deploy the API stack from the repo root:
+Deploy API:
 
 ```bash
 npm --prefix infra run cdk -- deploy Xand1ApiStack \
   --require-approval never \
-  -c xand1OpenAiApiKeySecretArn=<secret-arn>
+  -c xand1OpenAiApiKeySecretArn=<openai-secret-arn> \
+  -c xand1AnthropicApiKeySecretArn=<anthropic-secret-arn> \
+  -c xand1AnthropicModel=claude-fable-5
 ```
 
-Generate or refresh each active board mode:
+Refresh a Fable board and make it active:
 
 ```bash
 aws lambda invoke \
   --function-name xand1-refresh-board \
-  --payload '{"mode":"english"}' \
-  /tmp/xand1-refresh-english.json
-
-aws lambda invoke \
-  --function-name xand1-refresh-board \
-  --payload '{"mode":"emoji"}' \
-  /tmp/xand1-refresh-emoji.json
+  --cli-binary-format raw-in-base64-out \
+  --payload '{"mode":"emoji","provider":"anthropic","model":"claude-fable-5"}' \
+  /tmp/xand1-refresh-emoji-fable.json
 ```
 
-Check the public board endpoints:
+Deploy static hosting:
 
 ```bash
-curl 'https://<api-id>.execute-api.us-east-1.amazonaws.com/board?mode=english'
-curl 'https://<api-id>.execute-api.us-east-1.amazonaws.com/board?mode=emoji'
+npm --prefix infra run cdk -- deploy NemiPortfolioSiteStack \
+  --require-approval never \
+  -c certificateArn=<us-east-1-acm-certificate-arn>
 ```
 
-Static hosting for `xand1.n3mi.net` is registered in `hosted-apps.json` and deployed by `NemiPortfolioSiteStack` with the other hosted apps.
-
-## Tests
-
-Frontend helper tests:
+Quick checks:
 
 ```bash
-npm --prefix projects/xand1 run test
-```
-
-Backend helper and validation tests:
-
-```bash
-npm --prefix infra run test:xand1
-```
-
-Infra build and synth:
-
-```bash
-npm --prefix infra run build
-npm --prefix infra run synth
+curl 'https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com/boards?mode=emoji'
+curl 'https://ar02bn9qz6.execute-api.us-east-1.amazonaws.com/board?mode=emoji'
 ```

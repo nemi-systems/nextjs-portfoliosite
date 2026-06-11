@@ -54,6 +54,24 @@ export function sameTermSet(left: readonly string[], right: readonly string[]) {
   return termSetKey(left) === termSetKey(right)
 }
 
+export function modelAbbreviation(model: string, provider?: string) {
+  const trimmed = model.trim()
+  const lowered = trimmed.toLocaleLowerCase('en-US')
+  const providerName = provider?.toLocaleLowerCase('en-US') ?? ''
+  if (!trimmed) {
+    return 'model'
+  }
+  if (lowered.includes('fable') || providerName.includes('fable')) {
+    return 'fable'
+  }
+  if (lowered.startsWith('gpt-')) {
+    return trimmed.slice(4)
+  }
+
+  const parts = trimmed.split(/[-_:/.]+/).filter(Boolean)
+  return [...parts].reverse().find((part) => !/^\d{6,}$/.test(part)) ?? trimmed
+}
+
 function clampScore(score: number) {
   if (score < 0) {
     return 0
