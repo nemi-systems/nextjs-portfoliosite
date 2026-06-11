@@ -11,13 +11,13 @@ const projectsConfig = {
       githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite",
     },
     {
-      title: "GravityLens",
+      title: "xand1",
       summary:
-        "Realtime gravitational lensing experiment built with Rust, WebAssembly, and GPU rendering.",
-      image: "/assets/black-hole-laboratory.webp",
-      url: "https://gravitylens.n3mi.net",
-      github: null,
-      githubUrl: null,
+        "Connections with a semantic sting: find the four related terms, then call the category.",
+      image: "/assets/xand1-project-square.svg",
+      url: "https://xand1.n3mi.net",
+      github: "nemi-systems/nextjs-portfoliosite",
+      githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite/tree/main/projects/xand1",
     },
     {
       title: "Ontology",
@@ -29,13 +29,13 @@ const projectsConfig = {
       githubUrl: null,
     },
     {
-      title: "xand1",
+      title: "GravityLens",
       summary:
-        "Connections with a semantic sting: find the four related terms, then call the category.",
-      image: "/assets/xand1-project-square.svg",
-      url: "https://xand1.n3mi.net",
-      github: "nemi-systems/nextjs-portfoliosite",
-      githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite/tree/main/projects/xand1",
+        "Realtime gravitational lensing experiment built with Rust, WebAssembly, and GPU rendering.",
+      image: "/assets/black-hole-laboratory.webp",
+      url: "https://gravitylens.n3mi.net",
+      github: null,
+      githubUrl: null,
     },
     {
       title: "Web Audio Synthesizer",

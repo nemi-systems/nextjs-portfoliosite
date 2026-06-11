@@ -1,11 +1,13 @@
 import { BedrockRuntimeClient } from '@aws-sdk/client-bedrock-runtime'
 import { cosineSimilarity, embedTexts, normalizeTerm, termSetKey } from './shared/embedding'
 import { getActiveBoard, getBoardRecord } from './shared/dynamo'
-import type { BoardRecord, GuessRequest, GuessResponse, StoredCategory } from './shared/types'
+import type { BoardMode, BoardRecord, BoardResponse, GuessRequest, GuessResponse, StoredCategory } from './shared/types'
 
 type HttpEvent = {
   rawPath?: string
   body?: string
+  rawQueryString?: string
+  queryStringParameters?: Record<string, string | undefined>
   isBase64Encoded?: boolean
   requestContext?: {
     http?: {
@@ -41,14 +43,34 @@ function json(statusCode: number, body: unknown): HttpResponse {
   }
 }
 
-function publicBoard(board: BoardRecord) {
+function publicBoard(board: BoardRecord): BoardResponse {
   return {
     boardId: board.boardId,
+    mode: board.mode,
     terms: board.terms,
     difficultyColors: [...board.categories]
       .sort((left, right) => left.difficultyIndex - right.difficultyIndex)
       .map((category) => category.difficultyColor),
   }
+}
+
+function parseBoardMode(value: string | undefined): BoardMode {
+  if (!value || value === 'english') {
+    return 'english'
+  }
+  if (value === 'emoji') {
+    return 'emoji'
+  }
+  throw new Error('mode must be english or emoji.')
+}
+
+function boardModeFromEvent(event: HttpEvent) {
+  const direct = event.queryStringParameters?.mode
+  if (direct !== undefined) {
+    return parseBoardMode(direct)
+  }
+  const params = new URLSearchParams(event.rawQueryString ?? '')
+  return parseBoardMode(params.get('mode') ?? undefined)
 }
 
 function parseBody(event: HttpEvent) {
@@ -123,7 +145,7 @@ function isOneAway(board: BoardRecord, selectedTerms: readonly string[]) {
   return board.categories.some((category) => category.terms.filter((term) => selectedSet.has(normalizeTerm(term))).length === 3)
 }
 
-function solvedResponse(category: StoredCategory, score: number, threshold: number): GuessResponse {
+function solvedResponse(category: StoredCategory, score: number, threshold: number, guessedLabel: string): GuessResponse {
   return {
     status: 'solved',
     category: {
@@ -133,15 +155,17 @@ function solvedResponse(category: StoredCategory, score: number, threshold: numb
       terms: category.terms,
       ...(category.explanation ? { explanation: category.explanation } : {}),
     },
+    guessedLabel,
     score,
     threshold,
     passedThreshold: score >= threshold,
   }
 }
 
-async function handleGetBoard() {
+async function handleGetBoard(event: HttpEvent) {
   const tableName = requiredEnv('TABLE_NAME')
-  const board = await getActiveBoard(tableName)
+  const mode = boardModeFromEvent(event)
+  const board = await getActiveBoard(tableName, mode)
   if (!board) {
     return json(404, { message: 'No active xand1 board is available.' })
   }
@@ -174,7 +198,7 @@ async function handleGuess(event: HttpEvent) {
   const [labelEmbedding] = await embedTexts(bedrock, modelId, [request.label], 'search_query')
   const score = cosineSimilarity(labelEmbedding, matchedCategory.centroid, matchedCategory.centroidNorm)
 
-  return json(200, solvedResponse(matchedCategory, score, threshold))
+  return json(200, solvedResponse(matchedCategory, score, threshold, request.label))
 }
 
 async function handleWarm() {
@@ -187,7 +211,7 @@ export async function handler(event: HttpEvent) {
     const path = event.rawPath ?? event.requestContext?.http?.path ?? ''
 
     if (method === 'GET' && path.endsWith('/board')) {
-      return await handleGetBoard()
+      return await handleGetBoard(event)
     }
     if (method === 'GET' && path.endsWith('/warm')) {
       return await handleWarm()
@@ -199,7 +223,7 @@ export async function handler(event: HttpEvent) {
     return json(404, { message: 'Not found.' })
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unexpected xand1 API error.'
-    const statusCode = message.includes('required') || message.includes('Request body') || message.includes('Guess request') || message.includes('label must')
+    const statusCode = message.includes('required') || message.includes('Request body') || message.includes('Guess request') || message.includes('label must') || message.includes('mode must')
       ? 400
       : 500
     return json(statusCode, { message })

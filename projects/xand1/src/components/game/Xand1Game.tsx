@@ -1,17 +1,16 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { getBoard, submitGuess, warmApi, type BoardResponse, type SolvedGuessResponse } from '@/lib/api'
-import { calculateScoreSummary, shuffledTerms, termSetKey } from '@/lib/game'
+import { getBoard, submitGuess, warmApi, type BoardMode, type BoardResponse, type SolvedGuessResponse } from '@/lib/api'
+import { calculateScoreSummary, MISTAKE_PENALTY, shuffledTerms, termSetKey, wordmarkToneForToken, type WordmarkTone } from '@/lib/game'
 import { cn } from '@/lib/utils'
 import { GameTile } from './GameTile'
 import { GuessTray } from './GuessTray'
 import { SolvedGroup } from './SolvedGroup'
 
 type LoadState = 'loading' | 'ready' | 'error'
-type DisplayMode = 'english' | 'emoji'
+type DisplayMode = BoardMode
 type CoinFace = 'black' | 'white'
 type CoinFlipState =
   | { phase: 'choosing' }
@@ -24,16 +23,13 @@ type SolvedCategory = SolvedGuessResponse['category'] & {
   threshold: number
   passedThreshold: boolean
   solveOrder: number
+  guessedLabel: string
 }
 
 const STARTING_LIVES = 3
 const WARM_INTERVAL_MS = 4 * 60 * 1000
-const ENGLISH_TAGLINE = 'Connections with a semantic sting. You have to call it.'
+const ENGLISH_TAGLINE = 'Connections with a semantic sting'
 const EMOJI_TAGLINE = '🧩 vibes, 🧠 sting. Pick four, name the aura.'
-
-function formatPercent(score: number) {
-  return `${Math.round(score * 100)}%`
-}
 
 function coinFaceLabel(face: CoinFace) {
   return face === 'black' ? 'black face with white dot' : 'white face with black dot'
@@ -53,7 +49,8 @@ function CoinFaceButton({ face, disabled, onChoose }: { face: CoinFace; disabled
     >
       <span
         className={cn(
-          'absolute left-[58%] top-[35%] h-4 w-4 rounded-full',
+          'absolute top-[35%] h-4 w-4 rounded-full',
+          face === 'white' ? 'left-[22%]' : 'left-[58%]',
           face === 'black' ? 'bg-white' : 'bg-black',
         )}
       />
@@ -69,7 +66,7 @@ function CoinFlipSurvival({ state, onChoose }: { state: CoinFlipState; onChoose:
     <section className="rounded-3xl border-2 border-black bg-white p-5 text-center shadow-[0_12px_0_#111]">
       <p className="text-xs font-black uppercase tracking-[0.22em] text-red-600">0 lives: survival flip</p>
       <p className="mt-2 text-sm text-muted-foreground">
-        Pick a face. Win and keep playing at 0 lives. Lose and the board ends.
+        You have to call it.
       </p>
       <div className={cn('mx-auto mt-5 flex max-w-xs items-center justify-center gap-10', flipping && 'xand1-coin-flip') }>
         <div className={cn(flipping && 'xand1-coin-left')}>
@@ -120,7 +117,7 @@ function FinalScorePanel({
     ? 'text-amber-500'
     : summary.rank === 'A'
       ? 'text-emerald-600'
-      : summary.finalScore < 50
+      : summary.rank === 'C'
         ? 'text-red-600'
         : 'text-neutral-600'
 
@@ -128,23 +125,38 @@ function FinalScorePanel({
     <section className="grid gap-6 rounded-3xl border-2 border-black bg-neutral-50 p-5 sm:grid-cols-[1.4fr_0.8fr] sm:p-6">
       <div>
         <h2 className="text-lg font-black uppercase tracking-[0.18em]">Score calculation</h2>
-        <div className="mt-4 space-y-3 text-sm">
-          <div>
-            <p className="font-black uppercase tracking-[0.12em]">Category semantics</p>
-            <ul className="mt-2 space-y-1 text-muted-foreground">
-              {solved.map((category) => (
-                <li key={category.title} className="flex justify-between gap-4">
-                  <span>{category.title} × weight {category.difficultyIndex + 1}</span>
-                  <span className="font-semibold text-black">{formatPercent(category.score)}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="mt-4 overflow-hidden rounded-2xl bg-white text-sm">
+          <div className="grid grid-cols-[1fr_0.9fr_0.7fr] gap-3 border-b border-neutral-200 px-4 py-2 text-xs font-black uppercase tracking-[0.12em] text-muted-foreground">
+            <span>Row</span>
+            <span className="text-right">Data</span>
+            <span className="text-right">Subtotal</span>
           </div>
-          <div className="grid gap-2 rounded-2xl bg-white p-4 font-semibold">
-            <div className="flex justify-between"><span>Weighted semantic subtotal</span><span>{summary.semanticPercent}%</span></div>
-            <div className="flex justify-between"><span>Mistake penalty ({wrongGuessCount})</span><span>-{summary.mistakePenalty}</span></div>
-            <div className="flex justify-between"><span>Coin survival bonus ({survivalWins})</span><span>+{summary.coinSurvivalBonus}</span></div>
-            <div className="flex justify-between"><span>Perfect-order bonus</span><span>+{summary.perfectOrderBonus}</span></div>
+          {summary.semanticRows.map((row) => (
+            <div key={row.title} className="grid grid-cols-[1fr_0.9fr_0.7fr] gap-3 border-b border-neutral-100 px-4 py-2">
+              <span className="font-semibold">{row.title}</span>
+              <span className="text-right text-muted-foreground">{row.rawPercent}% × {row.weight}</span>
+              <span className="text-right font-black">{row.weightedContribution}%</span>
+            </div>
+          ))}
+          <div className="grid grid-cols-[1fr_0.9fr_0.7fr] gap-3 border-b border-neutral-200 bg-neutral-50 px-4 py-2 font-black">
+            <span>Semantic subtotal</span>
+            <span />
+            <span className="text-right">{summary.semanticPercent}%</span>
+          </div>
+          <div className="grid grid-cols-[1fr_0.9fr_0.7fr] gap-3 px-4 py-2">
+            <span>Mistake penalty</span>
+            <span className="text-right text-muted-foreground">{wrongGuessCount} × {MISTAKE_PENALTY}</span>
+            <span className="text-right font-black">-{summary.mistakePenalty}</span>
+          </div>
+          <div className="grid grid-cols-[1fr_0.9fr_0.7fr] gap-3 px-4 py-2">
+            <span>Coin survival bonus</span>
+            <span className="text-right text-muted-foreground">{survivalWins} wins</span>
+            <span className="text-right font-black">+{summary.coinSurvivalBonus}</span>
+          </div>
+          <div className="grid grid-cols-[1fr_0.9fr_0.7fr] gap-3 px-4 py-2">
+            <span>Perfect-order bonus</span>
+            <span />
+            <span className="text-right font-black">+{summary.perfectOrderBonus}</span>
           </div>
         </div>
       </div>
@@ -178,7 +190,23 @@ export function Xand1Game() {
   useEffect(() => {
     let cancelled = false
 
-    getBoard()
+    setLoadState('loading')
+    setBoard(null)
+    setTermOrder([])
+    setSelected([])
+    setSolved([])
+    setLabel('')
+    setMessage('')
+    setPending(false)
+    setLivesRemaining(STARTING_LIVES)
+    setWrongGuessCount(0)
+    setSurvivalWins(0)
+    setSurvivalFlips(0)
+    setCoinFlip(null)
+    setGameOver(false)
+    setWobblingTerms([])
+
+    getBoard(displayMode)
       .then((nextBoard) => {
         if (!cancelled) {
           setBoard(nextBoard)
@@ -196,7 +224,7 @@ export function Xand1Game() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [displayMode])
 
   useEffect(() => {
     if (loadState !== 'ready' || gameOver || solved.length === 4) {
@@ -218,16 +246,17 @@ export function Xand1Game() {
   const interactionLocked = pending || coinFlip !== null || gameOver
   const allSolved = solved.length === 4
   const lostLives = STARTING_LIVES - livesRemaining
-  const wordmarkStyle = lostLives === 2
+  const wordmarkOutlined = gameOver
+  const wordmarkStyle = wordmarkOutlined
     ? { WebkitTextStroke: '2px #dc2626' }
     : undefined
-  const wordmarkClass = lostLives === 0
-    ? 'text-black'
-    : lostLives === 1
-      ? 'text-red-700'
-      : lostLives === 2
-        ? 'text-white'
-        : 'text-red-600'
+  const wordmarkClassByTone: Record<WordmarkTone, string> = {
+    black: 'text-black',
+    red: 'text-red-600',
+    outline: 'text-white',
+  }
+  const emojiWordmarkClass = wordmarkClassByTone[wordmarkOutlined ? 'outline' : lostLives > 0 ? 'red' : 'black']
+  const englishWordmarkClass = (index: number) => wordmarkClassByTone[wordmarkToneForToken(index, lostLives, wordmarkOutlined)]
 
   function toggleTerm(term: string) {
     if (interactionLocked) {
@@ -266,6 +295,8 @@ export function Xand1Game() {
       return
     }
 
+    const submittedLabel = label.trim().replace(/\s+/g, ' ')
+
     setPending(true)
     setMessage('')
 
@@ -273,7 +304,7 @@ export function Xand1Game() {
       const response = await submitGuess({
         boardId: board.boardId,
         terms: selected,
-        label,
+        label: submittedLabel,
       })
 
       if (response.status === 'solved') {
@@ -285,6 +316,7 @@ export function Xand1Game() {
             threshold: response.threshold,
             passedThreshold: response.passedThreshold,
             solveOrder: current.length,
+            guessedLabel: response.guessedLabel || submittedLabel,
           }].sort((a, b) => a.difficultyIndex - b.difficultyIndex))
         }
         setSelected([])
@@ -343,34 +375,48 @@ export function Xand1Game() {
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-3xl flex-col px-4 py-8 sm:py-12">
       <header className="mb-8 text-center">
-        <div className="flex justify-center gap-2">
-          <Button
-            type="button"
-            variant={displayMode === 'english' ? 'default' : 'outline'}
-            aria-pressed={displayMode === 'english'}
-            onClick={() => setDisplayMode('english')}
-            className="h-9 px-4"
-          >
-            Æ
-          </Button>
-          <Button
-            type="button"
-            variant={displayMode === 'emoji' ? 'default' : 'outline'}
-            aria-pressed={displayMode === 'emoji'}
-            onClick={() => setDisplayMode('emoji')}
-            className="h-9 px-4"
-          >
-            🧠
-          </Button>
-        </div>
-        <h1 className={cn('mt-3 text-4xl font-black tracking-[-0.06em] transition-colors sm:text-6xl', wordmarkClass)} style={wordmarkStyle}>
-          {displayMode === 'english' ? 'x&1' : '❌&1️⃣'}
+        <h1 className={cn('mt-3 text-4xl font-black tracking-[-0.06em] transition-colors sm:text-6xl', displayMode === 'emoji' && emojiWordmarkClass)} style={wordmarkStyle}>
+          {displayMode === 'english' ? (
+            <>
+              <span className={cn('transition-colors', englishWordmarkClass(0))}>x</span>
+              <span className={cn('transition-colors', englishWordmarkClass(1))}>&amp;</span>
+              <span className={cn('transition-colors', englishWordmarkClass(2))}>1</span>
+            </>
+          ) : '❌➕1️⃣'}
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
           {displayMode === 'english' ? ENGLISH_TAGLINE : EMOJI_TAGLINE}
         </p>
         <LivesMeter livesRemaining={livesRemaining} />
       </header>
+
+      <div className="mb-5 flex justify-center">
+        <div className="inline-flex overflow-hidden rounded-full border-2 border-black bg-white shadow-[0_6px_0_#111]" role="group" aria-label="Board mode">
+          <button
+            type="button"
+            aria-pressed={displayMode === 'english'}
+            onClick={() => setDisplayMode('english')}
+            className={cn(
+              'h-10 px-5 text-lg font-black transition-colors',
+              displayMode === 'english' ? 'bg-black text-white' : 'bg-white text-black hover:bg-neutral-100',
+            )}
+          >
+            Æ
+          </button>
+          <span aria-hidden="true" className="w-0.5 bg-black" />
+          <button
+            type="button"
+            aria-pressed={displayMode === 'emoji'}
+            onClick={() => setDisplayMode('emoji')}
+            className={cn(
+              'h-10 px-5 text-lg font-black transition-colors',
+              displayMode === 'emoji' ? 'bg-black text-white' : 'bg-white text-black hover:bg-neutral-100',
+            )}
+          >
+            🧠
+          </button>
+        </div>
+      </div>
 
       <Card className="space-y-4 p-4 sm:p-6" style={{ borderRadius: '1.5rem' }}>
         {loadState === 'loading' ? (
@@ -406,6 +452,7 @@ export function Xand1Game() {
                     selected={selected.includes(term)}
                     disabled={interactionLocked}
                     wobbling={wobblingTerms.includes(term)}
+                    mode={displayMode}
                     onToggle={() => toggleTerm(term)}
                   />
                 ))}

@@ -1,5 +1,8 @@
+export type BoardMode = 'english' | 'emoji'
+
 export type BoardResponse = {
   boardId: string
+  mode: BoardMode
   terms: string[]
   difficultyColors: string[]
 }
@@ -19,6 +22,7 @@ export type SolvedGuessResponse = {
     terms: string[]
     explanation?: string
   }
+  guessedLabel: string
   score: number
   threshold: number
   passedThreshold: boolean

@@ -7,10 +7,11 @@ interface GameTileProps {
   selected: boolean
   disabled: boolean
   wobbling: boolean
+  mode: 'english' | 'emoji'
   onToggle: () => void
 }
 
-export function GameTile({ term, selected, disabled, wobbling, onToggle }: GameTileProps) {
+export function GameTile({ term, selected, disabled, wobbling, mode, onToggle }: GameTileProps) {
   const mobileChunks = splitTermForMobile(term)
 
   return (
@@ -22,15 +23,18 @@ export function GameTile({ term, selected, disabled, wobbling, onToggle }: GameT
       onClick={onToggle}
       style={{ borderRadius: '1.25rem' }}
       className={cn(
-        'h-20 px-1.5 text-center text-[0.72rem] leading-tight tracking-[0.06em] sm:h-24 sm:px-2 sm:text-base sm:tracking-[0.08em]',
+        'h-20 max-w-full overflow-hidden text-center leading-tight sm:h-24',
+        mode === 'emoji'
+          ? 'px-1 text-3xl tracking-normal sm:px-2 sm:text-4xl'
+          : '!px-[1px] text-[0.72rem] tracking-[0.06em] sm:!px-1 sm:text-base sm:tracking-[0.08em]',
         !selected && 'bg-neutral-100 hover:bg-neutral-200',
         wobbling && 'xand1-wobble',
       )}
     >
       <span className="hidden sm:inline">{term}</span>
-      <span className="flex flex-col items-center gap-0.5 sm:hidden" aria-hidden="true">
+      <span className="flex max-w-full flex-col items-center gap-0.5 overflow-hidden sm:hidden" aria-hidden="true">
         {mobileChunks.map((chunk) => (
-          <span key={chunk}>{chunk}</span>
+          <span key={chunk} className="max-w-full overflow-hidden break-words">{chunk}</span>
         ))}
       </span>
     </Button>

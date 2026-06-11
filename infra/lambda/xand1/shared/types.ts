@@ -1,5 +1,8 @@
+export type BoardMode = 'english' | 'emoji'
+
 export type BoardResponse = {
   boardId: string
+  mode: BoardMode
   terms: string[]
   difficultyColors: string[]
 }
@@ -19,6 +22,7 @@ export type SolvedGuessResponse = {
     terms: string[]
     explanation?: string
   }
+  guessedLabel: string
   score: number
   threshold: number
   passedThreshold: boolean
@@ -41,6 +45,7 @@ export type GeneratedCategory = {
 }
 
 export type GeneratedBoard = {
+  mode: BoardMode
   categories: GeneratedCategory[]
 }
 
@@ -61,6 +66,7 @@ export type BoardRecord = {
   pk: string
   sk: 'META'
   boardId: string
+  mode: BoardMode
   createdAt: string
   status: 'active' | 'archived'
   model: string
@@ -73,7 +79,7 @@ export type BoardRecord = {
 
 export type ActiveBoardRecord = {
   pk: 'ACTIVE'
-  sk: 'BOARD'
+  sk: `BOARD#${BoardMode}` | 'BOARD'
   boardId: string
   updatedAt: string
 }

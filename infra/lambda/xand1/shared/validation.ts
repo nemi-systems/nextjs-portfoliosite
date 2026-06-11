@@ -1,4 +1,4 @@
-import type { GeneratedBoard, GeneratedCategory } from './types'
+import type { BoardMode, GeneratedBoard, GeneratedCategory } from './types'
 import { termSetKey } from './embedding'
 
 export const DIFFICULTY_COLORS = ['#352A87', '#0F5CDD', '#00A6A6', '#F9D423'] as const
@@ -9,6 +9,26 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function normalizeTitle(value: string) {
   return value.trim().replace(/\s+/g, ' ')
+}
+
+const EMOJI_TERM_PATTERN = /[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u20E3]/u
+const ASCII_LETTER_PATTERN = /[A-Za-z]/
+
+export function activeBoardSk(mode: BoardMode) {
+  return `BOARD#${mode}` as const
+}
+
+function hasEmojiPresentation(value: string) {
+  return EMOJI_TERM_PATTERN.test(value)
+}
+
+function validateTermForMode(term: string, mode: BoardMode) {
+  if (mode !== 'emoji') {
+    return
+  }
+  if (!hasEmojiPresentation(term) || ASCII_LETTER_PATTERN.test(term)) {
+    throw new Error('Emoji generated terms must be emoji sequences without alphabetic words.')
+  }
 }
 
 function cleanAlternativeTitles(rawAlternativeTitles: unknown, title: string) {
@@ -43,7 +63,7 @@ function cleanAlternativeTitles(rawAlternativeTitles: unknown, title: string) {
   return alternativeTitles
 }
 
-export function validateGeneratedBoard(value: unknown): GeneratedBoard {
+export function validateGeneratedBoard(value: unknown, mode: BoardMode = 'english'): GeneratedBoard {
   if (!isRecord(value) || !Array.isArray(value.categories)) {
     throw new Error('Generated board must contain a categories array.')
   }
@@ -88,6 +108,7 @@ export function validateGeneratedBoard(value: unknown): GeneratedBoard {
       if (!clean) {
         throw new Error('Generated terms must be non-empty.')
       }
+      validateTermForMode(clean, mode)
       return clean
     })
 
@@ -118,7 +139,7 @@ export function validateGeneratedBoard(value: unknown): GeneratedBoard {
     throw new Error('Generated difficulty indices must be exactly 0, 1, 2, and 3.')
   }
 
-  return { categories: categories.sort((a, b) => a.difficultyIndex - b.difficultyIndex) }
+  return { mode, categories: categories.sort((a, b) => a.difficultyIndex - b.difficultyIndex) }
 }
 
 export function shuffled<T>(values: readonly T[]) {

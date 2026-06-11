@@ -60,6 +60,8 @@
       "artifactPath": "projects/xand1/out",
       "installCommand": ["npm", "ci"],
       "buildCommand": ["npm", "run", "build"],
+      "envSecretIdEnv": "XAND1_OPENAI_API_KEY_SECRET_ARN",
+      "envSecretKeys": ["NEXT_PUBLIC_XAND1_API_BASE_URL"],
       "domainAliases": ["xand1.n3mi.net"],
       "defaultRootObject": "index.html",
       "fallbackPagePath": "/index.html",

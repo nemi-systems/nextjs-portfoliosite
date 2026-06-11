@@ -1,7 +1,7 @@
 import type { SolvedGuessResponse } from '@/lib/api'
 
 interface SolvedGroupProps {
-  category: SolvedGuessResponse['category']
+  category: SolvedGuessResponse['category'] & { guessedLabel?: string }
   passedThreshold: boolean
 }
 
@@ -22,6 +22,11 @@ export function SolvedGroup({ category, passedThreshold }: SolvedGroupProps) {
       </p>
       {category.explanation ? (
         <p className="mx-auto mt-2 max-w-2xl text-sm opacity-90">{category.explanation}</p>
+      ) : null}
+      {category.guessedLabel ? (
+        <p className="mx-auto mt-3 max-w-2xl text-xs font-black uppercase tracking-[0.12em] opacity-90">
+          You guessed &quot;{category.guessedLabel}&quot;
+        </p>
       ) : null}
     </section>
   )

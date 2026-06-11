@@ -10,6 +10,16 @@ const validBoard = {
   ],
 }
 
+const validEmojiBoard = {
+  categories: [
+    { title: 'Weather', alternativeTitles: ['Forecast icons', 'Weather symbols', 'Meteorological signs', 'Weather conditions'], difficultyIndex: 0, terms: ['☀️', '🌧️', '❄️', '🌪️'], explanation: 'They are weather symbols.' },
+    { title: 'Sports balls', alternativeTitles: ['Athletic balls', 'Game balls', 'Ball sports', 'Sports equipment'], difficultyIndex: 1, terms: ['⚽', '🏀', '🏈', '🎾'], explanation: 'They are balls used in sports.' },
+    { title: 'Faces', alternativeTitles: ['Emotions', 'Emoji expressions', 'Facial reactions', 'Moods'], difficultyIndex: 2, terms: ['😀', '😢', '😡', '😱'], explanation: 'They are expressive faces.' },
+    { title: 'Transportation', alternativeTitles: ['Vehicles', 'Modes of travel', 'Transport icons', 'Ways to move'], difficultyIndex: 3, terms: ['🚗', '✈️', '🚲', '🚢'], explanation: 'They are ways to travel.' },
+  ],
+}
+
+
 describe('xand1 generated-board validation', () => {
   it('accepts valid generated boards and sorts categories by difficulty', () => {
     const result = validateGeneratedBoard(validBoard)
@@ -40,5 +50,17 @@ describe('xand1 generated-board validation', () => {
     const invalid = structuredClone(validBoard)
     invalid.categories[0].difficultyIndex = 0
     expect(() => validateGeneratedBoard(invalid)).toThrow(/exactly 0, 1, 2, and 3/)
+  })
+
+  it('accepts emoji generated boards in emoji mode', () => {
+    const result = validateGeneratedBoard(validEmojiBoard, 'emoji')
+    expect(result.mode).toBe('emoji')
+    expect(result.categories[0].terms).toEqual(['☀️', '🌧️', '❄️', '🌪️'])
+  })
+
+  it('rejects alphabetic terms in emoji mode', () => {
+    const invalid = structuredClone(validEmojiBoard)
+    invalid.categories[0].terms[0] = 'Sun'
+    expect(() => validateGeneratedBoard(invalid, 'emoji')).toThrow(/emoji sequences/)
   })
 })
