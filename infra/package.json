@@ -9,15 +9,22 @@
     "synth": "cdk synth",
     "deploy": "cdk deploy",
     "deploy:portfolio": "npm run deploy -- NextjsPortfoliositeSiteStack",
+    "test:xand1": "vitest run tests/xand1",
     "destroy": "cdk destroy"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
     "aws-cdk": "^2.126.0",
+    "esbuild": "^0.25.12",
     "ts-node": "^10.9.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.940.0",
+    "@aws-sdk/client-dynamodb": "^3.940.0",
+    "@aws-sdk/client-secrets-manager": "^3.940.0",
+    "@aws-sdk/lib-dynamodb": "^3.940.0",
     "aws-cdk-lib": "^2.126.0",
     "constructs": "^10.3.0",
     "source-map-support": "^0.5.21"

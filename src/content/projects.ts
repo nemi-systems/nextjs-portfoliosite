@@ -29,6 +29,15 @@ const projectsConfig = {
       githubUrl: null,
     },
     {
+      title: "xand1",
+      summary:
+        "A 4x4 semantic connections game where each guess must include both the four related terms and the category name.",
+      image: "/assets/xand1-project-square.svg",
+      url: "https://xand1.n3mi.net",
+      github: "nemi-systems/nextjs-portfoliosite",
+      githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite/tree/main/projects/xand1",
+    },
+    {
       title: "Web Audio Synthesizer",
       summary:
         "Browser synth with ADSR envelopes, filters, fx, unison, keyboard input, and live scopes.",

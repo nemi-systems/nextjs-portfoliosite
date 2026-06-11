@@ -52,6 +52,19 @@
       "fallbackPagePath": "/index.html",
       "responseHeaders": "standard",
       "cacheProfile": "mutable"
+    },
+    {
+      "id": "xand1",
+      "publicName": "xand1",
+      "projectPath": "projects/xand1",
+      "artifactPath": "projects/xand1/out",
+      "installCommand": ["npm", "ci"],
+      "buildCommand": ["npm", "run", "build"],
+      "domainAliases": ["xand1.n3mi.net"],
+      "defaultRootObject": "index.html",
+      "fallbackPagePath": "/index.html",
+      "responseHeaders": "standard",
+      "cacheProfile": "mutable"
     }
   ]
 }

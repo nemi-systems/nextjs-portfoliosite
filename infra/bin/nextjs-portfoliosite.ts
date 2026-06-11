@@ -3,6 +3,7 @@ import 'source-map-support/register'
 import { App, Environment } from 'aws-cdk-lib'
 import { NemiPortfolioCertificateStack } from '../lib/certificate-stack'
 import { NemiPortfolioSiteStack } from '../lib/static-site-stack'
+import { Xand1ApiStack } from '../lib/xand1-api-stack'
 
 const app = new App()
 const domainName = process.env.SITE_DOMAIN_NAME ?? 'n3mi.net'
@@ -32,4 +33,21 @@ new NemiPortfolioSiteStack(app, 'NemiPortfolioSiteStack', {
   env: siteEnv,
   domainName,
   certificateArn: siteCertificateArn,
+})
+
+new Xand1ApiStack(app, 'Xand1ApiStack', {
+  env: siteEnv,
+  allowedOrigins: [`https://xand1.${domainName}`, 'http://localhost:3000', 'http://localhost:3001'],
+  bedrockModelId:
+    app.node.tryGetContext('xand1BedrockModelId') ??
+    process.env.XAND1_BEDROCK_MODEL_ID,
+  categoryLabelThreshold:
+    app.node.tryGetContext('xand1CategoryLabelThreshold') ??
+    process.env.XAND1_CATEGORY_LABEL_THRESHOLD,
+  openAiApiKeySecretArn:
+    app.node.tryGetContext('xand1OpenAiApiKeySecretArn') ??
+    process.env.XAND1_OPENAI_API_KEY_SECRET_ARN,
+  openAiModel:
+    app.node.tryGetContext('xand1OpenAiModel') ??
+    process.env.XAND1_OPENAI_MODEL,
 })
