@@ -4,7 +4,6 @@ export type {
   BoardResponse,
   GuessRequest,
   GuessResponse,
-  LabelRejectedGuessResponse,
   SolvedGuessResponse,
   WrongTermsGuessResponse,
 } from './contracts'
@@ -41,4 +40,8 @@ export function submitGuess(request: GuessRequest) {
     method: 'POST',
     body: JSON.stringify(request),
   })
+}
+
+export function warmApi() {
+  return requestJson<{ ok: true }>('/warm')
 }

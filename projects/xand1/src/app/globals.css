@@ -28,3 +28,71 @@ button,
 input {
   font: inherit;
 }
+
+@keyframes xand1-wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(4deg);
+  }
+  60% {
+    transform: rotate(-3deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes xand1-coin-left {
+  0% {
+    transform: translateX(0);
+  }
+  45%,
+  100% {
+    transform: translateX(2.4rem);
+  }
+}
+
+@keyframes xand1-coin-right {
+  0% {
+    transform: translateX(0);
+  }
+  45%,
+  100% {
+    transform: translateX(-2.4rem);
+  }
+}
+
+@keyframes xand1-dao-flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  45% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(900deg);
+  }
+}
+
+.xand1-wobble {
+  animation: xand1-wobble 420ms ease-in-out;
+}
+
+.xand1-coin-left {
+  animation: xand1-coin-left 1200ms ease-in-out forwards;
+}
+
+.xand1-coin-right {
+  animation: xand1-coin-right 1200ms ease-in-out forwards;
+}
+
+.xand1-coin-flip {
+  animation: xand1-dao-flip 1200ms ease-in-out;
+  transform-style: preserve-3d;
+}

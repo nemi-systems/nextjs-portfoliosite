@@ -63,7 +63,7 @@ const FeaturedProjectCard = ({ title, summary, image, url, github, githubUrl }) 
             )}
           </div>
 
-          <p className="text-table-text font-mono text-xs leading-relaxed line-clamp-3 group-hover:text-box-title-bg transition-colors duration-200 flex-grow">
+          <p className="text-table-text font-mono text-xs leading-relaxed group-hover:text-box-title-bg transition-colors duration-200 flex-grow">
             {summary}
           </p>
 

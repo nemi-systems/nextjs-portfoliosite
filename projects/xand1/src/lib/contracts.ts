@@ -21,18 +21,13 @@ export type SolvedGuessResponse = {
   }
   score: number
   threshold: number
+  passedThreshold: boolean
 }
 
 export type WrongTermsGuessResponse = {
   status: 'wrong_terms'
   message: string
+  oneAway: boolean
 }
 
-export type LabelRejectedGuessResponse = {
-  status: 'label_rejected'
-  message: string
-  score: number
-  threshold: number
-}
-
-export type GuessResponse = SolvedGuessResponse | WrongTermsGuessResponse | LabelRejectedGuessResponse
+export type GuessResponse = SolvedGuessResponse | WrongTermsGuessResponse

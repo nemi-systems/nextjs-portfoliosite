@@ -7,6 +7,42 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
 
+function normalizeTitle(value: string) {
+  return value.trim().replace(/\s+/g, ' ')
+}
+
+function cleanAlternativeTitles(rawAlternativeTitles: unknown, title: string) {
+  if (!Array.isArray(rawAlternativeTitles) || rawAlternativeTitles.length < 4 || rawAlternativeTitles.length > 8) {
+    throw new Error('Generated categories must contain four to eight alternativeTitles.')
+  }
+
+  const titleKey = title.toLocaleLowerCase('en-US')
+  const seen = new Set([titleKey])
+  const alternativeTitles: string[] = []
+
+  for (const rawTitle of rawAlternativeTitles) {
+    if (typeof rawTitle !== 'string') {
+      throw new Error('Generated alternativeTitles must be strings.')
+    }
+    const clean = normalizeTitle(rawTitle)
+    if (!clean) {
+      throw new Error('Generated alternativeTitles must be non-empty.')
+    }
+    const key = clean.toLocaleLowerCase('en-US')
+    if (seen.has(key)) {
+      continue
+    }
+    seen.add(key)
+    alternativeTitles.push(clean)
+  }
+
+  if (alternativeTitles.length < 4) {
+    throw new Error('Generated categories must contain at least four unique alternativeTitles.')
+  }
+
+  return alternativeTitles
+}
+
 export function validateGeneratedBoard(value: unknown): GeneratedBoard {
   if (!isRecord(value) || !Array.isArray(value.categories)) {
     throw new Error('Generated board must contain a categories array.')
@@ -25,7 +61,7 @@ export function validateGeneratedBoard(value: unknown): GeneratedBoard {
       throw new Error('Each generated category must be an object.')
     }
 
-    const title = typeof categoryValue.title === 'string' ? categoryValue.title.trim() : ''
+    const title = typeof categoryValue.title === 'string' ? normalizeTitle(categoryValue.title) : ''
     const rawDifficultyIndex = categoryValue.difficultyIndex
     const terms = categoryValue.terms
     const explanation = typeof categoryValue.explanation === 'string' ? categoryValue.explanation.trim() : undefined
@@ -33,6 +69,7 @@ export function validateGeneratedBoard(value: unknown): GeneratedBoard {
     if (!title) {
       throw new Error('Generated categories must have non-empty titles.')
     }
+    const alternativeTitles = cleanAlternativeTitles(categoryValue.alternativeTitles, title)
     if (typeof rawDifficultyIndex !== 'number' || !Number.isInteger(rawDifficultyIndex) || rawDifficultyIndex < 0 || rawDifficultyIndex > 3) {
       throw new Error('Generated difficulty indices must be integers from 0 through 3.')
     }
@@ -70,6 +107,7 @@ export function validateGeneratedBoard(value: unknown): GeneratedBoard {
 
     categories.push({
       title,
+      alternativeTitles,
       difficultyIndex,
       terms: cleanTerms,
       ...(explanation ? { explanation } : {}),

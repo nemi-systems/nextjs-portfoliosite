@@ -31,7 +31,7 @@ const projectsConfig = {
     {
       title: "xand1",
       summary:
-        "A 4x4 semantic connections game where each guess must include both the four related terms and the category name.",
+        "Connections with a semantic sting: find the four related terms, then call the category.",
       image: "/assets/xand1-project-square.svg",
       url: "https://xand1.n3mi.net",
       github: "nemi-systems/nextjs-portfoliosite",

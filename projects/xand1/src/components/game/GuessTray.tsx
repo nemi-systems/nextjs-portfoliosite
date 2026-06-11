@@ -6,20 +6,23 @@ interface GuessTrayProps {
   selectedTerms: string[]
   label: string
   pending: boolean
+  visibleTermCount: number
   onLabelChange: (label: string) => void
   onSubmit: () => void
-  onClear: () => void
+  onShuffle: () => void
 }
 
 export function GuessTray({
   selectedTerms,
   label,
   pending,
+  visibleTermCount,
   onLabelChange,
   onSubmit,
-  onClear,
+  onShuffle,
 }: GuessTrayProps) {
   const canSubmit = selectedTerms.length === 4 && label.trim().length > 0 && !pending
+  const canShuffle = visibleTermCount > 1 && !pending
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault()
@@ -31,9 +34,7 @@ export function GuessTray({
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="min-h-6 text-sm font-medium text-muted-foreground">
-        {selectedTerms.length === 0
-          ? 'Select four terms, then name the connection.'
-          : selectedTerms.join(' · ')}
+        {selectedTerms.length > 0 ? selectedTerms.join(' · ') : null}
       </div>
       <div className="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
         <Input
@@ -47,8 +48,8 @@ export function GuessTray({
         <Button type="submit" disabled={!canSubmit}>
           Submit
         </Button>
-        <Button type="button" variant="ghost" disabled={pending || selectedTerms.length === 0} onClick={onClear}>
-          Clear
+        <Button type="button" variant="ghost" disabled={!canShuffle} onClick={onShuffle}>
+          Shuffle
         </Button>
       </div>
     </form>

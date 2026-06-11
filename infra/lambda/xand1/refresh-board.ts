@@ -74,6 +74,7 @@ async function generateBoard(apiKey: string, model: string) {
           role: 'user',
           content: [
             'Create exactly four semantic categories with exactly four short display terms each.',
+            'For each category, provide a concise title plus 4-8 concise alternativeTitles that are also correct names for the same four terms.',
             'Use difficultyIndex 0, 1, 2, and 3 exactly once, easiest to hardest.',
             'All 16 terms must be globally unique case-insensitively.',
             'Avoid categories that can be solved by the same surface feature unless that is the intended connection.',
@@ -99,9 +100,15 @@ async function generateBoard(apiKey: string, model: string) {
                 items: {
                   type: 'object',
                   additionalProperties: false,
-                  required: ['title', 'difficultyIndex', 'terms', 'explanation'],
+                  required: ['title', 'alternativeTitles', 'difficultyIndex', 'terms', 'explanation'],
                   properties: {
                     title: { type: 'string' },
+                    alternativeTitles: {
+                      type: 'array',
+                      minItems: 4,
+                      maxItems: 8,
+                      items: { type: 'string' },
+                    },
                     difficultyIndex: { type: 'integer', minimum: 0, maximum: 3 },
                     terms: {
                       type: 'array',
@@ -138,13 +145,15 @@ function buildStoredCategories(board: GeneratedBoard, embeddings: number[][]) {
   let offset = 0
 
   for (const category of board.categories) {
-    const termEmbeddings = embeddings.slice(offset, offset + category.terms.length)
-    offset += category.terms.length
-    const center = centroid(termEmbeddings)
+    const semanticTargetCount = 1 + category.alternativeTitles.length
+    const targetEmbeddings = embeddings.slice(offset, offset + semanticTargetCount)
+    offset += semanticTargetCount
+    const center = centroid(targetEmbeddings)
 
     categories.push({
       categoryId: randomUUID(),
       title: category.title,
+      alternativeTitles: category.alternativeTitles,
       difficultyIndex: category.difficultyIndex,
       difficultyColor: DIFFICULTY_COLORS[category.difficultyIndex],
       terms: category.terms,
@@ -167,7 +176,8 @@ export async function handler() {
   const apiKey = await getOpenAiApiKey()
   const generatedBoard = await generateBoard(apiKey, openAiModel)
   const allTerms = generatedBoard.categories.flatMap((category) => category.terms)
-  const embeddings = await embedTexts(bedrock, embeddingModel, allTerms, 'search_document')
+  const semanticTargets = generatedBoard.categories.flatMap((category) => [category.title, ...category.alternativeTitles])
+  const embeddings = await embedTexts(bedrock, embeddingModel, semanticTargets, 'search_document')
   const createdAt = new Date().toISOString()
   const boardId = randomUUID()
 

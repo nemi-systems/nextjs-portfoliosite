@@ -117,6 +117,11 @@ export class Xand1ApiStack extends Stack {
       integration,
     })
     api.addRoutes({
+      path: '/warm',
+      methods: [apigatewayv2.HttpMethod.GET],
+      integration,
+    })
+    api.addRoutes({
       path: '/guess',
       methods: [apigatewayv2.HttpMethod.POST],
       integration,

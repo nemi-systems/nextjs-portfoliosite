@@ -95,15 +95,32 @@ function parseGuessRequest(value: unknown): GuessRequest {
   }
 }
 
-function findMatchedCategory(board: BoardRecord, selectedTerms: readonly string[]) {
+function selectedTermKeys(board: BoardRecord, selectedTerms: readonly string[]) {
   const boardTerms = new Set(board.terms.map(normalizeTerm))
   const selectedKeys = selectedTerms.map(normalizeTerm)
   if (new Set(selectedKeys).size !== 4 || selectedKeys.some((term) => !boardTerms.has(term))) {
     return undefined
   }
+  return selectedKeys
+}
+
+function findMatchedCategory(board: BoardRecord, selectedTerms: readonly string[]) {
+  const selectedKeys = selectedTermKeys(board, selectedTerms)
+  if (!selectedKeys) {
+    return undefined
+  }
 
   const selectedKey = termSetKey(selectedTerms)
   return board.categories.find((category) => category.termSetKey === selectedKey)
+}
+
+function isOneAway(board: BoardRecord, selectedTerms: readonly string[]) {
+  const selectedKeys = selectedTermKeys(board, selectedTerms)
+  if (!selectedKeys) {
+    return false
+  }
+  const selectedSet = new Set(selectedKeys)
+  return board.categories.some((category) => category.terms.filter((term) => selectedSet.has(normalizeTerm(term))).length === 3)
 }
 
 function solvedResponse(category: StoredCategory, score: number, threshold: number): GuessResponse {
@@ -118,6 +135,7 @@ function solvedResponse(category: StoredCategory, score: number, threshold: numb
     },
     score,
     threshold,
+    passedThreshold: score >= threshold,
   }
 }
 
@@ -148,23 +166,19 @@ async function handleGuess(event: HttpEvent) {
   if (!matchedCategory) {
     return json(200, {
       status: 'wrong_terms',
-      message: 'Those four terms are not one category.',
+      message: 'Not quite.',
+      oneAway: isOneAway(board, request.terms),
     } satisfies GuessResponse)
   }
 
   const [labelEmbedding] = await embedTexts(bedrock, modelId, [request.label], 'search_query')
   const score = cosineSimilarity(labelEmbedding, matchedCategory.centroid, matchedCategory.centroidNorm)
 
-  if (score < threshold) {
-    return json(200, {
-      status: 'label_rejected',
-      message: 'Those terms match, but the category name is not close enough.',
-      score,
-      threshold,
-    } satisfies GuessResponse)
-  }
-
   return json(200, solvedResponse(matchedCategory, score, threshold))
+}
+
+async function handleWarm() {
+  return json(200, { ok: true })
 }
 
 export async function handler(event: HttpEvent) {
@@ -174,6 +188,9 @@ export async function handler(event: HttpEvent) {
 
     if (method === 'GET' && path.endsWith('/board')) {
       return await handleGetBoard()
+    }
+    if (method === 'GET' && path.endsWith('/warm')) {
+      return await handleWarm()
     }
     if (method === 'POST' && path.endsWith('/guess')) {
       return await handleGuess(event)
