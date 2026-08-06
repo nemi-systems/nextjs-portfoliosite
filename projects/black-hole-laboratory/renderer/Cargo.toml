@@ -1,0 +1,44 @@
+[package]
+name = "renderer"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "renderer"
+crate-type = ["cdylib", "rlib"]
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[dependencies]
+simulation = { path = "../simulation" }
+winit = "0.30"
+log = "0.4"
+
+cfg-if = "1"
+pollster = "0.3"
+cgmath = "0.18"
+bytemuck = { version = "1.4", features = [ "derive" ] }
+anyhow = "1.0"
+image = { version = "0.24", default-features = false, features = ["jpeg"] }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+env_logger = "0.11"
+
+wgpu = { version = "29", features = ["wgsl"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+console_error_panic_hook = "0.1.7"
+console_log = "1.0"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = [
+    "Document",
+    "Window",
+    "Element",
+    "HtmlCanvasElement",
+    "Node",
+    "Performance",
+]}
+wgpu = { version = "29", features = ["wgsl", "webgpu", "webgl"] }
+

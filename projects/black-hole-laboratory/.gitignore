@@ -1,0 +1,28 @@
+.aider*
+
+# Rust
+/target/
+
+# Node
+/node_modules/
+/www/node_modules/
+/www/dist/
+/www/pkg/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Nix
+result*
+.direnv/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*~
+*.bak
+
+# OS-generated files
+.DS_Store
+Thumbs.db

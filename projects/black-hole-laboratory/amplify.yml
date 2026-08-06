@@ -1,0 +1,18 @@
+# AWS Amplify build settings for the Black Hole Simulator project.
+# This configuration tells Amplify how to build the static web application
+# using a custom Docker build image that has Nix installed.
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - cd www
+        - npm install
+        - npm run build
+  artifacts:
+    # Specify the directory where the build output (static files) is located.
+    # Amplify will deploy the contents of this directory.
+    baseDirectory: /www/dist
+    files:
+      - '**/*'
+
