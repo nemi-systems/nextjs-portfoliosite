@@ -54,22 +54,32 @@ export function sameTermSet(left: readonly string[], right: readonly string[]) {
   return termSetKey(left) === termSetKey(right)
 }
 
-export function modelAbbreviation(model: string, provider?: string) {
+function titleCase(word: string) {
+  return word.charAt(0).toLocaleUpperCase('en-US') + word.slice(1)
+}
+
+export function modelDisplayName(model: string) {
   const trimmed = model.trim()
-  const lowered = trimmed.toLocaleLowerCase('en-US')
-  const providerName = provider?.toLocaleLowerCase('en-US') ?? ''
   if (!trimmed) {
-    return 'model'
+    return 'Unknown model'
   }
-  if (lowered.includes('fable') || providerName.includes('fable')) {
-    return 'fable'
-  }
-  if (lowered.startsWith('gpt-')) {
-    return trimmed.slice(4)
+  const lowered = trimmed.toLocaleLowerCase('en-US')
+
+  const gpt = /^gpt-([\d.]+)((?:-[a-z]+)*)$/.exec(lowered)
+  if (gpt) {
+    const [, version, suffix] = gpt
+    const variant = suffix.split('-').filter(Boolean).map(titleCase).join(' ')
+    return variant ? `GPT-${version} ${variant}` : `GPT-${version}`
   }
 
-  const parts = trimmed.split(/[-_:/.]+/).filter(Boolean)
-  return [...parts].reverse().find((part) => !/^\d{6,}$/.test(part)) ?? trimmed
+  const claude = /^claude-([a-z]+)(?:-(\d{1,2})(?:-(\d{1,2}))?)?(?:-\d{6,})?$/.exec(lowered)
+  if (claude) {
+    const [, family, major, minor] = claude
+    const version = major ? (minor ? `${major}.${minor}` : major) : ''
+    return version ? `${titleCase(family)} ${version}` : titleCase(family)
+  }
+
+  return trimmed
 }
 
 function clampScore(score: number) {

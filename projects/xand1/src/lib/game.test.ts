@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { calculateScoreSummary, modelAbbreviation, normalizeTerm, sameTermSet, splitTermForMobile, termSetKey, wordmarkToneForToken } from './game'
+import { calculateScoreSummary, modelDisplayName, normalizeTerm, sameTermSet, splitTermForMobile, termSetKey, wordmarkToneForToken } from './game'
 
 describe('game helpers', () => {
   it('normalizes display terms without changing semantic content', () => {
@@ -21,10 +21,15 @@ describe('game helpers', () => {
     expect(splitTermForMobile('coffee-table-book')).toEqual(['coffee', 'table', 'book'])
   })
 
-  it('abbreviates generation model names for board labels', () => {
-    expect(modelAbbreviation('gpt-5.5', 'openai')).toBe('5.5')
-    expect(modelAbbreviation('claude-fable-20260611', 'anthropic')).toBe('fable')
-    expect(modelAbbreviation('vendor/model-family-20260611')).toBe('family')
+  it('formats generation model ids as readable board labels', () => {
+    expect(modelDisplayName('gpt-5.5')).toBe('GPT-5.5')
+    expect(modelDisplayName('gpt-6-astra')).toBe('GPT-6 Astra')
+    expect(modelDisplayName('gpt-6.1-sol')).toBe('GPT-6.1 Sol')
+    expect(modelDisplayName('claude-fable-5')).toBe('Fable 5')
+    expect(modelDisplayName('claude-opus-5-5')).toBe('Opus 5.5')
+    expect(modelDisplayName('claude-opus-4-5-20251101')).toBe('Opus 4.5')
+    expect(modelDisplayName('claude-fable-20260611')).toBe('Fable')
+    expect(modelDisplayName('vendor/model-family-20260611')).toBe('vendor/model-family-20260611')
   })
 
 

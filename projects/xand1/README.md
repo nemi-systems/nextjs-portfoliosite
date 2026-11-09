@@ -36,7 +36,7 @@ Key paths:
 - `projects/xand1/src/components/game/*`: game UI, board selector, tiles, solved groups, and guess tray.
 - `projects/xand1/src/lib/api.ts`: public API client.
 - `projects/xand1/src/lib/contracts.ts`: public response/request types.
-- `projects/xand1/src/lib/game.ts`: client helpers, scoring display helpers, and model-label abbreviations.
+- `projects/xand1/src/lib/game.ts`: client helpers, scoring display helpers, and model display names.
 - `infra/lib/xand1-api-stack.ts`: DynamoDB table, GSI, HTTP API, Lambdas, IAM grants, and outputs.
 - `infra/lambda/xand1/refresh-board.ts`: manual OpenAI/Anthropic board generation.
 - `infra/lambda/xand1/game-api.ts`: public `/boards`, `/board`, `/guess`, and `/warm`.

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { getBoard, getBoards, submitGuess, warmApi, type BoardMode, type BoardResponse, type BoardSummary, type SolvedGuessResponse } from '@/lib/api'
-import { calculateScoreSummary, MISTAKE_PENALTY, modelAbbreviation, shuffledTerms, termSetKey, wordmarkToneForToken, type WordmarkTone } from '@/lib/game'
+import { calculateScoreSummary, MISTAKE_PENALTY, modelDisplayName, shuffledTerms, termSetKey, wordmarkToneForToken, type WordmarkTone } from '@/lib/game'
 import { cn } from '@/lib/utils'
 import { GameTile } from './GameTile'
 import { GuessTray } from './GuessTray'
@@ -28,8 +28,7 @@ type SolvedCategory = SolvedGuessResponse['category'] & {
 
 const STARTING_LIVES = 3
 const WARM_INTERVAL_MS = 4 * 60 * 1000
-const ENGLISH_TAGLINE = 'Connections with a semantic sting'
-const EMOJI_TAGLINE = '🧩 vibes, 🧠 sting. Pick four, name the aura.'
+const TAGLINE = 'Pick four. Name the link.'
 
 function coinFaceLabel(face: CoinFace) {
   return face === 'black' ? 'black face with white dot' : 'white face with black dot'
@@ -203,8 +202,8 @@ function BoardSelector({
       >
         <span>{selectedLabel}</span>
         {selectedBoard ? (
-          <span className="text-xs font-semibold lowercase tracking-wide text-muted-foreground">
-            {modelAbbreviation(selectedBoard.summary.model, selectedBoard.summary.provider)}
+          <span className="text-xs font-semibold tracking-wide text-muted-foreground">
+            {modelDisplayName(selectedBoard.summary.model)}
           </span>
         ) : null}
       </button>
@@ -228,10 +227,10 @@ function BoardSelector({
               )}
             >
               <span className="font-black">{label}</span>
-              <span className={cn('ml-auto text-xs font-semibold lowercase tracking-wide', summary.boardId === selectedBoardId ? 'text-neutral-300' : 'text-muted-foreground')}>
-                {modelAbbreviation(summary.model, summary.provider)}
+              <span className={cn('ml-auto text-xs font-semibold tracking-wide', summary.boardId === selectedBoardId ? 'text-neutral-300' : 'text-muted-foreground')}>
+                {modelDisplayName(summary.model)}
               </span>
-              {summary.isActive ? <span className="text-[0.6rem] font-black uppercase tracking-[0.16em] text-emerald-500">active</span> : null}
+              {summary.boardId === selectedBoardId ? <span className="text-[0.6rem] font-black uppercase tracking-[0.16em] text-emerald-500">active</span> : null}
             </button>
           ))}
         </div>
@@ -509,7 +508,7 @@ export function Xand1Game() {
           ) : '❌➕1️⃣'}
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
-          {displayMode === 'english' ? ENGLISH_TAGLINE : EMOJI_TAGLINE}
+          {TAGLINE}
         </p>
         <LivesMeter livesRemaining={livesRemaining} />
       </header>
