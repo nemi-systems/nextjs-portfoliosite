@@ -157,7 +157,8 @@ function boardPrompt(mode: BoardMode) {
         'Use difficultyIndex 0, 1, 2, and 3 exactly once, easiest to hardest.',
         'All 16 emoji terms must be globally unique.',
         'Avoid categories that can be solved only by emoji color, Unicode block, or another surface feature unless that is the intended connection.',
-        'Avoid terms that naturally fit multiple categories on the same board.',
+        'Do not make the board too clean: intentionally include one or two plausible cross-category lure groups of exactly 3 or 5 displayed emoji terms that share a theme but are not valid answer groups.',
+        'Lures may borrow terms from multiple real categories, but no displayed term should be genuinely ambiguous about its correct category.',
         'Write one short English explanation sentence for each category.',
       ].join(' '),
     }
@@ -171,7 +172,8 @@ function boardPrompt(mode: BoardMode) {
       'Use difficultyIndex 0, 1, 2, and 3 exactly once, easiest to hardest.',
       'All 16 terms must be globally unique case-insensitively.',
       'Avoid categories that can be solved by the same surface feature unless that is the intended connection.',
-      'Avoid terms that naturally fit multiple categories on the same board.',
+      'Do not make the board too clean: intentionally include one or two plausible cross-category lure groups of exactly 3 or 5 display terms that share a theme but are not valid answer groups.',
+      'Lures may borrow terms from multiple real categories, but no displayed term should be genuinely ambiguous about its correct category.',
       'Write one short explanation sentence for each category.',
     ].join(' '),
   }
@@ -341,7 +343,7 @@ export async function handler(event?: unknown) {
   const model = refreshEvent.model ?? (provider === 'anthropic'
     ? requiredEnv('XAND1_ANTHROPIC_MODEL')
     : process.env.OPENAI_MODEL ?? 'gpt-5.5')
-  const promptVersion = process.env.GENERATION_PROMPT_VERSION ?? '2026-06-11-mode-aware'
+  const promptVersion = process.env.GENERATION_PROMPT_VERSION ?? '2026-06-11-cross-category-lures'
 
   const apiKey = provider === 'anthropic' ? await getAnthropicApiKey() : await getOpenAiApiKey()
   const generatedBoard = await generateBoard(provider, apiKey, model, mode)

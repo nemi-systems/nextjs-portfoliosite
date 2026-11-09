@@ -73,7 +73,7 @@ export class Xand1ApiStack extends Stack {
         OPENAI_API_KEY_SECRET_ARN: props.openAiApiKeySecretArn ?? '',
         ANTHROPIC_API_KEY_SECRET_ARN: props.anthropicApiKeySecretArn ?? '',
         XAND1_ANTHROPIC_MODEL: props.anthropicModel ?? '',
-        GENERATION_PROMPT_VERSION: '2026-06-11',
+        GENERATION_PROMPT_VERSION: '2026-06-11-cross-category-lures',
       },
       bundling,
     })
