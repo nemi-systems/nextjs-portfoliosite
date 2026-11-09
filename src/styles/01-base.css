@@ -49,7 +49,7 @@
 /* Base body styles */
 body {
   color: var(--theme-secondary);
-  background: #000000;
+  background: rgb(var(--theme-bg-rgb));
   font-family: 'Berkeley Mono', 'JetBrains Mono', monospace;
   font-size: 15px;
   @apply overflow-x-hidden antialiased subpixel-antialiased;

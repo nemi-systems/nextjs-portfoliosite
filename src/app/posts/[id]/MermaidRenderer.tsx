@@ -10,25 +10,38 @@ export default function MermaidRenderer() {
 
     const renderMermaidBlocks = async () => {
       const mermaid = (await import('mermaid')).default;
-      const secondaryRgb = getComputedStyle(document.documentElement)
-        .getPropertyValue('--theme-secondary-rgb')
-        .trim() || '90 253 129';
+      const rootStyle = getComputedStyle(document.documentElement);
+      const secondaryRgb = rootStyle.getPropertyValue('--theme-secondary-rgb').trim() || '90 253 129';
       const secondaryColor = `rgb(${secondaryRgb.replace(/\s+/g, ', ')})`;
+      const isLight = document.documentElement.getAttribute('data-theme-mode') === 'light';
 
       mermaid.initialize({
         startOnLoad: false,
         securityLevel: 'strict',
-        theme: 'dark',
-        themeVariables: {
-          primaryColor: '#111827',
-          primaryTextColor: '#E5E7EB',
-          primaryBorderColor: secondaryColor,
-          lineColor: secondaryColor,
-          fontFamily: 'monospace',
-          edgeLabelBackground: '#0B1220',
-          tertiaryColor: '#0B1220',
-          tertiaryBorderColor: '#334155',
-        },
+        theme: isLight ? 'base' : 'dark',
+        themeVariables: isLight
+          ? {
+            // Catppuccin Latte surfaces
+            background: '#EFF1F5',
+            primaryColor: '#E6E9EF',
+            primaryTextColor: '#4C4F69',
+            primaryBorderColor: secondaryColor,
+            lineColor: secondaryColor,
+            fontFamily: 'monospace',
+            edgeLabelBackground: '#DCE0E8',
+            tertiaryColor: '#DCE0E8',
+            tertiaryBorderColor: '#ACB0BE',
+          }
+          : {
+            primaryColor: '#111827',
+            primaryTextColor: '#E5E7EB',
+            primaryBorderColor: secondaryColor,
+            lineColor: secondaryColor,
+            fontFamily: 'monospace',
+            edgeLabelBackground: '#0B1220',
+            tertiaryColor: '#0B1220',
+            tertiaryBorderColor: '#334155',
+          },
       });
       mermaidInitialized = true;
 

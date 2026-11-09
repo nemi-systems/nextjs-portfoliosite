@@ -25,10 +25,13 @@ type UnitCircleSample = {
 
 export type Rgb = readonly [number, number, number]
 
+export type GlobeColorMode = 'dark' | 'light'
+
 type RenderPalette = {
   grid: Rgb
   bandCore: Rgb
   bandGlow: Rgb
+  bandComposite: GlobalCompositeOperation
   vignetteInner: string
   vignetteOuter: string
 }
@@ -69,6 +72,7 @@ export interface GlobeFrameInput {
   runtime: GlobeRuntimeState
   controls: GlobeControlState
   accentRgb?: Rgb
+  mode?: GlobeColorMode
   userRotationXDeg: number
   userRotationYDeg: number
 }
@@ -98,10 +102,14 @@ const LIGHT_BAND_LATITUDES = [-16, 0, 16].map((deg) => degToRad(deg))
 
 const DEFAULT_AMBER_RGB: Rgb = [202, 143, 49]
 
+/** Catppuccin Latte base, the page background in light mode. */
+const LIGHT_BACKGROUND_RGB: Rgb = [239, 241, 245]
+
 const RED_PALETTE: RenderPalette = {
   grid: [255, 68, 68],
   bandCore: [255, 160, 160],
   bandGlow: [255, 102, 102],
+  bandComposite: 'lighter',
   vignetteInner: 'rgba(0, 0, 0, 0)',
   vignetteOuter: 'rgba(18, 0, 0, 0.2)'
 }
@@ -143,21 +151,33 @@ function scaleRgb(rgb: Rgb, factor: number): Rgb {
   ] as Rgb
 }
 
-function getAccentPalette(accentRgb: Rgb): RenderPalette {
-  const cacheKey = accentRgb.join(',')
+function getAccentPalette(accentRgb: Rgb, mode: GlobeColorMode): RenderPalette {
+  const cacheKey = `${mode}:${accentRgb.join(',')}`
   const cachedPalette = accentPaletteCache.get(cacheKey)
 
   if (cachedPalette) {
     return cachedPalette
   }
 
-  const palette: RenderPalette = {
-    grid: accentRgb,
-    bandCore: mixRgb(accentRgb, [255, 255, 255], 0.72),
-    bandGlow: mixRgb(accentRgb, [255, 255, 255], 0.38),
-    vignetteInner: 'rgba(0, 0, 0, 0)',
-    vignetteOuter: toRgbaCss(scaleRgb(accentRgb, 0.18), 0.24)
-  }
+  // Dark mode glows additively toward white; on a light page that washes out,
+  // so light mode paints a darker band core over a pale halo instead.
+  const palette: RenderPalette = mode === 'light'
+    ? {
+      grid: accentRgb,
+      bandCore: scaleRgb(accentRgb, 0.62),
+      bandGlow: mixRgb(accentRgb, LIGHT_BACKGROUND_RGB, 0.45),
+      bandComposite: 'source-over',
+      vignetteInner: 'rgba(0, 0, 0, 0)',
+      vignetteOuter: toRgbaCss(accentRgb, 0.12)
+    }
+    : {
+      grid: accentRgb,
+      bandCore: mixRgb(accentRgb, [255, 255, 255], 0.72),
+      bandGlow: mixRgb(accentRgb, [255, 255, 255], 0.38),
+      bandComposite: 'lighter',
+      vignetteInner: 'rgba(0, 0, 0, 0)',
+      vignetteOuter: toRgbaCss(scaleRgb(accentRgb, 0.18), 0.24)
+    }
 
   accentPaletteCache.set(cacheKey, palette)
   return palette
@@ -392,7 +412,7 @@ function drawLightBands(
   palette: RenderPalette
 ): void {
   ctx.save()
-  ctx.globalCompositeOperation = 'lighter'
+  ctx.globalCompositeOperation = palette.bandComposite
   const rotationGateOffset = (bandPhase / TAU) * BAND_GATE_COUNT
 
   for (let ringIndex = 0; ringIndex < LIGHT_BAND_LATITUDES.length; ringIndex += 1) {
@@ -515,7 +535,7 @@ export function bandLevelToAngularVelocity(level: number): number {
 }
 
 export function renderRetroGlobeFrame(ctx: CanvasRenderingContext2D, input: GlobeFrameInput): void {
-  const { width, height, dpr, runtime, controls, accentRgb, userRotationXDeg, userRotationYDeg } = input
+  const { width, height, dpr, runtime, controls, accentRgb, mode = 'dark', userRotationXDeg, userRotationYDeg } = input
 
   if (width <= 0 || height <= 0) {
     return
@@ -533,7 +553,7 @@ export function renderRetroGlobeFrame(ctx: CanvasRenderingContext2D, input: Glob
   const rotationY = degToRad(userRotationYDeg) + runtime.rotY
   const rotationZ = runtime.rotZ + wobbleZ
 
-  const palette = controls.isFlashing ? RED_PALETTE : getAccentPalette(accentRgb ?? DEFAULT_AMBER_RGB)
+  const palette = controls.isFlashing ? RED_PALETTE : getAccentPalette(accentRgb ?? DEFAULT_AMBER_RGB, mode)
   const densityScale = 0.75 + Math.max(0, controls.lineDensity) * 0.25
 
   const baseGridWidth = 0.26 + Math.max(0, controls.lineWidth) * 0.24

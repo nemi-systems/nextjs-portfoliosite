@@ -54,7 +54,7 @@
   }
 
   .control-label {
-    @apply text-xs uppercase tracking-tighter text-black font-mono py-1 bg-box-title-bg border-b border-box-outline whitespace-nowrap overflow-hidden flex justify-between items-center px-1;
+    @apply text-xs uppercase tracking-tighter text-on-accent font-mono py-1 bg-box-title-bg border-b border-box-outline whitespace-nowrap overflow-hidden flex justify-between items-center px-1;
   }
 
   .control-buttons-row {
@@ -192,7 +192,7 @@
   }
 
   .matrix-segment {
-    @apply text-black font-mono uppercase flex items-center justify-center;
+    @apply text-on-accent font-mono uppercase flex items-center justify-center;
     font-size: 9px;
     letter-spacing: 0.6px;
     height: 100%;
@@ -251,6 +251,18 @@
     border-color: var(--theme-secondary);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 4px rgb(var(--theme-secondary-rgb) / 0.3);
     background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 50%, #2a2a2a 100%);
+  }
+
+  /* Light mode keys: Latte crust/surface tones. :where() keeps specificity equal to the
+     dark rules above so the lit-up/active states below still win. */
+  :where(:root[data-theme-mode='light']) .equalizer-level {
+    background: linear-gradient(to bottom, #DCE0E8 0%, #CCD0DA 50%, #DCE0E8 100%);
+    border-color: #ACB0BE;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 1px 1px rgba(76,79,105,0.18);
+  }
+
+  :where(:root[data-theme-mode='light']) .equalizer-level:hover {
+    background: linear-gradient(to bottom, #E6E9EF 0%, #DCE0E8 50%, #E6E9EF 100%);
   }
 
   .equalizer-level.lit-up {

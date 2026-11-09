@@ -47,7 +47,7 @@
 @media (min-width: 1024px) {
   .project-table-scroll {
     scrollbar-width: thin;
-    scrollbar-color: var(--theme-accent) #1A1A1A;
+    scrollbar-color: var(--theme-accent) rgb(var(--theme-border-rgb));
   }
 
   .project-table-scroll::-webkit-scrollbar {
@@ -56,7 +56,7 @@
   }
 
   .project-table-scroll::-webkit-scrollbar-track {
-    background: #1A1A1A !important;
+    background: rgb(var(--theme-border-rgb)) !important;
   }
 
   .project-table-scroll::-webkit-scrollbar-thumb {
@@ -74,7 +74,7 @@
   }
   
   html::-webkit-scrollbar-track {
-    background: #1A1A1A !important;
+    background: rgb(var(--theme-border-rgb)) !important;
   }
   
   html::-webkit-scrollbar-thumb {
@@ -89,7 +89,7 @@
   
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--theme-accent) #1A1A1A;
+    scrollbar-color: var(--theme-accent) rgb(var(--theme-border-rgb));
   }
   
   body::-webkit-scrollbar {
@@ -97,7 +97,7 @@
   }
   
   body::-webkit-scrollbar-track {
-    background: #1A1A1A !important;
+    background: rgb(var(--theme-border-rgb)) !important;
   }
   
   body::-webkit-scrollbar-thumb {
@@ -112,6 +112,6 @@
   
   body {
     scrollbar-width: thin;
-    scrollbar-color: var(--theme-accent) #1A1A1A;
+    scrollbar-color: var(--theme-accent) rgb(var(--theme-border-rgb));
   }
 }

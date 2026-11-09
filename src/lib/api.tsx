@@ -663,7 +663,8 @@ async function getParserPre() {
     .use(rehypeKatex)
     // @ts-ignore
     .use(rehypePrettyCode, {
-      theme: "one-dark-pro",
+      // Both palettes are emitted as CSS vars; 04-components.css picks one per theme mode.
+      theme: { dark: "one-dark-pro", light: "catppuccin-latte" },
       keepBackground: false,
     })
     .use(rehypeSlug)

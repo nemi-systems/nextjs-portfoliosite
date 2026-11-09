@@ -6,7 +6,7 @@
 @layer components {
   /* Terminal border utility */
   .terminal-border {
-    border: 1px solid #1A1A1A;
+    border: 1px solid rgb(var(--theme-border-rgb));
   }
   /* Prose markdown styling */
   .prose {
@@ -22,7 +22,7 @@
   }
 
   .prose h2 {
-    @apply text-lg mb-3 border-b border-b-box-outline border-t border-t-white/60 pt-2 pb-1;
+    @apply text-lg mb-3 border-b border-b-box-outline border-t border-t-rule/60 pt-2 pb-1;
   }
   
   .prose a {
@@ -74,6 +74,16 @@
     white-space: pre;
     word-wrap: normal;
     word-break: normal;
+  }
+
+  .prose code[data-theme*=' '],
+  .prose code[data-theme*=' '] span {
+    color: var(--shiki-dark);
+  }
+
+  :root[data-theme-mode='light'] .prose code[data-theme*=' '],
+  :root[data-theme-mode='light'] .prose code[data-theme*=' '] span {
+    color: var(--shiki-light);
   }
 
   .prose [data-rehype-pretty-code-figure] pre {
@@ -285,7 +295,7 @@
 
   .post-audio-player-panel {
     @apply border border-box-outline bg-box-bg;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+    box-shadow: var(--theme-panel-shadow);
     backdrop-filter: blur(10px);
   }
 
@@ -357,8 +367,8 @@
         90deg,
         rgb(var(--theme-secondary-rgb) / 0.78) 0%,
         rgb(var(--theme-secondary-rgb) / 0.78) var(--post-audio-progress),
-        rgba(15, 23, 42, 0.52) var(--post-audio-progress),
-        rgba(15, 23, 42, 0.52) 100%
+        rgb(var(--theme-track-rgb) / 0.52) var(--post-audio-progress),
+        rgb(var(--theme-track-rgb) / 0.52) 100%
       );
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
@@ -487,12 +497,12 @@
   }
 
   .terminal-header {
-    @apply text-black font-mono text-sm uppercase tracking-widest border-b border-box-outline;
+    @apply text-on-accent font-mono text-sm uppercase tracking-widest border-b border-box-outline;
     background: var(--theme-header-bg);
   }
   
   .terminal-header-text {
-    @apply bg-box-title-bg text-black px-2 py-1 inline-block;
+    @apply bg-box-title-bg text-on-accent px-2 py-1 inline-block;
   }
 
   /* Interactive card components */
@@ -577,7 +587,7 @@
 
   .fused-panel-top .terminal-header,
   .fused-panel-bottom .terminal-header {
-    @apply bg-box-header-bg text-black font-mono text-sm uppercase tracking-widest border-box-outline;
+    @apply bg-box-header-bg text-on-accent font-mono text-sm uppercase tracking-widest border-box-outline;
   }
 
   .fused-panel-top .terminal-header {

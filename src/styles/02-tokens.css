@@ -26,16 +26,41 @@
   --shadow-glow-yellow: 0 0 8px rgba(202, 143, 49, 0.4);
   --shadow-glow-red: 0 0 8px rgba(255, 68, 68, 0.6);
 
+  /* Surface tokens (dark mode defaults) */
+  color-scheme: dark;
+  --theme-bg-rgb: 0 0 0;
+  --theme-surface-rgb: 6 6 6;
+  --theme-inset-rgb: 4 13 10;
+  --theme-border-rgb: 26 26 26;
+  --theme-muted-rgb: 128 128 128;
+  --theme-rule-rgb: 255 255 255;
+  --theme-track-rgb: 15 23 42;
+  --theme-panel-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+
   /* Accent theme tokens */
   --theme-accent-rgb: 202 143 49;
   --theme-accent-hover-rgb: 231 168 68;
   --theme-accent-bg-rgb: 33 33 7;
   --theme-secondary-rgb: 90 253 129;
-  --theme-header-bg: color-mix(in srgb, rgb(var(--theme-accent-rgb)) 9.5%, #000000);
+  --theme-on-accent-rgb: 0 0 0;
+  --theme-header-bg: color-mix(in srgb, rgb(var(--theme-accent-rgb)) 9.5%, rgb(var(--theme-bg-rgb)));
   --theme-accent: rgb(var(--theme-accent-rgb));
   --theme-accent-hover: rgb(var(--theme-accent-hover-rgb));
   --theme-accent-bg: rgb(var(--theme-accent-bg-rgb));
   --theme-secondary: rgb(var(--theme-secondary-rgb));
+}
+
+/* Light mode surfaces: Catppuccin Latte base/mantle/crust/surface1/subtext0/text */
+:root[data-theme-mode='light'] {
+  color-scheme: light;
+  --theme-bg-rgb: 239 241 245;
+  --theme-surface-rgb: 230 233 239;
+  --theme-inset-rgb: 220 224 232;
+  --theme-border-rgb: 188 192 204;
+  --theme-muted-rgb: 108 111 133;
+  --theme-rule-rgb: 76 79 105;
+  --theme-track-rgb: 172 176 190;
+  --theme-panel-shadow: 0 14px 34px rgba(76, 79, 105, 0.18);
 }
 
 :root[data-accent-theme='yellow'] {
@@ -46,10 +71,10 @@
 }
 
 :root[data-accent-theme='yellow-flipped'] {
-  --theme-accent-rgb: 90 253 129;
-  --theme-accent-hover-rgb: 137 255 164;
-  --theme-accent-bg-rgb: 9 37 18;
-  --theme-secondary-rgb: 202 143 49;
+  --theme-accent-rgb: 42 138 71;
+  --theme-accent-hover-rgb: 34 113 58;
+  --theme-accent-bg-rgb: 215 229 224;
+  --theme-secondary-rgb: 168 106 18;
 }
 
 :root[data-accent-theme='purple'] {
@@ -60,10 +85,10 @@
 }
 
 :root[data-accent-theme='purple-flipped'] {
-  --theme-accent-rgb: 139 212 80;
-  --theme-accent-hover-rgb: 176 231 129;
-  --theme-accent-bg-rgb: 18 35 14;
-  --theme-secondary-rgb: 150 95 212;
+  --theme-accent-rgb: 79 138 31;
+  --theme-accent-hover-rgb: 65 113 25;
+  --theme-accent-bg-rgb: 220 229 219;
+  --theme-secondary-rgb: 136 57 239;
 }
 
 :root[data-accent-theme='green'] {
@@ -74,10 +99,11 @@
 }
 
 :root[data-accent-theme='green-flipped'] {
-  --theme-accent-rgb: 255 255 255;
-  --theme-accent-hover-rgb: 255 255 255;
-  --theme-accent-bg-rgb: 34 34 34;
-  --theme-secondary-rgb: 231 244 15;
+  --theme-accent-rgb: 76 79 105;
+  --theme-accent-hover-rgb: 62 65 86;
+  --theme-accent-bg-rgb: 219 222 228;
+  --theme-secondary-rgb: 111 119 0;
+  --theme-on-accent-rgb: 239 241 245;
 }
 
 :root[data-accent-theme='pink'] {
@@ -88,8 +114,8 @@
 }
 
 :root[data-accent-theme='pink-flipped'] {
-  --theme-accent-rgb: 0 255 255;
-  --theme-accent-hover-rgb: 92 255 255;
-  --theme-accent-bg-rgb: 7 37 37;
-  --theme-secondary-rgb: 255 72 165;
+  --theme-accent-rgb: 14 138 150;
+  --theme-accent-hover-rgb: 11 113 123;
+  --theme-accent-bg-rgb: 212 229 234;
+  --theme-secondary-rgb: 200 40 127;
 }

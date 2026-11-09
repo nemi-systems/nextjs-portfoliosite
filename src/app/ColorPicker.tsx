@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 
 import { useAccentTheme } from './AccentThemeProvider'
-import { ACCENT_THEME_SWATCH_IDS, ACCENT_THEMES, type AccentThemeId } from './accentTheme'
+import { ACCENT_THEME_SWATCH_IDS, ACCENT_THEMES, LIGHT_MODE_BACKGROUND_HEX, type AccentThemeId } from './accentTheme'
 
 type HoverTarget = {
   themeId: AccentThemeId
@@ -85,7 +85,8 @@ export const ColorPicker = () => {
                       isSecondaryHighlighted ? 'brightness-125 shadow-[inset_0_0_0_2px_var(--theme-secondary)]' : ''
                     ].join(' ')}
                     style={{
-                      backgroundColor: swatch.secondaryHex,
+                      // Latte strip along the diagonal marks the light variant; corner shows its accent.
+                      background: `linear-gradient(135deg, ${LIGHT_MODE_BACKGROUND_HEX} 0 84%, ${ACCENT_THEMES[secondaryThemeId].hex} 84% 100%)`,
                       clipPath: 'polygon(100% 42%, 100% 100%, 42% 100%)'
                     }}
                   />

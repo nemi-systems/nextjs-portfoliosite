@@ -6,7 +6,9 @@ import {
   ACCENT_THEME_STORAGE_KEY,
   DEFAULT_ACCENT_THEME,
   type AccentThemeId,
-  isAccentThemeId
+  applyAccentThemeToDocument,
+  isAccentThemeId,
+  syncAccentThemeToUrl
 } from './accentTheme'
 
 type AccentThemeContextValue = {
@@ -15,10 +17,6 @@ type AccentThemeContextValue = {
 }
 
 const AccentThemeContext = createContext<AccentThemeContextValue | null>(null)
-
-const applyAccentTheme = (theme: AccentThemeId) => {
-  document.documentElement.setAttribute('data-accent-theme', theme)
-}
 
 const readAccentTheme = (): AccentThemeId => {
   if (typeof document !== 'undefined') {
@@ -48,12 +46,14 @@ export const AccentThemeProvider = ({ children }: { children: React.ReactNode })
   useEffect(() => {
     const nextTheme = readAccentTheme()
     setThemeState(nextTheme)
-    applyAccentTheme(nextTheme)
+    applyAccentThemeToDocument(nextTheme)
+    syncAccentThemeToUrl(nextTheme)
   }, [])
 
   const setTheme = useCallback((nextTheme: AccentThemeId) => {
     setThemeState(nextTheme)
-    applyAccentTheme(nextTheme)
+    applyAccentThemeToDocument(nextTheme)
+    syncAccentThemeToUrl(nextTheme)
 
     try {
       window.localStorage.setItem(ACCENT_THEME_STORAGE_KEY, nextTheme)

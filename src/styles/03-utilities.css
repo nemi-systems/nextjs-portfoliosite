@@ -5,9 +5,9 @@
 /* Terminal header utility */
 .terminal-header {
   background: var(--theme-header-bg);
-  border-bottom: 1px solid #1A1A1A;
+  border-bottom: 1px solid rgb(var(--theme-border-rgb));
   position: relative;
-  color: #000000;
+  color: rgb(var(--theme-on-accent-rgb));
 }
 
 /* Data table utilities */
@@ -18,15 +18,15 @@
 
 .data-table th,
 .data-table td {
-  border: 1px solid #1A1A1A;
+  border: 1px solid rgb(var(--theme-border-rgb));
   padding: 8px 12px;
-  background: #060606;
-  color: #808080;
+  background: rgb(var(--theme-surface-rgb));
+  color: rgb(var(--theme-muted-rgb));
 }
 
 .data-table th {
   background: var(--theme-accent);
-  color: #000000;
+  color: rgb(var(--theme-on-accent-rgb));
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -34,7 +34,7 @@
 
 /* Progress bar utility */
 .progress-bar {
-  background: #040D0A;
+  background: rgb(var(--theme-inset-rgb));
   border: 1px solid var(--theme-secondary);
   height: 8px;
   overflow: hidden;
@@ -88,7 +88,7 @@
 
 /* Control readout utility */
 .control-readout {
-  @apply flex-1 h-full bg-box-title-bg border-r border-box-outline text-black font-mono text-xs flex items-center justify-center select-none;
+  @apply flex-1 h-full bg-box-title-bg border-r border-box-outline text-on-accent font-mono text-xs flex items-center justify-center select-none;
 }
 
 /* Boombox button base styles */
@@ -104,7 +104,7 @@
 }
 
 .boombox-button.active {
-  @apply bg-box-title-bg text-black border-box-title-bg;
+  @apply bg-box-title-bg text-on-accent border-box-title-bg;
 }
 
 .boombox-button.inactive {

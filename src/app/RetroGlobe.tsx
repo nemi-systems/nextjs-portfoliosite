@@ -87,6 +87,7 @@ export const RetroGlobe = () => {
   }, [xRotationSpeed, rotationSpeed, zRotationSpeed])
 
   const accentRgb = useMemo<Rgb>(() => ACCENT_THEMES[theme].rgb, [theme])
+  const themeMode = ACCENT_THEMES[theme].mode
 
   const flashButton = useCallback((buttonId: string) => {
     setFlashingButton(buttonId)
@@ -324,6 +325,7 @@ export const RetroGlobe = () => {
           runtime,
           controls,
           accentRgb,
+          mode: themeMode,
           userRotationXDeg: userRotationRef.current.x,
           userRotationYDeg: userRotationRef.current.y
         })
@@ -341,7 +343,7 @@ export const RetroGlobe = () => {
       }
       lastTimestampRef.current = null
     }
-  }, [accentRgb, mounted])
+  }, [accentRgb, themeMode, mounted])
 
   useEffect(() => {
     if (!mounted) {
