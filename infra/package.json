@@ -8,7 +8,8 @@
     "cdk": "cdk",
     "synth": "cdk synth",
     "deploy": "cdk deploy",
-    "deploy:portfolio": "npm run deploy -- NextjsPortfoliositeSiteStack",
+    "deploy:portfolio": "npm run deploy -- NemiPortfolioSiteStack",
+    "gc:assets": "cdk gc --unstable=gc --type s3 --rollback-buffer-days 30 --created-buffer-days 7",
     "test:xand1": "vitest run tests/xand1",
     "destroy": "cdk destroy"
   },

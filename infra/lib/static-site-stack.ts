@@ -113,8 +113,16 @@ export class NemiPortfolioSiteStack extends Stack {
         encryption: BucketEncryption.S3_MANAGED,
         enforceSSL: true,
         versioned: true,
-        removalPolicy: RemovalPolicy.RETAIN,
-        autoDeleteObjects: false,
+        removalPolicy: RemovalPolicy.DESTROY,
+        autoDeleteObjects: true,
+        lifecycleRules: [
+          {
+            id: 'ExpireOldDeployments',
+            abortIncompleteMultipartUploadAfter: Duration.days(1),
+            expiredObjectDeleteMarker: true,
+            noncurrentVersionExpiration: Duration.days(7),
+          },
+        ],
         cors: [
           {
             allowedMethods: [HttpMethods.GET, HttpMethods.HEAD],
