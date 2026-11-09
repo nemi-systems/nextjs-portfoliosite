@@ -25,8 +25,8 @@ const projectsConfig = {
         "LLM-driven ontology extraction from markdown with interactive knowledge graph exploration.",
       image: "/assets/ontology-viewer-project-square.webp",
       url: "https://ontology.n3mi.net",
-      github: null,
-      githubUrl: null,
+      github: "nemi-systems/nextjs-portfoliosite",
+      githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite/tree/main/projects/ontology",
     },
     {
       title: "GravityLens",
@@ -34,8 +34,8 @@ const projectsConfig = {
         "Realtime gravitational lensing experiment built with Rust, WebAssembly, and GPU rendering.",
       image: "/assets/black-hole-laboratory.webp",
       url: "https://gravitylens.n3mi.net",
-      github: null,
-      githubUrl: null,
+      github: "nemi-systems/nextjs-portfoliosite",
+      githubUrl: "https://github.com/nemi-systems/nextjs-portfoliosite/tree/main/projects/black-hole-laboratory",
     },
     {
       title: "Web Audio Synthesizer",
