@@ -336,7 +336,7 @@ function buildStoredCategories(board: GeneratedBoard, embeddings: number[][]) {
 
 export async function handler(event?: unknown) {
   const refreshEvent = parseRefreshEvent(event)
-  const provider = refreshEvent.provider ?? parseGenerationProvider(process.env.GENERATION_PROVIDER) ?? 'openai'
+  const provider = refreshEvent.provider ?? parseGenerationProvider(process.env.GENERATION_PROVIDER) ?? 'anthropic'
   const mode = refreshEvent.mode
   const tableName = requiredEnv('TABLE_NAME')
   const embeddingModel = requiredEnv('BEDROCK_MODEL_ID')

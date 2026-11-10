@@ -68,9 +68,9 @@ sequenceDiagram
 
 Refresh behavior:
 
-- `provider` is `openai` or `anthropic`; omitted provider defaults to `openai`.
+- `provider` is `openai` or `anthropic`; omitted provider defaults to `anthropic`.
+- Anthropic defaults to `claude-fable-5-2` (Fable 5.2) via `XAND1_ANTHROPIC_MODEL`; an event `model` overrides it.
 - OpenAI defaults to `gpt-5.5`.
-- Anthropic/Fable requires `XAND1_ANTHROPIC_MODEL` or an event `model`; production uses `claude-fable-5`.
 - Secrets may be JSON (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `openaiApiKey`, `anthropicApiKey`, or `apiKey`) or a plain secret string.
 
 ## Guess validation flow
@@ -216,7 +216,7 @@ type GuessResponse =
 | `xand1OpenAiApiKeySecretArn` | `XAND1_OPENAI_API_KEY_SECRET_ARN` | OpenAI secret ARN. |
 | `xand1OpenAiModel` | `XAND1_OPENAI_MODEL` | OpenAI model; defaults to `gpt-5.5`. |
 | `xand1AnthropicApiKeySecretArn` | `XAND1_ANTHROPIC_API_KEY_SECRET_ARN` | Anthropic secret ARN. |
-| `xand1AnthropicModel` | `XAND1_ANTHROPIC_MODEL` | Anthropic model; production uses `claude-fable-5`. |
+| `xand1AnthropicModel` | `XAND1_ANTHROPIC_MODEL` | Anthropic model; defaults to `claude-fable-5-2`. |
 | `xand1BedrockModelId` | `XAND1_BEDROCK_MODEL_ID` | Bedrock embedding model; defaults to `cohere.embed-v4:0`. |
 | `xand1CategoryLabelThreshold` | `XAND1_CATEGORY_LABEL_THRESHOLD` | Cosine acceptance threshold; defaults to `0.35`. |
 
@@ -239,17 +239,17 @@ npm --prefix infra run cdk -- deploy Xand1ApiStack \
   --require-approval never \
   -c xand1OpenAiApiKeySecretArn=<openai-secret-arn> \
   -c xand1AnthropicApiKeySecretArn=<anthropic-secret-arn> \
-  -c xand1AnthropicModel=claude-fable-5
+  -c xand1AnthropicModel=claude-fable-5-2
 ```
 
-Refresh a Fable board and make it active:
+Refresh a board with the default provider/model (Anthropic Fable 5.2) and make it active:
 
 ```bash
 aws lambda invoke \
   --function-name xand1-refresh-board \
   --cli-binary-format raw-in-base64-out \
-  --payload '{"mode":"emoji","provider":"anthropic","model":"claude-fable-5"}' \
-  /tmp/xand1-refresh-emoji-fable.json
+  --payload '{"mode":"emoji"}' \
+  /tmp/xand1-refresh-emoji.json
 ```
 
 Deploy static hosting:

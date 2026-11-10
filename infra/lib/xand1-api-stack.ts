@@ -72,7 +72,7 @@ export class Xand1ApiStack extends Stack {
         OPENAI_MODEL: props.openAiModel ?? 'gpt-5.5',
         OPENAI_API_KEY_SECRET_ARN: props.openAiApiKeySecretArn ?? '',
         ANTHROPIC_API_KEY_SECRET_ARN: props.anthropicApiKeySecretArn ?? '',
-        XAND1_ANTHROPIC_MODEL: props.anthropicModel ?? '',
+        XAND1_ANTHROPIC_MODEL: props.anthropicModel ?? 'claude-fable-5-2',
         GENERATION_PROMPT_VERSION: '2026-06-11-cross-category-lures',
       },
       bundling,
